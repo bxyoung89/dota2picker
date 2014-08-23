@@ -1,0 +1,1069 @@
+[
+	{
+		"name": "Abaddon",
+		"id": "abaddon",
+		"stat": "strength",
+		"roles": [
+			"durable",
+			"support",
+			"carry"
+		]
+	},
+	{
+		"name": "Alchemist",
+		"id": "alchemist",
+		"stat": "strength",
+		"roles": [
+			"durable",
+			"carry",
+			"disabler"
+		]
+	},
+	{
+		"name": "Ancient Apparition",
+		"id": "ancient-apparition",
+		"stat": "intelligence",
+		"roles": [
+			"support",
+			"disabler"
+		]
+	},
+	{
+		"name": "Anti-Mage",
+		"id": "anti-mage",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"escape"
+		]
+	},
+	{
+		"name": "Axe",
+		"id": "axe",
+		"stat": "strength",
+		"roles": [
+			"durable",
+			"initiator",
+			"disabler",
+			"jungler"
+		]
+	},
+	{
+		"name": "Bane",
+		"id": "bane",
+		"stat": "intelligence",
+		"roles": [
+			"disabler",
+			"nuker",
+			"support"
+		]
+	},
+	{
+		"name": "Batrider",
+		"id": "batrider",
+		"stat": "intelligence",
+		"roles": [
+			"initiator",
+			"disabler",
+			"nuker",
+			"escape"
+		]
+	},
+	{
+		"name": "Beastmaster",
+		"id": "beastmaster",
+		"stat": "strength",
+		"roles": [
+			"initiator",
+			"disabler",
+			"durable"
+		]
+	},
+	{
+		"name": "Bloodseeker",
+		"id": "bloodseeker",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"jungler"
+		]
+	},
+	{
+		"name": "Bounty Hunter",
+		"id": "bounty-hunter",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"escape",
+			"nuker"
+		]
+	},
+	{
+		"name": "Brewmaster",
+		"id": "brewmaster",
+		"stat": "strength",
+		"roles": [
+			"carry",
+			"durable",
+			"initiator",
+			"pusher"
+		]
+	},
+	{
+		"name": "Bristleback",
+		"id": "bristleback",
+		"stat": "strength",
+		"roles": [
+			"durable",
+			"initiator",
+			"disabler"
+		]
+	},
+	{
+		"name": "Broodmother",
+		"id": "broodmother",
+		"stat": "agility",
+		"roles": [
+			"pusher",
+			"carry",
+			"escape"
+		]
+	},
+	{
+		"name": "Centaur Warrunner",
+		"id": "centaur-warrunner",
+		"stat": "strength",
+		"roles": [
+			"durable",
+			"disabler",
+			"initiator"
+		]
+	},
+	{
+		"name": "Chaos Knight",
+		"id": "chaos-knight",
+		"stat": "strength",
+		"roles": [
+			"carry",
+			"disabler",
+			"durable",
+			"pusher"
+		]
+	},
+	{
+		"name": "Chen",
+		"id": "chen",
+		"stat": "intelligence",
+		"roles": [
+			"support",
+			"jungler",
+			"pusher"
+		]
+	},
+	{
+		"name": "Clinkz",
+		"id": "clinkz",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"escape"
+		]
+	},
+	{
+		"name": "Clockwerk",
+		"id": "clockwerk",
+		"stat": "strength",
+		"roles": [
+			"initiator",
+			"durable"
+		]
+	},
+	{
+		"name": "Crystal Maiden",
+		"id": "crystal-maiden",
+		"stat": "agility",
+		"roles": [
+			"support",
+			"disabler",
+			"nuker",
+			"lane support"
+		]
+	},
+	{
+		"name": "Dark Seer",
+		"id": "dark-seer",
+		"stat": "intelligence",
+		"roles": [
+			"initiator",
+			"nuker",
+			"escape"
+		]
+	},
+	{
+		"name": "Dazzle",
+		"id": "dazzle",
+		"stat": "intelligence",
+		"roles": [
+			"support",
+			"lane support"
+		]
+	},
+	{
+		"name": "Death Prophet",
+		"id": "death-prophet",
+		"stat": "intelligence",
+		"roles": [
+			"pusher",
+			"nuker",
+			"durable"
+		]
+	},
+	{
+		"name": "Disruptor",
+		"id": "disruptor",
+		"stat": "intelligence",
+		"roles": [
+			"nuker",
+			"support",
+			"initiator",
+			"disabler"
+		]
+	},
+	{
+		"name": "Doom",
+		"id": "doom",
+		"stat": "strength",
+		"roles": [
+			"durable",
+			"carry",
+			"nuker"
+		]
+	},
+	{
+		"name": "Dragon Knight",
+		"id": "dragon-knight",
+		"stat": "strength",
+		"roles": [
+			"carry",
+			"durable",
+			"disabler",
+			"pusher"
+		]
+	},
+	{
+		"name": "Drow Ranger",
+		"id": "drow-ranger",
+		"stat": "agility",
+		"roles": [
+			"carry"
+		]
+	},
+	{
+		"name": "Earth Spirit",
+		"id": "earth-spirit",
+		"stat": "strength",
+		"roles": [
+			"carry",
+			"nuker"
+		]
+	},
+	{
+		"name": "Earthshaker",
+		"id": "earthshaker",
+		"stat": "strength",
+		"roles": [
+			"initiator",
+			"disabler",
+			"support",
+			"lane support"
+		]
+	},
+	{
+		"name": "Elder Titan",
+		"id": "elder-titan",
+		"stat": "strength",
+		"roles": [
+			"initiator",
+			"durable"
+		]
+	},
+	{
+		"name": "Ember Spirit",
+		"id": "ember-spirit",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"nuker",
+			"disabler",
+			"durable"
+		]
+	},
+	{
+		"name": "Enchantress",
+		"id": "enchantress",
+		"stat": "intelligence",
+		"roles": [
+			"support",
+			"pusher",
+			"durable",
+			"jungler"
+		]
+	},
+	{
+		"name": "Enigma",
+		"id": "enigma",
+		"stat": "intelligence",
+		"roles": [
+			"disabler",
+			"initiator",
+			"jungler",
+			"pusher"
+		]
+	},
+	{
+		"name": "Faceless Void",
+		"id": "faceless-void",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"initiator",
+			"disabler",
+			"escape"
+		]
+	},
+	{
+		"name": "Gyrocopter",
+		"id": "gyrocopter",
+		"stat": "agility",
+		"roles": [
+			"disabler",
+			"initiator",
+			"nuker"
+		]
+	},
+	{
+		"name": "Huskar",
+		"id": "huskar",
+		"stat": "strength",
+		"roles": [
+			"carry",
+			"initiator",
+			"durable"
+		]
+	},
+	{
+		"name": "Invoker",
+		"id": "invoker",
+		"stat": "intelligence",
+		"roles": [
+			"carry",
+			"nuker",
+			"initiator",
+			"escape"
+		]
+	},
+	{
+		"name": "Io",
+		"id": "io",
+		"stat": "strength",
+		"roles": [
+			"support",
+			"lane support",
+			"nuker"
+		]
+	},
+	{
+		"name": "Jakiro",
+		"id": "jakiro",
+		"stat": "intelligence",
+		"roles": [
+			"nuker",
+			"pusher",
+			"lane support",
+			"disabler"
+		]
+	},
+	{
+		"name": "Juggernaut",
+		"id": "juggernaut",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"pusher"
+		]
+	},
+	{
+		"name": "Keeper of the Light",
+		"id": "keeper-of-the-light",
+		"stat": "intelligence",
+		"roles": [
+			"pusher",
+			"support"
+		]
+	},
+	{
+		"name": "Kunkka",
+		"id": "kunkka",
+		"stat": "strength",
+		"roles": [
+			"diabler",
+			"initiator",
+			"carry",
+			"durable"
+		]
+	},
+	{
+		"name": "Legion Commander",
+		"id": "legion-commander",
+		"stat": "strength",
+		"roles": [
+			"carry",
+			"durable"
+		]
+	},
+	{
+		"name": "Leshrac",
+		"id": "leshrac",
+		"stat": "intelligence",
+		"roles": [
+			"nuker",
+			"pusher",
+			"disabler",
+			"support"
+		]
+	},
+	{
+		"name": "Lich",
+		"id": "lich",
+		"stat": "intelligence",
+		"roles": [
+			"support",
+			"lane support",
+			"nuker"
+		]
+	},
+	{
+		"name": "Lifestealer",
+		"id": "lifestealer",
+		"stat": "strength",
+		"roles": [
+			"carry",
+			"durable",
+			"jungler",
+			"escape"
+		]
+	},
+	{
+		"name": "Lina",
+		"id": "lina",
+		"stat": "intelligence",
+		"roles": [
+			"nuker",
+			"disabler",
+			"support"
+		]
+	},
+	{
+		"name": "Lion",
+		"id": "lion",
+		"stat": "intelligence",
+		"roles": [
+			"disabler",
+			"nuker",
+			"lane support",
+			"support"
+		]
+	},
+	{
+		"name": "Lone Druid",
+		"id": "lone-druid",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"durable",
+			"pusher",
+			"jungler"
+		]
+	},
+	{
+		"name": "Luna",
+		"id": "luna",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"nuker"
+		]
+	},
+	{
+		"name": "Lycan",
+		"id": "lycan",
+		"stat": "strength",
+		"roles": [
+			"carry",
+			"jungler",
+			"pusher",
+			"durable"
+		]
+	},
+	{
+		"name": "Magnus",
+		"id": "magnus",
+		"stat": "strength",
+		"roles": [
+			"initiator",
+			"disabler",
+			"nuker",
+			"carry"
+		]
+	},
+	{
+		"name": "Medusa",
+		"id": "medusa",
+		"stat": "agility",
+		"roles": [
+			"carry"
+		]
+	},
+	{
+		"name": "Meepo",
+		"id": "meepo",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"disabler",
+			"initiator"
+		]
+	},
+	{
+		"name": "Mirana",
+		"id": "mirana",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"nuker",
+			"disabler",
+			"escape"
+		]
+	},
+	{
+		"name": "Morphling",
+		"id": "morphling",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"escape",
+			"initiator",
+			"nuker"
+		]
+	},
+	{
+		"name": "Naga Siren",
+		"id": "naga-siren",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"disabler",
+			"pusher",
+			"escape"
+		]
+	},
+	{
+		"name": "Nature's Prophet",
+		"id": "natures-prophet",
+		"stat": "intelligence",
+		"roles": [
+			"jungler",
+			"pusher",
+			"carry",
+			"escape"
+		]
+	},
+	{
+		"name": "Necrophos",
+		"id": "necrophos",
+		"stat": "intelligence",
+		"roles": [
+			"support",
+			"durable",
+			"carry"
+		]
+	},
+	{
+		"name": "Night Stalker",
+		"id": "night-stalker",
+		"stat": "strength",
+		"roles": [
+			"durable",
+			"initiator"
+		]
+	},
+	{
+		"name": "Nyx Assassin",
+		"id": "nyx-assassin",
+		"stat": "agility",
+		"roles": [
+			"disabler",
+			"nuker"
+		]
+	},
+	{
+		"name": "Ogre Magi",
+		"id": "ogre-magi",
+		"stat": "intelligence",
+		"roles": [
+			"nuker",
+			"disabler",
+			"durable"
+		]
+	},
+	{
+		"name": "Omniknight",
+		"id": "omniknight",
+		"stat": "strength",
+		"roles": [
+			"durable",
+			"lane support",
+			"support"
+		]
+	},
+	{
+		"name": "Outworld Devourer",
+		"id": "outworld-devourer",
+		"stat": "intelligence",
+		"roles": [
+			"carry"
+		]
+	},
+	{
+		"name": "Phantom Assassin",
+		"id": "phantom-assassin",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"escape"
+		]
+	},
+	{
+		"name": "Phantom Lancer",
+		"id": "phantom-lancer",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"escape",
+			"pusher"
+		]
+	},
+	{
+		"name": "Phoenix",
+		"id": "phoenix",
+		"stat": "strength",
+		"roles": [
+			"initiator",
+			"disabler",
+			"nuker"
+		]
+	},
+	{
+		"name": "Puck",
+		"id": "puck",
+		"stat": "intelligence",
+		"roles": [
+			"initiator",
+			"nuker",
+			"disabler",
+			"escape"
+		]
+	},
+	{
+		"name": "Pudge",
+		"id": "pudge",
+		"stat": "strength",
+		"roles": [
+			"durable",
+			"disabler"
+		]
+	},
+	{
+		"name": "Pugna",
+		"id": "pugna",
+		"stat": "intelligence",
+		"roles": [
+			"nuker",
+			"pusher",
+			"support"
+		]
+	},
+	{
+		"name": "Queen of Pain",
+		"id": "queen-of-pain",
+		"stat": "intelligence",
+		"roles": [
+			"nuker",
+			"escape",
+			"carry"
+		]
+	},
+	{
+		"name": "Razor",
+		"id": "razor",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"durable",
+			"nuker"
+		]
+	},
+	{
+		"name": "Riki",
+		"id": "riki",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"escape"
+		]
+	},
+	{
+		"name": "Rubick",
+		"id": "rubick",
+		"stat": "intelligence",
+		"roles": [
+			"disabler",
+			"pusher"
+		]
+	},
+	{
+		"name": "Sand King",
+		"id": "sand-king",
+		"stat": "strength",
+		"roles": [
+			"initiator",
+			"disabler",
+			"nuker"
+		]
+	},
+	{
+		"name": "Shadow Demon",
+		"id": "shadow-demon",
+		"stat": "intelligence",
+		"roles": [
+			"support",
+			"disabler",
+			"nuker"
+		]
+	},
+	{
+		"name": "Shadow Fiend",
+		"id": "shadow-fiend",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"nuker"
+		]
+	},
+	{
+		"name": "Shadow Shaman",
+		"id": "shadow-shaman",
+		"stat": "intelligence",
+		"roles": [
+			"pusher",
+			"disabler",
+			"nuker",
+			"support"
+		]
+	},
+	{
+		"name": "Silencer",
+		"id": "silencer",
+		"stat": "intelligence",
+		"roles": [
+			"support",
+			"carry",
+			"initiator"
+		]
+	},
+	{
+		"name": "Skywrath Mage",
+		"id": "skywrath-mage",
+		"stat": "initiator",
+		"roles": [
+			"nuker",
+			"support"
+		]
+	},
+	{
+		"name": "Slardar",
+		"id": "slardar",
+		"stat": "strength",
+		"roles": [
+			"carry",
+			"durable",
+			"disabler",
+			"initiator"
+		]
+	},
+	{
+		"name": "Slark",
+		"id": "slark",
+		"stat": "agility",
+		"roles": [
+			"escape",
+			"carry"
+		]
+	},
+	{
+		"name": "Sniper",
+		"id": "sniper",
+		"stat": "agility",
+		"roles": [
+			"carry"
+		]
+	},
+	{
+		"name": "Spectre",
+		"id": "spectre",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"durable"
+		]
+	},
+	{
+		"name": "Spirit Breaker",
+		"id": "spirit-breaker",
+		"stat": "strength",
+		"roles": [
+			"durable",
+			"support",
+			"carry"
+		]
+	},
+	{
+		"name": "Storm Spirit",
+		"id": "storm-spirit",
+		"stat": "intelligence",
+		"roles": [
+			"carry",
+			"initiator",
+			"escape",
+			"disabler"
+		]
+	},
+	{
+		"name": "Sven",
+		"id": "sven",
+		"stat": "strength",
+		"roles": [
+			"disabler",
+			"initiator",
+			"carry",
+			"support"
+		]
+	},
+	{
+		"name": "Templar Assassin",
+		"id": "templar-assassin",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"escape"
+		]
+	},
+	{
+		"name": "Terrorblade",
+		"id": "terrorblade",
+		"stat": "agility",
+		"roles": [
+			"carry"
+		]
+	},
+	{
+		"name": "Tidehunter",
+		"id": "tidehunter",
+		"stat": "strength",
+		"roles": [
+			"initiator",
+			"durable",
+			"disabler",
+			"support"
+		]
+	},
+	{
+		"name": "Timbersaw",
+		"id": "timbersaw",
+		"stat": "strength",
+		"roles": [
+			"durable",
+			"nuker",
+			"escape"
+		]
+	},
+	{
+		"name": "Tinker",
+		"id": "tinker",
+		"stat": "intelligence",
+		"roles": [
+			"nuker",
+			"pusher"
+		]
+	},
+	{
+		"name": "Tiny",
+		"id": "tiny",
+		"stat": "strength",
+		"roles": [
+			"disabler",
+			"nuker",
+			"initiator",
+			"durable"
+		]
+	},
+	{
+		"name": "Treant Protector",
+		"id": "treant-protector",
+		"stat": "strength",
+		"roles": [
+			"durable",
+			"initiator",
+			"lane support",
+			"disabler"
+		]
+	},
+	{
+		"name": "Troll Warlord",
+		"id": "troll-warlord",
+		"stat": "agility",
+		"roles": [
+			"carry"
+		]
+	},
+	{
+		"name": "Tusk",
+		"id": "tusk",
+		"stat": "strength",
+		"roles": [
+			"initiator",
+			"durable"
+		]
+	},
+	{
+		"name": "Undying",
+		"id": "undying",
+		"stat": "strength",
+		"roles": [
+			"durable",
+			"pusher",
+			"disabler",
+			"initiator"
+		]
+	},
+	{
+		"name": "Ursa",
+		"id": "ursa",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"jungler",
+			"durable"
+		]
+	},
+	{
+		"name": "Vengeful Spirit",
+		"id": "vengeful-spirit",
+		"stat": "agility",
+		"roles": [
+			"support",
+			"disabler",
+			"lane support",
+			"initiator"
+		]
+	},
+	{
+		"name": "Venomancer",
+		"id": "venomancer",
+		"stat": "agility",
+		"roles": [
+			"support",
+			"nuker",
+			"initiator",
+			"pusher"
+		]
+	},
+	{
+		"name": "Viper",
+		"id": "viper",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"durable"
+		]
+	},
+	{
+		"name": "Visage",
+		"id": "visage",
+		"stat": "intelligence",
+		"roles": [
+			"nuker",
+			"durable",
+			"disabler"
+		]
+	},
+	{
+		"name": "Warlock",
+		"id": "warlock",
+		"stat": "intelligence",
+		"roles": [
+			"initiator",
+			"support",
+			"lane support",
+			"disabler"
+		]
+	},
+	{
+		"name": "Weaver",
+		"id": "weaver",
+		"stat": "agility",
+		"roles": [
+			"carry",
+			"escape"
+		]
+	},
+	{
+		"name": "Windranger",
+		"id": "windranger",
+		"stat": "intelligence",
+		"roles": [
+			"disabler",
+			"nuker",
+			"support",
+			"escape"
+		]
+	},
+	{
+		"name": "Witch Doctor",
+		"id": "witch-doctor",
+		"stat": "intelligence",
+		"roles": [
+			"support",
+			"disabler"
+		]
+	},
+	{
+		"name": "Wraith King",
+		"id": "wraith-king",
+		"stat": "strength",
+		"roles": [
+			"durable",
+			"carry",
+			"disabler"
+		]
+	},
+	{
+		"name": "Zeus",
+		"id": "zeus",
+		"stat": "intelligence",
+		"roles": [
+			"nuker",
+			"support"
+		]
+	}
+]

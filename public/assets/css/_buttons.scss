@@ -1,0 +1,77 @@
+/*
+ * * * * * * * * * * * * * * * * * * *
+ * BUTTON STYLES
+ * * * * * * * * * * * * * * * * * * *
+ */
+
+%button-style{
+    @extend %unstyled-button;
+    display: inline-block;
+    width: auto;
+    height: 30px;
+    padding: 0 10px;
+    @include font-size(1.5);
+    @extend %source-sans-semibold;
+    @extend %uppercase;
+    text-decoration: none;
+    line-height: 32px;
+    @include border-radius-all(4px);
+    border-top: 1px solid rgba($off-white, 0.5);
+    border-bottom: 1px solid rgba($off-black, .5);
+    cursor: pointer;
+
+    &:active {
+        border-top: 1px solid rgba($off-black, 0.5);
+        border-bottom: 1px solid rgba($off-white, 0.7);
+    }
+
+    &:focus { outline: 0; }
+
+    &:disabled,
+    &[disabled=disabled] {
+        opacity: 0.4;
+
+        &:hover,
+        &:active { cursor: default; }
+    }
+}
+
+@mixin button($background-color, $text-color) {
+    @extend %button-style;
+    background: $background-color;
+    color: $text-color;
+    @if $text-color == $off-white{
+        text-shadow: 1px 1px 0 rgba($off-black, 0.2);
+    }
+
+    &:hover{ background: lighten($background-color, 10%); }
+    &:active{ background: darken($background-color, 10%); }
+    &:disabled,
+    &[disabled=disabled] {
+        &:hover,
+        &:active { background: lighten($background-color, 10%); }
+    }
+}
+
+.button{ @include button($mid-grey, $off-black); }
+.button-red{ @include button($red, $off-white); }
+.button-green{ @include button($green, $off-white); }
+.button-light{ @include button($off-white, $off-black); }
+.button-dark{ @include button(darken($dark-grey, 10%), $off-white); }
+
+
+/*
+ * * * * * * * * * * * * * * * * * * *
+ * BUTTON GROUPS
+ * * * * * * * * * * * * * * * * * * *
+ */
+// Want to figure this out more
+.button-group [class*="button-"], .button-group .button {
+    @include border-radius-all(0);
+    margin-left: 0 !important;
+    margin-right: -3px !important;
+    border-right: 1px solid rgba($off-black, .3);
+
+    &:first-child { @include border-radius(4px, 0, 0, 4px); }
+    &:last-child  { @include border-radius(0, 4px, 4px, 0); }
+}

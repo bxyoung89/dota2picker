@@ -1,0 +1,280 @@
+// This is what's included in the _fonts-extended set:
+// Source Sans Pro Extra Light
+// Source Sans Pro Extra Light Italic
+// Source Sans Pro Light
+// Source Sans Pro Light Italic
+// Source Sans Pro Bold
+// Source Sans Pro Bold Italic
+// Source Sans Pro Black
+// Source Sans Pro Black Italic
+//
+// Source Code Pro Extra Light
+// Source Code Pro Light
+// Source Code Pro Regular
+// Source Code Pro Semibold
+// Source Code Pro Bold
+// Source Code Pro Black
+
+/*
+ * * * * * * * * * * * * * * * * * * *
+ * @font-face includes for EXTENDED Source Sans Pro files
+ * * * * * * * * * * * * * * * * * * *
+ */
+
+@font-face {
+    font-family: 'SourceSansProExtraLight';
+    src: url('../fonts/SourceSansPro-ExtraLight-webfont.eot');
+    src: url('../fonts/SourceSansPro-ExtraLight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/SourceSansPro-ExtraLight-webfont.woff') format('woff'),
+         url('../fonts/SourceSansPro-ExtraLight-webfont.ttf') format('truetype'),
+         url('../fonts/SourceSansPro-ExtraLight-webfont.svg#SourceSansProExtraLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceSansProExtraLightItalic';
+    src: url('../fonts/SourceSansPro-ExtraLightIt-webfont.eot');
+    src: url('../fonts/SourceSansPro-ExtraLightIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/SourceSansPro-ExtraLightIt-webfont.woff') format('woff'),
+         url('../fonts/SourceSansPro-ExtraLightIt-webfont.ttf') format('truetype'),
+         url('../fonts/SourceSansPro-ExtraLightIt-webfont.svg#SourceSansProExtraLightItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceSansProLight';
+    src: url('../fonts/SourceSansPro-Light-webfont.eot');
+    src: url('../fonts/SourceSansPro-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/SourceSansPro-Light-webfont.woff') format('woff'),
+         url('../fonts/SourceSansPro-Light-webfont.ttf') format('truetype'),
+         url('../fonts/SourceSansPro-Light-webfont.svg#SourceSansProLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceSansProLightItalic';
+    src: url('../fonts/SourceSansPro-LightIt-webfont.eot');
+    src: url('../fonts/SourceSansPro-LightIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/SourceSansPro-LightIt-webfont.woff') format('woff'),
+         url('../fonts/SourceSansPro-LightIt-webfont.ttf') format('truetype'),
+         url('../fonts/SourceSansPro-LightIt-webfont.svg#SourceSansProLightItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceSansProBold';
+    src: url('../fonts/SourceSansPro-Bold-webfont.eot');
+    src: url('../fonts/SourceSansPro-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/SourceSansPro-Bold-webfont.woff') format('woff'),
+         url('../fonts/SourceSansPro-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/SourceSansPro-Bold-webfont.svg#SourceSansProBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SourceSansProBoldItalic';
+    src: url('../fonts/SourceSansPro-BoldIt-webfont.eot');
+    src: url('../fonts/SourceSansPro-BoldIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/SourceSansPro-BoldIt-webfont.woff') format('woff'),
+         url('../fonts/SourceSansPro-BoldIt-webfont.ttf') format('truetype'),
+         url('../fonts/SourceSansPro-BoldIt-webfont.svg#SourceSansProBoldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SourceSansProBlack';
+    src: url('../fonts/SourceSansPro-Black-webfont.eot');
+    src: url('../fonts/SourceSansPro-Black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/SourceSansPro-Black-webfont.woff') format('woff'),
+         url('../fonts/SourceSansPro-Black-webfont.ttf') format('truetype'),
+         url('../fonts/SourceSansPro-Black-webfont.svg#SourceSansProBlack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SourceSansProBlackItalic';
+    src: url('../fonts/SourceSansPro-BlackIt-webfont.eot');
+    src: url('../fonts/SourceSansPro-BlackIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/SourceSansPro-BlackIt-webfont.woff') format('woff'),
+         url('../fonts/SourceSansPro-BlackIt-webfont.ttf') format('truetype'),
+         url('../fonts/SourceSansPro-BlackIt-webfont.svg#SourceSansProBlackItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+/*
+ * * * * * * * * * * * * * * * * * * *
+ * @extends for the EXTENDED Source Sans Pro files
+ * * * * * * * * * * * * * * * * * * *
+ */
+
+%source-sans-extra-light {
+	font-family: 'SourceSansProExtraLight', Verdana, Helvetica, Arial, sans-serif;
+	font-weight: 200;
+}
+
+%source-sans-extra-light-italic {
+	font-family: 'SourceSansProExtraLightItalic', Verdana, Helvetica, Arial, sans-serif;
+	font-weight: 200;
+}
+
+%source-sans-light {
+	font-family: 'SourceSansProLight', Verdana, Helvetica, Arial, sans-serif;
+	font-weight: 300;
+}
+
+%source-sans-light-italic {
+	font-family: 'SourceSansProLightItalic', Verdana, Helvetica, Arial, sans-serif;
+	font-weight: 300;
+}
+
+%source-sans-bold {
+	font-family: 'SourceSansProBold', Verdana, Helvetica, Arial, sans-serif;
+	font-weight: 700;
+}
+
+%source-sans-bold-italic {
+	font-family: 'SourceSansProBoldItalic', Verdana, Helvetica, Arial, sans-serif;
+	font-weight: 700;
+}
+
+%source-sans-black {
+	font-family: 'SourceSansProBlack', Verdana, Helvetica, Arial, sans-serif;
+	font-weight: 900;
+}
+
+%source-sans-black-italic {
+	font-family: 'SourceSansProBlackItalic', Verdana, Helvetica, Arial, sans-serif;
+	font-weight: 900;
+}
+
+
+
+/*
+ * * * * * * * * * * * * * * * * * * *
+ * @font-face includes for the Source Code Pro files
+ * * * * * * * * * * * * * * * * * * *
+ */
+
+@font-face {
+    font-family: 'SourceCodeProExtraLight';
+    src: url('../fonts/SourceCodePro-ExtraLight-webfont.eot');
+    src: url('../fonts/SourceCodePro-ExtraLight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/SourceCodePro-ExtraLight-webfont.woff') format('woff'),
+         url('../fonts/SourceCodePro-ExtraLight-webfont.ttf') format('truetype'),
+         url('../fonts/SourceCodePro-ExtraLight-webfont.svg#SourceCodeProExtraLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SourceCodeProLight';
+    src: url('../fonts/SourceCodePro-Light-webfont.eot');
+    src: url('../fonts/SourceCodePro-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/SourceCodePro-Light-webfont.woff') format('woff'),
+         url('../fonts/SourceCodePro-Light-webfont.ttf') format('truetype'),
+         url('../fonts/SourceCodePro-Light-webfont.svg#SourceCodeProLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SourceCodeProRegular';
+    src: url('../fonts/SourceCodePro-Regular-webfont.eot');
+    src: url('../fonts/SourceCodePro-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/SourceCodePro-Regular-webfont.woff') format('woff'),
+         url('../fonts/SourceCodePro-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/SourceCodePro-Regular-webfont.svg#SourceCodeProRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SourceCodeProSemibold';
+    src: url('../fonts/SourceCodePro-Semibold-webfont.eot');
+    src: url('../fonts/SourceCodePro-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/SourceCodePro-Semibold-webfont.woff') format('woff'),
+         url('../fonts/SourceCodePro-Semibold-webfont.ttf') format('truetype'),
+         url('../fonts/SourceCodePro-Semibold-webfont.svg#SourceCodeProSemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SourceCodeProBold';
+    src: url('../fonts/SourceCodePro-Bold-webfont.eot');
+    src: url('../fonts/SourceCodePro-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/SourceCodePro-Bold-webfont.woff') format('woff'),
+         url('../fonts/SourceCodePro-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/SourceCodePro-Bold-webfont.svg#SourceCodeProBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SourceCodeProBlack';
+    src: url('../fonts/SourceCodePro-Black-webfont.eot');
+    src: url('../fonts/SourceCodePro-Black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/SourceCodePro-Black-webfont.woff') format('woff'),
+         url('../fonts/SourceCodePro-Black-webfont.ttf') format('truetype'),
+         url('../fonts/SourceCodePro-Black-webfont.svg#SourceCodeProBlack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/*
+ * * * * * * * * * * * * * * * * * * *
+ * @extends for the Source Code Pro files
+ * * * * * * * * * * * * * * * * * * *
+ */
+
+%source-code-extra-light {
+    font-family: 'SourceCodeProExtraLight', Monaco, Consolas, "Lucida Console", monospace;
+    font-weight: 200;
+}
+
+%source-code-light {
+    font-family: 'SourceCodeProLight', Monaco, Consolas, "Lucida Console", monospace;
+    font-weight: 300;
+}
+
+%source-code {
+    font-family: 'SourceCodeProRegular', Monaco, Consolas, "Lucida Console", monospace;
+    font-weight: 400;
+}
+
+%source-code-semibold {
+    font-family: 'SourceCodeProSemibold', Monaco, Consolas, "Lucida Console", monospace;
+    font-weight: 600;
+}
+
+%source-code-bold {
+    font-family: 'SourceCodeProBold', Monaco, Consolas, "Lucida Console", monospace;
+    font-weight: 700;
+}
+
+%source-code-black {
+    font-family: 'SourceCodeProBlack', Monaco, Consolas, "Lucida Console", monospace;
+    font-weight: 900;
+}
+

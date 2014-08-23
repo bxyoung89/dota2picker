@@ -1,0 +1,90 @@
+/*
+ * * * * * * * * * * * * * * * * * * *
+ * COLORS
+ * * * * * * * * * * * * * * * * * * *
+ */
+
+$red: #ed1c24;
+$orange: #ff6600;
+$yellow: #ffcc00;
+$forest-green: #666600;
+$green: #51b848;
+$teal: #006666;
+$blue: #0090cb;
+$cyan: #00ccff;
+$dark-cyan: darken($cyan, 10%);
+$midnight: #002B38;
+$indigo: #2a1e5c;
+$purple: #66439a;
+$yellow-green: #efe80c;
+$red-orange: #ff3600;
+
+$black: #000;
+$off-black: #111;
+$dark-grey: #666;
+$mid-grey: #aaa;
+$light-grey: #ccc;
+$off-white: #eee;
+$white: #fff;
+
+$tan: #F2F1E6;
+$dark-tan: #C6C7C0;
+
+/*
+ * * * * * * * * * * * * * * * * * * *
+ * COLOR MIXINS
+ * * * * * * * * * * * * * * * * * * *
+ */
+
+.background-red { 			background: $red !important; }
+.background-orange { 		background: $orange !important; }
+.background-yellow { 		background: $yellow !important; }
+.background-forest-green { 	background: $forest-green !important; }
+.background-green { 		background: $green !important; }
+.background-teal { 			background: $teal !important; }
+.background-blue { 			background: $blue !important; }
+.background-cyan { 			background: $cyan !important; }
+.background-dark-cyan { 	background: $dark-cyan !important; }
+.background-midnight { 		background: $midnight !important; }
+.background-indigo { 		background: $indigo !important; }
+.background-purple { 		background: $purple !important; }
+.background-yellow-green { 	background: $yellow-green !important; }
+.background-red-orange { 	background: $red-orange !important; }
+
+.background-black {			background: $black !important; }
+.background-off-black { 	background: $off-black !important; }
+.background-dark-grey { 	background: $dark-grey !important; }
+.background-mid-grey { 		background: $mid-grey !important; }
+.background-light-grey { 	background: $light-grey !important; }
+.background-off-white { 	background: $off-white !important; }
+.background-white { 		background: $white !important; }
+
+.background-tan { 			background: $tan !important; }
+.background-dark-tan { 		background: $dark-tan !important; }
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.text-red { 			color: $red !important; }
+.text-orange { 			color: $orange !important; }
+.text-yellow { 			color: $yellow !important; }
+.text-forest-green { 	color: $forest-green !important; }
+.text-green { 			color: $green !important; }
+.text-teal { 			color: $teal !important; }
+.text-blue { 			color: $blue !important; }
+.text-cyan { 			color: $cyan !important; }
+.text-midnight { 		color: $midnight !important; }
+.text-indigo { 			color: $indigo !important; }
+.text-purple { 			color: $purple !important; }
+.text-yellow-green { 	color: $yellow-green !important; }
+.text-red-orange { 		color: $red-orange !important; }
+
+.text-black {			color: $black !important; }
+.text-off-black { 		color: $off-black !important; }
+.text-dark-grey { 		color: $dark-grey !important; }
+.text-mid-grey { 		color: $mid-grey !important; }
+.text-light-grey { 		color: $light-grey !important; }
+.text-off-white { 		color: $off-white !important; }
+.text-white { 			color: $white !important; }
+
+.text-tan { 			color: $tan !important; }
+.text-dark-tan { 		color: $dark-tan !important; }
