@@ -18,11 +18,11 @@ var SiteViewModel = (function(){
 	};
 
 	SiteViewModel.prototype.heroSelected = function(hero){
-		if(this.enemyHeroes().length === 5){
-			return;
-		}
 		if(hero.selected()){
 			this.heroRemoved(hero);
+			return;
+		}
+		if(this.enemyHeroes().length === 5){
 			return;
 		}
 		hero.selected(true);

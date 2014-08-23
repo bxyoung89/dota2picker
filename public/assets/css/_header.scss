@@ -5,8 +5,8 @@ $top-header-height: 30px;
 	height: $top-header-height;
 	width: 100%;
 
-	.title, .sub-title, .author-info{
-		line-height: $top-header-height;
+	.sub-title, .author-info{
+		line-height: 32px;
 	}
 
 	.title{
@@ -14,6 +14,8 @@ $top-header-height: 30px;
 		color: $light-blue;
 		margin-left: 10px;
 		float: left;
+		line-height: 34px;
+		@extend %source-sans-semibold;
 	}
 	.sub-title{
 		@include font-size(1.6);

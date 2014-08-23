@@ -4,6 +4,8 @@ var request = require('request');
 var cheerio = require('cheerio');
 var fs = require('fs');
 var heroFile = "public/js/heroes.json";
+var savedFile = "savedHeroes.json";
+var lastWritten = undefined;
 
 router.get('/', function(req, res){
 	res.sendfile("views/index.html");
@@ -14,6 +16,16 @@ router.get("/getHeroes", function(req, res){
 	fs.readFile(heroFile, "utf8", function(error, data){
 		if(error){
 			console.log("Error :", error);
+			return;
+		}
+		console.log(new Date().getTime());
+		if(lastWritten !== undefined && (new Date()).getTime() - lastWritten.getTime() < 86400000){
+			fs.readFile(savedFile, "utf8", function(error, data){
+				if(error){
+					return console.log(error);
+				}
+				res.send(data);
+			});
 			return;
 		}
 		data = JSON.parse(data);
@@ -55,6 +67,13 @@ router.get("/getHeroes", function(req, res){
 				return;
 			}
 			clearInterval(polling);
+			fs.writeFile(savedFile, JSON.stringify(heroes), function(error){
+				if(error){
+					console.log(error);
+				}
+				lastWritten = new Date();
+
+			});
 			res.send(heroes);
 		}, 100);
 	});

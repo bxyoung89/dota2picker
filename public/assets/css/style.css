@@ -379,28 +379,24 @@ body {
   src: url("../fonts/SourceSansPro-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/SourceSansPro-Regular-webfont.woff") format("woff"), url("../fonts/SourceSansPro-Regular-webfont.ttf") format("truetype"), url("../fonts/SourceSansPro-Regular-webfont.svg#SourceSansProRegular") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 @font-face {
   font-family: 'SourceSansProItalic';
   src: url("../fonts/SourceSansPro-It-webfont.eot");
   src: url("../fonts/SourceSansPro-It-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/SourceSansPro-It-webfont.woff") format("woff"), url("../fonts/SourceSansPro-It-webfont.ttf") format("truetype"), url("../fonts/SourceSansPro-It-webfont.svg#SourceSansProItalic") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 @font-face {
   font-family: 'SourceSansProSemibold';
   src: url("../fonts/SourceSansPro-Semibold-webfont.eot");
   src: url("../fonts/SourceSansPro-Semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/SourceSansPro-Semibold-webfont.woff") format("woff"), url("../fonts/SourceSansPro-Semibold-webfont.ttf") format("truetype"), url("../fonts/SourceSansPro-Semibold-webfont.svg#SourceSansProSemibold") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 @font-face {
   font-family: 'SourceSansProSemiboldItalic';
   src: url("../fonts/SourceSansPro-SemiboldIt-webfont.eot");
   src: url("../fonts/SourceSansPro-SemiboldIt-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/SourceSansPro-SemiboldIt-webfont.woff") format("woff"), url("../fonts/SourceSansPro-SemiboldIt-webfont.ttf") format("truetype"), url("../fonts/SourceSansPro-SemiboldIt-webfont.svg#SourceSansProSemiboldItalic") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 /*
  * * * * * * * * * * * * * * * * * * *
  * @extends for the BASE Source Sans Pro files
@@ -409,6 +405,10 @@ body {
 html {
   font-family: 'SourceSansProRegular', Verdana, Helvetica, Arial, sans-serif;
   font-weight: 400; }
+
+.top-header .title, .enemy-team .title {
+  font-family: 'SourceSansProSemibold', Verdana, Helvetica, Arial, sans-serif;
+  font-weight: 600; }
 
 /*
 ----------------
@@ -451,60 +451,44 @@ Copyright (c) 2013 Shaun Fox [http://shaunfox.com] under the MIT License (MIT) [
 @-webkit-keyframes spin {
   from {
     -webkit-transform: rotate(0deg); }
-
   50% {
     -webkit-transform: rotate(180deg); }
-
   to {
     -webkit-transform: rotate(360deg); } }
-
 @-moz-keyframes spin {
   from {
     -moz-transform: rotate(0deg); }
-
   50% {
     -moz-transform: rotate(180deg); }
-
   to {
     -moz-transform: rotate(360deg); } }
-
 @-ms-keyframes spin {
   from {
     -ms-transform: rotate(0deg); }
-
   50% {
     -ms-transform: rotate(180deg); }
-
   to {
     -ms-transform: rotate(360deg); } }
-
 @-o-keyframes spin {
   from {
     -o-transform: rotate(0deg); }
-
   50% {
     -o-transform: rotate(180deg); }
-
   to {
     -o-transform: rotate(360deg); } }
-
 @keyframes spin {
   from {
     transform: rotate(0deg); }
-
   50% {
     transform: rotate(180deg); }
-
   to {
     transform: rotate(360deg); } }
-
 @font-face {
   font-family: 'ringtail-icons-2.0';
   src: url("../icons/ringtail-icons-2.0.eot");
   src: url("../icons/ringtail-icons-2.0.eot?#iefix") format("embedded-opentype"), url("../icons/ringtail-icons-2.0.woff") format("woff"), url("../icons/ringtail-icons-2.0.ttf") format("truetype"), url("../icons/ringtail-icons-2.0.svg#ringtail-icons-2.0") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 [data-icon]:before {
   font-family: 'ringtail-icons-2.0';
@@ -1163,14 +1147,15 @@ h5 {
   color: #f9f3ee;
   height: 30px;
   width: 100%; }
-  .top-header .title, .top-header .sub-title, .top-header .author-info {
-    line-height: 30px; }
+  .top-header .sub-title, .top-header .author-info {
+    line-height: 32px; }
   .top-header .title {
     font-size: 26px;
     font-size: 2.6rem;
     color: #93edf5;
     margin-left: 10px;
-    float: left; }
+    float: left;
+    line-height: 34px; }
   .top-header .sub-title {
     font-size: 16px;
     font-size: 1.6rem;
@@ -1210,7 +1195,6 @@ h5 {
     font-size: 35px;
     font-size: 3.5rem;
     text-transform: uppercase;
-    font-weight: bold;
     letter-spacing: 0.3rem; }
   .enemy-team .team-wrapper {
     height: 105px;
@@ -1360,3 +1344,5 @@ h5 {
           height: 100%;
           max-height: 100%;
           width: auto; }
+
+/*# sourceMappingURL=style.css.map */
