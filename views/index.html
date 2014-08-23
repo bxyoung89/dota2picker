@@ -103,9 +103,48 @@
         <div class="sub-title">
             A Dota 2 CounterPicker
         </div>
-        <div class="author-info">
+        <div class="author-info" data-bind="click: openModal">
             by Broderick Young
-            <!--Go to modal-->
+        </div>
+    </div>
+    <div class="modal fill" data-bind="css: { visible: modalOpen}">
+        <div class="modal-overlay absolute fill" data-bind="click: closeModal"></div>
+        <div class="modal-content fill" >
+            <div class="modal-background">
+                <div class="content-wrapper absolute fill">
+                    <div class="content">
+                        <div class="intro-text">
+                            Hey! Thanks for coming. I hope you enjoy the site.
+                            <br><br>
+                            It was made using Node.js, Knockout.js, Jquery, and Sugar.js.
+                            <br><br>
+                            The data comes straight from <a href="http://www.dotabuff.com/">DOTABUFF</a>.  It's updated every day so the data is fresh!
+                        </div>
+                        <div class="about">
+                            <div class="profile-picture">
+                                <img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/3c/3c9d7efcea78408c7fec587348482e2fcf2d0b5a_full.jpg">
+                            </div>
+                            <div class="about-author">
+                                <a href="http://broderickyoung.com/">Broderick Young</a> (AKA TheWalrus) is a 2k mmr noob intent on getting better.
+                                <br><br>
+                                You can check out the source code for this project on <a href="https://github.com/bxyoung89">github</a>.
+                                <br><br>
+                                You can contact me on <a href="https://twitter.``com/bxyoung89">twitter</a>.
+                                <br><br>
+                                If you're feeling really generous send me something on <a href="http://steamcommunity.com/tradeoffer/new/?partner=82629665&token=Wf2beYpd">steam</a>!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-header absolute">
+                    <div class="title">
+                        About
+                    </div>
+                    <div class="close" data-bind="click: closeModal">
+                        <span class="icon ico-close"></span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script>

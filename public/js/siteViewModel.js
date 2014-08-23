@@ -5,6 +5,7 @@ var SiteViewModel = (function(){
 		this.enemyHeroes = ko.observableArray([]);
 		this.counterPicks = ko.observableArray([]);
 		this.heroes = ko.observableArray([]);
+		this.modalOpen = ko.observable(false);
 	}
 
 	SiteViewModel.prototype.loadHeroes = function(heroes){
@@ -39,6 +40,14 @@ var SiteViewModel = (function(){
 			return h.id === hero.id;
 		});
 		updateCounterPicks.bind(this)();
+	};
+
+	SiteViewModel.prototype.openModal = function(){
+		this.modalOpen(true);
+	};
+
+	SiteViewModel.prototype.closeModal = function(){
+		this.modalOpen(false);
 	};
 
 	function updateCounterPicks(){

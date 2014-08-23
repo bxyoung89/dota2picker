@@ -356,7 +356,7 @@ body {
   body:after {
     clear: both; }
 
-.counterpick-results .counterpicks .hero .hero-content .roles {
+.counterpick-results .counterpicks .hero .hero-content .roles, .modal .modal-content .modal-background {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -406,7 +406,7 @@ html {
   font-family: 'SourceSansProRegular', Verdana, Helvetica, Arial, sans-serif;
   font-weight: 400; }
 
-.top-header .title, .enemy-team .title {
+.top-header .title, .enemy-team .title, .modal .modal-content .modal-header .title {
   font-family: 'SourceSansProSemibold', Verdana, Helvetica, Arial, sans-serif;
   font-weight: 600; }
 
@@ -1166,7 +1166,8 @@ h5 {
   .top-header .author-info {
     color: #cb7c7c;
     margin-right: 10px;
-    float: right; }
+    float: right;
+    cursor: pointer; }
 
 .main-app {
   padding-top: 30px; }
@@ -1183,6 +1184,9 @@ h5 {
     height: 100%;
     left: auto;
     right: 0; }
+
+.main-app, .top-header {
+  z-index: 1; }
 
 .enemy-team {
   background: #93edf5;
@@ -1347,5 +1351,71 @@ h5 {
           height: 100%;
           max-height: 100%;
           width: auto; }
+
+.modal {
+  position: fixed;
+  z-index: 0;
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  opacity: 0; }
+  .modal.visible {
+    z-index: 2;
+    opacity: 1; }
+  .modal .modal-overlay {
+    background: rgba(10, 20, 36, 0.8); }
+  .modal .modal-content .modal-background {
+    height: 375px;
+    width: 650px;
+    margin: 0 auto;
+    background: #f9f3ee; }
+  .modal .modal-content .content-wrapper {
+    padding-top: 50px;
+    font-size: 16px;
+    font-size: 1.6rem;
+    color: #0a1424; }
+    .modal .modal-content .content-wrapper .content {
+      padding: 10px; }
+    .modal .modal-content .content-wrapper .about {
+      margin-top: 20px;
+      width: 100%; }
+      .modal .modal-content .content-wrapper .about .profile-picture {
+        display: inline-block;
+        width: 200px;
+        margin-right: 20px; }
+        .modal .modal-content .content-wrapper .about .profile-picture img {
+          width: 100%;
+          max-width: 100%;
+          height: auto; }
+      .modal .modal-content .content-wrapper .about .about-author {
+        display: inline-block;
+        width: 400px;
+        float: right;
+        margin-top: 15px; }
+  .modal .modal-content .modal-header {
+    height: 50px;
+    width: 100%;
+    background: #45a6e6;
+    color: #f9f3ee; }
+    .modal .modal-content .modal-header .title {
+      font-size: 20px;
+      font-size: 2rem;
+      line-height: 50px;
+      float: left;
+      margin-left: 20px; }
+    .modal .modal-content .modal-header .close {
+      float: right;
+      cursor: pointer;
+      -webkit-transition: color 0.3s ease;
+      -moz-transition: color 0.3s ease;
+      -o-transition: color 0.3s ease;
+      transition: color 0.3s ease; }
+      .modal .modal-content .modal-header .close .icon {
+        font-size: 60px;
+        font-size: 6rem;
+        line-height: 50px; }
+      .modal .modal-content .modal-header .close:hover {
+        color: #e5cbb5; }
 
 /*# sourceMappingURL=style.css.map */
