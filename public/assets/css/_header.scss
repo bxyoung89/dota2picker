@@ -5,6 +5,7 @@ $top-header-height: 30px;
 	height: $top-header-height;
 	width: 100%;
 
+	cursor: default;
 	.sub-title, .author-info{
 		line-height: 32px;
 	}

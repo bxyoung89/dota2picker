@@ -1146,7 +1146,8 @@ h5 {
   background: #0a1424;
   color: #f9f3ee;
   height: 30px;
-  width: 100%; }
+  width: 100%;
+  cursor: default; }
   .top-header .sub-title, .top-header .author-info {
     line-height: 32px; }
   .top-header .title {
@@ -1205,7 +1206,8 @@ h5 {
       margin-right: auto;
       text-align: center; }
       .enemy-team .team-wrapper .team .hero {
-        display: inline-block; }
+        display: inline-block;
+        cursor: pointer; }
         .enemy-team .team-wrapper .team .hero .background-image {
           max-height: 100%;
           height: 100%;
@@ -1248,7 +1250,8 @@ h5 {
   -webkit-transition: opacity 0.3s ease;
   -moz-transition: opacity 0.3s ease;
   -o-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease; }
+  transition: opacity 0.3s ease;
+  cursor: pointer; }
   .hero-grid .hero.selected {
     opacity: 1; }
     .hero-grid .hero.selected:hover {
@@ -1296,7 +1299,8 @@ h5 {
     height: 70px;
     margin-bottom: 10px;
     background: #f4b4ac;
-    color: #0a1424; }
+    color: #0a1424;
+    cursor: default; }
     .counterpick-results .counterpicks .hero:last-child {
       margin-bottom: 0; }
     .counterpick-results .counterpicks .hero .hero-content {
