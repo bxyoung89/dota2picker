@@ -1,0 +1,40 @@
+.hero-grid{
+	.scroll-wrapper{
+		max-height: 100%;
+		max-width: 100%;
+		overflow: auto;
+		background: $off-white;
+		padding: 10px;
+	}
+	.heroes{
+		width: 100%;
+		text-align: center;
+	}
+	.hero{
+		display: inline-block;
+		opacity: 0.6;
+		@include transition(opacity 0.3s ease);
+		&.selected{
+			opacity: 1;
+			&:hover{
+				opacity: 1;
+			}
+		}
+		&:hover{
+			opacity: 0.8;
+		}
+		.background-image{
+			max-width: 100%;
+			width: 100%;
+			height: auto;
+		}
+		.name{
+			color: $off-white;
+			@include font-size(2.0);
+			position: absolute;
+			bottom: 5px;
+			left: 5px;
+		}
+	}
+
+}

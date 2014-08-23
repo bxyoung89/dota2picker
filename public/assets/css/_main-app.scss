@@ -1,0 +1,20 @@
+.main-app{
+	padding-top: $top-header-height;
+}
+
+.enemy-team{
+	height: 150px;
+}
+
+.main-area{
+	padding-top: 150px;
+	.hero-grid{
+		padding-right: 550px;
+	}
+	.counter-pick-results{
+		width: 550px;
+		height: 100%;
+		left: auto;
+		right: 0;
+	}
+}

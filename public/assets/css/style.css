@@ -340,151 +340,6 @@ table {
 
 /*
  * * * * * * * * * * * * * * * * * * *
- * COLORS
- * * * * * * * * * * * * * * * * * * *
- */
-/*
- * * * * * * * * * * * * * * * * * * *
- * COLOR MIXINS
- * * * * * * * * * * * * * * * * * * *
- */
-.background-red {
-  background: #ed1c24 !important; }
-
-.background-orange {
-  background: #ff6600 !important; }
-
-.background-yellow {
-  background: #ffcc00 !important; }
-
-.background-forest-green {
-  background: #666600 !important; }
-
-.background-green {
-  background: #51b848 !important; }
-
-.background-teal {
-  background: #006666 !important; }
-
-.background-blue {
-  background: #0090cb !important; }
-
-.background-cyan {
-  background: #00ccff !important; }
-
-.background-dark-cyan {
-  background: #00a3cc !important; }
-
-.background-midnight {
-  background: #002b38 !important; }
-
-.background-indigo {
-  background: #2a1e5c !important; }
-
-.background-purple {
-  background: #66439a !important; }
-
-.background-yellow-green {
-  background: #efe80c !important; }
-
-.background-red-orange {
-  background: #ff3600 !important; }
-
-.background-black {
-  background: black !important; }
-
-.background-off-black {
-  background: #111111 !important; }
-
-.background-dark-grey {
-  background: #666666 !important; }
-
-.background-mid-grey {
-  background: #aaaaaa !important; }
-
-.background-light-grey {
-  background: #cccccc !important; }
-
-.background-off-white {
-  background: #eeeeee !important; }
-
-.background-white {
-  background: white !important; }
-
-.background-tan {
-  background: #f2f1e6 !important; }
-
-.background-dark-tan {
-  background: #c6c7c0 !important; }
-
-.text-red {
-  color: #ed1c24 !important; }
-
-.text-orange {
-  color: #ff6600 !important; }
-
-.text-yellow {
-  color: #ffcc00 !important; }
-
-.text-forest-green {
-  color: #666600 !important; }
-
-.text-green {
-  color: #51b848 !important; }
-
-.text-teal {
-  color: #006666 !important; }
-
-.text-blue {
-  color: #0090cb !important; }
-
-.text-cyan {
-  color: #00ccff !important; }
-
-.text-midnight {
-  color: #002b38 !important; }
-
-.text-indigo {
-  color: #2a1e5c !important; }
-
-.text-purple {
-  color: #66439a !important; }
-
-.text-yellow-green {
-  color: #efe80c !important; }
-
-.text-red-orange {
-  color: #ff3600 !important; }
-
-.text-black {
-  color: black !important; }
-
-.text-off-black {
-  color: #111111 !important; }
-
-.text-dark-grey {
-  color: #666666 !important; }
-
-.text-mid-grey {
-  color: #aaaaaa !important; }
-
-.text-light-grey {
-  color: #cccccc !important; }
-
-.text-off-white {
-  color: #eeeeee !important; }
-
-.text-white {
-  color: white !important; }
-
-.text-tan {
-  color: #f2f1e6 !important; }
-
-.text-dark-tan {
-  color: #c6c7c0 !important; }
-
-/*
- * * * * * * * * * * * * * * * * * * *
  * EXTENDS
  * * * * * * * * * * * * * * * * * * *
  */
@@ -501,22 +356,18 @@ body {
   body:after {
     clear: both; }
 
+.counterpick-results .counterpicks .hero .hero-content .roles {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
 /*
  * * * * * * * * * * * * * * * * * * *
  * MIXINS
  * * * * * * * * * * * * * * * * * * *
  */
-.button, .button-red, .button-green, .button-light, .button-dark {
-  text-transform: uppercase; }
-
-.button, .button-red, .button-green, .button-light, .button-dark {
-  border: none;
-  border-image-source: none;
-  border-image-slice: none;
-  border-image-width: none;
-  border-image-outset: none;
-  border-image-repeat: none; }
-
 /*
  * * * * * * * * * * * * * * * * * * *
  * @font-face includes for BASE Source Sans Pro files
@@ -558,10 +409,6 @@ body {
 html {
   font-family: 'SourceSansProRegular', Verdana, Helvetica, Arial, sans-serif;
   font-weight: 400; }
-
-.button, .button-red, .button-green, .button-light, .button-dark {
-  font-family: 'SourceSansProSemibold', Verdana, Helvetica, Arial, sans-serif;
-  font-weight: 600; }
 
 /*
 ----------------
@@ -1249,194 +1096,9 @@ Copyright (c) 2013 Shaun Fox [http://shaunfox.com] under the MIT License (MIT) [
 .ico-add-folder:before {
   content: "\e6bb"; }
 
-/*
- * * * * * * * * * * * * * * * * * * *
- * GRID
- * * * * * * * * * * * * * * * * * * *
- */
-.container {
-  width: 100%;
-  height: auto; }
-
-.full-width {
-  width: 100%; }
-
-.half-width {
-  width: 50%; }
-
-.one-third-width {
-  width: 33.33333%; }
-
-.two-thirds-width {
-  width: 66.66667%; }
-
-.one-fourth-width {
-  width: 25%; }
-
-.three-fourths-width {
-  width: 75%; }
-
-.one-fifth-width {
-  width: 20%; }
-
-.two-fifths-width {
-  width: 40%; }
-
-.three-fifths-width {
-  width: 60%; }
-
-.four-fifths-width {
-  width: 80%; }
-
-.one-sixth-width {
-  width: 16.66667%; }
-
-.five-sixths-width {
-  width: 83.33333%; }
-
-.full-height {
-  height: 100%; }
-
-.half-height {
-  height: 50%; }
-
-/*
- * * * * * * * * * * * * * * * * * * *
- * GRID MIXINS
- * * * * * * * * * * * * * * * * * * *
- */
-/*
- * * * * * * * * * * * * * * * * * * *
- * MEDIA QUERIES
- * * * * * * * * * * * * * * * * * * *
- */
-/*
- * * * * * * * * * * * * * * * * * * *
- * LITTLE BITS
- * * * * * * * * * * * * * * * * * * *
- */
-.left {
-  float: left; }
-
-.right {
-  float: right; }
-
-.nomar {
-  margin: 0; }
-
-.rule {
-  width: 100%;
-  height: 1px;
-  background: #aaaaaa;
-  margin: 10px 0 30px; }
-
-/*
- * * * * * * * * * * * * * * * * * * *
- * BUTTON STYLES
- * * * * * * * * * * * * * * * * * * *
- */
-.button, .button-red, .button-green, .button-light, .button-dark {
-  display: inline-block;
-  width: auto;
-  height: 30px;
-  padding: 0 10px;
-  font-size: 15px;
-  font-size: 1.5rem;
-  text-decoration: none;
-  line-height: 32px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  border-top: 1px solid rgba(238, 238, 238, 0.5);
-  border-bottom: 1px solid rgba(17, 17, 17, 0.5);
-  cursor: pointer; }
-  .button:active, .button-red:active, .button-green:active, .button-light:active, .button-dark:active {
-    border-top: 1px solid rgba(17, 17, 17, 0.5);
-    border-bottom: 1px solid rgba(238, 238, 238, 0.7); }
-  .button:focus, .button-red:focus, .button-green:focus, .button-light:focus, .button-dark:focus {
-    outline: 0; }
-  .button:disabled, .button-red:disabled, .button-green:disabled, .button-light:disabled, .button-dark:disabled, [disabled=disabled].button, [disabled=disabled].button-red, [disabled=disabled].button-green, [disabled=disabled].button-light, [disabled=disabled].button-dark {
-    opacity: 0.4; }
-    .button:disabled:hover, .button-red:disabled:hover, .button-green:disabled:hover, .button-light:disabled:hover, .button-dark:disabled:hover, .button:disabled:active, .button-red:disabled:active, .button-green:disabled:active, .button-light:disabled:active, .button-dark:disabled:active, [disabled=disabled].button:hover, [disabled=disabled].button-red:hover, [disabled=disabled].button-green:hover, [disabled=disabled].button-light:hover, [disabled=disabled].button-dark:hover, [disabled=disabled].button:active, [disabled=disabled].button-red:active, [disabled=disabled].button-green:active, [disabled=disabled].button-light:active, [disabled=disabled].button-dark:active {
-      cursor: default; }
-
-.button {
-  background: #aaaaaa;
-  color: #111111; }
-  .button:hover {
-    background: #c3c3c3; }
-  .button:active {
-    background: #909090; }
-  .button:disabled:hover, .button:disabled:active, .button[disabled=disabled]:hover, .button[disabled=disabled]:active {
-    background: #c3c3c3; }
-
-.button-red {
-  background: #ed1c24;
-  color: #eeeeee;
-  text-shadow: 1px 1px 0 rgba(17, 17, 17, 0.2); }
-  .button-red:hover {
-    background: #f14b52; }
-  .button-red:active {
-    background: #c61017; }
-  .button-red:disabled:hover, .button-red:disabled:active, .button-red[disabled=disabled]:hover, .button-red[disabled=disabled]:active {
-    background: #f14b52; }
-
-.button-green {
-  background: #51b848;
-  color: #eeeeee;
-  text-shadow: 1px 1px 0 rgba(17, 17, 17, 0.2); }
-  .button-green:hover {
-    background: #74c66d; }
-  .button-green:active {
-    background: #419439; }
-  .button-green:disabled:hover, .button-green:disabled:active, .button-green[disabled=disabled]:hover, .button-green[disabled=disabled]:active {
-    background: #74c66d; }
-
-.button-light {
-  background: #eeeeee;
-  color: #111111; }
-  .button-light:hover {
-    background: white; }
-  .button-light:active {
-    background: #d4d4d4; }
-  .button-light:disabled:hover, .button-light:disabled:active, .button-light[disabled=disabled]:hover, .button-light[disabled=disabled]:active {
-    background: white; }
-
-.button-dark {
-  background: #4d4d4d;
-  color: #eeeeee;
-  text-shadow: 1px 1px 0 rgba(17, 17, 17, 0.2); }
-  .button-dark:hover {
-    background: #666666; }
-  .button-dark:active {
-    background: #333333; }
-  .button-dark:disabled:hover, .button-dark:disabled:active, .button-dark[disabled=disabled]:hover, .button-dark[disabled=disabled]:active {
-    background: #666666; }
-
-/*
- * * * * * * * * * * * * * * * * * * *
- * BUTTON GROUPS
- * * * * * * * * * * * * * * * * * * *
- */
-.button-group [class*="button-"], .button-group .button {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  margin-left: 0 !important;
-  margin-right: -3px !important;
-  border-right: 1px solid rgba(17, 17, 17, 0.3); }
-  .button-group [class*="button-"]:first-child, .button-group .button:first-child {
-    -webkit-border-radius: 4px 0 0 4px;
-    -moz-border-radius: 4px 0 0 4px;
-    border-radius: 4px 0 0 4px; }
-  .button-group [class*="button-"]:last-child, .button-group .button:last-child {
-    -webkit-border-radius: 0 4px 4px 0;
-    -moz-border-radius: 0 4px 4px 0;
-    border-radius: 0 4px 4px 0; }
-
 html {
   font-size: 62.5%;
-  color: #111111;
+  color: #0a1424;
   width: 100%;
   height: 100%;
   display: block; }
@@ -1482,12 +1144,219 @@ h5 {
   font-size: 16px;
   font-size: 1.6rem; }
 
-p {
-  font-size: 16px;
-  font-size: 1.6rem;
-  color: #666666;
-  line-height: 1.5em; }
-  p a {
-    color: #0090cb; }
-    p a:hover {
-      border-bottom: 2px solid #0090cb; }
+.absolute {
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+.relative-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%; }
+
+.fill {
+  height: 100%;
+  width: 100%; }
+
+.top-header {
+  background: #0a1424;
+  color: #f9f3ee;
+  height: 30px;
+  width: 100%; }
+  .top-header .title, .top-header .sub-title, .top-header .author-info {
+    line-height: 30px; }
+  .top-header .title {
+    font-size: 26px;
+    font-size: 2.6rem;
+    color: #93edf5;
+    margin-left: 10px;
+    float: left; }
+  .top-header .sub-title {
+    font-size: 16px;
+    font-size: 1.6rem;
+    color: #45a6e6;
+    margin-left: 10px;
+    float: left; }
+  .top-header .author-info {
+    color: #cb7c7c;
+    margin-right: 10px;
+    float: right; }
+
+.main-app {
+  padding-top: 30px; }
+
+.enemy-team {
+  height: 150px; }
+
+.main-area {
+  padding-top: 150px; }
+  .main-area .hero-grid {
+    padding-right: 550px; }
+  .main-area .counter-pick-results {
+    width: 550px;
+    height: 100%;
+    left: auto;
+    right: 0; }
+
+.enemy-team {
+  background: #93edf5;
+  color: #0a1424;
+  padding: 5px;
+  width: 100%; }
+  .enemy-team .title {
+    height: 35px;
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.3rem; }
+  .enemy-team .team-wrapper {
+    height: 105px;
+    width: 100%; }
+    .enemy-team .team-wrapper .team {
+      width: 50%;
+      height: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center; }
+      .enemy-team .team-wrapper .team .hero {
+        display: inline-block; }
+        .enemy-team .team-wrapper .team .hero .background-image {
+          max-height: 100%;
+          height: 100%;
+          width: auto; }
+        .enemy-team .team-wrapper .team .hero .icon {
+          position: absolute;
+          top: -13px;
+          right: -13px;
+          -webkit-transition: all 0.3s ease;
+          -moz-transition: all 0.3s ease;
+          -o-transition: all 0.3s ease;
+          transition: all 0.3s ease; }
+          .enemy-team .team-wrapper .team .hero .icon span {
+            font-size: 50px;
+            font-size: 5rem;
+            color: #ff0000;
+            -webkit-transition: font-size 0.3s ease;
+            -moz-transition: font-size 0.3s ease;
+            -o-transition: font-size 0.3s ease;
+            transition: font-size 0.3s ease; }
+        .enemy-team .team-wrapper .team .hero:hover .icon {
+          top: -24px;
+          right: -24px; }
+          .enemy-team .team-wrapper .team .hero:hover .icon span {
+            font-size: 80px;
+            font-size: 8rem; }
+
+.hero-grid .scroll-wrapper {
+  max-height: 100%;
+  max-width: 100%;
+  overflow: auto;
+  background: #f9f3ee;
+  padding: 10px; }
+.hero-grid .heroes {
+  width: 100%;
+  text-align: center; }
+.hero-grid .hero {
+  display: inline-block;
+  opacity: 0.6;
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease; }
+  .hero-grid .hero.selected {
+    opacity: 1; }
+    .hero-grid .hero.selected:hover {
+      opacity: 1; }
+  .hero-grid .hero:hover {
+    opacity: 0.8; }
+  .hero-grid .hero .background-image {
+    max-width: 100%;
+    width: 100%;
+    height: auto; }
+  .hero-grid .hero .name {
+    color: #f9f3ee;
+    font-size: 20px;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 5px;
+    left: 5px; }
+
+.counterpick-results {
+  width: 550px;
+  height: 100%;
+  left: auto;
+  right: 0;
+  padding: 10px;
+  background: #45a6e6;
+  color: #f9f3ee; }
+  .counterpick-results .dropdown-wrapper {
+    height: 200px; }
+    .counterpick-results .dropdown-wrapper .title {
+      font-size: 16px;
+      font-size: 1.6rem;
+      margin-bottom: 10px; }
+    .counterpick-results .dropdown-wrapper .dropdown {
+      hieght: 40px;
+      width: 100%;
+      margin-bottom: 20px; }
+  .counterpick-results .hero-list-wrapper {
+    padding-top: 200px; }
+  .counterpick-results .scroll-wrapper {
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto; }
+  .counterpick-results .counterpicks .hero {
+    width: 100%;
+    height: 70px;
+    margin-bottom: 10px;
+    background: #f4b4ac;
+    color: #0a1424; }
+    .counterpick-results .counterpicks .hero:last-child {
+      margin-bottom: 0; }
+    .counterpick-results .counterpicks .hero .hero-content {
+      height: 100%;
+      width: 100%; }
+      .counterpick-results .counterpicks .hero .hero-content .image-wrapper {
+        float: left;
+        height: 100%; }
+        .counterpick-results .counterpicks .hero .hero-content .image-wrapper img {
+          height: 100%;
+          max-height: 100%;
+          width: auto; }
+      .counterpick-results .counterpicks .hero .hero-content .text-wrapper {
+        float: left;
+        margin-left: 10px;
+        line-height: 70px;
+        font-size: 16px;
+        font-size: 1.6rem; }
+        .counterpick-results .counterpicks .hero .hero-content .text-wrapper .name {
+          float: left; }
+        .counterpick-results .counterpicks .hero .hero-content .text-wrapper .advantage-text {
+          float: left;
+          margin-left: 10px;
+          line-height: 70px;
+          font-size: 16px;
+          font-size: 1.6rem; }
+          .counterpick-results .counterpicks .hero .hero-content .text-wrapper .advantage-text .icon {
+            font-size: 16px;
+            font-size: 1.6rem;
+            line-height: 70px; }
+          .counterpick-results .counterpicks .hero .hero-content .text-wrapper .advantage-text.positive {
+            color: #00ff00; }
+          .counterpick-results .counterpicks .hero .hero-content .text-wrapper .advantage-text.neutral {
+            color: #0a1424; }
+          .counterpick-results .counterpicks .hero .hero-content .text-wrapper .advantage-text.negative {
+            color: #ff0000; }
+      .counterpick-results .counterpicks .hero .hero-content .roles {
+        float: right;
+        margin-right: 10px;
+        height: 50%; }
+        .counterpick-results .counterpicks .hero .hero-content .roles .role-icon {
+          float: right;
+          margin-left: 10px;
+          height: 100%;
+          max-height: 100%;
+          width: auto; }

@@ -1,0 +1,30 @@
+$top-header-height: 30px;
+.top-header{
+	background: $off-black;
+	color: $off-white;
+	height: $top-header-height;
+	width: 100%;
+
+	.title, .sub-title, .author-info{
+		line-height: $top-header-height;
+	}
+
+	.title{
+		@include font-size(2.6);
+		color: $light-blue;
+		margin-left: 10px;
+		float: left;
+	}
+	.sub-title{
+		@include font-size(1.6);
+		color: $dark-blue;
+		margin-left: 10px;
+		float: left;
+
+	}
+	.author-info{
+		color: $dark-beige;
+		margin-right: 10px;
+		float: right;
+	}
+}

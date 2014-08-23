@@ -1,0 +1,54 @@
+.enemy-team{
+	background: $light-blue;
+	color: $off-black;
+	padding: 5px;
+	width: 100%;
+	.title{
+		height: 35px;
+		width: 100%;
+		text-align: center;
+		@include font-size(3.5);
+		text-transform: uppercase;
+		font-weight: bold;
+		letter-spacing: 0.3rem;
+	}
+	.team-wrapper{
+		height: 105px;
+		width: 100%;
+		.team{
+			width: 50%;
+			height: 100%;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+			.hero{
+				display: inline-block;
+				.background-image{
+					max-height: 100%;
+					height: 100%;
+					width: auto;
+				}
+				.icon{
+					position: absolute;
+					top: -13px;
+					right: -13px;
+					@include transition(all 0.3s ease);
+					span{
+						@include font-size(5);
+						color: #ff0000;
+						@include transition(font-size 0.3s ease);
+					}
+				}
+				&:hover{
+					.icon{
+						top: -24px;
+						right: -24px;
+						span{
+							@include font-size(8);
+						}
+					}
+				}
+			}
+		}
+	}
+}

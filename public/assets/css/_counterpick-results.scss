@@ -1,0 +1,98 @@
+.counterpick-results{
+	width: 550px;
+	height: 100%;
+	left: auto;
+	right: 0;
+	padding: 10px;
+	background: $dark-blue;
+	color: $off-white;
+	.dropdown-wrapper{
+		height: 200px;
+		.title{
+			@include font-size(1.6);
+			margin-bottom: 10px;
+		}
+		.dropdown{
+			hieght: 40px;
+			width: 100%;
+			margin-bottom: 20px;
+		}
+	}
+	.hero-list-wrapper{
+		padding-top: 200px;
+	}
+	.scroll-wrapper{
+		max-width: 100%;
+		max-height: 100%;
+		overflow: auto;
+	}
+	.counterpicks{
+		.hero{
+			width: 100%;
+			height: 70px;
+			margin-bottom: 10px;
+			background: $light-beige;
+			color: $off-black;
+			&:last-child{
+				margin-bottom: 0;
+			}
+			.hero-content{
+				height: 100%;
+				width: 100%;
+				.image-wrapper{
+					float: left;
+					height: 100%;
+					img{
+						height: 100%;
+						max-height: 100%;
+						width: auto;
+					}
+				}
+				.text-wrapper{
+					float: left;
+					margin-left: 10px;
+					line-height: 70px;
+					@include font-size(1.6);
+					.name{
+						float: left;
+					}
+					.advantage-text{
+						float: left;
+						margin-left: 10px;
+						line-height: 70px;
+						@include font-size(1.6);
+						.icon{
+							@include font-size(1.6);
+							line-height: 70px;
+						}
+
+						&.positive{
+							color: #00ff00;
+						}
+						&.neutral{
+							color: $off-black;
+						}
+						&.negative{
+							color: #ff0000;
+						}
+					}
+				}
+				.roles{
+					float: right;
+					margin-right: 10px;
+					height: 50%;
+					@extend %vertical-align;
+					.role-icon{
+						float: right;
+						margin-left: 10px;
+						height: 100%;
+						max-height: 100%;
+						width: auto;
+					}
+				}
+
+
+			}
+		}
+	}
+}

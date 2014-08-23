@@ -3,1067 +3,749 @@
 		"name": "Abaddon",
 		"id": "abaddon",
 		"stat": "strength",
-		"roles": [
-			"durable",
-			"support",
-			"carry"
-		]
+		"roles": ["durable", "support", "carry"],
+		"imageId": "abaddon"
 	},
 	{
 		"name": "Alchemist",
 		"id": "alchemist",
 		"stat": "strength",
-		"roles": [
-			"durable",
-			"carry",
-			"disabler"
-		]
+		"roles": ["durable", "carry", "disabler"],
+		"imageId": "alchemist"
 	},
 	{
 		"name": "Ancient Apparition",
 		"id": "ancient-apparition",
 		"stat": "intelligence",
-		"roles": [
-			"support",
-			"disabler"
-		]
+		"roles": ["support", "disabler"],
+		"imageId": "ancient_apparition"
 	},
 	{
 		"name": "Anti-Mage",
 		"id": "anti-mage",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"escape"
-		]
+		"roles": ["carry", "escape"],
+		"imageId": "antimage"
 	},
 	{
 		"name": "Axe",
 		"id": "axe",
 		"stat": "strength",
-		"roles": [
-			"durable",
-			"initiator",
-			"disabler",
-			"jungler"
-		]
+		"roles": ["durable", "initiator", "disabler", "jungler"],
+		"imageId": "axe"
 	},
 	{
 		"name": "Bane",
 		"id": "bane",
 		"stat": "intelligence",
-		"roles": [
-			"disabler",
-			"nuker",
-			"support"
-		]
+		"roles": ["disabler", "nuker", "support"],
+		"imageId": "bane"
 	},
 	{
 		"name": "Batrider",
 		"id": "batrider",
 		"stat": "intelligence",
-		"roles": [
-			"initiator",
-			"disabler",
-			"nuker",
-			"escape"
-		]
+		"roles": ["initiator", "disabler", "nuker", "escape"],
+		"imageId": "batrider"
 	},
 	{
 		"name": "Beastmaster",
 		"id": "beastmaster",
 		"stat": "strength",
-		"roles": [
-			"initiator",
-			"disabler",
-			"durable"
-		]
+		"roles": ["initiator", "disabler", "durable"],
+		"imageId": "beastmaster"
 	},
 	{
 		"name": "Bloodseeker",
 		"id": "bloodseeker",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"jungler"
-		]
+		"roles": ["carry", "jungler"],
+		"imageId": "bloodseeker"
 	},
 	{
 		"name": "Bounty Hunter",
 		"id": "bounty-hunter",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"escape",
-			"nuker"
-		]
+		"roles": ["carry", "escape", "nuker"],
+		"imageId": "bounty_hunter"
 	},
 	{
 		"name": "Brewmaster",
 		"id": "brewmaster",
 		"stat": "strength",
-		"roles": [
-			"carry",
-			"durable",
-			"initiator",
-			"pusher"
-		]
+		"roles": ["carry", "durable", "initiator", "pusher"],
+		"imageId": "brewmaster"
 	},
 	{
 		"name": "Bristleback",
 		"id": "bristleback",
 		"stat": "strength",
-		"roles": [
-			"durable",
-			"initiator",
-			"disabler"
-		]
+		"roles": ["durable", "initiator", "disabler"],
+		"imageId": "bristleback"
 	},
 	{
 		"name": "Broodmother",
 		"id": "broodmother",
 		"stat": "agility",
-		"roles": [
-			"pusher",
-			"carry",
-			"escape"
-		]
+		"roles": ["pusher", "carry", "escape"],
+		"imageId": "broodmother"
 	},
 	{
 		"name": "Centaur Warrunner",
 		"id": "centaur-warrunner",
 		"stat": "strength",
-		"roles": [
-			"durable",
-			"disabler",
-			"initiator"
-		]
+		"roles": ["durable", "disabler", "initiator"],
+		"imageId": "centaur"
 	},
 	{
 		"name": "Chaos Knight",
 		"id": "chaos-knight",
 		"stat": "strength",
-		"roles": [
-			"carry",
-			"disabler",
-			"durable",
-			"pusher"
-		]
+		"roles": ["carry", "disabler", "durable", "pusher"],
+		"imageId": "chaos_knight"
 	},
 	{
 		"name": "Chen",
 		"id": "chen",
 		"stat": "intelligence",
-		"roles": [
-			"support",
-			"jungler",
-			"pusher"
-		]
+		"roles": ["support", "jungler", "pusher"],
+		"imageId": "chen"
 	},
 	{
 		"name": "Clinkz",
 		"id": "clinkz",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"escape"
-		]
+		"roles": ["carry", "escape"],
+		"imageId": "clinkz"
 	},
 	{
 		"name": "Clockwerk",
 		"id": "clockwerk",
 		"stat": "strength",
-		"roles": [
-			"initiator",
-			"durable"
-		]
+		"roles": ["initiator", "durable"],
+		"imageId": "rattletrap"
 	},
 	{
 		"name": "Crystal Maiden",
 		"id": "crystal-maiden",
 		"stat": "agility",
-		"roles": [
-			"support",
-			"disabler",
-			"nuker",
-			"lane support"
-		]
+		"roles": ["support", "disabler", "nuker", "lane support"],
+		"imageId": "crystal_maiden"
 	},
 	{
 		"name": "Dark Seer",
 		"id": "dark-seer",
 		"stat": "intelligence",
-		"roles": [
-			"initiator",
-			"nuker",
-			"escape"
-		]
+		"roles": ["initiator", "nuker", "escape"],
+		"imageId": "dark_seer"
 	},
 	{
 		"name": "Dazzle",
 		"id": "dazzle",
 		"stat": "intelligence",
-		"roles": [
-			"support",
-			"lane support"
-		]
+		"roles": ["support", "lane support"],
+		"imageId": "dazzle"
 	},
 	{
 		"name": "Death Prophet",
 		"id": "death-prophet",
 		"stat": "intelligence",
-		"roles": [
-			"pusher",
-			"nuker",
-			"durable"
-		]
+		"roles": ["pusher", "nuker", "durable"],
+		"imageId": "death_prophet"
 	},
 	{
 		"name": "Disruptor",
 		"id": "disruptor",
 		"stat": "intelligence",
-		"roles": [
-			"nuker",
-			"support",
-			"initiator",
-			"disabler"
-		]
+		"roles": ["nuker", "support", "initiator", "disabler"],
+		"imageId": "disruptor"
 	},
 	{
 		"name": "Doom",
 		"id": "doom",
 		"stat": "strength",
-		"roles": [
-			"durable",
-			"carry",
-			"nuker"
-		]
+		"roles": ["durable", "carry", "nuker"],
+		"imageId": "doom_bringer"
 	},
 	{
 		"name": "Dragon Knight",
 		"id": "dragon-knight",
 		"stat": "strength",
-		"roles": [
-			"carry",
-			"durable",
-			"disabler",
-			"pusher"
-		]
+		"roles": ["carry", "durable", "disabler", "pusher"],
+		"imageId": "dragon_knight"
 	},
 	{
 		"name": "Drow Ranger",
 		"id": "drow-ranger",
 		"stat": "agility",
-		"roles": [
-			"carry"
-		]
+		"roles": ["carry"],
+		"imageId": "drow_ranger"
 	},
 	{
 		"name": "Earth Spirit",
 		"id": "earth-spirit",
 		"stat": "strength",
-		"roles": [
-			"carry",
-			"nuker"
-		]
+		"roles": ["carry", "nuker"],
+		"imageId": "earth_spirit"
 	},
 	{
 		"name": "Earthshaker",
 		"id": "earthshaker",
 		"stat": "strength",
-		"roles": [
-			"initiator",
-			"disabler",
-			"support",
-			"lane support"
-		]
+		"roles": ["initiator", "disabler", "support", "lane support"],
+		"imageId": "earthshaker"
 	},
 	{
 		"name": "Elder Titan",
 		"id": "elder-titan",
 		"stat": "strength",
-		"roles": [
-			"initiator",
-			"durable"
-		]
+		"roles": ["initiator", "durable"],
+		"imageId": "elder_titan"
 	},
 	{
 		"name": "Ember Spirit",
 		"id": "ember-spirit",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"nuker",
-			"disabler",
-			"durable"
-		]
+		"roles": ["carry", "nuker", "disabler", "durable"],
+		"imageId": "ember_spirit"
 	},
 	{
 		"name": "Enchantress",
 		"id": "enchantress",
 		"stat": "intelligence",
-		"roles": [
-			"support",
-			"pusher",
-			"durable",
-			"jungler"
-		]
+		"roles": ["support", "pusher", "durable", "jungler"],
+		"imageId": "enchantress"
 	},
 	{
 		"name": "Enigma",
 		"id": "enigma",
 		"stat": "intelligence",
-		"roles": [
-			"disabler",
-			"initiator",
-			"jungler",
-			"pusher"
-		]
+		"roles": ["disabler", "initiator", "jungler", "pusher"],
+		"imageId": "enigma"
 	},
 	{
 		"name": "Faceless Void",
 		"id": "faceless-void",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"initiator",
-			"disabler",
-			"escape"
-		]
+		"roles": ["carry", "initiator", "disabler", "escape"],
+		"imageId": "faceless_void"
 	},
 	{
 		"name": "Gyrocopter",
 		"id": "gyrocopter",
 		"stat": "agility",
-		"roles": [
-			"disabler",
-			"initiator",
-			"nuker"
-		]
+		"roles": ["disabler", "initiator", "nuker"],
+		"imageId": "gyrocopter"
 	},
 	{
 		"name": "Huskar",
 		"id": "huskar",
 		"stat": "strength",
-		"roles": [
-			"carry",
-			"initiator",
-			"durable"
-		]
+		"roles": ["carry", "initiator", "durable"],
+		"imageId": "huskar"
 	},
 	{
 		"name": "Invoker",
 		"id": "invoker",
 		"stat": "intelligence",
-		"roles": [
-			"carry",
-			"nuker",
-			"initiator",
-			"escape"
-		]
+		"roles": ["carry", "nuker", "initiator", "escape"],
+		"imageId": "invoker"
 	},
 	{
 		"name": "Io",
 		"id": "io",
 		"stat": "strength",
-		"roles": [
-			"support",
-			"lane support",
-			"nuker"
-		]
+		"roles": ["support", "lane support", "nuker"],
+		"imageId": "wisp"
 	},
 	{
 		"name": "Jakiro",
 		"id": "jakiro",
 		"stat": "intelligence",
-		"roles": [
-			"nuker",
-			"pusher",
-			"lane support",
-			"disabler"
-		]
+		"roles": ["nuker", "pusher", "lane support", "disabler"],
+		"imageId": "jakiro"
 	},
 	{
 		"name": "Juggernaut",
 		"id": "juggernaut",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"pusher"
-		]
+		"roles": ["carry", "pusher"],
+		"imageId": "juggernaut"
 	},
 	{
 		"name": "Keeper of the Light",
 		"id": "keeper-of-the-light",
 		"stat": "intelligence",
-		"roles": [
-			"pusher",
-			"support"
-		]
+		"roles": ["pusher", "support"],
+		"imageId": "keeper_of_the_light"
 	},
 	{
 		"name": "Kunkka",
 		"id": "kunkka",
 		"stat": "strength",
-		"roles": [
-			"diabler",
-			"initiator",
-			"carry",
-			"durable"
-		]
+		"roles": ["disabler", "initiator", "carry", "durable"],
+		"imageId": "kunkka"
 	},
 	{
 		"name": "Legion Commander",
 		"id": "legion-commander",
 		"stat": "strength",
-		"roles": [
-			"carry",
-			"durable"
-		]
+		"roles": ["carry", "durable"],
+		"imageId": "legion_commander"
 	},
 	{
 		"name": "Leshrac",
 		"id": "leshrac",
 		"stat": "intelligence",
-		"roles": [
-			"nuker",
-			"pusher",
-			"disabler",
-			"support"
-		]
+		"roles": ["nuker", "pusher", "disabler", "support"],
+		"imageId": "leshrac"
 	},
 	{
 		"name": "Lich",
 		"id": "lich",
 		"stat": "intelligence",
-		"roles": [
-			"support",
-			"lane support",
-			"nuker"
-		]
+		"roles": ["support", "lane support", "nuker"],
+		"imageId": "lich"
 	},
 	{
 		"name": "Lifestealer",
 		"id": "lifestealer",
 		"stat": "strength",
-		"roles": [
-			"carry",
-			"durable",
-			"jungler",
-			"escape"
-		]
+		"roles": ["carry", "durable", "jungler", "escape"],
+		"imageId": "life_stealer"
 	},
 	{
 		"name": "Lina",
 		"id": "lina",
 		"stat": "intelligence",
-		"roles": [
-			"nuker",
-			"disabler",
-			"support"
-		]
+		"roles": ["nuker", "disabler", "support"],
+		"imageId": "lina"
 	},
 	{
 		"name": "Lion",
 		"id": "lion",
 		"stat": "intelligence",
-		"roles": [
-			"disabler",
-			"nuker",
-			"lane support",
-			"support"
-		]
+		"roles": ["disabler", "nuker", "lane support", "support"],
+		"imageId": "lion"
 	},
 	{
 		"name": "Lone Druid",
 		"id": "lone-druid",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"durable",
-			"pusher",
-			"jungler"
-		]
+		"roles": ["carry", "durable", "pusher", "jungler"],
+		"imageId": "lone_druid"
 	},
 	{
 		"name": "Luna",
 		"id": "luna",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"nuker"
-		]
+		"roles": ["carry", "nuker"],
+		"imageId": "luna"
 	},
 	{
 		"name": "Lycan",
 		"id": "lycan",
 		"stat": "strength",
-		"roles": [
-			"carry",
-			"jungler",
-			"pusher",
-			"durable"
-		]
+		"roles": ["carry", "jungler", "pusher", "durable"],
+		"imageId": "lycan"
 	},
 	{
 		"name": "Magnus",
 		"id": "magnus",
 		"stat": "strength",
-		"roles": [
-			"initiator",
-			"disabler",
-			"nuker",
-			"carry"
-		]
+		"roles": ["initiator", "disabler", "nuker", "carry"],
+		"imageId": "magnataur"
 	},
 	{
 		"name": "Medusa",
 		"id": "medusa",
 		"stat": "agility",
-		"roles": [
-			"carry"
-		]
+		"roles": ["carry"],
+		"imageId": "medusa"
 	},
 	{
 		"name": "Meepo",
 		"id": "meepo",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"disabler",
-			"initiator"
-		]
+		"roles": ["carry", "disabler", "initiator"],
+		"imageId": "meepo"
 	},
 	{
 		"name": "Mirana",
 		"id": "mirana",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"nuker",
-			"disabler",
-			"escape"
-		]
+		"roles": ["carry", "nuker", "disabler", "escape"],
+		"imageId": "mirana"
 	},
 	{
 		"name": "Morphling",
 		"id": "morphling",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"escape",
-			"initiator",
-			"nuker"
-		]
+		"roles": ["carry", "escape", "initiator", "nuker"],
+		"imageId": "morphling"
 	},
 	{
 		"name": "Naga Siren",
 		"id": "naga-siren",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"disabler",
-			"pusher",
-			"escape"
-		]
+		"roles": ["carry", "disabler", "pusher", "escape"],
+		"imageId": "naga_siren"
 	},
 	{
 		"name": "Nature's Prophet",
 		"id": "natures-prophet",
 		"stat": "intelligence",
-		"roles": [
-			"jungler",
-			"pusher",
-			"carry",
-			"escape"
-		]
+		"roles": ["jungler", "pusher", "carry", "escape"],
+		"imageId": "furion"
 	},
 	{
 		"name": "Necrophos",
 		"id": "necrophos",
 		"stat": "intelligence",
-		"roles": [
-			"support",
-			"durable",
-			"carry"
-		]
+		"roles": ["support", "durable", "carry"],
+		"imageId": "necrolyte"
 	},
 	{
 		"name": "Night Stalker",
 		"id": "night-stalker",
 		"stat": "strength",
-		"roles": [
-			"durable",
-			"initiator"
-		]
+		"roles": ["durable", "initiator"],
+		"imageId": "night_stalker"
 	},
 	{
 		"name": "Nyx Assassin",
 		"id": "nyx-assassin",
 		"stat": "agility",
-		"roles": [
-			"disabler",
-			"nuker"
-		]
+		"roles": ["disabler", "nuker"],
+		"imageId": "nyx_assassin"
 	},
 	{
 		"name": "Ogre Magi",
 		"id": "ogre-magi",
 		"stat": "intelligence",
-		"roles": [
-			"nuker",
-			"disabler",
-			"durable"
-		]
+		"roles": ["nuker", "disabler", "durable"],
+		"imageId": "ogre_magi"
 	},
 	{
 		"name": "Omniknight",
 		"id": "omniknight",
 		"stat": "strength",
-		"roles": [
-			"durable",
-			"lane support",
-			"support"
-		]
+		"roles": ["durable", "lane support", "support"],
+		"imageId": "omniknight"
 	},
 	{
 		"name": "Outworld Devourer",
 		"id": "outworld-devourer",
 		"stat": "intelligence",
-		"roles": [
-			"carry"
-		]
+		"roles": ["carry"],
+		"imageId": "obsidian_destroyer"
 	},
 	{
 		"name": "Phantom Assassin",
 		"id": "phantom-assassin",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"escape"
-		]
+		"roles": ["carry", "escape"],
+		"imageId": "phantom_assassin"
 	},
 	{
 		"name": "Phantom Lancer",
 		"id": "phantom-lancer",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"escape",
-			"pusher"
-		]
+		"roles": ["carry", "escape", "pusher"],
+		"imageId": "phantom_lancer"
 	},
 	{
 		"name": "Phoenix",
 		"id": "phoenix",
 		"stat": "strength",
-		"roles": [
-			"initiator",
-			"disabler",
-			"nuker"
-		]
+		"roles": ["initiator", "disabler", "nuker"],
+		"imageId": "phoenix"
 	},
 	{
 		"name": "Puck",
 		"id": "puck",
 		"stat": "intelligence",
-		"roles": [
-			"initiator",
-			"nuker",
-			"disabler",
-			"escape"
-		]
+		"roles": ["initiator", "nuker", "disabler", "escape"],
+		"imageId": "puck"
 	},
 	{
 		"name": "Pudge",
 		"id": "pudge",
 		"stat": "strength",
-		"roles": [
-			"durable",
-			"disabler"
-		]
+		"roles": ["durable", "disabler"],
+		"imageId": "pudge"
 	},
 	{
 		"name": "Pugna",
 		"id": "pugna",
 		"stat": "intelligence",
-		"roles": [
-			"nuker",
-			"pusher",
-			"support"
-		]
+		"roles": ["nuker", "pusher", "support"],
+		"imageId": "pugna"
 	},
 	{
 		"name": "Queen of Pain",
 		"id": "queen-of-pain",
 		"stat": "intelligence",
-		"roles": [
-			"nuker",
-			"escape",
-			"carry"
-		]
+		"roles": ["nuker", "escape", "carry"],
+		"imageId": "queenofpain"
 	},
 	{
 		"name": "Razor",
 		"id": "razor",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"durable",
-			"nuker"
-		]
+		"roles": ["carry", "durable", "nuker"],
+		"imageId": "razor"
 	},
 	{
 		"name": "Riki",
 		"id": "riki",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"escape"
-		]
+		"roles": ["carry", "escape"],
+		"imageId": "riki"
 	},
 	{
 		"name": "Rubick",
 		"id": "rubick",
 		"stat": "intelligence",
-		"roles": [
-			"disabler",
-			"pusher"
-		]
+		"roles": ["disabler", "pusher"],
+		"imageId": "rubick"
 	},
 	{
 		"name": "Sand King",
 		"id": "sand-king",
 		"stat": "strength",
-		"roles": [
-			"initiator",
-			"disabler",
-			"nuker"
-		]
+		"roles": ["initiator", "disabler", "nuker"],
+		"imageId": "sand_king"
 	},
 	{
 		"name": "Shadow Demon",
 		"id": "shadow-demon",
 		"stat": "intelligence",
-		"roles": [
-			"support",
-			"disabler",
-			"nuker"
-		]
+		"roles": ["support", "disabler", "nuker"],
+		"imageId": "shadow_demon"
 	},
 	{
 		"name": "Shadow Fiend",
 		"id": "shadow-fiend",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"nuker"
-		]
+		"roles": ["carry", "nuker"],
+		"imageId": "nevermore"
 	},
 	{
 		"name": "Shadow Shaman",
 		"id": "shadow-shaman",
 		"stat": "intelligence",
-		"roles": [
-			"pusher",
-			"disabler",
-			"nuker",
-			"support"
-		]
+		"roles": ["pusher", "disabler", "nuker", "support"],
+		"imageId": "shadow_shaman"
 	},
 	{
 		"name": "Silencer",
 		"id": "silencer",
 		"stat": "intelligence",
-		"roles": [
-			"support",
-			"carry",
-			"initiator"
-		]
+		"roles": ["support", "carry", "initiator"],
+		"imageId": "silencer"
 	},
 	{
 		"name": "Skywrath Mage",
 		"id": "skywrath-mage",
 		"stat": "initiator",
-		"roles": [
-			"nuker",
-			"support"
-		]
+		"roles": ["nuker", "support"],
+		"imageId": "skywrath_mage"
 	},
 	{
 		"name": "Slardar",
 		"id": "slardar",
 		"stat": "strength",
-		"roles": [
-			"carry",
-			"durable",
-			"disabler",
-			"initiator"
-		]
+		"roles": ["carry", "durable", "disabler", "initiator"],
+		"imageId": "slardar"
 	},
 	{
 		"name": "Slark",
 		"id": "slark",
 		"stat": "agility",
-		"roles": [
-			"escape",
-			"carry"
-		]
+		"roles": ["escape", "carry"],
+		"imageId": "slark"
 	},
 	{
 		"name": "Sniper",
 		"id": "sniper",
 		"stat": "agility",
-		"roles": [
-			"carry"
-		]
+		"roles": ["carry"],
+		"imageId": "sniper"
 	},
 	{
 		"name": "Spectre",
 		"id": "spectre",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"durable"
-		]
+		"roles": ["carry", "durable"],
+		"imageId": "spectre"
 	},
 	{
 		"name": "Spirit Breaker",
 		"id": "spirit-breaker",
 		"stat": "strength",
-		"roles": [
-			"durable",
-			"support",
-			"carry"
-		]
+		"roles": ["durable", "support", "carry"],
+		"imageId": "spirit_breaker"
 	},
 	{
 		"name": "Storm Spirit",
 		"id": "storm-spirit",
 		"stat": "intelligence",
-		"roles": [
-			"carry",
-			"initiator",
-			"escape",
-			"disabler"
-		]
+		"roles": ["carry", "initiator", "escape", "disabler"],
+		"imageId": "storm_spirit"
 	},
 	{
 		"name": "Sven",
 		"id": "sven",
 		"stat": "strength",
-		"roles": [
-			"disabler",
-			"initiator",
-			"carry",
-			"support"
-		]
+		"roles": ["disabler", "initiator", "carry", "support"],
+		"imageId": "sven"
 	},
 	{
 		"name": "Templar Assassin",
 		"id": "templar-assassin",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"escape"
-		]
+		"roles": ["carry", "escape"],
+		"imageId": "templar_assassin"
 	},
 	{
 		"name": "Terrorblade",
 		"id": "terrorblade",
 		"stat": "agility",
-		"roles": [
-			"carry"
-		]
+		"roles": ["carry"],
+		"imageId": "terrorblade"
 	},
 	{
 		"name": "Tidehunter",
 		"id": "tidehunter",
 		"stat": "strength",
-		"roles": [
-			"initiator",
-			"durable",
-			"disabler",
-			"support"
-		]
+		"roles": ["initiator", "durable", "disabler", "support"],
+		"imageId": "tidehunter"
 	},
 	{
 		"name": "Timbersaw",
 		"id": "timbersaw",
 		"stat": "strength",
-		"roles": [
-			"durable",
-			"nuker",
-			"escape"
-		]
+		"roles": ["durable", "nuker", "escape"],
+		"imageId": "shredder"
 	},
 	{
 		"name": "Tinker",
 		"id": "tinker",
 		"stat": "intelligence",
-		"roles": [
-			"nuker",
-			"pusher"
-		]
+		"roles": ["nuker", "pusher"],
+		"imageId": "tinker"
 	},
 	{
 		"name": "Tiny",
 		"id": "tiny",
 		"stat": "strength",
-		"roles": [
-			"disabler",
-			"nuker",
-			"initiator",
-			"durable"
-		]
+		"roles": ["disabler", "nuker", "initiator", "durable"],
+		"imageId": "tiny"
 	},
 	{
 		"name": "Treant Protector",
 		"id": "treant-protector",
 		"stat": "strength",
-		"roles": [
-			"durable",
-			"initiator",
-			"lane support",
-			"disabler"
-		]
+		"roles": ["durable", "initiator", "lane support", "disabler"],
+		"imageId": "treant"
 	},
 	{
 		"name": "Troll Warlord",
 		"id": "troll-warlord",
 		"stat": "agility",
-		"roles": [
-			"carry"
-		]
+		"roles": ["carry"],
+		"imageId": "troll_warlord"
 	},
 	{
 		"name": "Tusk",
 		"id": "tusk",
 		"stat": "strength",
-		"roles": [
-			"initiator",
-			"durable"
-		]
+		"roles": ["initiator", "durable"],
+		"imageId": "tusk"
 	},
 	{
 		"name": "Undying",
 		"id": "undying",
 		"stat": "strength",
-		"roles": [
-			"durable",
-			"pusher",
-			"disabler",
-			"initiator"
-		]
+		"roles": ["durable", "pusher", "disabler", "initiator"],
+		"imageId": "undying"
 	},
 	{
 		"name": "Ursa",
 		"id": "ursa",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"jungler",
-			"durable"
-		]
+		"roles": ["carry", "jungler", "durable"],
+		"imageId": "ursa"
 	},
 	{
 		"name": "Vengeful Spirit",
 		"id": "vengeful-spirit",
 		"stat": "agility",
-		"roles": [
-			"support",
-			"disabler",
-			"lane support",
-			"initiator"
-		]
+		"roles": ["support", "disabler", "lane support", "initiator"],
+		"imageId": "vengefulspirit"
 	},
 	{
 		"name": "Venomancer",
 		"id": "venomancer",
 		"stat": "agility",
-		"roles": [
-			"support",
-			"nuker",
-			"initiator",
-			"pusher"
-		]
+		"roles": ["support", "nuker", "initiator", "pusher"],
+		"imageId": "venomancer"
 	},
 	{
 		"name": "Viper",
 		"id": "viper",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"durable"
-		]
+		"roles": ["carry", "durable"],
+		"imageId": "viper"
 	},
 	{
 		"name": "Visage",
 		"id": "visage",
 		"stat": "intelligence",
-		"roles": [
-			"nuker",
-			"durable",
-			"disabler"
-		]
+		"roles": ["nuker", "durable", "disabler"],
+		"imageId": "visage"
 	},
 	{
 		"name": "Warlock",
 		"id": "warlock",
 		"stat": "intelligence",
-		"roles": [
-			"initiator",
-			"support",
-			"lane support",
-			"disabler"
-		]
+		"roles": ["initiator", "support", "lane support", "disabler"],
+		"imageId": "warlock"
 	},
 	{
 		"name": "Weaver",
 		"id": "weaver",
 		"stat": "agility",
-		"roles": [
-			"carry",
-			"escape"
-		]
+		"roles": ["carry", "escape"],
+		"imageId": "weaver"
 	},
 	{
 		"name": "Windranger",
 		"id": "windranger",
 		"stat": "intelligence",
-		"roles": [
-			"disabler",
-			"nuker",
-			"support",
-			"escape"
-		]
+		"roles": ["disabler", "nuker", "support", "escape"],
+		"imageId": "windrunner"
 	},
 	{
 		"name": "Witch Doctor",
 		"id": "witch-doctor",
 		"stat": "intelligence",
-		"roles": [
-			"support",
-			"disabler"
-		]
+		"roles": ["support", "disabler"],
+		"imageId": "witch_doctor"
 	},
 	{
 		"name": "Wraith King",
 		"id": "wraith-king",
 		"stat": "strength",
-		"roles": [
-			"durable",
-			"carry",
-			"disabler"
-		]
+		"roles": ["durable", "carry", "disabler"],
+		"imageId": "skeleton_king"
 	},
 	{
 		"name": "Zeus",
 		"id": "zeus",
 		"stat": "intelligence",
-		"roles": [
-			"nuker",
-			"support"
-		]
+		"roles": ["nuker", "support"],
+		"imageId": "zuus"
 	}
 ]
