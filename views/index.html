@@ -8,6 +8,16 @@
     <script src="js/lib/sugar.min.js"></script>
     <script src="js/siteViewModel.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
+    <!--
+        Thanks for looking at the source!
+
+        This app was built using Node.js, Knockout.js, Jquery, and Sugar.js.
+
+        I scrape the dotabuff heropages to get the data.  The data is at most a day old.
+
+        If you enjoy this, maybe consider sending me stuff on steam? http://steamcommunity.com/id/txwalrus
+
+    -->
 </head>
 <body>
     <div class="main-app absolute fill">
@@ -45,7 +55,7 @@
                                                 </div>
 
                                                 <div class="roles" data-bind="foreach: roles">
-                                                    <img class="role-icon" data-bind="attr: { src: 'images/roles/'+($data.replace(' ','_'))+'.png'}">
+                                                    <img class="role-icon" data-bind="attr: { src: 'images/roles/'+($data.replace(' ','_'))+'.png', title: $data.capitalize()}">
                                                 </div>
                                             </div>
                                         </div>
