@@ -87,8 +87,7 @@ var SiteViewModel = (function () {
 	};
 
 	SiteViewModel.prototype.getRoleIcon = function(role){
-		var lowercase = role;
-		lowercase.toLowerCase();
+		var lowercase = role.toLowerCase();
 		return "images/roles/"+(lowercase.replace(" ","_"))+".png";
 	};
 
