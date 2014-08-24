@@ -75,7 +75,7 @@
 
 											<div class="roles" data-bind="foreach: roles">
 												<img class="role-icon"
-													 data-bind="attr: { src: 'images/roles/'+($data.replace(' ','_'))+'.png', title: $data.capitalize(true)}">
+													 data-bind="attr: { src: 'images/roles/'+($data.toLowerCase().replace(' ','_'))+'.png', title: $data.capitalize(true)}">
 											</div>
 										</div>
 									</div>
@@ -89,7 +89,7 @@
 									<div class="relative-wrapper">
 										<div class="button-content absolute fill">
 											<div class="icon-wrapper" data-bind="if: selectedRole() !== 'All Roles'">
-												<img data-bind="attr: { src: getRoleIcon(selectedRole())}">
+												<img data-bind="attr: { src: 'images/roles/'+(selectedRole().toLowerCase().replace(' ','_'))+'.png'}">
 											</div>
 											<div class="role-text" data-bind="text: selectedRole"></div>
 										</div>
@@ -103,7 +103,7 @@
 									<div class="menu-content" data-bind="foreach: roles">
 										<div class="menu-item" data-bind="click: function(){ $parent.dropdownItemClicked($data);}, css: {selected: $data === $parent.selectedRole()}">
 											<div class="icon-wrapper" data-bind="if: $data !== 'All Roles'">
-												<img data-bind="attr: { src: $parent.getRoleIcon($data)}">
+												<img data-bind="attr: { src: 'images/roles/'+($data.toLowerCase().replace(' ','_'))+'.png'}">
 											</div>
 											<div class="role-text" data-bind="text: $data"></div>
 										</div>

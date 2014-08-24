@@ -86,11 +86,6 @@ var SiteViewModel = (function () {
 		refreshCounterPicks();
 	};
 
-	SiteViewModel.prototype.getRoleIcon = function(role){
-		var lowercase = role.toLowerCase();
-		return "images/roles/"+(lowercase.replace(" ","_"))+".png";
-	};
-
 	function updateCounterPicks() {
 		this.counterPicks()
 			.filter(function (hero) {
