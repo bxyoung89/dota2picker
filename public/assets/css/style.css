@@ -1167,7 +1167,13 @@ h5 {
     color: #cb7c7c;
     margin-right: 10px;
     float: right;
-    cursor: pointer; }
+    cursor: pointer;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease; }
+    .top-header .author-info:hover {
+      color: #bd5757; }
 
 .main-app {
   padding-top: 30px; }

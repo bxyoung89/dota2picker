@@ -30,5 +30,9 @@ $top-header-height: 30px;
 		margin-right: 10px;
 		float: right;
 		cursor: pointer;
+		@include transition(color 0.3s ease);
+		&:hover{
+			color: darken($dark-beige, 10%);
+		}
 	}
 }
