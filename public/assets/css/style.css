@@ -1233,7 +1233,7 @@ h5 {
           .enemy-team .team-wrapper .team .hero .icon span {
             font-size: 50px;
             font-size: 5rem;
-            color: #ff0000;
+            color: #da4f49;
             -webkit-transition: font-size 0.3s ease;
             -moz-transition: font-size 0.3s ease;
             -o-transition: font-size 0.3s ease;
@@ -1256,17 +1256,19 @@ h5 {
   text-align: center; }
 .hero-grid .hero {
   display: inline-block;
-  opacity: 0.6;
-  -webkit-transition: opacity 0.3s ease;
-  -moz-transition: opacity 0.3s ease;
-  -o-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
-  cursor: pointer; }
-  .hero-grid .hero.selected {
+  cursor: pointer;
+  background: #f9f3ee; }
+  .hero-grid .hero .background-image, .hero-grid .hero .name {
+    opacity: 0.6;
+    -webkit-transition: opacity 0.3s ease;
+    -moz-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease; }
+  .hero-grid .hero.selected .background-image, .hero-grid .hero.selected .name {
     opacity: 1; }
-    .hero-grid .hero.selected:hover {
-      opacity: 1; }
-  .hero-grid .hero:hover {
+  .hero-grid .hero.selected:hover .background-image, .hero-grid .hero.selected:hover .name {
+    opacity: 1; }
+  .hero-grid .hero:hover .background-image, .hero-grid .hero:hover .name {
     opacity: 0.8; }
   .hero-grid .hero .background-image {
     max-width: 100%;
@@ -1303,7 +1305,8 @@ h5 {
   .counterpick-results .scroll-wrapper {
     max-width: 100%;
     max-height: 100%;
-    overflow: auto; }
+    overflow: auto;
+    position: relative; }
   .counterpick-results .counterpicks .hero {
     width: 100%;
     height: 70px;
@@ -1326,9 +1329,7 @@ h5 {
       .counterpick-results .counterpicks .hero .hero-content .text-wrapper {
         float: left;
         margin-left: 10px;
-        line-height: 70px;
-        font-size: 16px;
-        font-size: 1.6rem; }
+        line-height: 70px; }
         .counterpick-results .counterpicks .hero .hero-content .text-wrapper .name {
           float: left; }
         .counterpick-results .counterpicks .hero .hero-content .text-wrapper .advantage-text {
@@ -1338,15 +1339,22 @@ h5 {
           font-size: 16px;
           font-size: 1.6rem; }
           .counterpick-results .counterpicks .hero .hero-content .text-wrapper .advantage-text .icon {
-            font-size: 16px;
-            font-size: 1.6rem;
-            line-height: 70px; }
+            font-size: 50px;
+            font-size: 5rem;
+            line-height: 70px;
+            margin-left: -20px;
+            position: relative;
+            top: -2px; }
+          .counterpick-results .counterpicks .hero .hero-content .text-wrapper .advantage-text .advantage {
+            font-size: 20px;
+            font-size: 2rem;
+            margin-left: -20px; }
           .counterpick-results .counterpicks .hero .hero-content .text-wrapper .advantage-text.positive {
-            color: #00ff00; }
+            color: #5bb75b; }
           .counterpick-results .counterpicks .hero .hero-content .text-wrapper .advantage-text.neutral {
             color: #0a1424; }
           .counterpick-results .counterpicks .hero .hero-content .text-wrapper .advantage-text.negative {
-            color: #ff0000; }
+            color: #da4f49; }
       .counterpick-results .counterpicks .hero .hero-content .roles {
         float: right;
         margin-right: 10px;

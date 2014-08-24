@@ -35,7 +35,7 @@
 					@include transition(all 0.3s ease);
 					span{
 						@include font-size(5);
-						color: #ff0000;
+						color: $red;
 						@include transition(font-size 0.3s ease);
 					}
 				}

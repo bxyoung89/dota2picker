@@ -12,17 +12,27 @@
 	}
 	.hero{
 		display: inline-block;
-		opacity: 0.6;
-		@include transition(opacity 0.3s ease);
 		cursor: pointer;
+		background: $off-white;
+
+		.background-image, .name{
+			opacity: 0.6;
+			@include transition(opacity 0.3s ease);
+		}
 		&.selected{
-			opacity: 1;
-			&:hover{
+			.background-image, .name{
 				opacity: 1;
+			}
+			&:hover{
+				.background-image, .name{
+					opacity: 1;
+				}
 			}
 		}
 		&:hover{
-			opacity: 0.8;
+			.background-image, .name{
+				opacity: 0.8;
+			}
 		}
 		.background-image{
 			max-width: 100%;

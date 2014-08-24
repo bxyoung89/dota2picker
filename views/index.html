@@ -6,16 +6,17 @@
     <script src="js/lib/jquery-2.1.1.min.js"></script>
     <script src="js/lib/knockout-3.2.0.js"></script>
     <script src="js/lib/sugar.min.js"></script>
+    <script src="js/lib/isotope.pkgd.min.js"></script>
     <script src="js/siteViewModel.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <!--
         Thanks for looking at the source!
 
-        This app was built using Node.js, Knockout.js, Jquery, and Sugar.js.
+        This app was built using Node.js, Knockout.js, JQuery, Sugar.js, and Isotope.
 
         I scrape the dotabuff heropages to get the data.  The data is at most a day old.
 
-        If you enjoy this, maybe consider sending me stuff on steam? http://steamcommunity.com/id/txwalrus
+        If you enjoy this, maybe consider sending me stuff on steam? http://steamcommunity.com/tradeoffer/new/?partner=82629665&token=Wf2beYpd
 
     -->
 </head>
@@ -26,7 +27,7 @@
                 <div class="relative-wrapper">
                     <div class="hero-grid absolute fill">
                         <div class="scroll-wrapper fill">
-                            <div class="heroes" data-bind="foreach: heroes" >
+                            <div class="heroes" id="hero-list" data-bind="foreach: heroes" >
                                 <div class="hero" data-bind="click: function(){ $parent.heroSelected($data); }, css: { selected: selected}">
                                     <div class="relative-wrapper">
                                         <img class="background-image fill" data-bind="attr: { src: imageUrl}">
@@ -40,7 +41,7 @@
                         <div class="relative-wrapper">
                             <div class="hero-list-wrapper fill absolute">
                                 <div class="scroll-wrapper fill">
-                                    <div class="counterpicks" data-bind="foreach: counterPicks">
+                                    <div class="counterpicks" id="counterpick-list" data-bind="foreach: counterPicks">
                                         <div class="hero">
                                             <div class="hero-content">
                                                 <div class="image-wrapper">
@@ -48,9 +49,9 @@
                                                 </div>
                                                 <div class="text-wrapper">
                                                     <div class="name" data-bind="text: name"></div>
-                                                    <div class="advantage-text" data-bind="css: {positive: counterPickAdvantage > 0, neutral: counterPickAdvantage === 0, negative: counterPickAdvantage < 0}">
+                                                    <div class="advantage-text" data-bind="css: {positive: counterPickAdvantage() > 0, neutral: counterPickAdvantage() === 0, negative: counterPickAdvantage() < 0}">
+                                                        <span class="icon" data-bind="css: { 'ico-pointer-up': counterPickAdvantage() > 0, 'ico-minus': counterPickAdvantage() === 0, 'ico-pointer-down': counterPickAdvantage() < 0}"></span>
                                                         <span class="advantage" data-bind="text: counterPickAdvantage"></span>
-                                                        <span class="icon" data-bind="css: { 'ico-pointer-up': counterPickAdvantage > 0, 'ico-minus': counterPickAdvantage === 0, 'ico-pointer-down': counterPickAdvantage < 0}"></span>
                                                     </div>
                                                 </div>
 
@@ -116,7 +117,7 @@
                         <div class="intro-text">
                             Hey! Thanks for coming. I hope you enjoy the site.
                             <br><br>
-                            It was made using Node.js, Knockout.js, JQuery, and Sugar.js.
+                            It was made using Node.js, Knockout.js, JQuery, Sugar.js, and Isotope.
                             <br><br>
                             The data comes straight from <a href="http://www.dotabuff.com/">DOTABUFF</a>.  It's updated every day so the data is fresh!
                         </div>
