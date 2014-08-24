@@ -1,4 +1,25 @@
 .hero-grid{
+	.hero-list-wrapper{
+		padding-top: 80px;
+	}
+	.search-bar-wrapper{
+		padding: 10px;
+		width: 100%;
+		background: $off-white;
+
+		input{
+			height: 60px;
+			width: 100%;
+			line-height: 60px;
+			@include font-size(4.0);
+			border: 0;
+			border-bottom: 1px solid $off-black;
+			background: $off-white;
+			&:focus{
+				outline: none;
+			}
+		}
+	}
 	.scroll-wrapper{
 		max-height: 100%;
 		max-width: 100%;
@@ -14,6 +35,8 @@
 		display: inline-block;
 		cursor: pointer;
 		background: $off-white;
+		height: 144px;
+		width: 256px;
 
 		.background-image, .name{
 			opacity: 0.6;

@@ -28,7 +28,8 @@
 		"id": "anti-mage",
 		"stat": "agility",
 		"roles": ["carry", "escape"],
-		"imageId": "antimage"
+		"imageId": "antimage",
+		"nicknames": ["am"]
 	},
 	{
 		"name": "Axe",
@@ -315,7 +316,8 @@
 		"id": "keeper-of-the-light",
 		"stat": "intelligence",
 		"roles": ["pusher", "support"],
-		"imageId": "keeper_of_the_light"
+		"imageId": "keeper_of_the_light",
+		"nicknames": ["kotl"]
 	},
 	{
 		"name": "Kunkka",
@@ -554,7 +556,8 @@
 		"id": "queen-of-pain",
 		"stat": "intelligence",
 		"roles": ["nuker", "escape", "carry"],
-		"imageId": "queenofpain"
+		"imageId": "queenofpain",
+		"nicknames": ["qop"]
 	},
 	{
 		"name": "Razor",
@@ -641,7 +644,8 @@
 		"id": "slark",
 		"stat": "agility",
 		"roles": ["escape", "carry"],
-		"imageId": "slark"
+		"imageId": "slark",
+		"nicknames": ["nightcrawler"]
 	},
 	{
 		"name": "Sniper",
@@ -768,7 +772,8 @@
 		"id": "ursa",
 		"stat": "agility",
 		"roles": ["carry", "jungler", "durable"],
-		"imageId": "ursa"
+		"imageId": "ursa",
+		"nicknames": ["ulfsaar"]
 	},
 	{
 		"name": "Vengeful Spirit",
@@ -791,7 +796,8 @@
 		"id": "viper",
 		"stat": "agility",
 		"roles": ["carry", "durable"],
-		"imageId": "viper"
+		"imageId": "viper",
+		"nicknames": []
 	},
 	{
 		"name": "Visage",

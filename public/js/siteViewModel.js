@@ -13,10 +13,15 @@ var SiteViewModel = (function () {
 		this.roles = ko.observableArray([]);
 		this.selectedRole = ko.observable("All Roles");
 		this.dropdownIsOpen = ko.observable(false);
+		this.searchText = ko.observable("");
+		this.searchText.subscribe(onSearchTextUpdated);
 	}
 
 	SiteViewModel.prototype.loadHeroes = function (heroes) {
 		var rolesHash = {};
+		if(!Array.isArray(heroes)){
+			heroes = JSON.parse(heroes);
+		}
 		heroes.forEach(function (hero) {
 			hero.imageUrl = "http://cdn.dota2.com/apps/dota2/images/heroes/" + hero.imageId + "_full.png";
 			hero.selected = ko.observable(false);
@@ -117,6 +122,17 @@ var SiteViewModel = (function () {
 		return isNotInEnemyHeroes && hasSelectedRole;
 	}
 
+	function filterHeroesBySearchText(){
+		var vm = ko.dataFor(this);
+		var siteVM = ko.dataFor($("body")[0]);
+		var searchTextIsEmpty = siteVM.searchText().trim() === "";
+		var heroNameStartsWithText = vm.name.toLowerCase().startsWith(siteVM.searchText().toLowerCase().trim());
+		var heroNicknamesStartWithText = vm.nicknames.length !== 0 && vm.nicknames.any(function(name){
+			return name.toLowerCase().startsWith(siteVM.searchText().toLowerCase().trim());
+		});
+		return searchTextIsEmpty || heroNameStartsWithText || heroNicknamesStartWithText;
+	}
+
 	function initializeIsotope(){
 		var htmlLoadedInterval = setInterval(function(){
 			var heroList = $("#" + heroListId);
@@ -138,6 +154,16 @@ var SiteViewModel = (function () {
 				filter: filterCounterpicksForIsotope
 			});
 			counterPickList.isotope("bindResize");
+			heroList.isotope({
+				itemSelector: ".hero",
+				layoutMode: "fitRows",
+				getSortData: {
+					name: ".name"
+				},
+				sortBy: "name",
+				filter: filterHeroesBySearchText
+			});
+			heroList.isotope("bindResize");
 			initialized = true;
 		}, 500);
 	}
@@ -173,8 +199,33 @@ var SiteViewModel = (function () {
 					sortBy: "advantage"
 				});
 			}, 500);
+		}, 500);
+	}
+	
+	function refreshHeroList(){
+		setTimeout(function(){
+			if(!initialized){
+				return;
+			}
+			var heroList = $("#"+heroListId);
+			heroList.isotope({
+				filter: filterHeroesBySearchText
+			});
+			heroList.isotope("reloadItems");
+			heroList.isotope({
+				filter: filterHeroesBySearchText
+			});
+			setTimeout(function(){
+				heroList.isotope({
+					filter: filterHeroesBySearchText
+				});
+			}, 500);
 
 		}, 500);
+	}
+
+	function onSearchTextUpdated(){
+		refreshHeroList();
 	}
 
 

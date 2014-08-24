@@ -1245,6 +1245,23 @@ h5 {
             font-size: 80px;
             font-size: 8rem; }
 
+.hero-grid .hero-list-wrapper {
+  padding-top: 80px; }
+.hero-grid .search-bar-wrapper {
+  padding: 10px;
+  width: 100%;
+  background: #f9f3ee; }
+  .hero-grid .search-bar-wrapper input {
+    height: 60px;
+    width: 100%;
+    line-height: 60px;
+    font-size: 40px;
+    font-size: 4rem;
+    border: 0;
+    border-bottom: 1px solid #0a1424;
+    background: #f9f3ee; }
+    .hero-grid .search-bar-wrapper input:focus {
+      outline: none; }
 .hero-grid .scroll-wrapper {
   max-height: 100%;
   max-width: 100%;
@@ -1257,7 +1274,9 @@ h5 {
 .hero-grid .hero {
   display: inline-block;
   cursor: pointer;
-  background: #f9f3ee; }
+  background: #f9f3ee;
+  height: 144px;
+  width: 256px; }
   .hero-grid .hero .background-image, .hero-grid .hero .name {
     opacity: 0.6;
     -webkit-transition: opacity 0.3s ease;
@@ -1368,8 +1387,6 @@ h5 {
     background: #f4b4ac;
     color: #0a1424;
     cursor: default; }
-    .counterpick-results .counterpicks .hero:last-child {
-      margin-bottom: 0; }
     .counterpick-results .counterpicks .hero .hero-content {
       height: 100%;
       width: 100%; }

@@ -26,16 +26,22 @@
 		<div class="main-area absolute fill">
 			<div class="relative-wrapper">
 				<div class="hero-grid absolute fill">
-					<div class="scroll-wrapper fill">
-						<div class="heroes" id="hero-list" data-bind="foreach: heroes">
-							<div class="hero"
-								 data-bind="click: function(){ $parent.heroSelected($data); }, css: { selected: selected}">
-								<div class="relative-wrapper">
-									<img class="background-image fill" data-bind="attr: { src: imageUrl}">
-
-									<div class="name" data-bind="text: name"></div>
+					<div class="relative-wrapper">
+						<div class="hero-list-wrapper absolute fill">
+							<div class="scroll-wrapper fill">
+								<div class="heroes" id="hero-list" data-bind="foreach: heroes">
+									<div class="hero"
+										 data-bind="click: function(){ $parent.heroSelected($data); }, css: { selected: selected}">
+										<div class="relative-wrapper">
+											<img class="background-image fill" data-bind="attr: { src: imageUrl}">
+											<div class="name" data-bind="text: name"></div>
+										</div>
+									</div>
 								</div>
 							</div>
+						</div>
+						<div class="search-bar-wrapper absolute">
+							<input data-bind="value: searchText, valueUpdate: 'keyup'" placeholder="Search For A Hero">
 						</div>
 					</div>
 				</div>
