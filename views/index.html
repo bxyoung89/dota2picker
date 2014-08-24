@@ -1,162 +1,194 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
-    <title>Walrus Punch!</title>
-    <script src="js/lib/jquery-2.1.1.min.js"></script>
-    <script src="js/lib/knockout-3.2.0.js"></script>
-    <script src="js/lib/sugar.min.js"></script>
-    <script src="js/lib/isotope.pkgd.min.js"></script>
-    <script src="js/siteViewModel.js"></script>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!--
-        Thanks for looking at the source!
+	<meta charset="UTF-8">
+	<title>Walrus Punch!</title>
+	<script src="js/lib/jquery-2.1.1.min.js"></script>
+	<script src="js/lib/knockout-3.2.0.js"></script>
+	<script src="js/lib/sugar.min.js"></script>
+	<script src="js/lib/isotope.pkgd.min.js"></script>
+	<script src="js/siteViewModel.js"></script>
+	<link rel="stylesheet" href="assets/css/style.css">
+	<!--
+		Thanks for looking at the source!
 
-        This app was built using Node.js, Knockout.js, JQuery, Sugar.js, and Isotope.
+		This app was built using Node.js, Knockout.js, JQuery, Sugar.js, and Isotope.
 
-        I scrape the dotabuff heropages to get the data.  The data is at most a day old.
+		I scrape the dotabuff heropages to get the data.  The data is at most a day old.
 
-        If you enjoy this, maybe consider sending me stuff on steam? http://steamcommunity.com/tradeoffer/new/?partner=82629665&token=Wf2beYpd
+		If you enjoy this, maybe consider sending me stuff on steam? http://steamcommunity.com/tradeoffer/new/?partner=82629665&token=Wf2beYpd
 
-    -->
+	-->
 </head>
 <body>
-    <div class="main-app absolute fill">
-        <div class="relative-wrapper">
-            <div class="main-area absolute fill">
-                <div class="relative-wrapper">
-                    <div class="hero-grid absolute fill">
-                        <div class="scroll-wrapper fill">
-                            <div class="heroes" id="hero-list" data-bind="foreach: heroes" >
-                                <div class="hero" data-bind="click: function(){ $parent.heroSelected($data); }, css: { selected: selected}">
-                                    <div class="relative-wrapper">
-                                        <img class="background-image fill" data-bind="attr: { src: imageUrl}">
-                                        <div class="name" data-bind="text: name"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="counterpick-results absolute">
-                        <div class="relative-wrapper">
-                            <div class="hero-list-wrapper fill absolute">
-                                <div class="scroll-wrapper fill">
-                                    <div class="counterpicks" id="counterpick-list" data-bind="foreach: counterPicks">
-                                        <div class="hero">
-                                            <div class="hero-content">
-                                                <div class="image-wrapper">
-                                                    <img class="fill" data-bind="attr: { src: imageUrl}">
-                                                </div>
-                                                <div class="text-wrapper">
-                                                    <div class="name" data-bind="text: name"></div>
-                                                    <div class="advantage-text" data-bind="css: {positive: counterPickAdvantage() > 0, neutral: counterPickAdvantage() === 0, negative: counterPickAdvantage() < 0}">
-                                                        <span class="icon" data-bind="css: { 'ico-pointer-up': counterPickAdvantage() > 0, 'ico-minus': counterPickAdvantage() === 0, 'ico-pointer-down': counterPickAdvantage() < 0}"></span>
-                                                        <span class="advantage" data-bind="text: counterPickAdvantage"></span>
-                                                    </div>
-                                                </div>
+<div class="main-app absolute fill">
+	<div class="relative-wrapper">
+		<div class="main-area absolute fill">
+			<div class="relative-wrapper">
+				<div class="hero-grid absolute fill">
+					<div class="scroll-wrapper fill">
+						<div class="heroes" id="hero-list" data-bind="foreach: heroes">
+							<div class="hero"
+								 data-bind="click: function(){ $parent.heroSelected($data); }, css: { selected: selected}">
+								<div class="relative-wrapper">
+									<img class="background-image fill" data-bind="attr: { src: imageUrl}">
 
-                                                <div class="roles" data-bind="foreach: roles">
-                                                    <img class="role-icon" data-bind="attr: { src: 'images/roles/'+($data.replace(' ','_'))+'.png', title: $data.capitalize()}">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+									<div class="name" data-bind="text: name"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="counterpick-results absolute">
+					<div class="relative-wrapper">
+						<div class="hero-list-wrapper fill absolute">
+							<div class="scroll-wrapper fill">
+								<div class="counterpicks" id="counterpick-list" data-bind="foreach: counterPicks">
+									<div class="hero">
+										<div class="hero-content">
+											<div class="image-wrapper">
+												<img class="fill" data-bind="attr: { src: imageUrl}">
+											</div>
+											<div class="text-wrapper">
+												<div class="name" data-bind="text: name"></div>
+												<div class="advantage-text"
+													 data-bind="css: {positive: counterPickAdvantage() > 0, neutral: counterPickAdvantage() === 0, negative: counterPickAdvantage() < 0}">
+													<span class="icon"
+														  data-bind="css: { 'ico-pointer-up': counterPickAdvantage() > 0, 'ico-minus': counterPickAdvantage() === 0, 'ico-pointer-down': counterPickAdvantage() < 0}"></span>
+													<span class="advantage"
+														  data-bind="text: counterPickAdvantage"></span>
+												</div>
+											</div>
 
-                            <div class="dropdown-wrapper absolute">
-                                <div class="title">
-                                    Select a Role
-                                </div>
-                                <div class="dropdown">
-                                    Dropdown Here!
-                                </div>
-                            </div>
-                        </div>
+											<div class="roles" data-bind="foreach: roles">
+												<img class="role-icon"
+													 data-bind="attr: { src: 'images/roles/'+($data.replace(' ','_'))+'.png', title: $data.capitalize(true)}">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="dropdown-wrapper absolute">
+							<div class="dropdown">
+								<div class="dropdown-button" data-bind="click: toggleDropdownOpen">
+									<div class="relative-wrapper">
+										<div class="button-content absolute fill">
+											<div class="icon-wrapper" data-bind="if: selectedRole() !== 'All Roles'">
+												<img data-bind="attr: { src: getRoleIcon(selectedRole())}">
+											</div>
+											<div class="role-text" data-bind="text: selectedRole"></div>
+										</div>
+										<div class="chevron">
+											<span class="icon ico-chevron-down"></span>
+										</div>
+									</div>
+
+								</div>
+								<div class="dropdown-menu" data-bind="visible: dropdownIsOpen">
+									<div class="menu-content" data-bind="foreach: roles">
+										<div class="menu-item" data-bind="click: function(){ $parent.dropdownItemClicked($data);}, css: {selected: $data === $parent.selectedRole()}">
+											<div class="icon-wrapper" data-bind="if: $data !== 'All Roles'">
+												<img data-bind="attr: { src: $parent.getRoleIcon($data)}">
+											</div>
+											<div class="role-text" data-bind="text: $data"></div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
 
 
-                    </div>
-                </div>
-            </div>
-            <div class="enemy-team absolute">
-                <div class="title">
-                    Enemy Team
-                </div>
-                <div class="team-wrapper">
-                    <div class="team" data-bind="foreach: enemyHeroes">
-                        <div class="hero" data-bind="click: function(){ $parent.heroRemoved($data); }">
-                            <div class="relative-wrapper">
-                                <img class="background-image fill" data-bind="attr: { src: imageUrl}">
-                                <div class="icon">
-                                    <span class="ico-close"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="top-header absolute">
-        <div class="title">
-            Walrus Punch!
-        </div>
-        <div class="sub-title">
-            A Dota 2 CounterPicker
-        </div>
-        <div class="author-info" data-bind="click: openModal">
-            by Broderick Young
-        </div>
-    </div>
-    <div class="modal fill" data-bind="css: { visible: modalOpen}">
-        <div class="modal-overlay absolute fill" data-bind="click: closeModal"></div>
-        <div class="modal-content fill" >
-            <div class="modal-background">
-                <div class="content-wrapper absolute fill">
-                    <div class="content">
-                        <div class="intro-text">
-                            Hey! Thanks for coming. I hope you enjoy the site.
-                            <br><br>
-                            It was made using Node.js, Knockout.js, JQuery, Sugar.js, and Isotope.
-                            <br><br>
-                            The data comes straight from <a href="http://www.dotabuff.com/">DOTABUFF</a>.  It's updated every day so the data is fresh!
-                        </div>
-                        <div class="about">
-                            <div class="profile-picture">
-                                <img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/3c/3c9d7efcea78408c7fec587348482e2fcf2d0b5a_full.jpg">
-                            </div>
-                            <div class="about-author">
-                                <a href="http://broderickyoung.com/">Broderick Young</a> (AKA TheWalrus) is a 2k mmr noob intent on getting better.
-                                <br><br>
-                                You can check out the source code for this project on <a href="https://github.com/bxyoung89">github</a>.
-                                <br><br>
-                                You can contact me on <a href="https://twitter.``com/bxyoung89">twitter</a>.
-                                <br><br>
-                                If you're feeling really generous send me something on <a href="http://steamcommunity.com/tradeoffer/new/?partner=82629665&token=Wf2beYpd">steam</a>!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-header absolute">
-                    <div class="title">
-                        About
-                    </div>
-                    <div class="close" data-bind="click: closeModal">
-                        <span class="icon ico-close"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
-        var heroes;
-        var vm = new SiteViewModel();
-        $.get("/getHeroes", function(data){
-            heroes = data;
-            vm.loadHeroes(heroes);
-        });
+				</div>
+			</div>
+		</div>
+		<div class="enemy-team absolute">
+			<div class="title">
+				Enemy Team
+			</div>
+			<div class="team-wrapper">
+				<div class="team" data-bind="foreach: enemyHeroes">
+					<div class="hero" data-bind="click: function(){ $parent.heroRemoved($data); }">
+						<div class="relative-wrapper">
+							<img class="background-image fill" data-bind="attr: { src: imageUrl}">
 
-        ko.applyBindings(vm);
-    </script>
+							<div class="icon">
+								<span class="ico-close"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="top-header absolute">
+	<div class="title">
+		Walrus Punch!
+	</div>
+	<div class="sub-title">
+		A Dota 2 CounterPicker
+	</div>
+	<div class="author-info" data-bind="click: openModal">
+		by Broderick Young
+	</div>
+</div>
+<div class="modal fill" data-bind="css: { visible: modalOpen}">
+	<div class="modal-overlay absolute fill" data-bind="click: closeModal"></div>
+	<div class="modal-content fill">
+		<div class="modal-background">
+			<div class="content-wrapper absolute fill">
+				<div class="content">
+					<div class="intro-text">
+						Hey! Thanks for coming. I hope you enjoy the site.
+						<br><br>
+						It was made using Node.js, Knockout.js, JQuery, Sugar.js, and Isotope.
+						<br><br>
+						The data comes straight from <a href="http://www.dotabuff.com/">DOTABUFF</a>. It's updated every
+						day so the data is fresh!
+					</div>
+					<div class="about">
+						<div class="profile-picture">
+							<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/3c/3c9d7efcea78408c7fec587348482e2fcf2d0b5a_full.jpg">
+						</div>
+						<div class="about-author">
+							<a href="http://broderickyoung.com/">Broderick Young</a> (AKA TheWalrus) is a 2k mmr noob
+							intent on getting better.
+							<br><br>
+							You can check out the source code for this project on <a
+								href="https://github.com/bxyoung89">github</a>.
+							<br><br>
+							You can contact me on <a href="https://twitter.``com/bxyoung89">twitter</a>.
+							<br><br>
+							If you're feeling really generous send me something on <a
+								href="http://steamcommunity.com/tradeoffer/new/?partner=82629665&token=Wf2beYpd">steam</a>!
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-header absolute">
+				<div class="title">
+					About
+				</div>
+				<div class="close" data-bind="click: closeModal">
+					<span class="icon ico-close"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	var heroes;
+	var vm = new SiteViewModel();
+	$.get("/getHeroes", function (data) {
+		heroes = data;
+		vm.loadHeroes(heroes);
+	});
+
+	ko.applyBindings(vm);
+</script>
 </body>
 </html>

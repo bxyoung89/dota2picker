@@ -10,18 +10,33 @@ var SiteViewModel = (function () {
 		this.counterPicks = ko.observableArray([]);
 		this.heroes = ko.observableArray([]);
 		this.modalOpen = ko.observable(false);
+		this.roles = ko.observableArray([]);
+		this.selectedRole = ko.observable("All Roles");
+		this.dropdownIsOpen = ko.observable(false);
 	}
 
 	SiteViewModel.prototype.loadHeroes = function (heroes) {
+		var rolesHash = {};
 		heroes.forEach(function (hero) {
 			hero.imageUrl = "http://cdn.dota2.com/apps/dota2/images/heroes/" + hero.imageId + "_full.png";
 			hero.selected = ko.observable(false);
 			hero.counterPickAdvantage = ko.observable(0);
+			hero.roles = hero.roles.map(function(role){
+				var capitalizedRole = role.capitalize(true);
+				rolesHash[capitalizedRole] = "";
+				return capitalizedRole;
+			});
 			this.heroes.push(hero);
 			this.counterPicks.push(hero);
 		}, this);
+		Object.keys(rolesHash).forEach(function(role){
+			this.roles.push(role.capitalize(true));
+		}, this);
+		this.roles.sort();
+		this.roles.unshift("All Roles");
 		this.state("normal");
 		initializeIsotope();
+		addDocumentClickListener.bind(this)();
 	};
 
 	SiteViewModel.prototype.heroSelected = function (hero) {
@@ -56,12 +71,23 @@ var SiteViewModel = (function () {
 		this.modalOpen(false);
 	};
 
+	SiteViewModel.prototype.toggleDropdownOpen = function(){
+		this.dropdownIsOpen(!this.dropdownIsOpen());
+	};
+
+	SiteViewModel.prototype.dropdownItemClicked = function(role){
+		this.selectedRole(role);
+		this.dropdownIsOpen(false);
+		refreshCounterPicks();
+	};
+
+	SiteViewModel.prototype.getRoleIcon = function(role){
+		var lowercase = role;
+		lowercase.toLowerCase();
+		return "images/roles/"+(lowercase.replace(" ","_"))+".png";
+	};
+
 	function updateCounterPicks() {
-//		var counterPickHeroes = this.heroes().filter(function(hero){
-//			return !this.enemyHeroes().any(function(h){
-//				return h.id === hero.id;
-//			});
-//		}, this);
 		this.counterPicks()
 			.filter(function (hero) {
 				return !this.enemyHeroes().any(function (h) {
@@ -76,40 +102,19 @@ var SiteViewModel = (function () {
 				});
 				hero.counterPickAdvantage(Math.round(teamAdvantage * 1000) / 1000);
 			}, this);
-//		counterPickHeroes.sort(function(a, b){
-//			return b.counterPickAdvantage() - a.counterPickAdvantage();
-//		});
-//		this.counterPicks(counterPickHeroes);
-		setTimeout(function(){
-			if(!initialized){
-				return;
-			}
-			var counterPickList = $("#"+counterpickListId);
-			counterPickList.isotope({
-				filter: filterCounterpicksForIsotope,
-				sortBy: "advantage"
-			});
-			counterPickList.isotope("reloadItems");
-			counterPickList.isotope({
-				filter: filterCounterpicksForIsotope,
-				sortBy: "advantage"
-			});
-			setTimeout(function(){
-				counterPickList.isotope({
-					filter: filterCounterpicksForIsotope,
-					sortBy: "advantage"
-				});
-			}, 500);
-
-		}, 500);
+		refreshCounterPicks();
 	}
 
 	function filterCounterpicksForIsotope(){
 		var vm = ko.dataFor(this);
 		var siteVM = ko.dataFor($("body")[0]);
-		return siteVM.enemyHeroes().length > 0 && !siteVM.enemyHeroes().any(function(hero){
+		var isNotInEnemyHeroes = siteVM.enemyHeroes().length > 0 && !siteVM.enemyHeroes().any(function(hero){
 			return hero.id === vm.id;
 		});
+		var hasSelectedRole = siteVM.selectedRole() === "All Roles" || vm.roles.any(function(role){
+			return role === siteVM.selectedRole();
+		});
+		return isNotInEnemyHeroes && hasSelectedRole;
 	}
 
 	function initializeIsotope(){
@@ -137,6 +142,40 @@ var SiteViewModel = (function () {
 		}, 500);
 	}
 
+	function addDocumentClickListener(){
+		$(document).bind("click", function(e){
+			if($(e.target).parents().hasClass("dropdown")){
+				return;
+			}
+			this.dropdownIsOpen(false);
+		}.bind(this));
+
+	}
+
+	function refreshCounterPicks(){
+		setTimeout(function(){
+			if(!initialized){
+				return;
+			}
+			var counterPickList = $("#"+counterpickListId);
+			counterPickList.isotope({
+				filter: filterCounterpicksForIsotope,
+				sortBy: "advantage"
+			});
+			counterPickList.isotope("reloadItems");
+			counterPickList.isotope({
+				filter: filterCounterpicksForIsotope,
+				sortBy: "advantage"
+			});
+			setTimeout(function(){
+				counterPickList.isotope({
+					filter: filterCounterpicksForIsotope,
+					sortBy: "advantage"
+				});
+			}, 500);
+
+		}, 500);
+	}
 
 
 

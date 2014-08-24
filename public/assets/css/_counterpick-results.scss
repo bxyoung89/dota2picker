@@ -1,4 +1,5 @@
 .counterpick-results{
+	$dropdownHeight: 60px;
 	width: 550px;
 	height: 100%;
 	left: auto;
@@ -7,19 +8,85 @@
 	background: $dark-blue;
 	color: $off-white;
 	.dropdown-wrapper{
-		height: 200px;
-		.title{
-			@include font-size(1.6);
-			margin-bottom: 10px;
-		}
+		height: $dropdownHeight;
+		width: 100%;
 		.dropdown{
-			hieght: 40px;
+			height: 40px;
 			width: 100%;
 			margin-bottom: 20px;
 		}
+		.dropdown-button{
+			height: 100%;
+			width: 100%;
+			padding: 0 10px;
+			background: $dark-beige;
+			cursor: pointer;
+			&:hover{
+				background: darken($dark-beige, 10%);
+			}
+		}
+		.chevron{
+			position: absolute;
+			top: 0;
+			right: 0;
+			.icon{
+				@include font-size(4.0);
+			}
+		}
+		.dropdown-menu{
+			position: relative;
+			width: 100%;
+			height: 0;
+			.menu-content{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 200px;
+				max-height: 200px;
+				overflow: auto;
+				.menu-item{
+					width: 100%;
+					height: 40px;
+					background: $light-beige;
+					padding: 0 10px;
+					cursor: pointer;
+					&:hover{
+						background: darken($light-beige, 10%);
+					}
+					border-bottom: 1px solid $off-black;
+					&:last-child{
+						border-bottom: 0;
+					}
+					&.selected{
+						background: darken($light-beige, 15%);
+						&:hover{
+							background: darken($light-beige, 15%);
+						}
+					}
+				}
+			}
+		}
+		.icon-wrapper{
+			float: left;
+			height: 40px;
+			width: 40px;
+			padding: 5px;
+			img{
+				width: 100%;
+				max-width: 100%;
+				height: auto;
+			}
+		}
+		.role-text{
+			float: left;
+			line-height: 40px;
+			@include font-size(2.0);
+			color: $off-white;
+		}
 	}
 	.hero-list-wrapper{
-		padding-top: 200px;
+		padding-top: $dropdownHeight;
 	}
 	.scroll-wrapper{
 		max-width: 100%;
