@@ -19,13 +19,15 @@
 		If you enjoy this, maybe consider sending me stuff on steam? http://steamcommunity.com/tradeoffer/new/?partner=82629665&token=Wf2beYpd
 
 	-->
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	ga('create', 'UA-47989718-3', 'auto');
-	ga('send', 'pageview');
+		ga('create', 'UA-47989718-3', 'auto');
+		ga('send', 'pageview');
+	</script>
 </head>
 <body>
 <div class="main-app absolute fill">
@@ -69,7 +71,7 @@
 													<span class="icon"
 														  data-bind="css: { 'ico-pointer-up': counterPickAdvantage() > 0, 'ico-minus': counterPickAdvantage() === 0, 'ico-pointer-down': counterPickAdvantage() < 0}"></span>
 													<span class="advantage"
-														  data-bind="text: counterPickAdvantage"></span>
+														  data-bind="text: counterPickAdvantage() === 0 ? '0.000' : counterPickAdvantage()"></span>
 												</div>
 											</div>
 
