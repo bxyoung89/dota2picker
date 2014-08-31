@@ -216,7 +216,7 @@ var SiteViewModel = (function () {
 			});
 			setTimeout(function(){
 				var siteVM = ko.dataFor($("body")[0]);
-				var shownHeroes = heroes.filter(filterHeroBySearchText);
+				var shownHeroes = siteVM.heroes().filter(filterHeroBySearchText);
 				if(shownHeroes.length !== 1 || siteVM.enemyHeroes().length === 5){
 					return;
 				}
