@@ -100,7 +100,7 @@ var SiteViewModel = (function () {
 						return advantage.name === enemy.name;
 					}).advantage;
 				});
-				hero.counterPickAdvantage(Math.round(teamAdvantage * 1000) / 1000);
+				hero.counterPickAdvantage((Math.round(teamAdvantage * 1000) / 1000).toFixed(3));
 			}, this);
 		refreshCounterPicks();
 	}
