@@ -67,11 +67,11 @@
 											<div class="text-wrapper">
 												<div class="name" data-bind="text: name"></div>
 												<div class="advantage-text"
-													 data-bind="css: {positive: counterPickAdvantage() > 0, neutral: counterPickAdvantage() === 0, negative: counterPickAdvantage() < 0}">
+													 data-bind="css: {positive: parseFloat(counterPickAdvantage()) > 0, neutral: parseFloat(counterPickAdvantage()) === 0, negative: parseFloat(counterPickAdvantage()) < 0}">
 													<span class="icon"
-														  data-bind="css: { 'ico-pointer-up': counterPickAdvantage() > 0, 'ico-minus': counterPickAdvantage() === 0, 'ico-pointer-down': counterPickAdvantage() < 0}"></span>
+														  data-bind="css: { 'ico-pointer-up': parseFloat(counterPickAdvantage()) > 0, 'ico-minus': parseFloat(counterPickAdvantage()) === 0, 'ico-pointer-down': parseFloat(counterPickAdvantage()) < 0}"></span>
 													<span class="advantage"
-														  data-bind="text: counterPickAdvantage() === 0 ? '0.000' : counterPickAdvantage()"></span>
+														  data-bind="text: counterPickAdvantage()"></span>
 												</div>
 											</div>
 
