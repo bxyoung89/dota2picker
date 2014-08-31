@@ -14,7 +14,8 @@ var SiteViewModel = (function () {
 		this.selectedRole = ko.observable("All Roles");
 		this.dropdownIsOpen = ko.observable(false);
 		this.searchText = ko.observable("");
-		this.searchText.subscribe(onSearchTextUpdated);
+		this.throttledText = ko.computed(this.searchText).extend({ throttle: 400});
+		this.throttledText.subscribe(onSearchTextUpdated);
 	}
 
 	SiteViewModel.prototype.loadHeroes = function (heroes) {
@@ -118,11 +119,15 @@ var SiteViewModel = (function () {
 
 	function filterHeroesBySearchText(){
 		var vm = ko.dataFor(this);
+		return filterHeroBySearchText(vm);
+	}
+
+	function filterHeroBySearchText(hero){
 		var siteVM = ko.dataFor($("body")[0]);
-		var searchTextIsEmpty = siteVM.searchText().trim() === "";
-		var heroNameStartsWithText = vm.name.toLowerCase().startsWith(siteVM.searchText().toLowerCase().trim());
-		var heroNicknamesStartWithText = vm.nicknames.length !== 0 && vm.nicknames.any(function(name){
-			return name.toLowerCase().startsWith(siteVM.searchText().toLowerCase().trim());
+		var searchTextIsEmpty = siteVM.throttledText().trim() === "";
+		var heroNameStartsWithText = hero.name.toLowerCase().indexOf(siteVM.searchText().toLowerCase().trim()) !== -1;
+		var heroNicknamesStartWithText = hero.nicknames.length !== 0 && hero.nicknames.any(function(name){
+			return name.toLowerCase().indexOf(siteVM.throttledText().toLowerCase().trim()) !== -1;
 		});
 		return searchTextIsEmpty || heroNameStartsWithText || heroNicknamesStartWithText;
 	}
@@ -210,9 +215,17 @@ var SiteViewModel = (function () {
 				filter: filterHeroesBySearchText
 			});
 			setTimeout(function(){
-				heroList.isotope({
-					filter: filterHeroesBySearchText
-				});
+				var siteVM = ko.dataFor($("body")[0]);
+				var shownHeroes = heroes.filter(filterHeroBySearchText);
+				if(shownHeroes.length !== 1 || siteVM.enemyHeroes().length === 5){
+					return;
+				}
+				if(shownHeroes[0].selected()){
+					return;
+				}
+				shownHeroes[0].selected(true);
+				siteVM.enemyHeroes.push(shownHeroes[0]);
+				updateCounterPicks.bind(siteVM)();
 			}, 500);
 
 		}, 500);

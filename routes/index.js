@@ -29,11 +29,15 @@ router.get("/getHeroes", function(req, res){
 			return;
 		}
 		data = JSON.parse(data);
+		var validHeroesLength = data.length;
 		data.forEach(function(heroData){
 			var url = "http://www.dotabuff.com/heroes/"+heroData.id+"/matchups";
 			var advantages = [];
+			var heroIsValid = true;
 			request(url, function(error, response, html){
 				if(error){
+					validHeroesLength -=1;
+					heroIsValid = false;
 					return "error";
 				}
 				var $ = cheerio.load(html);
@@ -46,15 +50,26 @@ router.get("/getHeroes", function(req, res){
 
 						var nameColumn = columns[1];
 						hero.name = $(nameColumn).text();
+						if(hero.name.trim() === ""){
+							return;
+						}
 
 						var advantageColumn = columns[2];
 						hero.advantage = parseFloat($(advantageColumn).text());
 						advantages.push(hero);
 					});
 				});
+				if(advantages.length === 0){
+					validHeroesLength -=1;
+					heroIsValid = false;
+				}
 			});
 			var polling = setInterval(function(){
-				if(advantages.length !== data.length -1){
+				if(!heroIsValid){
+					clearInterval(polling);
+					return;
+				}
+				if(advantages.length !== validHeroesLength -1){
 					return;
 				}
 				clearInterval(polling);
@@ -63,18 +78,24 @@ router.get("/getHeroes", function(req, res){
 			}, 100);
 		});
 		var polling = setInterval(function(){
-			if(heroes.length !== data.length){
+			if(heroes.length !== validHeroesLength){
 				return;
 			}
 			clearInterval(polling);
-			fs.writeFile(savedFile, JSON.stringify(heroes), function(error){
+			var validHeroes = [];
+			heroes.forEach(function(hero){
+				if(hero.advantages !== undefined){
+					validHeroes.push(hero);
+				}
+			});
+			fs.writeFile(savedFile, JSON.stringify(validHeroes), function(error){
 				if(error){
 					console.log(error);
 				}
 				lastWritten = new Date();
 
 			});
-			res.send(heroes);
+			res.send(validHeroes);
 		}, 100);
 	});
 
