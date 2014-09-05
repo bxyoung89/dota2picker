@@ -264,14 +264,6 @@
 		"nicknames": ["darkterror"]
 	},
 	{
-		"name": "Goblin Techies",
-		"id": "techies",
-		"stat": "intelligence",
-		"roles": ["nuker", "support", "disabler"],
-		"imageId": "techies",
-		"nicknames":["Squee", "Spleen", "Spoon", "gt"]
-	},
-	{
 		"name": "Gyrocopter",
 		"id": "gyrocopter",
 		"stat": "agility",
@@ -694,6 +686,14 @@
 		"roles": ["disabler", "initiator", "carry", "support"],
 		"imageId": "sven",
 		"nicknames": []
+	},
+	{
+		"name": "Techies",
+		"id": "techies",
+		"stat": "intelligence",
+		"roles": ["nuker", "support", "disabler"],
+		"imageId": "techies",
+		"nicknames":["Squee", "Spleen", "Spoon", "gt", "Goblin Techies"]
 	},
 	{
 		"name": "Templar Assassin",
