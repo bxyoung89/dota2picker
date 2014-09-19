@@ -30,21 +30,19 @@
 				}
 				.icon{
 					position: absolute;
-					top: -13px;
-					right: -13px;
+					top: 5px;
+					right: 0;
 					@include transition(all 0.3s ease);
 					span{
-						@include font-size(5);
+						@include font-size(3.0);
 						color: $red;
 						@include transition(font-size 0.3s ease);
 					}
 				}
 				&:hover{
 					.icon{
-						top: -24px;
-						right: -24px;
 						span{
-							@include font-size(8);
+							@include font-size(4);
 						}
 					}
 				}

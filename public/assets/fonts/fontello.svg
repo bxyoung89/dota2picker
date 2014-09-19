@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2014 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="pointer-up" unicode="&#xe800;" d="m2 575q-5 10 3 19l195 215q5 5 13 5 7 0 13-5l198-215q7-9 3-19-5-11-16-11h-125v-696q0-8-5-13t-13-5h-107q-8 0-13 5t-5 13v696h-125q-12 0-16 11z" horiz-adv-x="428.6" />
+<glyph glyph-name="pointer-down" unicode="&#xe801;" d="m2 125q5 11 16 11h125v696q0 8 5 13t13 5h107q8 0 13-5t5-13v-696h125q11 0 16-11t-3-19l-195-215q-6-5-13-5-8 0-13 5l-198 215q-8 9-3 19z" horiz-adv-x="428.6" />
+<glyph glyph-name="minus" unicode="&#xe802;" d="m0 332v107q0 23 16 38t38 16h678q22 0 38-16t16-38v-107q0-22-16-38t-38-15h-678q-23 0-38 15t-16 38z" horiz-adv-x="785.7" />
+<glyph glyph-name="chevron-up" unicode="&#xe803;" d="m50 133q0 14 11 25l414 414q11 10 25 10t25-10l414-414q11-11 11-25t-11-26l-92-92q-11-10-26-10t-25 10l-296 297-296-297q-11-10-25-10t-26 10l-92 92q-11 11-11 26z" horiz-adv-x="1000" />
+<glyph glyph-name="chevron-down" unicode="&#xe804;" d="m50 425q0 14 11 25l92 92q11 11 26 11t25-11l296-296 296 296q11 11 25 11t26-11l92-92q11-11 11-25t-11-26l-414-413q-10-11-25-11t-25 11l-414 413q-11 11-11 26z" horiz-adv-x="1000" />
+<glyph glyph-name="close" unicode="&#xe805;" d="m654 349l346-346-154-154-346 346-346-346-154 154 346 346-346 346 154 154 346-346 346 346 154-154z" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>

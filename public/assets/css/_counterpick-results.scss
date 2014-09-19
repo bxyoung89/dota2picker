@@ -30,7 +30,8 @@
 			top: 0;
 			right: 0;
 			.icon{
-				@include font-size(4.0);
+				@include font-size(2.0);
+				line-height: 40px;
 			}
 		}
 		.dropdown-menu{
@@ -128,11 +129,11 @@
 						line-height: 70px;
 						@include font-size(1.6);
 						.icon{
-							@include font-size(5.0);
+							@include font-size(1.8);
 							line-height: 70px;
-							margin-left: -20px;
+							margin-right: 15px;
 							position: relative;
-							top: -2px;
+							top: 0;
 						}
 						.advantage{
 							@include font-size(2.0);
