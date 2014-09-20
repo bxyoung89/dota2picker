@@ -55,4 +55,14 @@
 
 .twitter-typeahead{
 	width: 100%;
+	&:after{
+		@extend .fontello;
+		content: '\e807';
+		color: rgba($off-black, 0.4);
+		@include font-size(4.0);
+		line-height: 55px;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
 }

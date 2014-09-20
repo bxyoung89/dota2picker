@@ -430,7 +430,7 @@ html {
   }
 }
 */
-[class^="ico-"]:before, [class*=" ico-"]:before {
+[class^="ico-"]:before, [class*=" ico-"]:before, .fontello, .twitter-typeahead:after {
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
@@ -751,6 +751,15 @@ h5 {
 
 .twitter-typeahead {
   width: 100%; }
+  .twitter-typeahead:after {
+    content: '\e807';
+    color: rgba(31, 12, 11, 0.4);
+    font-size: 40px;
+    font-size: 4rem;
+    line-height: 55px;
+    position: absolute;
+    top: 0;
+    right: 0; }
 
 .counterpick-results {
   width: 550px;
