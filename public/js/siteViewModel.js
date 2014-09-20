@@ -16,6 +16,12 @@ var SiteViewModel = (function () {
 		this.searchText = ko.observable("");
 		this.throttledText = ko.computed(this.searchText).extend({ throttle: 400});
 		this.throttledText.subscribe(onSearchTextUpdated);
+
+		for(var x = 0; x < 5; x++){
+			this.enemyHeroes.push({
+				empty: true
+			});
+		}
 	}
 
 	SiteViewModel.prototype.loadHeroes = function (heroes) {
@@ -33,6 +39,7 @@ var SiteViewModel = (function () {
 				return capitalizedRole;
 			});
 			hero.overallAdvantage = ko.observable(0);
+			hero.empty = false;
 			this.heroes.push(hero);
 			allHeroNames.push(hero.name);
 			allHeroNames.concat(hero.nicknames);
@@ -52,11 +59,12 @@ var SiteViewModel = (function () {
 			this.heroRemoved(hero);
 			return;
 		}
-		if (this.enemyHeroes().length === 5) {
+		if (emptySlots(this.enemyHeroes()) === 0) {
 			return;
 		}
 		hero.selected(true);
-		this.enemyHeroes.push(hero);
+		this.enemyHeroes.pop();
+		this.enemyHeroes.unshift(hero);
 		updateCounterPicks.bind(this)();
 	};
 
@@ -67,6 +75,9 @@ var SiteViewModel = (function () {
 		hero.selected(false);
 		this.enemyHeroes.remove(function (h) {
 			return h.id === hero.id;
+		});
+		this.enemyHeroes.push({
+			empty: true
 		});
 		updateCounterPicks.bind(this)();
 	};
@@ -97,7 +108,9 @@ var SiteViewModel = (function () {
 				});
 			}, this)
 			.forEach(function (hero) {
-				var teamAdvantage = this.enemyHeroes().average(function (enemy) {
+				var teamAdvantage = this.enemyHeroes().filter(function(hero){
+					return !hero.empty;
+				}).average(function (enemy) {
 					return hero.advantages.find(function (advantage) {
 						return advantage.name === enemy.name;
 					}).advantage;
@@ -114,9 +127,9 @@ var SiteViewModel = (function () {
 	}
 
 	function filterCounterpicksForIsotope(hero) {
-		var vm = hero;//ko.dataFor(this);
+		var vm = hero;
 		var siteVM = ko.dataFor($("body")[0]);
-		if (siteVM.enemyHeroes().length <= 0) {
+		if (emptySlots(siteVM.enemyHeroes()) === 5) {
 			return false;
 		}
 		var isNotInEnemyHeroes = siteVM.enemyHeroes().length > 0 && !siteVM.enemyHeroes().any(function (hero) {
@@ -215,7 +228,7 @@ var SiteViewModel = (function () {
 		heroList.mixItUp("filter", filter, function () {
 			var siteVM = ko.dataFor($("body")[0]);
 			var shownHeroes = siteVM.heroes().filter(filterHeroBySearchText);
-			if (shownHeroes.length !== 1 || siteVM.enemyHeroes().length === 5) {
+			if (shownHeroes.length !== 1 || emptySlots(siteVM.enemyHeroes()) === 0) {
 				return;
 			}
 			if (shownHeroes[0].selected()) {
@@ -230,8 +243,6 @@ var SiteViewModel = (function () {
 	function onSearchTextUpdated() {
 		refreshHeroList();
 	}
-
-
 
 	function substringMatcher(strs) {
 		return function findMatches(q, cb) {
@@ -257,8 +268,11 @@ var SiteViewModel = (function () {
 		};
 	}
 
-
-
+	function emptySlots(heroArray){
+		return heroArray.reduce(function(sum, hero){
+			return hero.empty ? sum+1 : sum;
+		}, 0);
+	}
 
 	return SiteViewModel;
 }());

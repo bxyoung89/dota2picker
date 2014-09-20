@@ -360,7 +360,7 @@ body {
   body:after {
     clear: both; }
 
-.counterpick-results .counterpicks .hero .hero-content .roles, .modal .modal-content .modal-background {
+.enemy-team .team-wrapper .team .hero .empty-slot .ico-plus, .counterpick-results .counterpicks .hero .hero-content .roles, .modal .modal-content .modal-background {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -416,10 +416,20 @@ html {
 
 @font-face {
   font-family: 'fontello';
-  src: url("../fonts/fontello.eot?82767050");
-  src: url("../fonts/fontello.eot?82767050#iefix") format("embedded-opentype"), url("../fonts/fontello.woff?82767050") format("woff"), url("../fonts/fontello.ttf?82767050") format("truetype"), url("../fonts/fontello.svg?82767050#fontello") format("svg");
+  src: url("../fonts/fontello.eot?73843324");
+  src: url("../fonts/fontello.eot?73843324#iefix") format("embedded-opentype"), url("../fonts/fontello.woff?73843324") format("woff"), url("../fonts/fontello.ttf?73843324") format("truetype"), url("../fonts/fontello.svg?73843324#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?73843324#fontello') format('svg');
+  }
+}
+*/
 [class^="ico-"]:before, [class*=" ico-"]:before {
   font-family: "fontello";
   font-style: normal;
@@ -458,6 +468,14 @@ html {
   content: '\e805'; }
 
 /* 'î …' */
+.ico-plus:before {
+  content: '\e806'; }
+
+/* 'î †' */
+.ico-search:before {
+  content: '\e807'; }
+
+/* 'î ‡' */
 html {
   font-size: 62.5%;
   color: #1f0c0b;
@@ -597,7 +615,10 @@ h5 {
       text-align: center; }
       .enemy-team .team-wrapper .team .hero {
         display: inline-block;
-        cursor: pointer; }
+        cursor: pointer;
+        width: 187px;
+        height: 109px;
+        vertical-align: top; }
         .enemy-team .team-wrapper .team .hero .background-image {
           max-height: 100%;
           height: 100%;
@@ -621,6 +642,17 @@ h5 {
         .enemy-team .team-wrapper .team .hero:hover .icon span {
           font-size: 40px;
           font-size: 4rem; }
+        .enemy-team .team-wrapper .team .hero .empty-slot {
+          height: 100%;
+          width: 100%;
+          border: 5px dashed #d8cfc5;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          border-radius: 10px;
+          color: #d8cfc5; }
+          .enemy-team .team-wrapper .team .hero .empty-slot .ico-plus {
+            font-size: 36px;
+            font-size: 3.6rem; }
 
 .hero-grid .hero-list-wrapper {
   padding-top: 80px; }

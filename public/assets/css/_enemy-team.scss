@@ -25,6 +25,9 @@
 			.hero{
 				display: inline-block;
 				cursor: pointer;
+				width: 187px;
+				height: 109px;
+				vertical-align: top;
 				.background-image{
 					max-height: 100%;
 					height: 100%;
@@ -46,6 +49,18 @@
 						span{
 							@include font-size(4);
 						}
+					}
+				}
+
+				.empty-slot{
+					height: 100%;
+					width: 100%;
+					border: 5px dashed $off-white;
+					@include border-radius-all(10px);
+					color: $off-white;
+					.ico-plus{
+						@include font-size(3.6);
+						@extend %vertical-align;
 					}
 				}
 			}

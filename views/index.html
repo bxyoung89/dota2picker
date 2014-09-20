@@ -131,14 +131,20 @@
 			</div>
 			<div class="team-wrapper">
 				<div class="team" data-bind="foreach: enemyHeroes">
-					<div class="hero" data-bind="click: function(){ $parent.heroRemoved($data); }">
+					<div class="hero" data-bind="click: function(){ if(empty){ return;} $parent.heroRemoved($data); }">
+						<!-- ko if: !empty -->
 						<div class="relative-wrapper">
 							<img class="background-image fill" data-bind="attr: { src: imageUrl}">
-
 							<div class="icon">
 								<span class="ico-close"></span>
 							</div>
 						</div>
+						<!-- /ko -->
+						<!-- ko if: empty -->
+							<div class="empty-slot">
+								<div class="ico-plus"></div>
+							</div>
+						<!-- /ko -->
 					</div>
 				</div>
 			</div>
