@@ -7,7 +7,6 @@ var SiteViewModel = (function () {
 	function SiteViewModel() {
 		this.state = ko.observable("loading");
 		this.enemyHeroes = ko.observableArray([]);
-		this.counterPicks = ko.observableArray([]);
 		this.heroes = ko.observableArray([]);
 		this.modalOpen = ko.observable(false);
 		this.roles = ko.observableArray([]);
@@ -20,22 +19,22 @@ var SiteViewModel = (function () {
 
 	SiteViewModel.prototype.loadHeroes = function (heroes) {
 		var rolesHash = {};
-		if(!Array.isArray(heroes)){
+		if (!Array.isArray(heroes)) {
 			heroes = JSON.parse(heroes);
 		}
 		heroes.forEach(function (hero) {
 			hero.imageUrl = "http://cdn.dota2.com/apps/dota2/images/heroes/" + hero.imageId + "_full.png";
 			hero.selected = ko.observable(false);
 			hero.counterPickAdvantage = ko.observable(0);
-			hero.roles = hero.roles.map(function(role){
+			hero.roles = hero.roles.map(function (role) {
 				var capitalizedRole = role.capitalize(true);
 				rolesHash[capitalizedRole] = "";
 				return capitalizedRole;
 			});
+			hero.overallAdvantage = ko.observable(0);
 			this.heroes.push(hero);
-			this.counterPicks.push(hero);
 		}, this);
-		Object.keys(rolesHash).forEach(function(role){
+		Object.keys(rolesHash).forEach(function (role) {
 			this.roles.push(role.capitalize(true));
 		}, this);
 		this.roles.sort();
@@ -77,18 +76,18 @@ var SiteViewModel = (function () {
 		this.modalOpen(false);
 	};
 
-	SiteViewModel.prototype.toggleDropdownOpen = function(){
+	SiteViewModel.prototype.toggleDropdownOpen = function () {
 		this.dropdownIsOpen(!this.dropdownIsOpen());
 	};
 
-	SiteViewModel.prototype.dropdownItemClicked = function(role){
+	SiteViewModel.prototype.dropdownItemClicked = function (role) {
 		this.selectedRole(role);
 		this.dropdownIsOpen(false);
 		refreshCounterPicks();
 	};
 
 	function updateCounterPicks() {
-		this.counterPicks()
+		this.heroes()
 			.filter(function (hero) {
 				return !this.enemyHeroes().any(function (h) {
 					return h.id === hero.id;
@@ -102,74 +101,77 @@ var SiteViewModel = (function () {
 				});
 				hero.counterPickAdvantage((Math.round(teamAdvantage * 1000) / 1000).toFixed(3));
 			}, this);
+		var sortedCounterpicks = this.heroes().sortBy(function (hero) {
+			return hero.counterPickAdvantage();
+		});
+		sortedCounterpicks.forEach(function (hero, index) {
+			hero.overallAdvantage(index);
+		});
 		refreshCounterPicks();
 	}
 
-	function filterCounterpicksForIsotope(){
-		var vm = ko.dataFor(this);
+	function filterCounterpicksForIsotope(hero) {
+		var vm = hero;//ko.dataFor(this);
 		var siteVM = ko.dataFor($("body")[0]);
-		var isNotInEnemyHeroes = siteVM.enemyHeroes().length > 0 && !siteVM.enemyHeroes().any(function(hero){
+		if (siteVM.enemyHeroes().length <= 0) {
+			return false;
+		}
+		var isNotInEnemyHeroes = siteVM.enemyHeroes().length > 0 && !siteVM.enemyHeroes().any(function (hero) {
 			return hero.id === vm.id;
 		});
-		var hasSelectedRole = siteVM.selectedRole() === "All Roles" || vm.roles.any(function(role){
+		var hasSelectedRole = siteVM.selectedRole() === "All Roles" || vm.roles.any(function (role) {
 			return role === siteVM.selectedRole();
 		});
 		return isNotInEnemyHeroes && hasSelectedRole;
 	}
 
-	function filterHeroesBySearchText(){
+	function filterHeroesBySearchText() {
 		var vm = ko.dataFor(this);
 		return filterHeroBySearchText(vm);
 	}
 
-	function filterHeroBySearchText(hero){
+	function filterHeroBySearchText(hero) {
 		var siteVM = ko.dataFor($("body")[0]);
 		var searchTextIsEmpty = siteVM.throttledText().trim() === "";
 		var heroNameStartsWithText = hero.name.toLowerCase().indexOf(siteVM.searchText().toLowerCase().trim()) !== -1;
-		var heroNicknamesStartWithText = hero.nicknames.length !== 0 && hero.nicknames.any(function(name){
+		var heroNicknamesStartWithText = hero.nicknames.length !== 0 && hero.nicknames.any(function (name) {
 			return name.toLowerCase().indexOf(siteVM.throttledText().toLowerCase().trim()) !== -1;
 		});
 		return searchTextIsEmpty || heroNameStartsWithText || heroNicknamesStartWithText;
 	}
 
-	function initializeIsotope(){
-		var htmlLoadedInterval = setInterval(function(){
+	function initializeIsotope() {
+		var htmlLoadedInterval = setInterval(function () {
 			var heroList = $("#" + heroListId);
-			var counterPickList = $("#"+counterpickListId);
-			if(heroList.length === 0 || counterPickList.length === 0){
+			var counterPickList = $("#" + counterpickListId);
+			if (heroList.length === 0 || counterPickList.length === 0) {
 				return;
 			}
 			clearInterval(htmlLoadedInterval);
-			counterPickList.isotope({
-				itemSelector: ".hero",
-				layoutMode: "vertical",
-				getSortData: {
-					advantage: function(element){
-						var vm = ko.dataFor(element);
-						return -1 * vm.counterPickAdvantage();
-					}
+			counterPickList.mixItUp({
+				controls: {
+					enable: false
 				},
-				sortBy: "advantage",
-				filter: filterCounterpicksForIsotope
-			});
-			counterPickList.isotope("bindResize");
-			heroList.isotope({
-				itemSelector: ".hero",
-				layoutMode: "fitRows",
-				getSortData: {
-					name: ".name"
+				layout: {
+					display: "block"
 				},
-				sortBy: "name",
-				filter: filterHeroesBySearchText
+				load: {
+					filter: "none"
+				}
 			});
-			heroList.isotope("bindResize");
+			heroList.mixItUp({
+				controls: {
+					enable: false
+				}
+			});
+			heroList.mixItUp("sort", "name: desc");
 			initialized = true;
 		}, 500);
 	}
 
-	function addDocumentClickListener(){
-		$(document).bind("click", function(e){
-			if($(e.target).parents().hasClass("dropdown")){
+	function addDocumentClickListener() {
+		$(document).bind("click", function (e) {
+			if ($(e.target).parents().hasClass("dropdown")) {
 				return;
 			}
 			this.dropdownIsOpen(false);
@@ -177,65 +179,48 @@ var SiteViewModel = (function () {
 
 	}
 
-	function refreshCounterPicks(){
-		setTimeout(function(){
-			if(!initialized){
-				return;
-			}
-			var counterPickList = $("#"+counterpickListId);
-			counterPickList.isotope({
-				filter: filterCounterpicksForIsotope,
-				sortBy: "advantage"
-			});
-			counterPickList.isotope("reloadItems");
-			counterPickList.isotope({
-				filter: filterCounterpicksForIsotope,
-				sortBy: "advantage"
-			});
-			setTimeout(function(){
-				counterPickList.isotope({
-					filter: filterCounterpicksForIsotope,
-					sortBy: "advantage"
-				});
-			}, 500);
-		}, 500);
-	}
-	
-	function refreshHeroList(){
-		setTimeout(function(){
-			if(!initialized){
-				return;
-			}
-			var heroList = $("#"+heroListId);
-			heroList.isotope({
-				filter: filterHeroesBySearchText
-			});
-			heroList.isotope("reloadItems");
-			heroList.isotope({
-				filter: filterHeroesBySearchText
-			});
-			setTimeout(function(){
-				var siteVM = ko.dataFor($("body")[0]);
-				var shownHeroes = siteVM.heroes().filter(filterHeroBySearchText);
-				if(shownHeroes.length !== 1 || siteVM.enemyHeroes().length === 5){
-					return;
-				}
-				if(shownHeroes[0].selected()){
-					return;
-				}
-				shownHeroes[0].selected(true);
-				siteVM.enemyHeroes.push(shownHeroes[0]);
-				updateCounterPicks.bind(siteVM)();
-			}, 500);
-
-		}, 500);
+	function refreshCounterPicks() {
+		if (!initialized) {
+			return;
+		}
+		var counterPickList = $("#" + counterpickListId);
+		var filter = counterPickList.find(".mix").filter(function () {
+			var hero = ko.dataFor(this);
+			return filterCounterpicksForIsotope(hero);
+		});
+		counterPickList.mixItUp("multiMix", {
+			filter: filter,
+			sort: "advantage:desc"
+		});
 	}
 
-	function onSearchTextUpdated(){
+	function refreshHeroList() {
+		if (!initialized) {
+			return;
+		}
+		var heroList = $("#" + heroListId);
+		var filter = heroList.find(".mix").filter(function () {
+			var hero = ko.dataFor(this);
+			return filterHeroBySearchText(hero);
+		});
+		heroList.mixItUp("filter", filter, function () {
+			var siteVM = ko.dataFor($("body")[0]);
+			var shownHeroes = siteVM.heroes().filter(filterHeroBySearchText);
+			if (shownHeroes.length !== 1 || siteVM.enemyHeroes().length === 5) {
+				return;
+			}
+			if (shownHeroes[0].selected()) {
+				return;
+			}
+			shownHeroes[0].selected(true);
+			siteVM.enemyHeroes.push(shownHeroes[0]);
+			updateCounterPicks.bind(siteVM)();
+		});
+	}
+
+	function onSearchTextUpdated() {
 		refreshHeroList();
 	}
-
-
 
 	return SiteViewModel;
 }());

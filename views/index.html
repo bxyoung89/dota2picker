@@ -8,7 +8,7 @@
 	<!--
 		Thanks for looking at the source!
 
-		This app was built using Node.js, Knockout.js, JQuery, Sugar.js, and Isotope.
+		This app was built using Node.js, Knockout.js, JQuery, Sugar.js, and MixItUp.
 
 		I scrape the dotabuff heropages to get the data.  The data is at most a day old.
 
@@ -42,8 +42,9 @@
 						<div class="hero-list-wrapper absolute fill">
 							<div class="scroll-wrapper fill">
 								<div class="heroes" id="hero-list" data-bind="foreach: heroes">
-									<div class="hero"
-										 data-bind="click: function(){ $parent.heroSelected($data); }, css: { selected: selected}">
+									<div class="hero mix"
+										 data-bind="click: function(){ $parent.heroSelected($data); }, css: { selected: selected}, attr: {'data-name':name}"
+											>
 										<div class="relative-wrapper">
 											<img class="background-image fill" data-bind="attr: { src: imageUrl}">
 
@@ -63,8 +64,8 @@
 					<div class="relative-wrapper">
 						<div class="hero-list-wrapper fill absolute">
 							<div class="scroll-wrapper fill">
-								<div class="counterpicks" id="counterpick-list" data-bind="visible: enemyHeroes().length > 0, foreach: counterPicks" >
-									<div class="hero">
+								<div class="counterpicks" id="counterpick-list" data-bind="foreach: heroes" >
+									<div class="hero mix" data-bind="attr: {'data-advantage': overallAdvantage, 'data-name': name}">
 										<div class="hero-content">
 											<div class="image-wrapper">
 												<img class="fill" data-bind="attr: { src: imageUrl}">
@@ -121,8 +122,6 @@
 							</div>
 						</div>
 					</div>
-
-
 				</div>
 			</div>
 		</div>
@@ -166,7 +165,7 @@
 					<div class="intro-text">
 						Hey! Thanks for coming. I hope you enjoy the site.
 						<br><br>
-						It was made using Node.js, Knockout.js, JQuery, Sugar.js, and Isotope.
+						It was made using Node.js, Knockout.js, JQuery, Sugar.js, and MixItUp.
 						<br><br>
 						The data comes straight from <a href="http://www.dotabuff.com/">DOTABUFF</a>. It's updated every
 						day so the data is fresh!
@@ -206,8 +205,7 @@
 <script src="js/lib/jquery-2.1.1.min.js"></script>
 <script src="js/lib/knockout-3.2.0.js"></script>
 <script src="js/lib/sugar.min.js"></script>
-<script src="js/lib/isotope.pkgd.min.js"></script>
-<!--<script src="js/lib/jquery.mixitup.min.js"></script>-->
+<script src="js/lib/jquery.mixitup.min.js"></script>
 <script src="js/siteViewModel.js"></script>
 <script>
 	var heroes;

@@ -48,6 +48,20 @@
  * * * * * * * * * * * * * * * * * * *
  */
 
+@function purge($list) {
+	$result: ();
+
+	@each $item in $list {
+		@if $item != null
+    and $item != false
+    and $item != "" {
+			$result: append($result, $item);
+		}
+	}
+
+	@return $result;
+}
+
 // REM font-size
 @mixin font-size($size){
 	font-size: ($size * 10) + px;
@@ -85,6 +99,19 @@
 	-o-transition: $args;
 	transition: $args;
 }
+
+@mixin transition-multiple($transitions, $browsers:webkit moz ms o default){
+	@each $browser in $browsers{
+		@if( $browser == default){
+			transition: zip(purge($transitions));
+		}
+		@else{
+			-#{$browser}-transition: zip(purge($transitions));
+		}
+	}
+}
+
+
 
 %inline-block { display: inline-block; }
 %uppercase { text-transform: uppercase; }

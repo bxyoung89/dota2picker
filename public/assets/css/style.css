@@ -339,6 +339,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.mix {
+  display: none; }
+
 /*
  * * * * * * * * * * * * * * * * * * *
  * EXTENDS
@@ -644,7 +647,6 @@ h5 {
   width: 100%;
   text-align: center; }
 .hero-grid .hero {
-  display: inline-block;
   cursor: pointer;
   background: #f9f3ee;
   height: 144px;
