@@ -42,7 +42,9 @@ var SiteViewModel = (function () {
 			hero.empty = false;
 			this.heroes.push(hero);
 			allHeroNames.push(hero.name);
-			allHeroNames.concat(hero.nicknames);
+			hero.nicknames.forEach(function(name){
+				allHeroNames.push(name.capitalize(true));
+			});
 		}, this);
 		Object.keys(rolesHash).forEach(function (role) {
 			this.roles.push(role.capitalize(true));
