@@ -237,7 +237,8 @@ var SiteViewModel = (function () {
 				return;
 			}
 			shownHeroes[0].selected(true);
-			siteVM.enemyHeroes.push(shownHeroes[0]);
+			siteVM.enemyHeroes.pop();
+			siteVM.enemyHeroes.unshift(shownHeroes[0]);
 			updateCounterPicks.bind(siteVM)();
 		});
 	}
