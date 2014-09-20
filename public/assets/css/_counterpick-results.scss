@@ -5,8 +5,8 @@
 	left: auto;
 	right: 0;
 	padding: 10px;
-	background: $dark-blue;
-	color: $off-white;
+	background: $green-black;
+	color: $off-black;
 	.dropdown-wrapper{
 		height: $dropdownHeight;
 		width: 100%;
@@ -19,13 +19,14 @@
 			height: 100%;
 			width: 100%;
 			padding: 0 10px;
-			background: $dark-beige;
+			background: $dark-green;
 			cursor: pointer;
 			&:hover{
-				background: darken($dark-beige, 10%);
+				background: darken($dark-green, 10%);
 			}
 		}
 		.chevron{
+			color: $off-white;
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -49,20 +50,21 @@
 				.menu-item{
 					width: 100%;
 					height: 40px;
-					background: $light-beige;
+					background: darken($grey, 10%);
 					padding: 0 10px;
 					cursor: pointer;
 					&:hover{
-						background: darken($light-beige, 10%);
+						background: darken($grey, 20%);
 					}
 					border-bottom: 1px solid $off-black;
 					&:last-child{
 						border-bottom: 0;
 					}
 					&.selected{
-						background: darken($light-beige, 15%);
+						color: $off-white;
+						background: $mid-green;
 						&:hover{
-							background: darken($light-beige, 15%);
+							background: $mid-green;
 						}
 					}
 				}
@@ -140,13 +142,13 @@
 						}
 
 						&.positive{
-							color: $green;
+							color: $mid-green;
 						}
 						&.neutral{
 							color: $off-black;
 						}
 						&.negative{
-							color: $red;
+							color: $light-red;
 						}
 					}
 				}

@@ -16,7 +16,7 @@
 }
 
 .typeahead:focus {
-	border-bottom: 1px solid $dark-blue;
+	border-bottom: 1px solid $dark-green;
 }
 
 .tt-query {
@@ -33,7 +33,7 @@
 	overflow-y: auto;
 	margin-top: 12px;
 	padding: 8px 0;
-	background-color: lighten($light-beige, 10%);
+	background-color: lighten($grey, 10%);
 	@include box-shadow(0 5px 10px rgba($off-black,.2));
 }
 
@@ -45,7 +45,7 @@
 
 .tt-suggestion.tt-cursor {
 	color: $off-white;
-	background-color: $dark-blue;
+	background-color: $dark-green;
 
 }
 

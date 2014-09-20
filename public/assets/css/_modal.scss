@@ -8,7 +8,7 @@
 		opacity: 1;
 	}
 	.modal-overlay{
-		background: rgba($off-black, 0.8);
+		background: rgba($more-black, 0.8);
 	}
 	.modal-content{
 		.modal-background{
@@ -53,7 +53,7 @@
 		.modal-header{
 			height: 50px;
 			width: 100%;
-			background: $dark-blue;
+			background: $off-black;
 			color: $off-white;
 
 			.title{

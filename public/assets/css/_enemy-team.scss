@@ -1,9 +1,10 @@
 .enemy-team{
-	background: $light-blue;
+	background: $mid-red;
 	color: $off-black;
 	padding: 5px;
 	width: 100%;
 	.title{
+		color: $off-white;
 		height: 35px;
 		width: 100%;
 		text-align: center;
@@ -15,6 +16,7 @@
 	.team-wrapper{
 		height: 105px;
 		width: 100%;
+		margin-bottom: 35px;
 		.team{
 			height: 100%;
 			margin-left: auto;
@@ -35,7 +37,7 @@
 					@include transition(all 0.3s ease);
 					span{
 						@include font-size(3.0);
-						color: $red;
+						color: $light-red;
 						@include transition(font-size 0.3s ease);
 					}
 				}

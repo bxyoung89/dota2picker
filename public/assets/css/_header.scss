@@ -12,7 +12,7 @@ $top-header-height: 30px;
 
 	.title{
 		@include font-size(2.6);
-		color: $light-blue;
+		color: $light-red;
 		margin-left: 10px;
 		float: left;
 		line-height: 34px;
@@ -20,19 +20,19 @@ $top-header-height: 30px;
 	}
 	.sub-title{
 		@include font-size(1.6);
-		color: $dark-blue;
+		color: $mid-red;
 		margin-left: 10px;
 		float: left;
 
 	}
 	.author-info{
-		color: $dark-beige;
+		color: $light-red;
 		margin-right: 10px;
 		float: right;
 		cursor: pointer;
 		@include transition(color 0.3s ease);
 		&:hover{
-			color: darken($dark-beige, 10%);
+			color: darken($light-red, 10%);
 		}
 	}
 }
