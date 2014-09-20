@@ -8,7 +8,7 @@
 	<!--
 		Thanks for looking at the source!
 
-		This app was built using Node.js, Knockout.js, JQuery, Sugar.js, and MixItUp.
+		This app was built using Node.js, Knockout.js, JQuery, Sugar.js, Typeahead.js, and MixItUp.
 
 		I scrape the dotabuff heropages to get the data.  The data is at most a day old.
 
@@ -55,7 +55,7 @@
 							</div>
 						</div>
 						<div class="search-bar-wrapper absolute">
-							<input data-bind="value: searchText, valueUpdate: 'afterkeydown'"
+							<input class="typeahead" data-bind="value: searchText, valueUpdate: 'afterkeydown'"
 								   placeholder="Search For A Hero">
 						</div>
 					</div>
@@ -165,7 +165,7 @@
 					<div class="intro-text">
 						Hey! Thanks for coming. I hope you enjoy the site.
 						<br><br>
-						It was made using Node.js, Knockout.js, JQuery, Sugar.js, and MixItUp.
+						It was made using Node.js, Knockout.js, JQuery, Sugar.js, Typeahead.js, and MixItUp.
 						<br><br>
 						The data comes straight from <a href="http://www.dotabuff.com/">DOTABUFF</a>. It's updated every
 						day so the data is fresh!
@@ -206,6 +206,7 @@
 <script src="js/lib/knockout-3.2.0.js"></script>
 <script src="js/lib/sugar.min.js"></script>
 <script src="js/lib/jquery.mixitup.min.js"></script>
+<script src="js/lib/typeahead.jquery.min.js"></script>
 <script src="js/siteViewModel.js"></script>
 <script>
 	var heroes;

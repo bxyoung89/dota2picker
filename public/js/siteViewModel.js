@@ -3,6 +3,7 @@ var SiteViewModel = (function () {
 	var heroListId = "hero-list";
 	var counterpickListId = "counterpick-list";
 	var initialized = false;
+	var allHeroNames = [];
 
 	function SiteViewModel() {
 		this.state = ko.observable("loading");
@@ -33,6 +34,8 @@ var SiteViewModel = (function () {
 			});
 			hero.overallAdvantage = ko.observable(0);
 			this.heroes.push(hero);
+			allHeroNames.push(hero.name);
+			allHeroNames.concat(hero.nicknames);
 		}, this);
 		Object.keys(rolesHash).forEach(function (role) {
 			this.roles.push(role.capitalize(true));
@@ -40,7 +43,7 @@ var SiteViewModel = (function () {
 		this.roles.sort();
 		this.roles.unshift("All Roles");
 		this.state("normal");
-		initializeIsotope();
+		initializeJqueryThings();
 		addDocumentClickListener.bind(this)();
 	};
 
@@ -125,11 +128,6 @@ var SiteViewModel = (function () {
 		return isNotInEnemyHeroes && hasSelectedRole;
 	}
 
-	function filterHeroesBySearchText() {
-		var vm = ko.dataFor(this);
-		return filterHeroBySearchText(vm);
-	}
-
 	function filterHeroBySearchText(hero) {
 		var siteVM = ko.dataFor($("body")[0]);
 		var searchTextIsEmpty = siteVM.throttledText().trim() === "";
@@ -140,7 +138,7 @@ var SiteViewModel = (function () {
 		return searchTextIsEmpty || heroNameStartsWithText || heroNicknamesStartWithText;
 	}
 
-	function initializeIsotope() {
+	function initializeJqueryThings() {
 		var htmlLoadedInterval = setInterval(function () {
 			var heroList = $("#" + heroListId);
 			var counterPickList = $("#" + counterpickListId);
@@ -165,8 +163,19 @@ var SiteViewModel = (function () {
 				}
 			});
 			heroList.mixItUp("sort", "name: desc");
+
+			$(".typeahead").typeahead({
+					hint: true,
+					highlight: true,
+					minLength: 1
+				},
+				{
+					name: 'allHeroNames',
+					displayKey: 'value',
+					source: substringMatcher(allHeroNames)
+				});
 			initialized = true;
-		}, 500);
+		}, 100);
 	}
 
 	function addDocumentClickListener() {
@@ -221,6 +230,35 @@ var SiteViewModel = (function () {
 	function onSearchTextUpdated() {
 		refreshHeroList();
 	}
+
+
+
+	function substringMatcher(strs) {
+		return function findMatches(q, cb) {
+			var matches, substrRegex;
+
+			// an array that will be populated with substring matches
+			matches = [];
+
+			// regex used to determine if a string contains the substring `q`
+			substrRegex = new RegExp(q, 'i');
+
+			// iterate through the pool of strings and for any string that
+			// contains the substring `q`, add it to the `matches` array
+			$.each(strs, function(i, str) {
+				if (substrRegex.test(str)) {
+					// the typeahead jQuery plugin expects suggestions to a
+					// JavaScript object, refer to typeahead docs for more info
+					matches.push({ value: str });
+				}
+			});
+
+			cb(matches);
+		};
+	}
+
+
+
 
 	return SiteViewModel;
 }());

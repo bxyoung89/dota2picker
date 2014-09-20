@@ -7,18 +7,7 @@
 		width: 100%;
 		background: $off-white;
 
-		input{
-			height: 60px;
-			width: 100%;
-			line-height: 60px;
-			@include font-size(4.0);
-			border: 0;
-			border-bottom: 1px solid $off-black;
-			background: $off-white;
-			&:focus{
-				outline: none;
-			}
-		}
+		//input is taken care of in the typeahead styles
 	}
 	.scroll-wrapper{
 		max-height: 100%;
