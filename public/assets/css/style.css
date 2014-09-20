@@ -817,12 +817,12 @@ h5 {
           width: auto; }
       .counterpick-results .counterpicks .hero .hero-content .text-wrapper {
         float: left;
+        margin-left: 10px;
         line-height: 70px; }
         .counterpick-results .counterpicks .hero .hero-content .text-wrapper .name {
           float: left; }
         .counterpick-results .counterpicks .hero .hero-content .text-wrapper .advantage-text {
           float: left;
-          margin-left: 10px;
           line-height: 70px;
           font-size: 16px;
           font-size: 1.6rem; }
