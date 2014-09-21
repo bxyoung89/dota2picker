@@ -58,5 +58,63 @@
 			left: 5px;
 		}
 	}
+	.instructions{
+		width: 100%;
+		text-align: center;
+		@include font-size(1.6);
+		background: $off-white;
+		padding: 10px;
+	}
+
+
+	&.medium{
+		.hero{
+			cursor: pointer;
+			height: 115px;
+			width: 205px;
+
+			.background-image, .name{
+				opacity: 0.6;
+				@include transition(opacity 0.3s ease);
+			}
+			&.selected{
+				.background-image, .name{
+					opacity: 1;
+				}
+				&:hover{
+					.background-image, .name{
+						opacity: 1;
+					}
+				}
+			}
+			&:hover{
+				.background-image, .name{
+					opacity: 0.8;
+				}
+			}
+			.background-image{
+				max-width: 100%;
+				width: 100%;
+				height: auto;
+			}
+			.name{
+				color: $off-white;
+				@include font-size(2.0);
+				position: absolute;
+				bottom: 5px;
+				left: 5px;
+			}
+		}
+
+	}
+
+	&.small, &.tiny{
+		.grid-and-search-container{
+			height: auto;
+		}
+		.search-bar-wrapper{
+			position: relative;
+		}
+	}
 
 }

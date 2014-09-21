@@ -31,44 +31,54 @@
 		ga('create', 'UA-47989718-3', 'auto');
 		ga('send', 'pageview');
 	</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div class="main-app absolute fill">
+<div class="main-app absolute fill" data-bind="css: {large: currentSize().name === 'large', medium: currentSize().name === 'medium', small: currentSize().name === 'small', tiny: currentSize().name === 'tiny'}">
 	<div class="relative-wrapper">
-		<div class="main-area absolute fill">
+		<div class="main-area absolute fill" data-bind="css: {large: currentSize().name === 'large', medium: currentSize().name === 'medium', small: currentSize().name === 'small', tiny: currentSize().name === 'tiny'}">
 			<div class="relative-wrapper">
-				<div class="hero-grid absolute fill">
-					<div class="relative-wrapper">
-						<div class="hero-list-wrapper absolute fill">
-							<div class="scroll-wrapper fill">
-								<div class="heroes" id="hero-list" data-bind="foreach: heroes">
-									<div class="hero mix"
-										 data-bind="click: function(){ $parent.heroSelected($data); }, css: { selected: selected}, attr: {'data-name':name}"
-											>
-										<div class="relative-wrapper">
-											<img class="background-image fill" data-bind="attr: { src: imageUrl}">
+				<div class="hero-grid absolute fill" data-bind="css: {large: currentSize().name === 'large', medium: currentSize().name === 'medium', small: currentSize().name === 'small', tiny: currentSize().name === 'tiny'}">
+					<div class="relative-wrapper grid-and-search-container">
+						<!-- ko if: currentSize().name !=='small' && currentSize().name !== 'tiny'-->
+							<div class="hero-list-wrapper absolute fill">
+								<div class="scroll-wrapper fill">
+									<div class="heroes" id="hero-list" data-bind="foreach: heroes">
+										<div class="hero mix"
+											 data-bind="click: function(){ $parent.heroSelected($data); }, css: { selected: selected}, attr: {'data-name':name}"
+												>
+											<div class="relative-wrapper">
+												<img class="background-image fill" data-bind="attr: { src: $parent.getHeroGridImageUrl($data)}">
 
-											<div class="name" data-bind="text: name"></div>
+												<div class="name" data-bind="text: name"></div>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="search-bar-wrapper absolute">
+						<!-- /ko -->
+						<div class="search-bar-wrapper absolute" data-bind="css: {large: currentSize().name === 'large', medium: currentSize().name === 'medium', small: currentSize().name === 'small', tiny: currentSize().name === 'tiny'}">
 							<input class="typeahead" data-bind="value: searchText, valueUpdate: 'afterkeydown'"
 								   placeholder="Search For A Hero">
 						</div>
+						<!-- ko if: currentSize().name ==='small' || currentSize().name === 'tiny'-->
+							<div class="instructions" data-bind="visible: emptyEnemyTeam">
+								Welcome to Walrus Punch!
+								<br><br>
+								To get counter-picks search for a hero above and see the suggested heroes below!
+							</div>
+						<!-- /ko -->
 					</div>
 				</div>
-				<div class="counterpick-results absolute">
-					<div class="relative-wrapper">
+				<div class="counterpick-results absolute" data-bind="css: {large: currentSize().name === 'large', medium: currentSize().name === 'medium', small: currentSize().name === 'small', tiny: currentSize().name === 'tiny'}">
+					<div class="relative-wrapper counterpick-relative-wrapper">
 						<div class="hero-list-wrapper fill absolute">
 							<div class="scroll-wrapper fill">
 								<div class="counterpicks" id="counterpick-list" data-bind="foreach: heroes" >
 									<div class="hero mix" data-bind="attr: {'data-advantage': overallAdvantage, 'data-name': name}">
 										<div class="hero-content">
 											<div class="image-wrapper">
-												<img class="fill" data-bind="attr: { src: imageUrl}">
+												<img class="fill" data-bind="attr: { src: $parent.getCounterPickImageUrl($data)}">
 											</div>
 											<div class="text-wrapper">
 												<div class="name" data-bind="text: name"></div>
@@ -80,11 +90,12 @@
 														  data-bind="text: counterPickAdvantage()"></span>
 												</div>
 											</div>
-
-											<div class="roles" data-bind="foreach: roles">
-												<img class="role-icon"
-													 data-bind="attr: { src: 'images/roles/'+($data.toLowerCase().replace(' ','_'))+'.png', title: $data.capitalize(true)}">
-											</div>
+											<!-- ko if: $parent.currentSize().name === "large" -->
+												<div class="roles" data-bind="foreach: roles">
+													<img class="role-icon"
+														 data-bind="attr: { src: 'images/roles/'+($data.toLowerCase().replace(' ','_'))+'.png', title: $data.capitalize(true)}">
+												</div>
+											<!-- /ko -->
 										</div>
 									</div>
 								</div>
@@ -125,7 +136,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="enemy-team absolute">
+		<div class="enemy-team absolute" data-bind="css: {large: currentSize().name === 'large', medium: currentSize().name === 'medium', small: currentSize().name === 'small', tiny: currentSize().name === 'tiny'}">
 			<div class="title">
 				Enemy Team
 			</div>
@@ -134,7 +145,7 @@
 					<div class="hero" data-bind="click: function(){ if(empty){ return;} $parent.heroRemoved($data); }">
 						<!-- ko if: !empty -->
 						<div class="relative-wrapper">
-							<img class="background-image fill" data-bind="attr: { src: imageUrl}">
+							<img class="background-image fill" data-bind="attr: { src: $parent.getEnemyTeamImageUrl($data)}">
 							<div class="icon">
 								<span class="ico-close"></span>
 							</div>
@@ -151,18 +162,18 @@
 		</div>
 	</div>
 </div>
-<div class="top-header absolute">
+<div class="top-header absolute" data-bind="large: currentSize().name === 'large', medium: currentSize().name === 'medium', small: currentSize().name === 'small', tiny: currentSize().name === 'tiny'">
 	<div class="title">
 		Walrus Punch!
 	</div>
-	<div class="sub-title">
+	<div class="sub-title" data-bind="visible: currentSize().name !== 'tiny'">
 		A Dota 2 CounterPicker
 	</div>
 	<div class="author-info" data-bind="click: openModal">
 		by Broderick Young
 	</div>
 </div>
-<div class="modal fill" data-bind="css: { visible: modalOpen}">
+<div class="modal fill" data-bind="css: { visible: modalOpen, large: currentSize().name === 'large', medium: currentSize().name === 'medium', small: currentSize().name === 'small', tiny: currentSize().name === 'tiny'}">
 	<div class="modal-overlay absolute fill" data-bind="click: closeModal"></div>
 	<div class="modal-content fill">
 		<div class="modal-background">

@@ -4,21 +4,59 @@
 
 .enemy-team{
 	height: 185px;
+	&.medium{
+		height: 143px;
+	}
+	&.small, &.tiny{
+		height: 75px;
+	}
 }
 
 .main-area{
 	padding-top: 185px;
+	&.medium{
+		padding-top: 143px;
+	}
+	&.small, &.tiny{
+		padding-top: 75px;
+	}
 	.hero-grid{
 		padding-right: 550px;
+		&.medium{
+			padding-right: 370px;
+		}
+		&.small, &.tiny{
+			width: 100%;
+			height: auto;
+			position: relative;
+			top: 0;
+			left: 0;
+			padding: 0;
+		}
 	}
-	.counter-pick-results{
+	.counterpick-results{
 		width: 550px;
 		height: 100%;
 		left: auto;
 		right: 0;
+		&.medium{
+			width: 370px;
+		}
+		&.small, &.tiny{
+			width: 100%;
+			position: relative;
+			top: 0;
+			left: 0;
+			right: 0;
+		}
 	}
 }
 
 .main-app, .top-header{
 	z-index: 1;
+}
+
+//for responsive-ness
+@-ms-viewport{
+	width: device-width;
 }

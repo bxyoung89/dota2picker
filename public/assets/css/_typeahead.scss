@@ -66,3 +66,38 @@
 		right: 0;
 	}
 }
+
+.search-bar-wrapper{
+	&.small, &.tiny{
+		.typeahead,
+		.tt-query,
+		.tt-hint {
+			height: 40px;
+			padding: 0 6px;
+			@include font-size(2.0);
+			line-height: 40px;
+		}
+
+
+		.tt-dropdown-menu {
+			width: 100%;
+			max-height: 130px;
+			margin-top: 12px;
+			padding: 8px 0;
+		}
+
+		.tt-suggestion {
+			padding: 3px 20px;
+			@include font-size(1.8);
+			line-height: 24px;
+		}
+
+		.twitter-typeahead{
+			&:after{
+				@include font-size(2.0);
+				line-height: 35px;
+			}
+		}
+
+	}
+}

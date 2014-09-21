@@ -576,20 +576,47 @@ h5 {
 
 .enemy-team {
   height: 185px; }
+  .enemy-team.medium {
+    height: 143px; }
+  .enemy-team.small, .enemy-team.tiny {
+    height: 75px; }
 
 .main-area {
   padding-top: 185px; }
+  .main-area.medium {
+    padding-top: 143px; }
+  .main-area.small, .main-area.tiny {
+    padding-top: 75px; }
   .main-area .hero-grid {
     padding-right: 550px; }
-  .main-area .counter-pick-results {
+    .main-area .hero-grid.medium {
+      padding-right: 370px; }
+    .main-area .hero-grid.small, .main-area .hero-grid.tiny {
+      width: 100%;
+      height: auto;
+      position: relative;
+      top: 0;
+      left: 0;
+      padding: 0; }
+  .main-area .counterpick-results {
     width: 550px;
     height: 100%;
     left: auto;
     right: 0; }
+    .main-area .counterpick-results.medium {
+      width: 370px; }
+    .main-area .counterpick-results.small, .main-area .counterpick-results.tiny {
+      width: 100%;
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0; }
 
 .main-app, .top-header {
   z-index: 1; }
 
+@-ms-viewport {
+  width: device-width; }
 .enemy-team {
   background: #732c2f;
   color: #1f0c0b;
@@ -618,7 +645,10 @@ h5 {
         cursor: pointer;
         width: 187px;
         height: 109px;
-        vertical-align: top; }
+        vertical-align: top;
+        margin-right: 10px; }
+        .enemy-team .team-wrapper .team .hero:last-child {
+          margin-right: 0; }
         .enemy-team .team-wrapper .team .hero .background-image {
           max-height: 100%;
           height: 100%;
@@ -646,13 +676,55 @@ h5 {
           height: 100%;
           width: 100%;
           border: 5px dashed #d8cfc5;
-          -webkit-border-radius: 10px;
-          -moz-border-radius: 10px;
-          border-radius: 10px;
-          color: #d8cfc5; }
+          color: #d8cfc5;
+          opacity: 0.6; }
           .enemy-team .team-wrapper .team .hero .empty-slot .ico-plus {
             font-size: 36px;
             font-size: 3.6rem; }
+  .enemy-team.medium .title {
+    height: 24px;
+    font-size: 24px;
+    font-size: 2.4rem;
+    margin-top: 5px; }
+  .enemy-team.medium .team-wrapper {
+    height: 75px;
+    margin-bottom: 29px; }
+    .enemy-team.medium .team-wrapper .team .hero {
+      width: 134px;
+      height: 75px; }
+      .enemy-team.medium .team-wrapper .team .hero .icon span {
+        font-size: 20px;
+        font-size: 2rem; }
+      .enemy-team.medium .team-wrapper .team .hero:hover .icon span {
+        font-size: 30px;
+        font-size: 3rem; }
+      .enemy-team.medium .team-wrapper .team .hero .empty-slot .ico-plus {
+        font-size: 24px;
+        font-size: 2.4rem; }
+  .enemy-team.small .title, .enemy-team.tiny .title {
+    height: 16px;
+    font-size: 16px;
+    font-size: 1.6rem; }
+  .enemy-team.small .team-wrapper, .enemy-team.tiny .team-wrapper {
+    height: 33px;
+    margin-bottom: 16px; }
+    .enemy-team.small .team-wrapper .team .hero, .enemy-team.tiny .team-wrapper .team .hero {
+      width: 59px;
+      height: 33px;
+      margin-right: 5px; }
+      .enemy-team.small .team-wrapper .team .hero .icon, .enemy-team.tiny .team-wrapper .team .hero .icon {
+        top: 0; }
+        .enemy-team.small .team-wrapper .team .hero .icon span, .enemy-team.tiny .team-wrapper .team .hero .icon span {
+          font-size: 12px;
+          font-size: 1.2rem; }
+      .enemy-team.small .team-wrapper .team .hero:hover .icon span, .enemy-team.tiny .team-wrapper .team .hero:hover .icon span {
+        font-size: 16px;
+        font-size: 1.6rem; }
+      .enemy-team.small .team-wrapper .team .hero .empty-slot, .enemy-team.tiny .team-wrapper .team .hero .empty-slot {
+        border: 5px dotted #d8cfc5; }
+        .enemy-team.small .team-wrapper .team .hero .empty-slot .ico-plus, .enemy-team.tiny .team-wrapper .team .hero .empty-slot .ico-plus {
+          font-size: 16px;
+          font-size: 1.6rem; }
 
 .hero-grid .hero-list-wrapper {
   padding-top: 80px; }
@@ -697,6 +769,44 @@ h5 {
     position: absolute;
     bottom: 5px;
     left: 5px; }
+.hero-grid .instructions {
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  font-size: 1.6rem;
+  background: #d8cfc5;
+  padding: 10px; }
+.hero-grid.medium .hero {
+  cursor: pointer;
+  height: 115px;
+  width: 205px; }
+  .hero-grid.medium .hero .background-image, .hero-grid.medium .hero .name {
+    opacity: 0.6;
+    -webkit-transition: opacity 0.3s ease;
+    -moz-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease; }
+  .hero-grid.medium .hero.selected .background-image, .hero-grid.medium .hero.selected .name {
+    opacity: 1; }
+  .hero-grid.medium .hero.selected:hover .background-image, .hero-grid.medium .hero.selected:hover .name {
+    opacity: 1; }
+  .hero-grid.medium .hero:hover .background-image, .hero-grid.medium .hero:hover .name {
+    opacity: 0.8; }
+  .hero-grid.medium .hero .background-image {
+    max-width: 100%;
+    width: 100%;
+    height: auto; }
+  .hero-grid.medium .hero .name {
+    color: #d8cfc5;
+    font-size: 20px;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 5px;
+    left: 5px; }
+.hero-grid.small .grid-and-search-container, .hero-grid.tiny .grid-and-search-container {
+  height: auto; }
+.hero-grid.small .search-bar-wrapper, .hero-grid.tiny .search-bar-wrapper {
+  position: relative; }
 
 .typeahead,
 .tt-query,
@@ -761,11 +871,32 @@ h5 {
     top: 0;
     right: 0; }
 
+.search-bar-wrapper.small .typeahead,
+.search-bar-wrapper.small .tt-query,
+.search-bar-wrapper.small .tt-hint, .search-bar-wrapper.tiny .typeahead,
+.search-bar-wrapper.tiny .tt-query,
+.search-bar-wrapper.tiny .tt-hint {
+  height: 40px;
+  padding: 0 6px;
+  font-size: 20px;
+  font-size: 2rem;
+  line-height: 40px; }
+.search-bar-wrapper.small .tt-dropdown-menu, .search-bar-wrapper.tiny .tt-dropdown-menu {
+  width: 100%;
+  max-height: 130px;
+  margin-top: 12px;
+  padding: 8px 0; }
+.search-bar-wrapper.small .tt-suggestion, .search-bar-wrapper.tiny .tt-suggestion {
+  padding: 3px 20px;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 24px; }
+.search-bar-wrapper.small .twitter-typeahead:after, .search-bar-wrapper.tiny .twitter-typeahead:after {
+  font-size: 20px;
+  font-size: 2rem;
+  line-height: 35px; }
+
 .counterpick-results {
-  width: 550px;
-  height: 100%;
-  left: auto;
-  right: 0;
   padding: 10px;
   background: #0e180d;
   color: #1f0c0b; }
@@ -898,6 +1029,39 @@ h5 {
           height: 100%;
           max-height: 100%;
           width: auto; }
+  .counterpick-results.small, .counterpick-results.tiny {
+    height: auto;
+    min-height: 100%; }
+    .counterpick-results.small .hero-list-wrapper, .counterpick-results.tiny .hero-list-wrapper {
+      height: auto;
+      position: relative; }
+      .counterpick-results.small .hero-list-wrapper .scroll-wrapper, .counterpick-results.tiny .hero-list-wrapper .scroll-wrapper {
+        height: auto; }
+    .counterpick-results.small .counterpick-relative-wrapper, .counterpick-results.tiny .counterpick-relative-wrapper {
+      height: auto;
+      min-height: 100%; }
+    .counterpick-results.small .counterpicks .hero, .counterpick-results.tiny .counterpicks .hero {
+      width: 100%;
+      height: 33px;
+      margin-bottom: 5px; }
+      .counterpick-results.small .counterpicks .hero .hero-content .text-wrapper, .counterpick-results.tiny .counterpicks .hero .hero-content .text-wrapper {
+        margin-left: 10px;
+        line-height: 33px; }
+        .counterpick-results.small .counterpicks .hero .hero-content .text-wrapper .advantage-text, .counterpick-results.tiny .counterpicks .hero .hero-content .text-wrapper .advantage-text {
+          line-height: 33px;
+          font-size: 16px;
+          font-size: 1.6rem; }
+          .counterpick-results.small .counterpicks .hero .hero-content .text-wrapper .advantage-text .icon, .counterpick-results.tiny .counterpicks .hero .hero-content .text-wrapper .advantage-text .icon {
+            font-size: 18px;
+            font-size: 1.8rem;
+            line-height: 33px;
+            margin-right: 15px;
+            position: relative;
+            top: 0; }
+          .counterpick-results.small .counterpicks .hero .hero-content .text-wrapper .advantage-text .advantage, .counterpick-results.tiny .counterpicks .hero .hero-content .text-wrapper .advantage-text .advantage {
+            font-size: 20px;
+            font-size: 2rem;
+            margin-left: -20px; }
 
 .modal {
   position: fixed;

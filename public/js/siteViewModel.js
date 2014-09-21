@@ -4,6 +4,33 @@ var SiteViewModel = (function () {
 	var counterpickListId = "counterpick-list";
 	var initialized = false;
 	var allHeroNames = [];
+	var sizes = [
+		{
+			name: "tiny",
+			value: function(width){
+				return width < 500;
+			}
+		},
+		{
+			name: "small",
+			value: function(width){
+				return width < 805 && width > 500;
+			}
+		},
+		{
+			name: "medium",
+			value: function(width){
+				return width < 1100 && width >= 805;
+			}
+		},
+		{
+			name: "large",
+			value: function(width){
+				return width >= 1100;
+			}
+		}
+	];
+	var resizeRefreshTimeout;
 
 	function SiteViewModel() {
 		this.state = ko.observable("loading");
@@ -16,12 +43,19 @@ var SiteViewModel = (function () {
 		this.searchText = ko.observable("");
 		this.throttledText = ko.computed(this.searchText).extend({ throttle: 400});
 		this.throttledText.subscribe(onSearchTextUpdated);
+		this.currentSize = ko.observable();
+		this.heroListInitialized = ko.observable(false);
+		this.emptyEnemyTeam = ko.computed(function(){
+			return emptySlots(this.enemyHeroes()) === 5;
+		}.bind(this));
 
 		for(var x = 0; x < 5; x++){
 			this.enemyHeroes.push({
 				empty: true
 			});
 		}
+
+		setCurrentSize.bind(this)();
 	}
 
 	SiteViewModel.prototype.loadHeroes = function (heroes) {
@@ -30,7 +64,9 @@ var SiteViewModel = (function () {
 			heroes = JSON.parse(heroes);
 		}
 		heroes.forEach(function (hero) {
-			hero.imageUrl = "http://cdn.dota2.com/apps/dota2/images/heroes/" + hero.imageId + "_full.png";
+			hero.fullImage = "http://cdn.dota2.com/apps/dota2/images/heroes/" + hero.imageId + "_full.png";
+			hero.largeImage = "http://cdn.dota2.com/apps/dota2/images/heroes/" + hero.imageId + "_lg.png";
+			hero.smallImage = "http://cdn.dota2.com/apps/dota2/images/heroes/" + hero.imageId + "_sb.png";
 			hero.selected = ko.observable(false);
 			hero.counterPickAdvantage = ko.observable(0);
 			hero.roles = hero.roles.map(function (role) {
@@ -52,7 +88,7 @@ var SiteViewModel = (function () {
 		this.roles.sort();
 		this.roles.unshift("All Roles");
 		this.state("normal");
-		initializeJqueryThings();
+		initializeJqueryThings.bind(this)();
 		addDocumentClickListener.bind(this)();
 	};
 
@@ -100,6 +136,33 @@ var SiteViewModel = (function () {
 		this.selectedRole(role);
 		this.dropdownIsOpen(false);
 		refreshCounterPicks();
+	};
+
+	SiteViewModel.prototype.getHeroGridImageUrl = function(hero){
+		switch(this.currentSize().name){
+			case "large": return hero.fullImage;
+			case "medium": return hero.largeImage;
+			case "small": return hero.smallImage;
+			case "tiny": return hero.smallImage;
+		}
+	};
+
+	SiteViewModel.prototype.getEnemyTeamImageUrl = function(hero){
+		switch(this.currentSize().name){
+			case "large": return hero.largeImage;
+			case "medium": return hero.largeImage;
+			case "small": return hero.smallImage;
+			case "tiny": return hero.smallImage;
+		}
+	};
+
+	SiteViewModel.prototype.getCounterPickImageUrl = function(hero){
+		switch(this.currentSize().name){
+			case "large": return hero.largeImage;
+			case "medium": return hero.largeImage;
+			case "small": return hero.smallImage;
+			case "tiny": return hero.smallImage;
+		}
 	};
 
 	function updateCounterPicks() {
@@ -157,7 +220,9 @@ var SiteViewModel = (function () {
 		var htmlLoadedInterval = setInterval(function () {
 			var heroList = $("#" + heroListId);
 			var counterPickList = $("#" + counterpickListId);
-			if (heroList.length === 0 || counterPickList.length === 0) {
+			var heroListShouldExist = getHeroListShouldExist.bind(this)();
+			var heroListExists = heroList.length !== 0;
+			if ((heroListShouldExist && !heroListExists) || counterPickList.length === 0) {
 				return;
 			}
 			clearInterval(htmlLoadedInterval);
@@ -172,12 +237,7 @@ var SiteViewModel = (function () {
 					filter: "none"
 				}
 			});
-			heroList.mixItUp({
-				controls: {
-					enable: false
-				}
-			});
-			heroList.mixItUp("sort", "name: desc");
+			initializeHeroList.bind(this)();
 
 			$(".typeahead").typeahead({
 					hint: true,
@@ -190,7 +250,7 @@ var SiteViewModel = (function () {
 					source: substringMatcher(allHeroNames)
 				});
 			initialized = true;
-		}, 100);
+		}.bind(this), 100);
 	}
 
 	function addDocumentClickListener() {
@@ -219,7 +279,13 @@ var SiteViewModel = (function () {
 	}
 
 	function refreshHeroList() {
-		if (!initialized) {
+		if (!initialized ) {
+			return;
+		}
+		var siteVM = ko.dataFor($("body")[0]);
+		var heroListShouldExist = getHeroListShouldExist.bind(siteVM)();
+		if(!siteVM.heroListInitialized() || !heroListShouldExist){
+			addHeroIfOneLeft();
 			return;
 		}
 		var heroList = $("#" + heroListId);
@@ -227,20 +293,7 @@ var SiteViewModel = (function () {
 			var hero = ko.dataFor(this);
 			return filterHeroBySearchText(hero);
 		});
-		heroList.mixItUp("filter", filter, function () {
-			var siteVM = ko.dataFor($("body")[0]);
-			var shownHeroes = siteVM.heroes().filter(filterHeroBySearchText);
-			if (shownHeroes.length !== 1 || emptySlots(siteVM.enemyHeroes()) === 0) {
-				return;
-			}
-			if (shownHeroes[0].selected()) {
-				return;
-			}
-			shownHeroes[0].selected(true);
-			siteVM.enemyHeroes.pop();
-			siteVM.enemyHeroes.unshift(shownHeroes[0]);
-			updateCounterPicks.bind(siteVM)();
-		});
+		heroList.mixItUp("filter", filter, addHeroIfOneLeft);
 	}
 
 	function onSearchTextUpdated() {
@@ -276,6 +329,74 @@ var SiteViewModel = (function () {
 			return hero.empty ? sum+1 : sum;
 		}, 0);
 	}
+
+	function setCurrentSize(){
+		var windowWidth = $(window).width();
+		var currentSize = sizes.find(function(size){
+			return size.value(windowWidth);
+		});
+		this.currentSize(currentSize);
+
+		if(resizeRefreshTimeout !== undefined){
+			clearTimeout(resizeRefreshTimeout);
+		}
+		resizeRefreshTimeout = setTimeout(function(){
+			clearTimeout(resizeRefreshTimeout);
+			var heroListShouldExist = getHeroListShouldExist.bind(this)();
+			if(!heroListShouldExist && this.heroListInitialized()){
+				this.heroListInitialized(false);
+			}
+			if(heroListShouldExist && !this.heroListInitialized()){
+				initializeHeroList.bind(this)();
+			}
+			refreshHeroList();
+			refreshCounterPicks();
+		}.bind(this), 500);
+
+	}
+
+	function initializeHeroList(){
+		var heroList = $("#" + heroListId);
+		var counterPickList = $("#" + counterpickListId);
+		if (heroList.length === 0) {
+			return;
+		}
+		if(heroList.mixItUp("isLoaded")){
+			heroList.mixItUp("destroy");
+		}
+
+		heroList.mixItUp({
+			controls: {
+				enable: false
+			}
+		});
+		heroList.mixItUp("sort", "name: desc");
+		this.heroListInitialized(true);
+	}
+
+	function addHeroIfOneLeft(){
+		var siteVM = ko.dataFor($("body")[0]);
+		var shownHeroes = siteVM.heroes().filter(filterHeroBySearchText);
+		if (shownHeroes.length !== 1 || emptySlots(siteVM.enemyHeroes()) === 0) {
+			return;
+		}
+		if (shownHeroes[0].selected()) {
+			return;
+		}
+		shownHeroes[0].selected(true);
+		siteVM.enemyHeroes.pop();
+		siteVM.enemyHeroes.unshift(shownHeroes[0]);
+		updateCounterPicks.bind(siteVM)();
+	}
+
+	function getHeroListShouldExist(){
+		return this.currentSize() !== undefined && this.currentSize().name !== "small" && this.currentSize().name !== "tiny";
+	}
+
+	$(window).resize(function(){
+		var siteVM = ko.dataFor($("body")[0]);
+		setCurrentSize.bind(siteVM)();
+	});
 
 	return SiteViewModel;
 }());
