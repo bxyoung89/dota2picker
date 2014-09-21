@@ -143,4 +143,13 @@
 			}
 		}
 	}
+	&.tiny{
+		.team-wrapper {
+			.team {
+				.hero {
+					margin-right: 0;
+				}
+			}
+		}
+	}
 }

@@ -570,6 +570,9 @@ h5 {
     transition: color 0.3s ease; }
     .top-header .author-info:hover {
       color: #9b3124; }
+  .top-header.tiny .title {
+    font-size: 22px;
+    font-size: 2.2rem; }
 
 .main-app {
   padding-top: 30px; }
@@ -725,6 +728,8 @@ h5 {
         .enemy-team.small .team-wrapper .team .hero .empty-slot .ico-plus, .enemy-team.tiny .team-wrapper .team .hero .empty-slot .ico-plus {
           font-size: 16px;
           font-size: 1.6rem; }
+  .enemy-team.tiny .team-wrapper .team .hero {
+    margin-right: 0; }
 
 .hero-grid .hero-list-wrapper {
   padding-top: 80px; }
@@ -1107,7 +1112,7 @@ h5 {
   .modal .modal-content .modal-header {
     height: 50px;
     width: 100%;
-    background: #1f0c0b;
+    background: #732c2f;
     color: #d8cfc5; }
     .modal .modal-content .modal-header .title {
       font-size: 20px;
@@ -1128,3 +1133,15 @@ h5 {
         line-height: 50px; }
       .modal .modal-content .modal-header .close:hover {
         color: #b9a997; }
+  .modal.tiny .modal-content .modal-background, .modal.small .modal-content .modal-background {
+    width: 80%;
+    height: auto; }
+  .modal.tiny .modal-content .content-wrapper, .modal.small .modal-content .content-wrapper {
+    position: relative;
+    height: auto; }
+    .modal.tiny .modal-content .content-wrapper .about .profile-picture, .modal.small .modal-content .content-wrapper .about .profile-picture {
+      display: none; }
+    .modal.tiny .modal-content .content-wrapper .about .about-author, .modal.small .modal-content .content-wrapper .about .about-author {
+      display: block;
+      width: 100%;
+      float: none; }

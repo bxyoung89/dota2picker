@@ -35,4 +35,10 @@ $top-header-height: 30px;
 			color: darken($light-red, 10%);
 		}
 	}
+
+	&.tiny{
+		.title{
+			@include font-size(2.2);
+		}
+	}
 }

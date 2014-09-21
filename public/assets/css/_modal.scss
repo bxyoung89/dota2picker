@@ -53,7 +53,7 @@
 		.modal-header{
 			height: 50px;
 			width: 100%;
-			background: $off-black;
+			background: $mid-red;
 			color: $off-white;
 
 			.title{
@@ -76,6 +76,32 @@
 				}
 			}
 		}
+
+	}
+
+	&.tiny, &.small{
+
+		.modal-content {
+			.modal-background {
+				width: 80%;
+				height: auto;
+			}
+			.content-wrapper{
+				position: relative;
+				height: auto;
+				.about{
+					.profile-picture{
+						display: none;
+					}
+					.about-author{
+						display: block;
+						width: 100%;
+						float: none;
+					}
+				}
+			}
+		}
+
 
 	}
 }
