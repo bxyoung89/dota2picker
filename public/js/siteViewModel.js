@@ -182,8 +182,8 @@ var SiteViewModel = (function () {
 				});
 				hero.counterPickAdvantage((Math.round(teamAdvantage * 1000) / 1000).toFixed(3));
 			}, this);
-		var sortedCounterpicks = this.heroes().sortBy(function (hero) {
-			return hero.counterPickAdvantage();
+		var sortedCounterpicks = this.heroes().sort(function (hero1, hero2) {
+			return hero1.counterPickAdvantage() - hero2.counterPickAdvantage();
 		});
 		sortedCounterpicks.forEach(function (hero, index) {
 			hero.overallAdvantage(index);
