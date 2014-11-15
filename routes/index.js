@@ -3,6 +3,7 @@ var router = express.Router();
 var request = require('request');
 var cheerio = require('cheerio');
 var fs = require('fs');
+var sugar = require("sugar");
 var heroFile = "public/js/heroes.json";
 var savedFile = "savedHeroes.json";
 var lastWritten = undefined;
@@ -22,7 +23,8 @@ router.get("/getHeroes", function(req, res){
 		if(lastWritten !== undefined && (new Date()).getTime() - lastWritten.getTime() < 86400000){
 			fs.readFile(savedFile, "utf8", function(error, data){
 				if(error){
-					return console.log(error);
+					console.log(error);
+					return error;
 				}
 				res.send(data);
 			});
@@ -50,7 +52,7 @@ router.get("/getHeroes", function(req, res){
 
 						var nameColumn = columns[1];
 						hero.name = $(nameColumn).text();
-						if(hero.name.trim() === ""){
+						if(hero.name.trim() === "" || hero.name.trim() === heroData.name){
 							return;
 						}
 
@@ -79,6 +81,15 @@ router.get("/getHeroes", function(req, res){
 		});
 		var polling = setInterval(function(){
 			if(heroes.length !== validHeroesLength){
+				//var waitingHeroes = data.filter(function(hero){
+				//	return heroes.find(function(h){
+				//		return h.id === hero.id;
+				//	}) === undefined;
+				//});
+				//var waitingHeroesString = waitingHeroes.reduce(function(sum, hero){
+				//	return sum+ hero.id+" ";
+				//}, "waiting on ");
+				//console.log(waitingHeroesString);
 				return;
 			}
 			clearInterval(polling);
@@ -88,6 +99,7 @@ router.get("/getHeroes", function(req, res){
 					validHeroes.push(hero);
 				}
 			});
+			console.log("writing to file");
 			fs.writeFile(savedFile, JSON.stringify(validHeroes), function(error){
 				if(error){
 					console.log(error);
