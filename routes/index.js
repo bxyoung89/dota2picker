@@ -36,19 +36,38 @@ router.get("/getHeroes", function(req, res){
 			var url = "http://www.dotabuff.com/heroes/"+heroData.id+"/matchups";
 			var advantages = [];
 			var heroIsValid = true;
-			request(url, function(error, response, html){
+			var requestOptions = {
+				url: url,
+				headers: {
+					"User-Agent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"
+				}
+			};
+
+			request(requestOptions, function(error, response, html){
 				if(error){
 					validHeroesLength -=1;
 					heroIsValid = false;
+					console.log("got an error");
+					console.log(error);
 					return "error";
 				}
 				var $ = cheerio.load(html);
+				//fs.writeFile("herohtmltest.html", html, function(error){
+				//	if(error){
+				//		console.log(error);
+				//	}
+				//});
 				$("tbody").filter(function(){
 					var table = $(this);
 					var rows = table.children();
 					rows.each(function(){
 						var hero = {};
 						var columns = $(this).children();
+						//var columnText = "";
+						//columns.each(function(column){
+						//	columnText = " "+$(column).text();
+						//});
+						//console.log(columnText);
 
 						var nameColumn = columns[1];
 						hero.name = $(nameColumn).text();
@@ -62,12 +81,14 @@ router.get("/getHeroes", function(req, res){
 					});
 				});
 				if(advantages.length === 0){
+					//console.log("no advantages");
 					validHeroesLength -=1;
 					heroIsValid = false;
 				}
 			});
 			var polling = setInterval(function(){
 				if(!heroIsValid){
+					//console.log("hero is not valid: "+heroData.name);
 					clearInterval(polling);
 					return;
 				}
