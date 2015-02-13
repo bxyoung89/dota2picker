@@ -1375,6 +1375,20 @@
     ]
   },
   {
+    "name": "Winter Wyvern",
+    "id": "winter-wyvern",
+    "stat": "intelligence",
+    "roles": [
+      "support",
+      "disabler"
+    ],
+    "imageId": "winter_wyvern",
+    "nicknames": [
+      "auroth",
+      "ww"
+    ]
+  },
+  {
     "name": "Witch Doctor",
     "id": "witch-doctor",
     "stat": "intelligence",
