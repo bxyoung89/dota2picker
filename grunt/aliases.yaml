@@ -1,0 +1,30 @@
+build:
+- "concurrent:build-all"
+
+build-css:
+- "sass:all"
+- "autoprefixer:all"
+- "csso:all"
+
+build-css-dev:
+- "sass:all"
+- "autoprefixer:all"
+- "csso:all"
+- "notify"
+
+build-js:
+- "html2js:dev"
+- "concurrent:concat-all"
+- "ngAnnotate:dev"
+- "uglify:all"
+
+build-js-dev:
+- "html2js:dev"
+- "concat:dev"
+- "ngAnnotate:dev"
+- "uglify:dev"
+- "notify"
+
+build-js-lib:
+- "concat:lib"
+- "uglify:lib"

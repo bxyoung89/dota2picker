@@ -1,0 +1,28 @@
+// Clearfix
+// http://nicolasgallagher.com/micro-clearfix-hack/
+// include @mixin clearfix on the parent div you want to clear
+@mixin clearfix() {
+	zoom: 1; // For IE 6/7 (trigger hasLayout)
+
+	&:after,
+	&:before {
+		content: "";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+@mixin vertical-align() {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+// REM font-size
+@mixin font-size($size){
+	font-size: ($size * 10) + px;
+	font-size: $size + rem;
+}

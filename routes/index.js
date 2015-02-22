@@ -4,7 +4,7 @@ var request = require('request');
 var cheerio = require('cheerio');
 var fs = require('fs');
 var sugar = require("sugar");
-var heroFile = "public/js/heroes.json";
+var heroFile = "heroFiles/base/heroes.json";
 var savedFile = "savedHeroes.json";
 var lastWritten = undefined;
 

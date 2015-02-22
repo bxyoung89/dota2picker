@@ -1,3 +1,5 @@
 node_modules/
 .idea/
 savedHeroes.json
+public/bin/
+public/js/lib/bowerDependencies

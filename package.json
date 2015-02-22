@@ -16,5 +16,20 @@
     "request": "*",
     "cheerio": "*",
     "sugar": "*"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "load-grunt-config": "~0.16.0",
+    "grunt-concurrent": "~1.0.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-concat": "~0.5.1",
+    "grunt-contrib-uglify": "~0.8.0",
+    "grunt-autoprefixer": "~2.2.0",
+    "grunt-csso": "~0.7.0",
+    "grunt-sass": "~0.18.0",
+    "grunt-ng-annotate": "~0.10.0",
+    "grunt-html2js": "~0.3.0",
+    "grunt-notify": "~0.4.1"
   }
 }
