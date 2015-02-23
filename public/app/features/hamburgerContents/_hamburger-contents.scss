@@ -1,0 +1,54 @@
+.hamburger-contents{
+	height: 100%;
+	width: 100%;
+	position: relative;
+	background: $dark-green;
+	color: $off-white;
+}
+
+.hamburger-close-button{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	height: 40px;
+	width: 40px;
+	@include font-size(2.6);
+
+}
+
+.hamburger-items{
+	height: 100%;
+	width: 100%;
+	padding: 50px 10px 10px 10px;
+}
+
+.hamburger-item{
+	margin-bottom: 20px;
+}
+
+.hamburger-nav{
+
+}
+
+.hamburger-nav-item{
+	display: block;
+	margin-bottom: 10px;
+	color: $off-white;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.hamburger-translation-toggle{
+
+	.translation-instructions{
+		margin-bottom: 5px;
+	}
+
+	select{
+
+	}
+
+	option{
+
+	}
+}

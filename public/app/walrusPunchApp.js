@@ -5,6 +5,11 @@ angular.module("WalrusPunch", ["Templates", "ngRoute", "ngStorage", "countTo", "
 			controller: "counterPickerPageController",
 			reloadOnSearch: false
 		});
+		$routeProvider.when("/about", {
+			templateUrl: "/app/features/aboutPage/aboutPage.html",
+			controller: "aboutPageController",
+			reloadOnSearch: false
+		});
 		$routeProvider.otherwise({redirectTo: "/"});
 	}])
 	.config(function (AngularyticsProvider){
@@ -18,6 +23,10 @@ angular.module("WalrusPunch", ["Templates", "ngRoute", "ngStorage", "countTo", "
 	})
 	.constant("RESIZE_EVENTS", {
 		resized: "resized"
+	})
+	.constant("HAMBURGER_EVENTS", {
+		open: "open",
+		close: "close"
 	})
 	.run([ "Angularytics", function(Angularlytics){
 			Angularlytics.init();

@@ -9,6 +9,10 @@ html {
 	display: block;
 }
 
+body{
+	@include font-size(1.6);
+}
+
 .page-wrapper{
 	height: 100%;
 	width: 100%;

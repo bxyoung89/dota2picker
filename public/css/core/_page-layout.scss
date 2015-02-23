@@ -1,0 +1,60 @@
+.page{
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	position: relative;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	transition: all 500ms ease;
+
+	&.hamburger-is-open{
+		left: -300px;
+	}
+
+}
+
+.page-header{
+
+}
+
+.page-content{
+
+}
+
+.hamburger-page-blocker{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	height: 100%;
+	width: 100%;
+	background: $off-black;
+	opacity: 0;
+	transition: all 500ms ease;
+
+	&.open{
+		z-index: 10000;
+		opacity: 0.8;
+		left: -300px;
+	}
+}
+
+.hamburger-content-wrapper{
+	position: fixed;
+	top: 0;
+	left: 100%;
+	z-index: 0;
+	height: 100%;
+	width: 300px;
+	background: $off-black;
+	opacity: 0;
+	transition: all 500ms ease;
+
+	&.open{
+		z-index: 10000;
+		opacity: 0.8;
+		margin-left: -300px;
+	}
+
+}

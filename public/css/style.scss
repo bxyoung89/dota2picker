@@ -6,11 +6,14 @@
 @import "core/fonts";
 @import "core/mixins";
 @import "core/app-layout";
+@import "core/page-layout";
 
 @import "../app/features/aboutModal/about-modal";
+@import "../app/features/aboutPage/about-page";
 @import "../app/features/appHeader/app-header";
 @import "../app/features/counterPickerPage/counter-picker-page";
 @import "../app/features/counterPicksList/counter-pick-list";
 @import "../app/features/enemyTeam/enemy-team";
+@import "../app/features/hamburgerContents/hamburger-contents";
 @import "../app/features/heroGrid/hero-grid";
 

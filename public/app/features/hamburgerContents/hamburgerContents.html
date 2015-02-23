@@ -1,0 +1,22 @@
+<div class="hamburger-contents" ng-controller="hamburgerContentsController">
+	<div class="hamburger-close-button" ng-click="closeHamburger()">
+		X
+	</div>
+	<div class="hamburger-items">
+		<div class="hamburger-item hamburger-nav">
+			<a class="hamburger-nav-item" href="/#/">
+				Home
+			</a>
+			<a class="hamburger-nav-item" href="/#/about">
+				About
+			</a>
+		</div>
+		<div class="hamburger-item translation-toggle">
+			<div class="translation-instructions">
+				Select a language
+			</div>
+			<select ng-model="selectedLanguage" ng-options="languageOption.name for languageOption in languageOptions" ng-change="onSelectedLanguageChanged()">
+			</select>
+		</div>
+	</div>
+</div>

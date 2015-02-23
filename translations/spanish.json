@@ -37,14 +37,14 @@
   "languages": {
     "English": "Ingles",
     "French": "French",
-    "German": "German",
-    "Japanese": "Japanese",
-    "Korean": "Korean",
-    "Portuguese": "Portuguese",
-    "Russian": "Russian",
+    "German": "Alemán",
+    "Japanese": "Japonés",
+    "Korean": "Coreana",
+    "Portuguese": "Portugués",
+    "Russian": "Ruso",
     "Simplified Chinese": "Chino Simplificado",
     "Spanish": "Español",
-    "Traditional Chinese": "Traditional Chinese"
+    "Traditional Chinese": "Chino Tradicional"
   },
   "heroes": {
     "Alchemist": "Alchemist",

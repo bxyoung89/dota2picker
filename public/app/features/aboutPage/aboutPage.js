@@ -1,4 +1,4 @@
-angular.module("WalrusPunch").controller("counterPickerPageController", [
+angular.module("WalrusPunch").controller("aboutPageController", [
 	"$scope",
 	"$rootScope",
 	"HAMBURGER_EVENTS",
