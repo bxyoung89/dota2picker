@@ -1,6 +1,5 @@
-angular.module("WalrusPunch").service("responsiveService", ["$rootScope", function ($rootScope) {
+angular.module("WalrusPunch").service("responsiveService", ["$rootScope", "RESIZE_EVENTS", function ($rootScope, RESIZE_EVENTS) {
 
-	var size = "";
 	var sizes = [
 		{
 			name: "tiny",
@@ -30,26 +29,23 @@ angular.module("WalrusPunch").service("responsiveService", ["$rootScope", functi
 
 
 	function ResponsiveService() {
-		$(document).ready(getCurrentSize);
-	}
-
-	$rootScope.$watch(getCurrentSize(),
-		function (sizeName) {
-			size = sizeName;
+		$(window).resize(function(){
+			$rootScope.$broadcast(RESIZE_EVENTS.resized);
 		});
+	}
 
 
 	ResponsiveService.prototype.getSize = function () {
-		return size;
+		var currentSize = getCurrentSize();
+		return currentSize === undefined ? "tiny" :currentSize.name;
 	};
 
 	function getCurrentSize() {
 		var windowWidth = $(window).width();
 		return sizes.find(function (size) {
-			return size.value(window);
+			return size.value(windowWidth);
 		});
 	}
-
 
 	return new ResponsiveService();
 }]);

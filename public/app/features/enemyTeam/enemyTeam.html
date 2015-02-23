@@ -1,10 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-	<meta charset="UTF-8">
-	<title></title>
-</head>
-<body>
+<div class="enemy-team absolute"
+	 data-bind="css: {large: currentSize().name === 'large', medium: currentSize().name === 'medium', small: currentSize().name === 'small', tiny: currentSize().name === 'tiny'}">
+	<div class="title">
+		Enemy Team
+	</div>
+	<div class="team-wrapper">
+		<div class="team" data-bind="foreach: enemyHeroes">
+			<div class="hero" data-bind="click: function(){ if(empty){ return;} $parent.heroRemoved($data); }">
+				<!-- ko if: !empty -->
+				<div class="relative-wrapper">
+					<img class="background-image fill" data-bind="attr: { src: $parent.getEnemyTeamImageUrl($data)}">
 
-</body>
-</html>
+					<div class="icon">
+						<span class="ico-close"></span>
+					</div>
+				</div>
+				<!-- /ko -->
+				<!-- ko if: empty -->
+				<div class="empty-slot">
+					<div class="ico-plus"></div>
+				</div>
+				<!-- /ko -->
+			</div>
+		</div>
+	</div>
+</div>

@@ -11,7 +11,13 @@ angular.module("WalrusPunch", ["Templates", "ngRoute", "ngStorage", "countTo", "
 		AngularyticsProvider.setEventHandlers(["GoogleUniversal"]);
 	})
 	.constant("MODAL_EVENTS", {
-		showAboutModa: "showAboutModal"
+		showAboutModal: "showAboutModal"
+	})
+	.constant("TRANSLATION_EVENTS", {
+		translationChanged: "translationChanged"
+	})
+	.constant("RESIZE_EVENTS", {
+		resized: "resized"
 	})
 	.run([ "Angularytics", function(Angularlytics){
 			Angularlytics.init();
