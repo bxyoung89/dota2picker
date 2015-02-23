@@ -5,6 +5,7 @@ var cheerio = require('cheerio');
 var fs = require('fs');
 var sugar = require("sugar");
 var heroFile = "heroFiles/base/heroes.json";
+var url = require('url');
 var savedFile = "savedHeroes.json";
 var lastWritten = undefined;
 
@@ -133,6 +134,42 @@ router.get("/getHeroes", function(req, res){
 	});
 
 });
+
+router.get("/getLocale", function(req, res){
+	res.send(req.locale.code);
+});
+
+router.get("/getTranslation", function(req, res){
+	var url_parts = url.parse(req.url, true);
+	var query = url_parts.query;
+	var translationPath = getTranslationPath(query.language);
+	fs.readFile(translationPath, "utf8", function(error, data){
+		if(error){
+			console.log("Error getting translations :", error);
+			res.send({
+				"error": "Could not load translation."
+			});
+			return;
+		}
+		res.send(data);
+	});
+});
+
+function getTranslationPath(translationName){
+	switch(translationName){
+		case "english": return "translations/english.json";
+		case "french": return "translations/french.json";
+		case "german": return "translations/german.json";
+		case "japanese": return "translations/japanese.json";
+		case "korean": return "translations/korean.json";
+		case "portuguese": return "translations/portugese.json";
+		case "russian": return "translations/russian.json";
+		case "simplifiedChinese": return "translations/simplifiedChinese.json";
+		case "spanish": return "translations/spanish.json";
+		case "traditionalChinese": return "translations/traditionalChinese.json";
+		default: return "translations/english.json";
+	}
+}
 
 
 module.exports = router;

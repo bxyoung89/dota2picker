@@ -2,19 +2,30 @@ angular.module("WalrusPunch").service("translationService", ["$http", function($
 
 	var state = "loading";
 	var serverLocale = "en";
-	var currentTranslationName = "English";
+	var currentTranslationName = "";
 	var currentTranslation = {};
 	var translationOptions = [];
 	var nativeLanguages = {
 		"English": "English",
-		"Spanish": "Español"
+		"Spanish": "Español",
+		"Simplified Chinese": "简体中文"
+	};
+	var languageIds = {
+		"English": "english",
+		"Spanish": "spanish",
+		"Simplified Chinese": "simplifiedChinese"
 	};
 
 	function TranslationService(){
-		getTranslation();
+		currentTranslationName = "English";
+		getTranslation("english");
 	}
 
-	TranslationService.prototype.getTranslatedString = function(stringToTranslate){
+	TranslationService.prototype.getState = function(){
+		return state;
+	};
+
+	TranslationService.prototype.translateString = function(stringToTranslate){
 		var translatedString = currentTranslation[stringToTranslate];
 		if(translatedString === undefined){
 			return "Shitty Wizard";
@@ -22,7 +33,7 @@ angular.module("WalrusPunch").service("translationService", ["$http", function($
 		return translatedString;
 	};
 
-	TranslationService.prototype.getTranslatedHeroName = function(heroName){
+	TranslationService.prototype.translateHeroName = function(heroName){
 		var translatedString = currentTranslation.heroes[heroName];
 		if(translatedString === undefined){
 			return "Shitty Wizard";
@@ -31,11 +42,11 @@ angular.module("WalrusPunch").service("translationService", ["$http", function($
 	};
 
 	TranslationService.prototype.getHeroNicknames = function(heroName){
-		var nicknames = currentTranslation.heroNickNames[heroName];
+		var nicknames = currentTranslation.heroNicknames[heroName];
 		return nicknames;
 	};
 
-	TranslationService.prototype.getTranslatedRole = function(role){
+	TranslationService.prototype.translateRole = function(role){
 		var translatedString = currentTranslation.roles[role];
 		if(translatedString === undefined){
 			return "Shitty Wizard";
@@ -43,21 +54,27 @@ angular.module("WalrusPunch").service("translationService", ["$http", function($
 		return translatedString;
 	};
 
+	TranslationService.prototype.changeTranslation = function(languageId){
+		state = "loading";
+		getTranslation(languageId);
+	};
+
 	function getCurrentLocale(){
 		//todo
 	}
 
-	function getTranslation(){
-		$http.get("/getTranslation?language=english")
+	function getTranslation(languageId){
+		$http.get("/getTranslation?language="+languageId)
 			.success(function(data){
 				if(typeof data === "string"){
 					data = JSON.parse(data);
 				}
 				currentTranslation = data;
 				updateTranslationOptions();
+				state = "done";
 			})
 			.error(function(data){
-				state = error;
+				state = "error";
 			});
 	}
 
@@ -72,11 +89,14 @@ angular.module("WalrusPunch").service("translationService", ["$http", function($
 	function updateTranslationOptions(){
 		translationOptions = Object.keys(nativeLanguages).map(function(englishLanguageLang){
 			var translatedLanguage = currentTranslation.languages[englishLanguageLang];
-			return translatedLanguage+" ("+nativeLanguages[englishLanguageLang]+")";
+			return {
+				name:translatedLanguage+" ("+nativeLanguages[englishLanguageLang]+")",
+				id: languageIds[englishLanguageLang]
+			};
 		});
 	}
 
 
 
-	return new TraslationService();
+	return new TranslationService();
 }]);

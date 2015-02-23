@@ -2,6 +2,7 @@ angular.module("WalrusPunch").service("heroService", ["$http", "translationServi
 
 	var heroes = [];
 	var state = "loading";
+	var translationServiceInterval = undefined;
 
 
 	function HeroService(){
@@ -39,7 +40,20 @@ angular.module("WalrusPunch").service("heroService", ["$http", "translationServi
 					hero.empty = false;
 					heroes.push(hero);
 				});
-				state = "done";
+				if(translationService.getState() !== "loading"){
+					translateHeroes();
+					state = "done";
+					return;
+				}
+				translationServiceInterval = setInterval(function(){
+					if(translationService.getState() === "loading"){
+						return;
+					}
+					clearInterval(translationServiceInterval);
+					translateHeroes();
+					state = "done";
+				}, 300);
+
 			})
 			.error(function(data, status){
 				state = "error";
@@ -48,10 +62,11 @@ angular.module("WalrusPunch").service("heroService", ["$http", "translationServi
 
 	function translateHeroes(){
 		heroes.forEach(function(hero){
-			hero.translatedName = translationService.translateHeroName(hero);
+			hero.translatedName = translationService.translateHeroName(hero.name);
 			hero.roles.forEach(function(role){
 				role.translatedName = translationService.translateRole(role.id);
 			});
+			hero.nickNames = translationService.getHeroNicknames(hero.name);
 		});
 	}
 

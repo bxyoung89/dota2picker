@@ -1,0 +1,401 @@
+{
+  "Search for a Hero": "Search for a Hero",
+  "Welcome to Walrus Punch!": "Welcome to Walrus Punch!",
+  "To get counter-picks search for a hero above and see the suggested heroes below!": "To get counter-picks search for a hero above and see the suggested heroes below!",
+  "All Roles": "All Roles",
+  "Enemy Team": "Enemy Team",
+  "Walrus Punch!": "海象神拳！",
+  "A Dota 2 CounterPicker": "DotA的2计数器选择器",
+  "By Broderick Young": "由年轻布罗德里克",
+  "Hey! Thanks for coming. I hope you enjoy the site.": "Hey! Thanks for coming. I hope you enjoy the site.",
+  "It was made using Node.js, Knockout.js, JQuery, Sugar.js, Typeahead.js, and MixItUp.": "It was made using Node.js, Knockout.js, JQuery, Sugar.js, Typeahead.js, and MixItUp.",
+  "The data comes straight from Dotabuff": "The data comes straight from ###Dotabuff###",
+  "It's updated every day so the data is fresh!": "It's updated every day so the data is fresh!",
+  "Broderick Young (AKA TheWalrus) is a 3k mmr noob intent on getting better.": "###Broderick Young### (AKA TheWalrus) is a 3k mmr noob intent on getting better.",
+  "You can check out the source code for this project on GitHub.": "You can check out the source code for this project on ###GitHub###.",
+  "You can contact me on Twitter.": "You can contact me on ###Twitter###.",
+  "If you're feeling really generous send me something on Steam!": "If you're feeling really generous send me something on ###Steam###",
+  "About": "About",
+  "Language": "Language",
+  "roles": {
+    "nuker": "nuker",
+    "durable": "durable",
+    "carry": "carry",
+    "pusher": "pusher",
+    "support": "support",
+    "lane support": "lane support",
+    "initiator": "initiator",
+    "disabler": "disabler",
+    "escape": "escape",
+    "jungler": "jungler"
+  },
+  "stats": {
+    "strength": "strength",
+    "agility": "agility",
+    "intelligence": "intelligence"
+  },
+  "languages": {
+    "English": "English",
+    "French": "French",
+    "German": "German",
+    "Japanese": "Japanese",
+    "Korean": "Korean",
+    "Portuguese": "Portuguese",
+    "Russian": "Russian",
+    "Simplified Chinese": "Simplified Chinese",
+    "Spanish": "Spanish",
+    "Traditional Chinese": "Traditional Chinese"
+  },
+  "heroes": {
+    "Alchemist": "Alchemist",
+    "Axe": "Axe",
+    "Anti-Mage": "Anti-Mage",
+    "Ancient Apparition": "Ancient Apparition",
+    "Bane": "Bane",
+    "Abaddon": "Abaddon",
+    "Batrider": "Batrider",
+    "Bloodseeker": "Bloodseeker",
+    "Beastmaster": "Beastmaster",
+    "Bounty Hunter": "Bounty Hunter",
+    "Centaur Warrunner": "Centaur Warrunner",
+    "Brewmaster": "Brewmaster",
+    "Bristleback": "Bristleback",
+    "Broodmother": "Broodmother",
+    "Chen": "Chen",
+    "Crystal Maiden": "Crystal Maiden",
+    "Chaos Knight": "Chaos Knight",
+    "Clinkz": "Clinkz",
+    "Clockwerk": "Clockwerk",
+    "Dazzle": "Dazzle",
+    "Death Prophet": "Death Prophet",
+    "Doom": "Doom",
+    "Dark Seer": "Dark Seer",
+    "Dragon Knight": "Dragon Knight",
+    "Disruptor": "Disruptor",
+    "Drow Ranger": "Drow Ranger",
+    "Earthshaker": "Earthshaker",
+    "Elder Titan": "Elder Titan",
+    "Earth Spirit": "Earth Spirit",
+    "Ember Spirit": "Ember Spirit",
+    "Enchantress": "Enchantress",
+    "Enigma": "Enigma",
+    "Huskar": "Huskar",
+    "Io": "Io",
+    "Faceless Void": "Faceless Void",
+    "Gyrocopter": "Gyrocopter",
+    "Juggernaut": "Juggernaut",
+    "Invoker": "Invoker",
+    "Jakiro": "Jakiro",
+    "Kunkka": "Kunkka",
+    "Legion Commander": "Legion Commander",
+    "Keeper of the Light": "Keeper of the Light",
+    "Lich": "Lich",
+    "Leshrac": "Leshrac",
+    "Lina": "Lina",
+    "Lion": "Lion",
+    "Lifestealer": "Lifestealer",
+    "Lone Druid": "Lone Druid",
+    "Lycan": "Lycan",
+    "Luna": "Luna",
+    "Magnus": "Magnus",
+    "Medusa": "Medusa",
+    "Morphling": "Morphling",
+    "Mirana": "Mirana",
+    "Meepo": "Meepo",
+    "Naga Siren": "Naga Siren",
+    "Nature's Prophet": "Nature's Prophet",
+    "Night Stalker": "Night Stalker",
+    "Nyx Assassin": "Nyx Assassin",
+    "Necrophos": "Necrophos",
+    "Ogre Magi": "Ogre Magi",
+    "Outworld Devourer": "Outworld Devourer",
+    "Phantom Lancer": "Phantom Lancer",
+    "Omniknight": "Omniknight",
+    "Phantom Assassin": "Phantom Assassin",
+    "Puck": "Puck",
+    "Oracle": "Oracle",
+    "Pudge": "Pudge",
+    "Phoenix": "Phoenix",
+    "Razor": "Razor",
+    "Riki": "Riki",
+    "Pugna": "Pugna",
+    "Rubick": "Rubick",
+    "Queen of Pain": "Queen of Pain",
+    "Sand King": "Sand King",
+    "Shadow Fiend": "Shadow Fiend",
+    "Shadow Shaman": "Shadow Shaman",
+    "Silencer": "Silencer",
+    "Slardar": "Slardar",
+    "Shadow Demon": "Shadow Demon",
+    "Sniper": "Sniper",
+    "Skywrath Mage": "Skywrath Mage",
+    "Slark": "Slark",
+    "Storm Spirit": "Storm Spirit",
+    "Sven": "Sven",
+    "Templar Assassin": "Templar Assassin",
+    "Spectre": "Spectre",
+    "Spirit Breaker": "Spirit Breaker",
+    "Tidehunter": "Tidehunter",
+    "Tinker": "Tinker",
+    "Terrorblade": "Terrorblade",
+    "Tiny": "Tiny",
+    "Timbersaw": "Timbersaw",
+    "Techies": "Techies",
+    "Troll Warlord": "Troll Warlord",
+    "Tusk": "Tusk",
+    "Undying": "Undying",
+    "Treant Protector": "Treant Protector",
+    "Vengeful Spirit": "Vengeful Spirit",
+    "Venomancer": "Venomancer",
+    "Ursa": "Ursa",
+    "Viper": "Viper",
+    "Visage": "Visage",
+    "Warlock": "Warlock",
+    "Windranger": "Windranger",
+    "Witch Doctor": "Witch Doctor",
+    "Wraith King": "Wraith King",
+    "Zeus": "Zeus",
+    "Weaver": "Weaver",
+    "Winter Wyvern": "Winter Wyvern"
+  },
+  "heroNicknames": {
+    "Alchemist": ["razzil"],
+    "Axe": [],
+    "Anti-Mage": ["am"],
+    "Ancient Apparition": [
+      "kaldr",
+      "aa"
+    ],
+    "Bane": ["atropos"],
+    "Abaddon": ["avernus"],
+    "Batrider": [],
+    "Bloodseeker": [
+      "strygwyr",
+      "bs"
+    ],
+    "Beastmaster": [
+      "karroch",
+      "rexxar",
+      "bm"
+    ],
+    "Bounty Hunter": [
+      "gondar",
+      "bh"
+    ],
+    "Centaur Warrunner": [
+      "bradwarden",
+      "cw"
+    ],
+    "Brewmaster": [
+      "mangix",
+      "bm"
+    ],
+    "Bristleback": [
+      "rigwarl",
+      "bb"
+    ],
+    "Broodmother": ["bm"],
+    "Chen": [],
+    "Crystal Maiden": [
+      "rylai",
+      "cm"
+    ],
+    "Chaos Knight": ["ck"],
+    "Clinkz": ["bone"],
+    "Clockwerk": [
+      "rattletrap",
+      "cw"
+    ],
+    "Dazzle": [],
+    "Death Prophet": [
+      "krobelus",
+      "grobulus",
+      "dp"
+    ],
+    "Doom": [],
+    "Dark Seer": [
+      "ish",
+      "ds"
+    ],
+    "Dragon Knight": [
+      "davion",
+      "dk"
+    ],
+    "Disruptor": [],
+    "Drow Ranger": [
+      "traxex",
+      "dr"
+    ],
+    "Earthshaker": [
+      "raigor",
+      "es"
+    ],
+    "Elder Titan": ["et"],
+    "Earth Spirit": [
+      "kaolin",
+      "es"
+    ],
+    "Ember Spirit": [
+      "xin",
+      "es"
+    ],
+    "Enchantress": ["aiushtha"],
+    "Enigma": [],
+    "Huskar": [],
+    "Io": ["wisp"],
+    "Faceless Void": ["darkterror"],
+    "Gyrocopter": ["aurel"],
+    "Juggernaut": ["yurnero"],
+    "Invoker": [
+      "kael",
+      "karl",
+      "carl"
+    ],
+    "Jakiro": ["thd"],
+    "Kunkka": [],
+    "Legion Commander": [
+      "tresdin",
+      "lc"
+    ],
+    "Keeper of the Light": ["kotl"],
+    "Lich": ["ethreain"],
+    "Leshrac": [],
+    "Lina": [],
+    "Lion": [],
+    "Lifestealer": ["naix"],
+    "Lone Druid": [
+      "sylla",
+      "ld"
+    ],
+    "Lycan": ["banehallow"],
+    "Luna": [],
+    "Magnus": [],
+    "Medusa": ["gorgon"],
+    "Morphling": [],
+    "Mirana": ["potm"],
+    "Meepo": ["geomancer"],
+    "Naga Siren": [
+      "slithice",
+      "ns"
+    ],
+    "Nature's Prophet": [
+      "furion",
+      "np"
+    ],
+    "Night Stalker": [
+      "ns",
+      "balanar"
+    ],
+    "Nyx Assassin": ["na"],
+    "Necrophos": ["necrolyte"],
+    "Ogre Magi": [
+      "aggron",
+      "om"
+    ],
+    "Outworld Devourer": [
+      "od",
+      "harbinger"
+    ],
+    "Phantom Lancer": [
+      "azwraith",
+      "pl"
+    ],
+    "Omniknight": ["ok"],
+    "Phantom Assassin": [
+      "pa",
+      "mortred"
+    ],
+    "Puck": [],
+    "Oracle": ["nerif"],
+    "Pudge": ["butcher"],
+    "Phoenix": [],
+    "Razor": [],
+    "Riki": [],
+    "Pugna": [],
+    "Rubick": [],
+    "Queen of Pain": ["qop"],
+    "Sand King": [
+      "crixalis",
+      "sk"
+    ],
+    "Shadow Fiend": [
+      "nevermore",
+      "sf"
+    ],
+    "Shadow Shaman": [
+      "rhasta",
+      "ss"
+    ],
+    "Silencer": ["nortrom"],
+    "Slardar": [],
+    "Shadow Demon": ["sd"],
+    "Sniper": ["kardel"],
+    "Skywrath Mage": [
+      "dragonus",
+      "sm"
+    ],
+    "Slark": ["nightcrawler"],
+    "Storm Spirit": [
+      "raijin",
+      "ss"
+    ],
+    "Sven": [],
+    "Templar Assassin": [
+      "lanaya",
+      "ta"
+    ],
+    "Spectre": ["mercurial"],
+    "Spirit Breaker": [
+      "barathrum",
+      "sb"
+    ],
+    "Tidehunter": ["leviathan"],
+    "Tinker": ["boush"],
+    "Terrorblade": ["tb"],
+    "Tiny": [],
+    "Timbersaw": ["rizzrack"],
+    "Techies": [
+      "Squee",
+      "Spleen",
+      "Spoon",
+      "gt",
+      "Goblin Techies"
+    ],
+    "Troll Warlord": ["tw"],
+    "Tusk": ["ymir"],
+    "Undying": ["dirge"],
+    "Treant Protector": ["rooftrellen"],
+    "Vengeful Spirit": [
+      "shendelzare",
+      "vs"
+    ],
+    "Venomancer": ["lesale"],
+    "Ursa": ["ulfsaar"],
+    "Viper": [],
+    "Visage": [],
+    "Warlock": [
+      "demnok",
+      "wl"
+    ],
+    "Windranger": [
+      "lyralei",
+      "wr"
+    ],
+    "Witch Doctor": [
+      "zharvakko",
+      "wd"
+    ],
+    "Wraith King": [
+      "ostarion",
+      "skeleton king",
+      "wk",
+      "sk"
+    ],
+    "Zeus": [],
+    "Weaver": ["skitskurr"],
+    "Winter Wyvern": [
+      "auroth",
+      "ww"
+    ]
+  }
+}

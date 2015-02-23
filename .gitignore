@@ -3,3 +3,4 @@ node_modules/
 savedHeroes.json
 public/bin/
 public/js/lib/bowerDependencies
+.tmp/

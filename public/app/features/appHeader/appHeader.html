@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-	<meta charset="UTF-8">
-	<title></title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="app-header" ng-class="responsiveService.getSize()" ng-controller="appHeaderController">
+	<div class="app-header-title">
+		{{ translationService.translateString("Walrus Punch!")}}
+	</div>
+	<div class="app-header-sub-title" data-bind="visible: currentSize().name !== 'tiny'">
+		{{ translationService.translateString("A Dota 2 CounterPicker")}}
+	</div>
+	<div class="about-modal-link" ng-click="openAboutModal()">
+		{{ translationService.translateString("By Broderick Young")}}
+	</div>
+</div>
