@@ -1,4 +1,4 @@
-*, *:before, *:after { @extend %border-box; }
+*, *:before, *:after { box-sizing: border-box; }
 
 html {
 	@include main-font();
@@ -11,6 +11,8 @@ html {
 
 body{
 	@include font-size(1.6);
+	height: 100%;
+	width: 100%;
 }
 
 .page-wrapper{

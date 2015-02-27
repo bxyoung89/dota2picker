@@ -33,13 +33,19 @@
 	height: 40px;
 	width: 40px;
 	background: $dark-green;
-	line-height: 40px;
-	color: $off-white;
 	float: right;
 	display: block;
 	cursor: pointer;
-	transition: color 300ms ease;
+	transition: all 300ms ease;
 	&:hover{
-		color: darken($off-white, 10%);
+		background: darken($dark-green, 10%);
+	}
+
+	svg{
+		fill: $off-white;
+		margin: 0 auto;
+		@include vertical-align();
+		height: 40px;
+		width: 40px;
 	}
 }

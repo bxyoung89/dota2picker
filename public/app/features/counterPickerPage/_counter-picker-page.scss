@@ -1,0 +1,117 @@
+.counter-picker-page{
+	height: 100%;
+	width: 100%;
+}
+
+.counter-picker-page-content{
+	height: 100%;
+	width: 100%;
+	position: relative;
+
+}
+
+.counter-picker-page-top-content{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	height: 185px;
+	width: 100%;
+
+	.enemy-team-wrapper{
+		height: 100%;
+		width: 100%;
+		position: relative;
+	}
+}
+
+
+
+.counter-picker-page-bottom-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	height: 100%;
+	width: 100%;
+	padding-top: 185px;
+
+	.hero-grid-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		height: 100%;
+		width: 100%;
+		padding-right: 550px;
+	}
+
+	.counter-picker-list-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		height: 100%;
+		width: 550px;
+	}
+}
+
+.counter-picker-page-bottom-content-relative-wrapper{
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+@media(max-width:$counter-picker-page-medium-width){
+	.counter-picker-page-top-content{
+		height: 143px;
+	}
+
+	.counter-picker-page-bottom-content{
+		padding-top: 143px;
+
+		.hero-grid-wrapper{
+			padding-right: 370px;
+		}
+
+		.counter-picker-list-wrapper{
+			width: 370px;
+		}
+	}
+}
+
+
+
+@media(max-width:$counter-picker-page-small-width){
+	.counter-picker-page-top-content{
+		height: 75px;
+	}
+
+	.counter-picker-page-bottom-content{
+		padding-top: 75px;
+	}
+
+	.counter-picker-page-bottom-content{
+		.hero-grid-wrapper{
+			width: 100%;
+			height: auto;
+			position: relative;
+			top: 0;
+			left: 0;
+			padding: 0;
+		}
+
+		.counter-picker-list-wrapper{
+			width: 100%;
+			position: relative;
+			top: 0;
+			left: 0;
+			right: 0;
+		}
+	}
+}
+
+@media(max-width:$counter-picker-page-tiny-width){
+
+
+}

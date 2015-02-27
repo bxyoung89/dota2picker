@@ -40,6 +40,28 @@ angular.module("WalrusPunch").service("responsiveService", ["$rootScope", "RESIZ
 		return currentSize === undefined ? "tiny" :currentSize.name;
 	};
 
+	ResponsiveService.prototype.getHeroImageSmall = function(hero){
+		var size = ResponsiveService.prototype.getSize();
+		switch(size){
+			case "tiny": return "http://cdn.dota2.com/apps/dota2/images/heroes/" + hero.imageId + "_sb.png";
+			case "small": return "http://cdn.dota2.com/apps/dota2/images/heroes/" + hero.imageId + "_sb.png";
+			case "medium": return "http://cdn.dota2.com/apps/dota2/images/heroes/" + hero.imageId + "_lg.png";
+			case "large": return "http://cdn.dota2.com/apps/dota2/images/heroes/" + hero.imageId + "_lg.png";
+			default: return "http://cdn.dota2.com/apps/dota2/images/heroes/" + hero.imageId + "_sb.png";
+		}
+	};
+
+	ResponsiveService.prototype.getHeroImageLarge = function(hero){
+		var size = ResponsiveService.prototype.getSize();
+		switch(size){
+			case "tiny": return "http://cdn.dota2.com/apps/dota2/images/heroes/" + hero.imageId + "_sb.png";
+			case "small": return "http://cdn.dota2.com/apps/dota2/images/heroes/" + hero.imageId + "_sb.png";
+			case "medium": return "http://cdn.dota2.com/apps/dota2/images/heroes/" + hero.imageId + "_lg.png";
+			case "large": return "http://cdn.dota2.com/apps/dota2/images/heroes/" + hero.imageId + "_full.png";
+			default: return "http://cdn.dota2.com/apps/dota2/images/heroes/" + hero.imageId + "_sb.png";
+		}
+	};
+
 	function getCurrentSize() {
 		var windowWidth = $(window).width();
 		return sizes.find(function (size) {

@@ -1,25 +1,21 @@
-<div class="enemy-team absolute"
-	 data-bind="css: {large: currentSize().name === 'large', medium: currentSize().name === 'medium', small: currentSize().name === 'small', tiny: currentSize().name === 'tiny'}">
-	<div class="title">
-		Enemy Team
+<div class="enemy-team" ng-class="responsiveSize" ng-controller="enemyTeamController">
+	<div class="enemy-team-title">
+		{{ translationService.translateString("Enemy Team")}}
 	</div>
-	<div class="team-wrapper">
-		<div class="team" data-bind="foreach: enemyHeroes">
-			<div class="hero" data-bind="click: function(){ if(empty){ return;} $parent.heroRemoved($data); }">
-				<!-- ko if: !empty -->
-				<div class="relative-wrapper">
-					<img class="background-image fill" data-bind="attr: { src: $parent.getEnemyTeamImageUrl($data)}">
-
-					<div class="icon">
-						<span class="ico-close"></span>
-					</div>
+	<div class="enemy-team-heroes-wrapper">
+		<div class="enemy-heroes">
+			<div class="enemy-team-hero-slot" ng-repeat="hero in heroes" >
+				<div class="enemy-hero" ng-if="!hero.empty" ng-click="onHeroClicked(hero)">
+					<img class="background-image" ng-src="{{getHeroImage(hero)}}">
+					<svg viewBox="0 0 30 30" class="ico-close">
+						<use xlink:href="#ico-close"></use>
+					</svg>
 				</div>
-				<!-- /ko -->
-				<!-- ko if: empty -->
-				<div class="empty-slot">
-					<div class="ico-plus"></div>
+				<div class="enemy-team-empty-slot" ng-if="hero.empty">
+					<svg viewBox="0 0 30 30" class="ico-plus">
+						<use xlink:href="#ico-plus"></use>
+					</svg>
 				</div>
-				<!-- /ko -->
 			</div>
 		</div>
 	</div>
