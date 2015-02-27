@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-	<meta charset="UTF-8">
-	<title></title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="hero-grid" ng-controller="heroGridController" id="{{heroGridId}}">
+	<div class="hero-grid-hero mix" ng-repeat="hero in heroes" ng-click="onHeroClicked(hero)" ng-class="{selected: hero.selected }" data-name="{{hero.translatedName}}" data-hero-id="{{hero.id}}">
+		<div class="hero-content">
+			<img ng-src="{{getHeroImage(hero)}}">
+			<div class="name">
+				{{ hero.translatedName }}
+			</div>
+		</div>
+	</div>
+</div>

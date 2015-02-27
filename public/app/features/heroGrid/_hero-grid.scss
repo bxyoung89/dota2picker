@@ -1,0 +1,87 @@
+//<div class="hero-grid" ng-controller="heroGridController">
+//<div class="hero-grid-heroes">
+//<div class="hero-grid-hero mix" ng-click="onHeroClicked(hero)" ng-class="{selected: hero.selected }" data-name="{{hero.name}}">
+//<div class="hero-content">
+//<img ng-src="{{getHeroImage(hero)}}">
+//<div class="name">
+//				 {{ hero.translatedName }}
+//</div>
+//</div>
+//</div>
+//</div>
+//</div>
+
+.hero-grid{
+	height: 100%;
+	width: 100%;
+	font-size: 0;
+	overflow: auto;
+	text-align: center;
+}
+
+.hero-grid-hero{
+	display: inline-block;
+	height: 144px;
+	width: 256px;
+	background: $off-white;
+	cursor: pointer;
+
+	&.selected{
+		img,
+		.name{
+			opacity: 1;
+		}
+	}
+
+	&:hover{
+		img,
+		.name{
+			opacity: 0.8;
+		}
+	}
+
+	.hero-content{
+		position: relative;
+		height: 100%;
+		width: 100%;
+	}
+
+	img,
+	.name{
+		opacity: 0.6;
+		transition: all 300ms ease;
+	}
+
+	img{
+		max-width: 100%;
+		width: 100%;
+		height: auto;
+	}
+
+	.name{
+		position: absolute;
+		color: $off-white;
+		@include font-size(2.0);
+		bottom: 5px;
+		left: 5px;
+	}
+}
+
+
+@media(max-width:$counter-picker-page-medium-width){
+	.hero-grid-hero {
+		height: 115px;
+		width: 205px;
+	}
+}
+
+
+
+@media(max-width:$counter-picker-page-small-width){
+
+}
+
+@media(max-width:$counter-picker-page-tiny-width){
+
+
+}

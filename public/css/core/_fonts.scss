@@ -93,9 +93,9 @@
 //	unicode-range: U+E01-E3A, U+E3F-E5B, U+200B-200D, U+25CC;
 //}
 //
-
-
-
+//
+//
+//
 @font-face {
 	font-family: "Source Sans Pro";
 	src: url("/fonts/sourceSansPro-Regular-webfont.eot");
@@ -158,8 +158,8 @@
 	url("/fonts/sourceSansPro-BoldIt-webfont.woff") format('woff'),
 	url("/fonts/sourceSansPro-BoldIt-webfont.ttf") format('truetype'),
 	url("/fonts/sourceSansPro-BoldIt-webfont.svg#SourceSansProBoldItalic") format('svg');
-	font-weight: 400;
-	font-style: normal;
+	font-weight: 700;
+	font-style: italic;
 }
 
 @mixin main-font {

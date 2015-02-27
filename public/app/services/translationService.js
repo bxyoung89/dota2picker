@@ -45,7 +45,7 @@ angular.module("WalrusPunch").service("translationService", [
 		TranslationService.prototype.translateString = function (stringToTranslate) {
 			var translatedString = currentTranslation[stringToTranslate];
 			if (translatedString === undefined) {
-				return "Shitty Wizard";
+				return stringToTranslate;
 			}
 			return translatedString;
 		};
@@ -53,7 +53,7 @@ angular.module("WalrusPunch").service("translationService", [
 		TranslationService.prototype.translateHeroName = function (heroName) {
 			var translatedString = currentTranslation.heroes[heroName];
 			if (translatedString === undefined) {
-				return "Shitty Wizard";
+				return heroName;
 			}
 			return translatedString;
 		};
@@ -66,7 +66,7 @@ angular.module("WalrusPunch").service("translationService", [
 		TranslationService.prototype.translateRole = function (role) {
 			var translatedString = currentTranslation.roles[role];
 			if (translatedString === undefined) {
-				return "Shitty Wizard";
+				return role;
 			}
 			return translatedString;
 		};

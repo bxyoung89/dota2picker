@@ -12,10 +12,16 @@
 				</div>
 				<div class="counter-picker-page-bottom-content">
 					<div class="counter-picker-page-bottom-content-relative-wrapper">
+						<div class="hero-selection-wrapper">
+							<div class="hero-selection-relative-wrapper">
+								<div class="hero-search-bar-wrapper">
 
-					</div>
-					<div class="hero-grid-wrapper">
-
+								</div>
+								<div class="hero-grid-wrapper" ng-if="shouldShowHeroGrid()">
+									<ng-include src="'/app/features/heroGrid/heroGrid.html'"></ng-include>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="counter-pick-list-wrapper">
 
