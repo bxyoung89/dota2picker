@@ -5,7 +5,8 @@ angular.module("WalrusPunch").controller("heroGridController", [
 	"translationService",
 	"responsiveService",
 	"guidService",
-	function($scope, heroService, counterPickerPageService, translationService, responsiveService, guidService){
+	"TRANSLATION_EVENTS",
+	function($scope, heroService, counterPickerPageService, translationService, responsiveService, guidService, TRANSLATION_EVENTS){
 		$scope.heroGridId = "hero-grid-"+guidService.newGuid();
 		$scope.translationService = translationService;
 		$scope.heroes = JSON.parse(JSON.stringify(heroService.getTranslatedHeroes()));
@@ -44,6 +45,13 @@ angular.module("WalrusPunch").controller("heroGridController", [
 			translatedHeroesWatcher();
 			enemyTeamWatcher();
 			searchKeyWordsWatcher();
+		});
+
+		$scope.$on(TRANSLATION_EVENTS.translationChanged, function(){
+			setTimeout(function(){
+				var heroGrid = $("#"+$scope.heroGridId);
+				heroGrid.mixItUp("sort", "name: desc");
+			},0);
 		});
 
 		$scope.getHeroImage = responsiveService.getHeroImageLarge;
