@@ -1,5 +1,5 @@
 <div class="hero-grid" ng-controller="heroGridController" id="{{heroGridId}}">
-	<div class="hero-grid-hero mix" ng-repeat="hero in heroes" ng-click="onHeroClicked(hero)" ng-class="{selected: isHeroSelected(hero) }" data-name="{{hero.translatedName}}" data-hero-id="{{hero.id}}">
+	<div class="hero-grid-hero mix" ng-repeat="hero in heroes" ng-click="onHeroClicked(hero)" ng-class="{selected: hero.isSelected }" data-name="{{hero.translatedName}}" data-hero-id="{{hero.id}}">
 		<div class="hero-content">
 			<img ng-src="{{getHeroImage(hero)}}">
 			<div class="name">

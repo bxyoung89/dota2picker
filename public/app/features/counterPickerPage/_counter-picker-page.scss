@@ -45,7 +45,7 @@
 		background: $off-white;
 	}
 
-	.counter-pick-list-area-wrapper {
+	.counter-pick-list-wrapper {
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -62,8 +62,7 @@
 	position: relative;
 }
 
-.hero-selection-relative-wrapper,
-.counter-pick-list-area-relative-wrapper{
+.hero-selection-relative-wrapper{
 	height: 100%;
 	width: 100%;
 	position: relative;
@@ -89,26 +88,6 @@
 }
 
 
-.role-dropdown-wrapper{
-	height: 60px;
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 2;
-}
-
-.counter-pick-list-wrapper{
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 1;
-	padding-top: 60px;
-}
-
-
 @media(max-width:$counter-picker-page-medium-width){
 	.counter-picker-page-top-content{
 		height: 143px;
@@ -121,7 +100,7 @@
 			padding-right: 370px;
 		}
 
-		.counter-pick-list-area-wrapper{
+		.counter-pick-list-wrapper{
 			width: 370px;
 		}
 	}
@@ -148,7 +127,7 @@
 			padding: 0;
 		}
 
-		.counter-pick-list-area-wrapper{
+		.counter-pick-list-wrapper{
 			width: 100%;
 			position: relative;
 			top: 0;

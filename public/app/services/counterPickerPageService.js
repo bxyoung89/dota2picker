@@ -21,11 +21,13 @@ angular.module("WalrusPunch").service("counterPickerPageService", [ "counterPick
 		if(matchingEnemyHero !== undefined){
 			return;
 		}
+		hero.isSelected = true;
 		enemyTeam.push(hero);
 		onEnemyTeamChanged();
 	};
 
 	CounterPickerPageService.prototype.removeEnemyHero = function(hero){
+		hero.isSelected = false;
 		var enemyTeamLength = enemyTeam.length;
 		enemyTeam.remove(function(h){
 			return h.id === hero.id;

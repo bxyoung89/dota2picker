@@ -14,6 +14,10 @@
 	color: $off-black;
 	cursor: default;
 	position: relative;
+
+	&:last-child{
+		margin-bottom: 0;
+	}
 }
 
 .counter-pick-hero-image-wrapper{
@@ -89,13 +93,13 @@
 
 	.name{
 		float: left;
-		@include font-size(1.6);
+		@include font-size(2.6);
 	}
 
 	.advantage{
 		float: left;
 		line-height: 70px;
-		@include font-size(2.0);
+		@include font-size(2.6);
 	}
 
 	svg{
@@ -147,6 +151,11 @@
 			line-height: 33px;
 		}
 
+		.name{
+			float: left;
+			@include font-size(2.0);
+		}
+
 		svg{
 			margin-top: -5px;
 		}
@@ -154,24 +163,12 @@
 		.ico-minus{
 			margin-top: -7px;
 		}
-
-		.roles{
-			height: 20px;
-			margin-top: 6px;
-			display: none;
-		}
 	}
 }
 
 @media(max-width:$counter-picker-page-small-width){
 	.counter-pick-list{
 		height: auto;
-	}
-
-	.counter-pick-hero-text {
-		.roles {
-			display: block;
-		}
 	}
 }
 

@@ -75,24 +75,7 @@ angular.module("WalrusPunch").controller("counterPickListController", [
 				var isOnEnemyTeam = coutnerPickerPageService.getEnemyTeam().any(function(enemy){
 					return enemy.id === heroId;
 				});
-				if(isOnEnemyTeam){
-					return false;
-				}
-				//var matchingHero = heroList.find(function(hero){
-				//	return hero.id === heroId;
-				//});
-				//if(matchingHero === undefined){
-				//	return false;
-				//}
-				//var selectedRole = coutnerPickerPageService.getSelectedRole();
-				//if(selectedRole.id === "All Roles"){
-				//	return true;
-				//}
-				//var hasSelectedRole = matchingHero.roles.any(function(role){
-				//	return role.id === selectedRole.id;
-				//});
-				//return hasSelectedRole;
-				return true;
+				return !isOnEnemyTeam;
 			});
 
 			heroList.mixItUp("multiMix", {

@@ -162,6 +162,13 @@
 	font-style: italic;
 }
 
+@font-face {
+	font-family: "Noto Sans";
+	src: url("/fonts/noto sans/NotoSansCJKsc-Regular.otf") format("opentype");
+	font-weight: 400;
+	font-style: normal;
+}
+
 @mixin main-font {
-	font-family: "Source Sans Pro", Verdana, Helvetica, Arial, sans-serif;
+	font-family: "Source Sans Pro", "Noto Sans", Verdana, Helvetica, Arial, sans-serif;
 }
