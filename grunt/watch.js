@@ -8,7 +8,8 @@ module.exports = {
 	},
 	js: {
 		files: [
-			"<%= paths.appSrc %>/**/*.js"
+			"<%= paths.appSrc %>/**/*.js",
+			"<%= paths.appSrc %>/**/*.html"
 		],
 		tasks: ["build-js-dev"]
 	}

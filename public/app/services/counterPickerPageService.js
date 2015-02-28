@@ -15,6 +15,12 @@ angular.module("WalrusPunch").service("counterPickerPageService", [function(){
 		if(enemyTeam.length === 5){
 			return;
 		}
+		var matchingEnemyHero = enemyTeam.find(function(enemy){
+			return enemy.id === hero.id;
+		});
+		if(matchingEnemyHero !== undefined){
+			return;
+		}
 		enemyTeam.push(hero);
 	};
 

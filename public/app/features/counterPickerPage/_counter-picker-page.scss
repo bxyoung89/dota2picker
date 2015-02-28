@@ -44,6 +44,7 @@
 		height: 100%;
 		width: 100%;
 		padding-right: 550px;
+		background: $off-white;
 	}
 
 	.counter-picker-list-wrapper {
@@ -74,7 +75,7 @@
 	left: 0;
 	z-index: 2;
 	width: 100%;
-	height: 50px;
+	height: 80px;
 }
 
 .hero-grid-wrapper{
@@ -84,7 +85,7 @@
 	z-index: 1;
 	width: 100%;
 	height: 100%;
-	padding-top: 50px;
+	padding-top: 80px;
 }
 
 @media(max-width:$counter-picker-page-medium-width){
@@ -137,6 +138,11 @@
 
 	.hero-grid-wrapper{
 		display: none;
+	}
+
+
+	.hero-search-bar-wrapper{
+		height: 60px;
 	}
 }
 
