@@ -3,11 +3,6 @@
     "name": "Abaddon",
     "id": "abaddon",
     "stat": "strength",
-    "roles": [
-      "durable",
-      "support",
-      "carry"
-    ],
     "imageId": "abaddon",
     "nicknames": ["avernus"]
   },
@@ -15,11 +10,6 @@
     "name": "Alchemist",
     "id": "alchemist",
     "stat": "strength",
-    "roles": [
-      "durable",
-      "carry",
-      "disabler"
-    ],
     "imageId": "alchemist",
     "nicknames": ["razzil"]
   },
@@ -27,10 +17,6 @@
     "name": "Ancient Apparition",
     "id": "ancient-apparition",
     "stat": "intelligence",
-    "roles": [
-      "support",
-      "disabler"
-    ],
     "imageId": "ancient_apparition",
     "nicknames": [
       "kaldr",
@@ -41,10 +27,6 @@
     "name": "Anti-Mage",
     "id": "anti-mage",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "escape"
-    ],
     "imageId": "antimage",
     "nicknames": ["am"]
   },
@@ -52,12 +34,6 @@
     "name": "Axe",
     "id": "axe",
     "stat": "strength",
-    "roles": [
-      "durable",
-      "initiator",
-      "disabler",
-      "jungler"
-    ],
     "imageId": "axe",
     "nicknames": []
   },
@@ -65,11 +41,6 @@
     "name": "Bane",
     "id": "bane",
     "stat": "intelligence",
-    "roles": [
-      "disabler",
-      "nuker",
-      "support"
-    ],
     "imageId": "bane",
     "nicknames": ["atropos"]
   },
@@ -77,12 +48,6 @@
     "name": "Batrider",
     "id": "batrider",
     "stat": "intelligence",
-    "roles": [
-      "initiator",
-      "disabler",
-      "nuker",
-      "escape"
-    ],
     "imageId": "batrider",
     "nicknames": []
   },
@@ -90,11 +55,6 @@
     "name": "Beastmaster",
     "id": "beastmaster",
     "stat": "strength",
-    "roles": [
-      "initiator",
-      "disabler",
-      "durable"
-    ],
     "imageId": "beastmaster",
     "nicknames": [
       "karroch",
@@ -106,10 +66,6 @@
     "name": "Bloodseeker",
     "id": "bloodseeker",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "jungler"
-    ],
     "imageId": "bloodseeker",
     "nicknames": [
       "strygwyr",
@@ -120,11 +76,6 @@
     "name": "Bounty Hunter",
     "id": "bounty-hunter",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "escape",
-      "nuker"
-    ],
     "imageId": "bounty_hunter",
     "nicknames": [
       "gondar",
@@ -135,12 +86,6 @@
     "name": "Brewmaster",
     "id": "brewmaster",
     "stat": "strength",
-    "roles": [
-      "carry",
-      "durable",
-      "initiator",
-      "pusher"
-    ],
     "imageId": "brewmaster",
     "nicknames": [
       "mangix",
@@ -151,11 +96,6 @@
     "name": "Bristleback",
     "id": "bristleback",
     "stat": "strength",
-    "roles": [
-      "durable",
-      "initiator",
-      "disabler"
-    ],
     "imageId": "bristleback",
     "nicknames": [
       "rigwarl",
@@ -166,11 +106,6 @@
     "name": "Broodmother",
     "id": "broodmother",
     "stat": "agility",
-    "roles": [
-      "pusher",
-      "carry",
-      "escape"
-    ],
     "imageId": "broodmother",
     "nicknames": ["bm"]
   },
@@ -178,11 +113,6 @@
     "name": "Centaur Warrunner",
     "id": "centaur-warrunner",
     "stat": "strength",
-    "roles": [
-      "durable",
-      "disabler",
-      "initiator"
-    ],
     "imageId": "centaur",
     "nicknames": [
       "bradwarden",
@@ -193,12 +123,6 @@
     "name": "Chaos Knight",
     "id": "chaos-knight",
     "stat": "strength",
-    "roles": [
-      "carry",
-      "disabler",
-      "durable",
-      "pusher"
-    ],
     "imageId": "chaos_knight",
     "nicknames": ["ck"]
   },
@@ -206,11 +130,6 @@
     "name": "Chen",
     "id": "chen",
     "stat": "intelligence",
-    "roles": [
-      "support",
-      "jungler",
-      "pusher"
-    ],
     "imageId": "chen",
     "nicknames": []
   },
@@ -218,10 +137,6 @@
     "name": "Clinkz",
     "id": "clinkz",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "escape"
-    ],
     "imageId": "clinkz",
     "nicknames": ["bone"]
   },
@@ -229,10 +144,6 @@
     "name": "Clockwerk",
     "id": "clockwerk",
     "stat": "strength",
-    "roles": [
-      "initiator",
-      "durable"
-    ],
     "imageId": "rattletrap",
     "nicknames": [
       "rattletrap",
@@ -243,12 +154,6 @@
     "name": "Crystal Maiden",
     "id": "crystal-maiden",
     "stat": "agility",
-    "roles": [
-      "support",
-      "disabler",
-      "nuker",
-      "lane support"
-    ],
     "imageId": "crystal_maiden",
     "nicknames": [
       "rylai",
@@ -259,11 +164,6 @@
     "name": "Dark Seer",
     "id": "dark-seer",
     "stat": "intelligence",
-    "roles": [
-      "initiator",
-      "nuker",
-      "escape"
-    ],
     "imageId": "dark_seer",
     "nicknames": [
       "ish",
@@ -274,10 +174,6 @@
     "name": "Dazzle",
     "id": "dazzle",
     "stat": "intelligence",
-    "roles": [
-      "support",
-      "lane support"
-    ],
     "imageId": "dazzle",
     "nicknames": []
   },
@@ -285,11 +181,6 @@
     "name": "Death Prophet",
     "id": "death-prophet",
     "stat": "intelligence",
-    "roles": [
-      "pusher",
-      "nuker",
-      "durable"
-    ],
     "imageId": "death_prophet",
     "nicknames": [
       "krobelus",
@@ -301,12 +192,6 @@
     "name": "Disruptor",
     "id": "disruptor",
     "stat": "intelligence",
-    "roles": [
-      "nuker",
-      "support",
-      "initiator",
-      "disabler"
-    ],
     "imageId": "disruptor",
     "nicknames": []
   },
@@ -314,11 +199,6 @@
     "name": "Doom",
     "id": "doom",
     "stat": "strength",
-    "roles": [
-      "durable",
-      "carry",
-      "nuker"
-    ],
     "imageId": "doom_bringer",
     "nicknames": []
   },
@@ -326,12 +206,6 @@
     "name": "Dragon Knight",
     "id": "dragon-knight",
     "stat": "strength",
-    "roles": [
-      "carry",
-      "durable",
-      "disabler",
-      "pusher"
-    ],
     "imageId": "dragon_knight",
     "nicknames": [
       "davion",
@@ -342,7 +216,6 @@
     "name": "Drow Ranger",
     "id": "drow-ranger",
     "stat": "agility",
-    "roles": ["carry"],
     "imageId": "drow_ranger",
     "nicknames": [
       "traxex",
@@ -353,10 +226,6 @@
     "name": "Earth Spirit",
     "id": "earth-spirit",
     "stat": "strength",
-    "roles": [
-      "carry",
-      "nuker"
-    ],
     "imageId": "earth_spirit",
     "nicknames": [
       "kaolin",
@@ -367,12 +236,6 @@
     "name": "Earthshaker",
     "id": "earthshaker",
     "stat": "strength",
-    "roles": [
-      "initiator",
-      "disabler",
-      "support",
-      "lane support"
-    ],
     "imageId": "earthshaker",
     "nicknames": [
       "raigor",
@@ -383,10 +246,6 @@
     "name": "Elder Titan",
     "id": "elder-titan",
     "stat": "strength",
-    "roles": [
-      "initiator",
-      "durable"
-    ],
     "imageId": "elder_titan",
     "nicknames": ["et"]
   },
@@ -394,12 +253,6 @@
     "name": "Ember Spirit",
     "id": "ember-spirit",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "nuker",
-      "disabler",
-      "durable"
-    ],
     "imageId": "ember_spirit",
     "nicknames": [
       "xin",
@@ -410,12 +263,6 @@
     "name": "Enchantress",
     "id": "enchantress",
     "stat": "intelligence",
-    "roles": [
-      "support",
-      "pusher",
-      "durable",
-      "jungler"
-    ],
     "imageId": "enchantress",
     "nicknames": ["aiushtha"]
   },
@@ -423,12 +270,6 @@
     "name": "Enigma",
     "id": "enigma",
     "stat": "intelligence",
-    "roles": [
-      "disabler",
-      "initiator",
-      "jungler",
-      "pusher"
-    ],
     "imageId": "enigma",
     "nicknames": []
   },
@@ -436,12 +277,6 @@
     "name": "Faceless Void",
     "id": "faceless-void",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "initiator",
-      "disabler",
-      "escape"
-    ],
     "imageId": "faceless_void",
     "nicknames": ["darkterror"]
   },
@@ -449,11 +284,6 @@
     "name": "Gyrocopter",
     "id": "gyrocopter",
     "stat": "agility",
-    "roles": [
-      "disabler",
-      "initiator",
-      "nuker"
-    ],
     "imageId": "gyrocopter",
     "nicknames": ["aurel"]
   },
@@ -461,11 +291,6 @@
     "name": "Huskar",
     "id": "huskar",
     "stat": "strength",
-    "roles": [
-      "carry",
-      "initiator",
-      "durable"
-    ],
     "imageId": "huskar",
     "nicknames": []
   },
@@ -473,12 +298,6 @@
     "name": "Invoker",
     "id": "invoker",
     "stat": "intelligence",
-    "roles": [
-      "carry",
-      "nuker",
-      "initiator",
-      "escape"
-    ],
     "imageId": "invoker",
     "nicknames": [
       "kael",
@@ -490,11 +309,6 @@
     "name": "Io",
     "id": "io",
     "stat": "strength",
-    "roles": [
-      "support",
-      "lane support",
-      "nuker"
-    ],
     "imageId": "wisp",
     "nicknames": ["wisp"]
   },
@@ -502,12 +316,6 @@
     "name": "Jakiro",
     "id": "jakiro",
     "stat": "intelligence",
-    "roles": [
-      "nuker",
-      "pusher",
-      "lane support",
-      "disabler"
-    ],
     "imageId": "jakiro",
     "nicknames": ["thd"]
   },
@@ -515,10 +323,6 @@
     "name": "Juggernaut",
     "id": "juggernaut",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "pusher"
-    ],
     "imageId": "juggernaut",
     "nicknames": ["yurnero"]
   },
@@ -526,10 +330,6 @@
     "name": "Keeper of the Light",
     "id": "keeper-of-the-light",
     "stat": "intelligence",
-    "roles": [
-      "pusher",
-      "support"
-    ],
     "imageId": "keeper_of_the_light",
     "nicknames": ["kotl"]
   },
@@ -537,12 +337,6 @@
     "name": "Kunkka",
     "id": "kunkka",
     "stat": "strength",
-    "roles": [
-      "disabler",
-      "initiator",
-      "carry",
-      "durable"
-    ],
     "imageId": "kunkka",
     "nicknames": []
   },
@@ -550,10 +344,6 @@
     "name": "Legion Commander",
     "id": "legion-commander",
     "stat": "strength",
-    "roles": [
-      "carry",
-      "durable"
-    ],
     "imageId": "legion_commander",
     "nicknames": [
       "tresdin",
@@ -564,12 +354,6 @@
     "name": "Leshrac",
     "id": "leshrac",
     "stat": "intelligence",
-    "roles": [
-      "nuker",
-      "pusher",
-      "disabler",
-      "support"
-    ],
     "imageId": "leshrac",
     "nicknames": []
   },
@@ -577,11 +361,6 @@
     "name": "Lich",
     "id": "lich",
     "stat": "intelligence",
-    "roles": [
-      "support",
-      "lane support",
-      "nuker"
-    ],
     "imageId": "lich",
     "nicknames": ["ethreain"]
   },
@@ -589,12 +368,6 @@
     "name": "Lifestealer",
     "id": "lifestealer",
     "stat": "strength",
-    "roles": [
-      "carry",
-      "durable",
-      "jungler",
-      "escape"
-    ],
     "imageId": "life_stealer",
     "nicknames": ["naix"]
   },
@@ -602,11 +375,6 @@
     "name": "Lina",
     "id": "lina",
     "stat": "intelligence",
-    "roles": [
-      "nuker",
-      "disabler",
-      "support"
-    ],
     "imageId": "lina",
     "nicknames": []
   },
@@ -614,12 +382,6 @@
     "name": "Lion",
     "id": "lion",
     "stat": "intelligence",
-    "roles": [
-      "disabler",
-      "nuker",
-      "lane support",
-      "support"
-    ],
     "imageId": "lion",
     "nicknames": []
   },
@@ -627,12 +389,6 @@
     "name": "Lone Druid",
     "id": "lone-druid",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "durable",
-      "pusher",
-      "jungler"
-    ],
     "imageId": "lone_druid",
     "nicknames": [
       "sylla",
@@ -643,10 +399,6 @@
     "name": "Luna",
     "id": "luna",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "nuker"
-    ],
     "imageId": "luna",
     "nicknames": []
   },
@@ -654,12 +406,6 @@
     "name": "Lycan",
     "id": "lycan",
     "stat": "strength",
-    "roles": [
-      "carry",
-      "jungler",
-      "pusher",
-      "durable"
-    ],
     "imageId": "lycan",
     "nicknames": ["banehallow"]
   },
@@ -667,12 +413,6 @@
     "name": "Magnus",
     "id": "magnus",
     "stat": "strength",
-    "roles": [
-      "initiator",
-      "disabler",
-      "nuker",
-      "carry"
-    ],
     "imageId": "magnataur",
     "nicknames": []
   },
@@ -680,7 +420,6 @@
     "name": "Medusa",
     "id": "medusa",
     "stat": "agility",
-    "roles": ["carry"],
     "imageId": "medusa",
     "nicknames": ["gorgon"]
   },
@@ -688,11 +427,6 @@
     "name": "Meepo",
     "id": "meepo",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "disabler",
-      "initiator"
-    ],
     "imageId": "meepo",
     "nicknames": ["geomancer"]
   },
@@ -700,12 +434,6 @@
     "name": "Mirana",
     "id": "mirana",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "nuker",
-      "disabler",
-      "escape"
-    ],
     "imageId": "mirana",
     "nicknames": ["potm"]
   },
@@ -713,12 +441,6 @@
     "name": "Morphling",
     "id": "morphling",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "escape",
-      "initiator",
-      "nuker"
-    ],
     "imageId": "morphling",
     "nicknames": []
   },
@@ -726,12 +448,6 @@
     "name": "Naga Siren",
     "id": "naga-siren",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "disabler",
-      "pusher",
-      "escape"
-    ],
     "imageId": "naga_siren",
     "nicknames": [
       "slithice",
@@ -742,12 +458,6 @@
     "name": "Nature's Prophet",
     "id": "natures-prophet",
     "stat": "intelligence",
-    "roles": [
-      "jungler",
-      "pusher",
-      "carry",
-      "escape"
-    ],
     "imageId": "furion",
     "nicknames": [
       "furion",
@@ -758,11 +468,6 @@
     "name": "Necrophos",
     "id": "necrophos",
     "stat": "intelligence",
-    "roles": [
-      "support",
-      "durable",
-      "carry"
-    ],
     "imageId": "necrolyte",
     "nicknames": ["necrolyte"]
   },
@@ -770,10 +475,6 @@
     "name": "Night Stalker",
     "id": "night-stalker",
     "stat": "strength",
-    "roles": [
-      "durable",
-      "initiator"
-    ],
     "imageId": "night_stalker",
     "nicknames": [
       "ns",
@@ -784,10 +485,6 @@
     "name": "Nyx Assassin",
     "id": "nyx-assassin",
     "stat": "agility",
-    "roles": [
-      "disabler",
-      "nuker"
-    ],
     "imageId": "nyx_assassin",
     "nicknames": ["na"]
   },
@@ -795,11 +492,6 @@
     "name": "Ogre Magi",
     "id": "ogre-magi",
     "stat": "intelligence",
-    "roles": [
-      "nuker",
-      "disabler",
-      "durable"
-    ],
     "imageId": "ogre_magi",
     "nicknames": [
       "aggron",
@@ -810,11 +502,6 @@
     "name": "Omniknight",
     "id": "omniknight",
     "stat": "strength",
-    "roles": [
-      "durable",
-      "lane support",
-      "support"
-    ],
     "imageId": "omniknight",
     "nicknames": ["ok"]
   },
@@ -822,10 +509,6 @@
     "name": "Oracle",
     "id": "oracle",
     "stat": "intelligence",
-    "roles": [
-      "support",
-      "lane support"
-    ],
     "imageId": "oracle",
     "nicknames": ["nerif"]
   },
@@ -833,7 +516,6 @@
     "name": "Outworld Devourer",
     "id": "outworld-devourer",
     "stat": "intelligence",
-    "roles": ["carry"],
     "imageId": "obsidian_destroyer",
     "nicknames": [
       "od",
@@ -844,10 +526,6 @@
     "name": "Phantom Assassin",
     "id": "phantom-assassin",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "escape"
-    ],
     "imageId": "phantom_assassin",
     "nicknames": [
       "pa",
@@ -858,11 +536,6 @@
     "name": "Phantom Lancer",
     "id": "phantom-lancer",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "escape",
-      "pusher"
-    ],
     "imageId": "phantom_lancer",
     "nicknames": [
       "azwraith",
@@ -873,11 +546,6 @@
     "name": "Phoenix",
     "id": "phoenix",
     "stat": "strength",
-    "roles": [
-      "initiator",
-      "disabler",
-      "nuker"
-    ],
     "imageId": "phoenix",
     "nicknames": []
   },
@@ -885,12 +553,6 @@
     "name": "Puck",
     "id": "puck",
     "stat": "intelligence",
-    "roles": [
-      "initiator",
-      "nuker",
-      "disabler",
-      "escape"
-    ],
     "imageId": "puck",
     "nicknames": []
   },
@@ -898,10 +560,6 @@
     "name": "Pudge",
     "id": "pudge",
     "stat": "strength",
-    "roles": [
-      "durable",
-      "disabler"
-    ],
     "imageId": "pudge",
     "nicknames": ["butcher"]
   },
@@ -909,11 +567,6 @@
     "name": "Pugna",
     "id": "pugna",
     "stat": "intelligence",
-    "roles": [
-      "nuker",
-      "pusher",
-      "support"
-    ],
     "imageId": "pugna",
     "nicknames": []
   },
@@ -921,11 +574,6 @@
     "name": "Queen of Pain",
     "id": "queen-of-pain",
     "stat": "intelligence",
-    "roles": [
-      "nuker",
-      "escape",
-      "carry"
-    ],
     "imageId": "queenofpain",
     "nicknames": ["qop"]
   },
@@ -933,11 +581,6 @@
     "name": "Razor",
     "id": "razor",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "durable",
-      "nuker"
-    ],
     "imageId": "razor",
     "nicknames": []
   },
@@ -945,10 +588,6 @@
     "name": "Riki",
     "id": "riki",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "escape"
-    ],
     "imageId": "riki",
     "nicknames": []
   },
@@ -956,10 +595,6 @@
     "name": "Rubick",
     "id": "rubick",
     "stat": "intelligence",
-    "roles": [
-      "disabler",
-      "pusher"
-    ],
     "imageId": "rubick",
     "nicknames": []
   },
@@ -967,11 +602,6 @@
     "name": "Sand King",
     "id": "sand-king",
     "stat": "strength",
-    "roles": [
-      "initiator",
-      "disabler",
-      "nuker"
-    ],
     "imageId": "sand_king",
     "nicknames": [
       "crixalis",
@@ -982,11 +612,6 @@
     "name": "Shadow Demon",
     "id": "shadow-demon",
     "stat": "intelligence",
-    "roles": [
-      "support",
-      "disabler",
-      "nuker"
-    ],
     "imageId": "shadow_demon",
     "nicknames": ["sd"]
   },
@@ -994,10 +619,6 @@
     "name": "Shadow Fiend",
     "id": "shadow-fiend",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "nuker"
-    ],
     "imageId": "nevermore",
     "nicknames": [
       "nevermore",
@@ -1008,12 +629,6 @@
     "name": "Shadow Shaman",
     "id": "shadow-shaman",
     "stat": "intelligence",
-    "roles": [
-      "pusher",
-      "disabler",
-      "nuker",
-      "support"
-    ],
     "imageId": "shadow_shaman",
     "nicknames": [
       "rhasta",
@@ -1024,11 +639,6 @@
     "name": "Silencer",
     "id": "silencer",
     "stat": "intelligence",
-    "roles": [
-      "support",
-      "carry",
-      "initiator"
-    ],
     "imageId": "silencer",
     "nicknames": ["nortrom"]
   },
@@ -1036,10 +646,6 @@
     "name": "Skywrath Mage",
     "id": "skywrath-mage",
     "stat": "initiator",
-    "roles": [
-      "nuker",
-      "support"
-    ],
     "imageId": "skywrath_mage",
     "nicknames": [
       "dragonus",
@@ -1050,12 +656,6 @@
     "name": "Slardar",
     "id": "slardar",
     "stat": "strength",
-    "roles": [
-      "carry",
-      "durable",
-      "disabler",
-      "initiator"
-    ],
     "imageId": "slardar",
     "nicknames": []
   },
@@ -1063,10 +663,6 @@
     "name": "Slark",
     "id": "slark",
     "stat": "agility",
-    "roles": [
-      "escape",
-      "carry"
-    ],
     "imageId": "slark",
     "nicknames": ["nightcrawler"]
   },
@@ -1074,7 +670,6 @@
     "name": "Sniper",
     "id": "sniper",
     "stat": "agility",
-    "roles": ["carry"],
     "imageId": "sniper",
     "nicknames": ["kardel"]
   },
@@ -1082,10 +677,6 @@
     "name": "Spectre",
     "id": "spectre",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "durable"
-    ],
     "imageId": "spectre",
     "nicknames": ["mercurial"]
   },
@@ -1093,11 +684,6 @@
     "name": "Spirit Breaker",
     "id": "spirit-breaker",
     "stat": "strength",
-    "roles": [
-      "durable",
-      "support",
-      "carry"
-    ],
     "imageId": "spirit_breaker",
     "nicknames": [
       "barathrum",
@@ -1108,12 +694,6 @@
     "name": "Storm Spirit",
     "id": "storm-spirit",
     "stat": "intelligence",
-    "roles": [
-      "carry",
-      "initiator",
-      "escape",
-      "disabler"
-    ],
     "imageId": "storm_spirit",
     "nicknames": [
       "raijin",
@@ -1124,12 +704,6 @@
     "name": "Sven",
     "id": "sven",
     "stat": "strength",
-    "roles": [
-      "disabler",
-      "initiator",
-      "carry",
-      "support"
-    ],
     "imageId": "sven",
     "nicknames": []
   },
@@ -1137,11 +711,6 @@
     "name": "Techies",
     "id": "techies",
     "stat": "intelligence",
-    "roles": [
-      "nuker",
-      "support",
-      "disabler"
-    ],
     "imageId": "techies",
     "nicknames": [
       "Squee",
@@ -1155,10 +724,6 @@
     "name": "Templar Assassin",
     "id": "templar-assassin",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "escape"
-    ],
     "imageId": "templar_assassin",
     "nicknames": [
       "lanaya",
@@ -1169,7 +734,6 @@
     "name": "Terrorblade",
     "id": "terrorblade",
     "stat": "agility",
-    "roles": ["carry"],
     "imageId": "terrorblade",
     "nicknames": ["tb"]
   },
@@ -1177,12 +741,6 @@
     "name": "Tidehunter",
     "id": "tidehunter",
     "stat": "strength",
-    "roles": [
-      "initiator",
-      "durable",
-      "disabler",
-      "support"
-    ],
     "imageId": "tidehunter",
     "nicknames": ["leviathan"]
   },
@@ -1190,11 +748,6 @@
     "name": "Timbersaw",
     "id": "timbersaw",
     "stat": "strength",
-    "roles": [
-      "durable",
-      "nuker",
-      "escape"
-    ],
     "imageId": "shredder",
     "nicknames": ["rizzrack"]
   },
@@ -1202,10 +755,6 @@
     "name": "Tinker",
     "id": "tinker",
     "stat": "intelligence",
-    "roles": [
-      "nuker",
-      "pusher"
-    ],
     "imageId": "tinker",
     "nicknames": ["boush"]
   },
@@ -1213,12 +762,6 @@
     "name": "Tiny",
     "id": "tiny",
     "stat": "strength",
-    "roles": [
-      "disabler",
-      "nuker",
-      "initiator",
-      "durable"
-    ],
     "imageId": "tiny",
     "nicknames": []
   },
@@ -1226,12 +769,6 @@
     "name": "Treant Protector",
     "id": "treant-protector",
     "stat": "strength",
-    "roles": [
-      "durable",
-      "initiator",
-      "lane support",
-      "disabler"
-    ],
     "imageId": "treant",
     "nicknames": ["rooftrellen"]
   },
@@ -1239,7 +776,6 @@
     "name": "Troll Warlord",
     "id": "troll-warlord",
     "stat": "agility",
-    "roles": ["carry"],
     "imageId": "troll_warlord",
     "nicknames": ["tw"]
   },
@@ -1247,10 +783,6 @@
     "name": "Tusk",
     "id": "tusk",
     "stat": "strength",
-    "roles": [
-      "initiator",
-      "durable"
-    ],
     "imageId": "tusk",
     "nicknames": ["ymir"]
   },
@@ -1258,12 +790,6 @@
     "name": "Undying",
     "id": "undying",
     "stat": "strength",
-    "roles": [
-      "durable",
-      "pusher",
-      "disabler",
-      "initiator"
-    ],
     "imageId": "undying",
     "nicknames": ["dirge"]
   },
@@ -1271,11 +797,6 @@
     "name": "Ursa",
     "id": "ursa",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "jungler",
-      "durable"
-    ],
     "imageId": "ursa",
     "nicknames": ["ulfsaar"]
   },
@@ -1283,12 +804,6 @@
     "name": "Vengeful Spirit",
     "id": "vengeful-spirit",
     "stat": "agility",
-    "roles": [
-      "support",
-      "disabler",
-      "lane support",
-      "initiator"
-    ],
     "imageId": "vengefulspirit",
     "nicknames": [
       "shendelzare",
@@ -1299,12 +814,6 @@
     "name": "Venomancer",
     "id": "venomancer",
     "stat": "agility",
-    "roles": [
-      "support",
-      "nuker",
-      "initiator",
-      "pusher"
-    ],
     "imageId": "venomancer",
     "nicknames": ["lesale"]
   },
@@ -1312,10 +821,6 @@
     "name": "Viper",
     "id": "viper",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "durable"
-    ],
     "imageId": "viper",
     "nicknames": []
   },
@@ -1323,11 +828,6 @@
     "name": "Visage",
     "id": "visage",
     "stat": "intelligence",
-    "roles": [
-      "nuker",
-      "durable",
-      "disabler"
-    ],
     "imageId": "visage",
     "nicknames": []
   },
@@ -1335,12 +835,6 @@
     "name": "Warlock",
     "id": "warlock",
     "stat": "intelligence",
-    "roles": [
-      "initiator",
-      "support",
-      "lane support",
-      "disabler"
-    ],
     "imageId": "warlock",
     "nicknames": [
       "demnok",
@@ -1351,10 +845,6 @@
     "name": "Weaver",
     "id": "weaver",
     "stat": "agility",
-    "roles": [
-      "carry",
-      "escape"
-    ],
     "imageId": "weaver",
     "nicknames": ["skitskurr"]
   },
@@ -1362,12 +852,6 @@
     "name": "Windranger",
     "id": "windranger",
     "stat": "intelligence",
-    "roles": [
-      "disabler",
-      "nuker",
-      "support",
-      "escape"
-    ],
     "imageId": "windrunner",
     "nicknames": [
       "lyralei",
@@ -1378,10 +862,6 @@
     "name": "Winter Wyvern",
     "id": "winter-wyvern",
     "stat": "intelligence",
-    "roles": [
-      "support",
-      "disabler"
-    ],
     "imageId": "winter_wyvern",
     "nicknames": [
       "auroth",
@@ -1392,10 +872,6 @@
     "name": "Witch Doctor",
     "id": "witch-doctor",
     "stat": "intelligence",
-    "roles": [
-      "support",
-      "disabler"
-    ],
     "imageId": "witch_doctor",
     "nicknames": [
       "zharvakko",
@@ -1406,11 +882,6 @@
     "name": "Wraith King",
     "id": "wraith-king",
     "stat": "strength",
-    "roles": [
-      "durable",
-      "carry",
-      "disabler"
-    ],
     "imageId": "skeleton_king",
     "nicknames": [
       "ostarion",
@@ -1423,10 +894,6 @@
     "name": "Zeus",
     "id": "zeus",
     "stat": "intelligence",
-    "roles": [
-      "nuker",
-      "support"
-    ],
     "imageId": "zuus",
     "nicknames": []
   }

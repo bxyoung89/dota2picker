@@ -17,18 +17,6 @@
   "If you're feeling really generous send me something on Steam!": "Si te sientes muy generoso enviarme algo en ###Steam###",
   "About": "Acerca de",
   "Language": "Idioma",
-  "roles": {
-    "nuker": "devastator",
-    "durable": "resistente",
-    "carry": "carry",
-    "pusher": "presionador",
-    "support": "apoyo",
-    "lane support": "apoyo de senda",
-    "initiator": "iniciador",
-    "disabler": "incapacitador",
-    "escape": "escurridizo",
-    "jungler": "cazador"
-  },
   "stats": {
     "strength": "strength",
     "agility": "agility",

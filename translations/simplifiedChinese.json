@@ -17,18 +17,6 @@
   "If you're feeling really generous send me something on Steam!": "If you're feeling really generous send me something on ###Steam###",
   "About": "About",
   "Language": "Language",
-  "roles": {
-    "nuker": "nuker",
-    "durable": "durable",
-    "carry": "carry",
-    "pusher": "pusher",
-    "support": "support",
-    "lane support": "lane support",
-    "initiator": "initiator",
-    "disabler": "disabler",
-    "escape": "escape",
-    "jungler": "jungler"
-  },
   "stats": {
     "strength": "strength",
     "agility": "agility",

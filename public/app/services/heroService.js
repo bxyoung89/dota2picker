@@ -47,12 +47,6 @@ angular.module("WalrusPunch").service("heroService", [
 						hero.largeImage = "http://cdn.dota2.com/apps/dota2/images/heroes/" + hero.imageId + "_lg.png";
 						hero.smallImage = "http://cdn.dota2.com/apps/dota2/images/heroes/" + hero.imageId + "_sb.png";
 						hero.counterPickAdvantage = 0;
-						hero.roles = hero.roles.map(function (role) {
-							return {
-								id: role,
-								translatedRole: role.capitalize(true)
-							};
-						});
 						hero.overallAdvantage = 0;
 						hero.empty = false;
 						heroes.push(hero);
@@ -80,9 +74,6 @@ angular.module("WalrusPunch").service("heroService", [
 		function translateHeroes() {
 			heroes.forEach(function (hero) {
 				hero.translatedName = translationService.translateHeroName(hero.name);
-				hero.roles.forEach(function (role) {
-					role.translatedName = translationService.translateRole(role.id);
-				});
 				hero.nickNames = translationService.getHeroNicknames(hero.name);
 			});
 		}
