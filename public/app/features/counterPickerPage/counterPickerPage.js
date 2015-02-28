@@ -10,6 +10,10 @@ angular.module("WalrusPunch").controller("counterPickerPageController", [
 			$scope.hamburgerIsOpen = true;
 		});
 
+		$rootScope.$on(HAMBURGER_EVENTS.close, function () {
+			$scope.hamburgerIsOpen = false;
+		});
+
 		$scope.closeHamburger = function () {
 			$scope.hamburgerIsOpen = false;
 			$rootScope.$broadcast(HAMBURGER_EVENTS.close);

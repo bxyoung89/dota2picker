@@ -1,4 +1,4 @@
-angular.module("WalrusPunch").service("counterPickerPageService", [function(){
+angular.module("WalrusPunch").service("counterPickerPageService", [ "counterPicksService", function(counterPicksService){
 
 	var enemyTeam = [];
 	var searchKeyWords = "";
@@ -22,12 +22,17 @@ angular.module("WalrusPunch").service("counterPickerPageService", [function(){
 			return;
 		}
 		enemyTeam.push(hero);
+		onEnemyTeamChanged();
 	};
 
 	CounterPickerPageService.prototype.removeEnemyHero = function(hero){
+		var enemyTeamLength = enemyTeam.length;
 		enemyTeam.remove(function(h){
 			return h.id === hero.id;
 		});
+		if(enemyTeam.length !== enemyTeamLength){
+			onEnemyTeamChanged();
+		}
 	};
 
 	CounterPickerPageService.prototype.getSearchKeyWords = function(){
@@ -37,6 +42,10 @@ angular.module("WalrusPunch").service("counterPickerPageService", [function(){
 	CounterPickerPageService.prototype.setSearchKeyWords = function(search){
 		searchKeyWords = search;
 	};
+
+	function onEnemyTeamChanged(){
+		counterPicksService.updateCounterPickData(enemyTeam);
+	}
 
 	return new CounterPickerPageService();
 }]);

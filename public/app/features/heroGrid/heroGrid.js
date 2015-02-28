@@ -30,15 +30,6 @@ angular.module("WalrusPunch").controller("heroGridController", [
 			});
 		}, true);
 
-		var enemyTeamWatcher = $scope.$watch(counterPickerPageService.getEnemyTeam, function(enemyTeam){
-			$scope.heroes.forEach(function(hero){
-				var matchingEnemyHero = enemyTeam.find(function(enemyHero){
-					return enemyHero.id === hero.id;
-				});
-				hero.selected = matchingEnemyHero !== undefined;
-			});
-		});
-
 		var searchKeyWordsWatcher = $scope.$watch(counterPickerPageService.getSearchKeyWords, function(search){
 			debounceFilterMixItUp(search);
 			filterMixItUp(search);
@@ -46,7 +37,6 @@ angular.module("WalrusPunch").controller("heroGridController", [
 
 		$scope.$on("$destroy", function(){
 			translatedHeroesWatcher();
-			enemyTeamWatcher();
 			searchKeyWordsWatcher();
 		});
 
@@ -61,6 +51,13 @@ angular.module("WalrusPunch").controller("heroGridController", [
 
 		$scope.onHeroClicked = function(hero){
 			counterPickerPageService.addEnemyHero(hero);
+		};
+
+		$scope.isHeroSelected = function(hero){
+			var enemyTeam = counterPickerPageService.getEnemyTeam();
+			return enemyTeam.any(function(enemyHero){
+				return enemyHero.id === hero.id;
+			});
 		};
 
 

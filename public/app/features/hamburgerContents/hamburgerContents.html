@@ -7,15 +7,15 @@
 	<div class="hamburger-items">
 		<div class="hamburger-item hamburger-nav">
 			<a class="hamburger-nav-item" href="/#/">
-				Home
+				{{ translationService.translateString("Home")}}
 			</a>
 			<a class="hamburger-nav-item" href="/#/about">
-				About
+				{{ translationService.translateString("About")}}
 			</a>
 		</div>
 		<div class="hamburger-item translation-toggle">
 			<div class="translation-instructions">
-				Select a language
+				{{ translationService.translateString("Select a language")}}
 			</div>
 			<select ng-model="selectedLanguage" ng-options="languageOption.name for languageOption in languageOptions" ng-change="onSelectedLanguageChanged()">
 			</select>

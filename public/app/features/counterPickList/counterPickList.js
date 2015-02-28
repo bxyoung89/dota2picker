@@ -1,0 +1,119 @@
+angular.module("WalrusPunch").controller("counterPickListController", [
+	"$scope",
+	"heroService",
+	"responsiveService",
+	"guidService",
+	"counterPickerPageService",
+	function($scope, heroService, responsiveService, guidService, coutnerPickerPageService){
+		var mixItUpFilterTimeout = undefined;
+
+		$scope.heroListId = "counter-pick-list-heroes-"+guidService.newGuid();
+		$scope.heroes = heroService.getTranslatedHeroes();
+		$scope.getHeroImage = responsiveService.getHeroImageSmall;
+
+		var heroesWatcher = $scope.$watch(heroService.getTranslatedHeroes, function(heroes){
+			$scope.heroes = heroes;
+			debounceFilterMixItUp();
+		}, true);
+
+		$scope.$on("$destroy", function(){
+			heroesWatcher();
+		});
+
+		$scope.heroIsPositive = function(hero){
+			return parseFloat(hero.counterPickAdvantage) > 0;
+		};
+
+		$scope.heroIsNeutral = function(hero){
+			return parseFloat(hero.counterPickAdvantage) === 0;
+		};
+
+		$scope.heroIsNegative = function(hero){
+			return parseFloat(hero.counterPickAdvantage) < 0;
+		};
+
+		$scope.getAdvantageIconClass = function(hero){
+			if(hero.counterPickAdvantage > 0){
+				return "ico-pointer-up";
+			}
+			if(hero.counterPickAdvantage < 0){
+				return "ico-pointer-down";
+			}
+			return "ico-minus";
+		};
+
+		$scope.getImageForRole = function(role){
+			return "/images/roles/"+(role.id.toLowerCase().replace(' ','_'))+".png";
+		};
+
+		function initializeMixItUp(){
+			var heroList = $("#"+$scope.heroListId);
+			heroList.mixItUp({
+				controls: {
+					enable: false
+				},
+				layout: {
+					display: "block"
+				},
+				load: {
+					filter: "none"
+				}
+			});
+			heroList.mixItUp("sort", "advantage: asc");
+		}
+
+
+		function filterMixItUp(){
+			var heroList = $("#"+$scope.heroListId);
+
+			var filter = heroList.find(".mix").filter(function () {
+				var heroId = $(this).attr("data-hero-id");
+				var enemyTeamIsEmpty = coutnerPickerPageService.getEnemyTeam().length === 0;
+				if(enemyTeamIsEmpty){
+					return false;
+				}
+				var isOnEnemyTeam = coutnerPickerPageService.getEnemyTeam().any(function(enemy){
+					return enemy.id === heroId;
+				});
+				if(isOnEnemyTeam){
+					return false;
+				}
+				//var matchingHero = heroList.find(function(hero){
+				//	return hero.id === heroId;
+				//});
+				//if(matchingHero === undefined){
+				//	return false;
+				//}
+				//var selectedRole = coutnerPickerPageService.getSelectedRole();
+				//if(selectedRole.id === "All Roles"){
+				//	return true;
+				//}
+				//var hasSelectedRole = matchingHero.roles.any(function(role){
+				//	return role.id === selectedRole.id;
+				//});
+				//return hasSelectedRole;
+				return true;
+			});
+
+			heroList.mixItUp("multiMix", {
+				filter: filter,
+				sort: "advantage:desc"
+			});
+		}
+
+		function debounceFilterMixItUp(){
+			if(mixItUpFilterTimeout !== undefined){
+				clearTimeout(mixItUpFilterTimeout);
+			}
+			mixItUpFilterTimeout = setTimeout(function(){
+				clearTimeout(mixItUpFilterTimeout);
+				mixItUpFilterTimeout = undefined;
+				filterMixItUp();
+			}, 500);
+		}
+
+
+		setTimeout(function(){
+			initializeMixItUp();
+		}, 0);
+	}]);

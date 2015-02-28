@@ -4,6 +4,7 @@ angular.module("WalrusPunch").controller("hamburgerContentsController", [
 	"HAMBURGER_EVENTS",
 	"translationService",
 	function($scope, $rootScope, HAMBURGER_EVENTS, translationService){
+		$scope.translationService = translationService;
 		$scope.languageOptions = translationService.getTranslationOptions();
 		$scope.selectedLanguage = $scope.languageOptions.find(function(option){
 			return option.id === translationService.getCurrentTranslationId();
@@ -26,6 +27,6 @@ angular.module("WalrusPunch").controller("hamburgerContentsController", [
 
 		$scope.closeHamburger = function(){
 			$rootScope.$broadcast(HAMBURGER_EVENTS.close);
-		}
+		};
 	}
 ]);

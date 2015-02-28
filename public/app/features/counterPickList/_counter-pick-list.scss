@@ -1,0 +1,181 @@
+.counter-pick-list{
+	height: 100%;
+	width: 100%;
+	background: $dark-green;
+	padding: 10px;
+	overflow: auto;
+}
+
+.counter-pick-hero{
+	width: 100%;
+	height: 70px;
+	margin-bottom: 10px;
+	background: $off-white;
+	color: $off-black;
+	cursor: default;
+	position: relative;
+}
+
+.counter-pick-hero-image-wrapper{
+	width: 125px;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2;
+
+	img{
+		height: 100%;
+		max-height: 100%;
+		width: auto;
+	}
+}
+
+.counter-pick-hero-text{
+	line-height: 70px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	padding-left: 135px;
+	padding-right: 10px;
+
+	&.positive{
+		.advantage{
+			color: $mid-green;
+		}
+
+		svg{
+			fill: $mid-green;
+		}
+
+		.ico-pointer-down,
+		.ico-minus{
+			display: none;
+		}
+	}
+
+	&.neutral{
+		.advantage{
+			color: $off-black;
+		}
+
+		svg{
+			fill: $off-black;
+		}
+
+		.ico-pointer-down,
+		.ico-pointer-up{
+			display: none;
+		}
+	}
+
+	&.negative{
+		.advantage{
+			color: $light-red;
+		}
+
+		svg{
+			fill: $light-red;
+		}
+
+		.ico-pointer-up,
+		.ico-minus{
+			display: none;
+		}
+	}
+
+	.name{
+		float: left;
+		@include font-size(1.6);
+	}
+
+	.advantage{
+		float: left;
+		line-height: 70px;
+		@include font-size(2.0);
+	}
+
+	svg{
+		display: block;
+		float: left;
+		height: 40px;
+		width: 40px;
+		margin-top: 12px;
+		margin-right: -5px
+	}
+
+	.ico-minus{
+		margin-top: 14px;
+	}
+
+	.roles{
+		float: right;
+		height: 30px;
+		margin-top: 17px;
+
+		img{
+			float: right;
+			margin-left: 10px;
+			height: 100%;
+			max-height: 100%;
+			width: auto;
+		}
+	}
+}
+
+
+@media(max-width:$counter-picker-page-medium-width){
+	.counter-pick-hero{
+		width: 100%;
+		height: 33px;
+		margin-bottom: 5px;
+	}
+
+	.counter-pick-hero-image-wrapper{
+		width: 59px;
+	}
+
+	.counter-pick-hero-text{
+		line-height: 33px;
+		padding-left: 69px;
+
+		.advantage{
+			@include font-size(2.0);
+			line-height: 33px;
+		}
+
+		svg{
+			margin-top: -5px;
+		}
+		
+		.ico-minus{
+			margin-top: -7px;
+		}
+
+		.roles{
+			height: 20px;
+			margin-top: 6px;
+			display: none;
+		}
+	}
+}
+
+@media(max-width:$counter-picker-page-small-width){
+	.counter-pick-list{
+		height: auto;
+	}
+
+	.counter-pick-hero-text {
+		.roles {
+			display: block;
+		}
+	}
+}
+
+@media(max-width:$counter-picker-page-tiny-width){
+
+
+}

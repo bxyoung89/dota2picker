@@ -1,0 +1,27 @@
+<div class="counter-pick-list" id="{{heroListId}}" ng-controller="counterPickListController">
+	<div class="counter-pick-hero mix" ng-repeat="hero in heroes" data-advantage="{{hero.advantageIndex}}" data-hero-id="{{hero.id}}">
+		<div class="counter-pick-hero-image-wrapper">
+			<img ng-src="{{ getHeroImage(hero)}}">
+		</div>
+		<div class="counter-pick-hero-text" ng-class="{ positive: heroIsPositive(hero), neutral: heroIsNeutral(hero), negative: heroIsNegative(hero)}">
+			<div class="name">
+				{{ hero.translatedName }}
+			</div>
+			<div class="advantage">
+				<svg viewBox="0 0 30 30" class="ico-pointer-up">
+					<use xlink:href="#ico-pointer-up"></use>
+				</svg>
+				<svg viewBox="0 0 30 30" class="ico-minus">
+					<use xlink:href="#ico-minus"></use>
+				</svg>
+				<svg viewBox="0 0 30 30" class="ico-pointer-down">
+					<use xlink:href="#ico-pointer-down"></use>
+				</svg>
+				<span>{{hero.counterPickAdvantage}}</span>
+			</div>
+			<div class="roles">
+				<img ng-repeat="role in hero.roles" ng-src="{{getImageForRole(role)}}" title="{{role.translatedName.capitalize()}}">
+			</div>
+		</div>
+	</div>
+</div>

@@ -71,10 +71,15 @@ router.get("/getHeroes", function(req, res){
 						//console.log(columnText);
 
 						var nameColumn = columns[1];
-						hero.name = $(nameColumn).text();
-						if(hero.name.trim() === "" || hero.name.trim() === heroData.name){
+						var heroName = $(nameColumn).text().trim();
+						if(heroName === "" || heroName === heroData.name){
 							return;
 						}
+						var matchingHero = data.find(function(h){
+							return h.name === heroName;
+						});
+
+						hero.id = matchingHero.id;
 
 						var advantageColumn = columns[2];
 						hero.advantage = parseFloat($(advantageColumn).text());

@@ -25,8 +25,6 @@
 	}
 }
 
-
-
 .counter-picker-page-bottom-content {
 	position: absolute;
 	top: 0;
@@ -47,13 +45,14 @@
 		background: $off-white;
 	}
 
-	.counter-picker-list-wrapper {
+	.counter-pick-list-area-wrapper {
 		position: absolute;
 		top: 0;
-		left: 0;
+		right: 0;
 		z-index: 1;
 		height: 100%;
 		width: 550px;
+		background: $dark-green;
 	}
 }
 
@@ -63,7 +62,8 @@
 	position: relative;
 }
 
-.hero-selection-relative-wrapper{
+.hero-selection-relative-wrapper,
+.counter-pick-list-area-relative-wrapper{
 	height: 100%;
 	width: 100%;
 	position: relative;
@@ -88,6 +88,27 @@
 	padding-top: 80px;
 }
 
+
+.role-dropdown-wrapper{
+	height: 60px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.counter-pick-list-wrapper{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	padding-top: 60px;
+}
+
+
 @media(max-width:$counter-picker-page-medium-width){
 	.counter-picker-page-top-content{
 		height: 143px;
@@ -100,7 +121,7 @@
 			padding-right: 370px;
 		}
 
-		.counter-picker-list-wrapper{
+		.counter-pick-list-area-wrapper{
 			width: 370px;
 		}
 	}
@@ -111,13 +132,13 @@
 @media(max-width:$counter-picker-page-small-width){
 	.counter-picker-page-top-content{
 		height: 75px;
+		position: relative;
 	}
 
 	.counter-picker-page-bottom-content{
-		padding-top: 75px;
-	}
+		position: relative;
+		padding-top: 0;
 
-	.counter-picker-page-bottom-content{
 		.hero-selection-wrapper{
 			width: 100%;
 			height: auto;
@@ -127,7 +148,7 @@
 			padding: 0;
 		}
 
-		.counter-picker-list-wrapper{
+		.counter-pick-list-area-wrapper{
 			width: 100%;
 			position: relative;
 			top: 0;
@@ -136,6 +157,8 @@
 		}
 	}
 
+
+
 	.hero-grid-wrapper{
 		display: none;
 	}
@@ -143,6 +166,7 @@
 
 	.hero-search-bar-wrapper{
 		height: 60px;
+		position: relative;
 	}
 }
 
