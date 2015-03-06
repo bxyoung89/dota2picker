@@ -130,6 +130,15 @@
 	}
 }
 
+.dota1{
+	.counter-pick-hero-image-wrapper{
+		width: 70px;
+	}
+	.counter-pick-hero-text{
+		padding-left: 80px;
+	}
+}
+
 
 @media(max-width:$counter-picker-page-medium-width){
 	.counter-pick-hero{
@@ -162,6 +171,15 @@
 		
 		.ico-minus{
 			margin-top: -7px;
+		}
+	}
+
+	.dota1{
+		.counter-pick-hero-image-wrapper{
+			width: 33px;
+		}
+		.counter-pick-hero-text{
+			padding-left: 43px;
 		}
 	}
 }

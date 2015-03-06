@@ -1,4 +1,4 @@
-angular.module("WalrusPunch").service("responsiveService", ["$rootScope", "RESIZE_EVENTS", function ($rootScope, RESIZE_EVENTS) {
+angular.module("WalrusPunch").service("responsiveService", ["$rootScope", "RESIZE_EVENTS", "dota1Service", function ($rootScope, RESIZE_EVENTS, dota1Service) {
 
 	var sizes = [
 		{
@@ -41,6 +41,9 @@ angular.module("WalrusPunch").service("responsiveService", ["$rootScope", "RESIZ
 	};
 
 	ResponsiveService.prototype.getHeroImageSmall = function(hero){
+		if(dota1Service.isInDota1Mode()){
+			return "/images/dota1/"+hero.dota1Image;
+		}
 		var size = ResponsiveService.prototype.getSize();
 		switch(size){
 			case "tiny": return "http://cdn.dota2.com/apps/dota2/images/heroes/" + hero.imageId + "_sb.png";
@@ -52,6 +55,9 @@ angular.module("WalrusPunch").service("responsiveService", ["$rootScope", "RESIZ
 	};
 
 	ResponsiveService.prototype.getHeroImageLarge = function(hero){
+		if(dota1Service.isInDota1Mode()){
+			return "/images/dota1/"+hero.dota1Image;
+		}
 		var size = ResponsiveService.prototype.getSize();
 		switch(size){
 			case "tiny": return "http://cdn.dota2.com/apps/dota2/images/heroes/" + hero.imageId + "_sb.png";

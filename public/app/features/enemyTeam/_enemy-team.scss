@@ -109,6 +109,12 @@
 	}
 }
 
+.dota1{
+	.enemy-team-hero-slot{
+		width: 109px;
+	}
+}
+
 @media(max-width:$counter-picker-page-medium-width){
 	.enemy-team-title{
 		height: 24px;
@@ -142,9 +148,13 @@
 			width: 50px;
 		}
 	}
+
+	.dota1{
+		.enemy-team-hero-slot{
+			width: 75px;
+		}
+	}
 }
-
-
 
 @media(max-width:$counter-picker-page-small-width){
 	.enemy-team-title{
@@ -176,6 +186,12 @@
 		svg{
 			height: 25px;
 			width: 25px;
+		}
+	}
+
+	.dota1{
+		.enemy-team-hero-slot{
+			width: 33px;
 		}
 	}
 }

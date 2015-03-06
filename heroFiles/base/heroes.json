@@ -4,14 +4,16 @@
     "id": "abaddon",
     "stat": "strength",
     "imageId": "abaddon",
-    "nicknames": ["avernus"]
+    "nicknames": ["avernus"],
+    "dota1Image": "abaddon.gif"
   },
   {
     "name": "Alchemist",
     "id": "alchemist",
     "stat": "strength",
     "imageId": "alchemist",
-    "nicknames": ["razzil"]
+    "nicknames": ["razzil"],
+    "dota1Image": "alchemist.gif"
   },
   {
     "name": "Ancient Apparition",
@@ -21,35 +23,40 @@
     "nicknames": [
       "kaldr",
       "aa"
-    ]
+    ],
+    "dota1Image": "acient_apparition.jpg"
   },
   {
     "name": "Anti-Mage",
     "id": "anti-mage",
     "stat": "agility",
     "imageId": "antimage",
-    "nicknames": ["am"]
+    "nicknames": ["am"],
+    "dota1Image": "anti-mage.gif"
   },
   {
     "name": "Axe",
     "id": "axe",
     "stat": "strength",
     "imageId": "axe",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "axe.gif"
   },
   {
     "name": "Bane",
     "id": "bane",
     "stat": "intelligence",
     "imageId": "bane",
-    "nicknames": ["atropos"]
+    "nicknames": ["atropos"],
+    "dota1Image": "bane.gif"
   },
   {
     "name": "Batrider",
     "id": "batrider",
     "stat": "intelligence",
     "imageId": "batrider",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "bat_rider.jpeg"
   },
   {
     "name": "Beastmaster",
@@ -60,7 +67,8 @@
       "karroch",
       "rexxar",
       "bm"
-    ]
+    ],
+    "dota1Image": "beast_master.gif"
   },
   {
     "name": "Bloodseeker",
@@ -70,7 +78,8 @@
     "nicknames": [
       "strygwyr",
       "bs"
-    ]
+    ],
+    "dota1Image": "bloodseeker.gif"
   },
   {
     "name": "Bounty Hunter",
@@ -80,7 +89,8 @@
     "nicknames": [
       "gondar",
       "bh"
-    ]
+    ],
+    "dota1Image": "bounty_hunter.gif"
   },
   {
     "name": "Brewmaster",
@@ -89,8 +99,10 @@
     "imageId": "brewmaster",
     "nicknames": [
       "mangix",
-      "bm"
-    ]
+      "bm",
+      "panda"
+    ],
+    "dota1Image": "brewmaster.gif"
   },
   {
     "name": "Bristleback",
@@ -100,14 +112,16 @@
     "nicknames": [
       "rigwarl",
       "bb"
-    ]
+    ],
+    "dota1Image": "bristleback.jpg"
   },
   {
     "name": "Broodmother",
     "id": "broodmother",
     "stat": "agility",
     "imageId": "broodmother",
-    "nicknames": ["bm"]
+    "nicknames": ["bm"],
+    "dota1Image": "broodmother.gif"
   },
   {
     "name": "Centaur Warrunner",
@@ -117,28 +131,32 @@
     "nicknames": [
       "bradwarden",
       "cw"
-    ]
+    ],
+    "dota1Image": "centaur_warrunner.jpg"
   },
   {
     "name": "Chaos Knight",
     "id": "chaos-knight",
     "stat": "strength",
     "imageId": "chaos_knight",
-    "nicknames": ["ck"]
+    "nicknames": ["ck"],
+    "dota1Image": "chaos_knight.gif"
   },
   {
     "name": "Chen",
     "id": "chen",
     "stat": "intelligence",
     "imageId": "chen",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "chen.gif"
   },
   {
     "name": "Clinkz",
     "id": "clinkz",
     "stat": "agility",
     "imageId": "clinkz",
-    "nicknames": ["bone"]
+    "nicknames": ["bone"],
+    "dota1Image": "clinkz.gif"
   },
   {
     "name": "Clockwerk",
@@ -148,7 +166,8 @@
     "nicknames": [
       "rattletrap",
       "cw"
-    ]
+    ],
+    "dota1Image": "clockwerk.gif"
   },
   {
     "name": "Crystal Maiden",
@@ -158,7 +177,8 @@
     "nicknames": [
       "rylai",
       "cm"
-    ]
+    ],
+    "dota1Image": "crystal_maiden.jpg"
   },
   {
     "name": "Dark Seer",
@@ -168,14 +188,16 @@
     "nicknames": [
       "ish",
       "ds"
-    ]
+    ],
+    "dota1Image": "dark_seer.gif"
   },
   {
     "name": "Dazzle",
     "id": "dazzle",
     "stat": "intelligence",
     "imageId": "dazzle",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "dazzle.gif"
   },
   {
     "name": "Death Prophet",
@@ -186,21 +208,24 @@
       "krobelus",
       "grobulus",
       "dp"
-    ]
+    ],
+    "dota1Image": "death_prophet.gif"
   },
   {
     "name": "Disruptor",
     "id": "disruptor",
     "stat": "intelligence",
     "imageId": "disruptor",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "disruptor.gif"
   },
   {
     "name": "Doom",
     "id": "doom",
     "stat": "strength",
     "imageId": "doom_bringer",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "doom.gif"
   },
   {
     "name": "Dragon Knight",
@@ -210,7 +235,8 @@
     "nicknames": [
       "davion",
       "dk"
-    ]
+    ],
+    "dota1Image": "dragon_knight.gif"
   },
   {
     "name": "Drow Ranger",
@@ -220,7 +246,8 @@
     "nicknames": [
       "traxex",
       "dr"
-    ]
+    ],
+    "dota1Image": "drow_ranger.gif"
   },
   {
     "name": "Earth Spirit",
@@ -230,7 +257,8 @@
     "nicknames": [
       "kaolin",
       "es"
-    ]
+    ],
+    "dota1Image": "earth_spirit.gif"
   },
   {
     "name": "Earthshaker",
@@ -240,14 +268,16 @@
     "nicknames": [
       "raigor",
       "es"
-    ]
+    ],
+    "dota1Image": "earthshaker.gif"
   },
   {
     "name": "Elder Titan",
     "id": "elder-titan",
     "stat": "strength",
     "imageId": "elder_titan",
-    "nicknames": ["et"]
+    "nicknames": ["et"],
+    "dota1Image": "elder_titan.jpeg"
   },
   {
     "name": "Ember Spirit",
@@ -257,42 +287,48 @@
     "nicknames": [
       "xin",
       "es"
-    ]
+    ],
+    "dota1Image": "ember_spirit.jpg"
   },
   {
     "name": "Enchantress",
     "id": "enchantress",
     "stat": "intelligence",
     "imageId": "enchantress",
-    "nicknames": ["aiushtha"]
+    "nicknames": ["aiushtha"],
+    "dota1Image": "enchantress.jpg"
   },
   {
     "name": "Enigma",
     "id": "enigma",
     "stat": "intelligence",
     "imageId": "enigma",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "enigma.gif"
   },
   {
     "name": "Faceless Void",
     "id": "faceless-void",
     "stat": "agility",
     "imageId": "faceless_void",
-    "nicknames": ["darkterror"]
+    "nicknames": ["darkterror"],
+    "dota1Image": "faceless_void.gif"
   },
   {
     "name": "Gyrocopter",
     "id": "gyrocopter",
     "stat": "agility",
     "imageId": "gyrocopter",
-    "nicknames": ["aurel"]
+    "nicknames": ["aurel"],
+    "dota1Image": "gyrocopter.gif"
   },
   {
     "name": "Huskar",
     "id": "huskar",
     "stat": "strength",
     "imageId": "huskar",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "huskar.gif"
   },
   {
     "name": "Invoker",
@@ -303,42 +339,48 @@
       "kael",
       "karl",
       "carl"
-    ]
+    ],
+    "dota1Image": "invoker.gif"
   },
   {
     "name": "Io",
     "id": "io",
     "stat": "strength",
     "imageId": "wisp",
-    "nicknames": ["wisp"]
+    "nicknames": ["wisp"],
+    "dota1Image": "io.jpg"
   },
   {
     "name": "Jakiro",
     "id": "jakiro",
     "stat": "intelligence",
     "imageId": "jakiro",
-    "nicknames": ["thd"]
+    "nicknames": ["thd"],
+    "dota1Image": "jakiro.gif"
   },
   {
     "name": "Juggernaut",
     "id": "juggernaut",
     "stat": "agility",
     "imageId": "juggernaut",
-    "nicknames": ["yurnero"]
+    "nicknames": ["yurnero"],
+    "dota1Image": "juggernaut.gif"
   },
   {
     "name": "Keeper of the Light",
     "id": "keeper-of-the-light",
     "stat": "intelligence",
     "imageId": "keeper_of_the_light",
-    "nicknames": ["kotl"]
+    "nicknames": ["kotl"],
+    "dota1Image": "keeper_of_the_light.jpg"
   },
   {
     "name": "Kunkka",
     "id": "kunkka",
     "stat": "strength",
     "imageId": "kunkka",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "kunkka.gif"
   },
   {
     "name": "Legion Commander",
@@ -348,42 +390,48 @@
     "nicknames": [
       "tresdin",
       "lc"
-    ]
+    ],
+    "dota1Image": "legion_commander.jpg"
   },
   {
     "name": "Leshrac",
     "id": "leshrac",
     "stat": "intelligence",
     "imageId": "leshrac",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "leshrac.gif"
   },
   {
     "name": "Lich",
     "id": "lich",
     "stat": "intelligence",
     "imageId": "lich",
-    "nicknames": ["ethreain"]
+    "nicknames": ["ethreain"],
+    "dota1Image": "lich.gif"
   },
   {
     "name": "Lifestealer",
     "id": "lifestealer",
     "stat": "strength",
     "imageId": "life_stealer",
-    "nicknames": ["naix"]
+    "nicknames": ["naix"],
+    "dota1Image": "lifestealer.gif"
   },
   {
     "name": "Lina",
     "id": "lina",
     "stat": "intelligence",
     "imageId": "lina",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "lina.jpg"
   },
   {
     "name": "Lion",
     "id": "lion",
     "stat": "intelligence",
     "imageId": "lion",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "lion.gif"
   },
   {
     "name": "Lone Druid",
@@ -393,56 +441,64 @@
     "nicknames": [
       "sylla",
       "ld"
-    ]
+    ],
+    "dota1Image": "lone_druid.gif"
   },
   {
     "name": "Luna",
     "id": "luna",
     "stat": "agility",
     "imageId": "luna",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "luna.gif"
   },
   {
     "name": "Lycan",
     "id": "lycan",
     "stat": "strength",
     "imageId": "lycan",
-    "nicknames": ["banehallow"]
+    "nicknames": ["banehallow"],
+    "dota1Image": "lycan.gif"
   },
   {
     "name": "Magnus",
     "id": "magnus",
     "stat": "strength",
     "imageId": "magnataur",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "magnus.gif"
   },
   {
     "name": "Medusa",
     "id": "medusa",
     "stat": "agility",
     "imageId": "medusa",
-    "nicknames": ["gorgon"]
+    "nicknames": ["gorgon"],
+    "dota1Image": "medusa.gif"
   },
   {
     "name": "Meepo",
     "id": "meepo",
     "stat": "agility",
     "imageId": "meepo",
-    "nicknames": ["geomancer"]
+    "nicknames": ["geomancer"],
+    "dota1Image": "meepo.gif"
   },
   {
     "name": "Mirana",
     "id": "mirana",
     "stat": "agility",
     "imageId": "mirana",
-    "nicknames": ["potm"]
+    "nicknames": ["potm"],
+    "dota1Image": "mirana.gif"
   },
   {
     "name": "Morphling",
     "id": "morphling",
     "stat": "agility",
     "imageId": "morphling",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "morphling.gif"
   },
   {
     "name": "Naga Siren",
@@ -452,7 +508,8 @@
     "nicknames": [
       "slithice",
       "ns"
-    ]
+    ],
+    "dota1Image": "naga_siren.gif"
   },
   {
     "name": "Nature's Prophet",
@@ -462,14 +519,16 @@
     "nicknames": [
       "furion",
       "np"
-    ]
+    ],
+    "dota1Image": "furion.gif"
   },
   {
     "name": "Necrophos",
     "id": "necrophos",
     "stat": "intelligence",
     "imageId": "necrolyte",
-    "nicknames": ["necrolyte"]
+    "nicknames": ["necrolyte"],
+    "dota1Image": "necrolyte.gif"
   },
   {
     "name": "Night Stalker",
@@ -479,14 +538,16 @@
     "nicknames": [
       "ns",
       "balanar"
-    ]
+    ],
+    "dota1Image": "nightstalker.gif"
   },
   {
     "name": "Nyx Assassin",
     "id": "nyx-assassin",
     "stat": "agility",
     "imageId": "nyx_assassin",
-    "nicknames": ["na"]
+    "nicknames": ["na"],
+    "dota1Image": "nyx_assasin.gif"
   },
   {
     "name": "Ogre Magi",
@@ -496,21 +557,24 @@
     "nicknames": [
       "aggron",
       "om"
-    ]
+    ],
+    "dota1Image": "ogre_magi.gif"
   },
   {
     "name": "Omniknight",
     "id": "omniknight",
     "stat": "strength",
     "imageId": "omniknight",
-    "nicknames": ["ok"]
+    "nicknames": ["ok"],
+    "dota1Image": "omniknight.gif"
   },
   {
     "name": "Oracle",
     "id": "oracle",
     "stat": "intelligence",
     "imageId": "oracle",
-    "nicknames": ["nerif"]
+    "nicknames": ["nerif"],
+    "dota1Image": "oracle.gif"
   },
   {
     "name": "Outworld Devourer",
@@ -520,7 +584,8 @@
     "nicknames": [
       "od",
       "harbinger"
-    ]
+    ],
+    "dota1Image": "outworld_devourer.gif"
   },
   {
     "name": "Phantom Assassin",
@@ -530,7 +595,8 @@
     "nicknames": [
       "pa",
       "mortred"
-    ]
+    ],
+    "dota1Image": "phantom_assasin.gif"
   },
   {
     "name": "Phantom Lancer",
@@ -540,63 +606,72 @@
     "nicknames": [
       "azwraith",
       "pl"
-    ]
+    ],
+    "dota1Image": "phantom_lancer.gif"
   },
   {
     "name": "Phoenix",
     "id": "phoenix",
     "stat": "strength",
     "imageId": "phoenix",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "phoenix.jpg"
   },
   {
     "name": "Puck",
     "id": "puck",
     "stat": "intelligence",
     "imageId": "puck",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "puck.gif"
   },
   {
     "name": "Pudge",
     "id": "pudge",
     "stat": "strength",
     "imageId": "pudge",
-    "nicknames": ["butcher"]
+    "nicknames": ["butcher"],
+    "dota1Image": "pudge.gif"
   },
   {
     "name": "Pugna",
     "id": "pugna",
     "stat": "intelligence",
     "imageId": "pugna",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "pugna.jpg"
   },
   {
     "name": "Queen of Pain",
     "id": "queen-of-pain",
     "stat": "intelligence",
     "imageId": "queenofpain",
-    "nicknames": ["qop"]
+    "nicknames": ["qop"],
+    "dota1Image": "queen_of_pain.gif"
   },
   {
     "name": "Razor",
     "id": "razor",
     "stat": "agility",
     "imageId": "razor",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "razor.gif"
   },
   {
     "name": "Riki",
     "id": "riki",
     "stat": "agility",
     "imageId": "riki",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "riki.gif"
   },
   {
     "name": "Rubick",
     "id": "rubick",
     "stat": "intelligence",
     "imageId": "rubick",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "rubick.jpg"
   },
   {
     "name": "Sand King",
@@ -606,14 +681,16 @@
     "nicknames": [
       "crixalis",
       "sk"
-    ]
+    ],
+    "dota1Image": "sand_king.gif"
   },
   {
     "name": "Shadow Demon",
     "id": "shadow-demon",
     "stat": "intelligence",
     "imageId": "shadow_demon",
-    "nicknames": ["sd"]
+    "nicknames": ["sd"],
+    "dota1Image": "shadow_demon.jpg"
   },
   {
     "name": "Shadow Fiend",
@@ -623,7 +700,8 @@
     "nicknames": [
       "nevermore",
       "sf"
-    ]
+    ],
+    "dota1Image": "shadow_fiend.gif"
   },
   {
     "name": "Shadow Shaman",
@@ -633,14 +711,16 @@
     "nicknames": [
       "rhasta",
       "ss"
-    ]
+    ],
+    "dota1Image": "shadow_shaman.gif"
   },
   {
     "name": "Silencer",
     "id": "silencer",
     "stat": "intelligence",
     "imageId": "silencer",
-    "nicknames": ["nortrom"]
+    "nicknames": ["nortrom"],
+    "dota1Image": "silencer.gif"
   },
   {
     "name": "Skywrath Mage",
@@ -650,35 +730,40 @@
     "nicknames": [
       "dragonus",
       "sm"
-    ]
+    ],
+    "dota1Image": "skywrath_mage.jpg"
   },
   {
     "name": "Slardar",
     "id": "slardar",
     "stat": "strength",
     "imageId": "slardar",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "slardar.gif"
   },
   {
     "name": "Slark",
     "id": "slark",
     "stat": "agility",
     "imageId": "slark",
-    "nicknames": ["nightcrawler"]
+    "nicknames": ["nightcrawler"],
+    "dota1Image": "slark.gif"
   },
   {
     "name": "Sniper",
     "id": "sniper",
     "stat": "agility",
     "imageId": "sniper",
-    "nicknames": ["kardel"]
+    "nicknames": ["kardel"],
+    "dota1Image": "sniper.gif"
   },
   {
     "name": "Spectre",
     "id": "spectre",
     "stat": "agility",
     "imageId": "spectre",
-    "nicknames": ["mercurial"]
+    "nicknames": ["mercurial"],
+    "dota1Image": "spectre.gif"
   },
   {
     "name": "Spirit Breaker",
@@ -688,7 +773,8 @@
     "nicknames": [
       "barathrum",
       "sb"
-    ]
+    ],
+    "dota1Image": "spiritbreaker.gif"
   },
   {
     "name": "Storm Spirit",
@@ -698,14 +784,16 @@
     "nicknames": [
       "raijin",
       "ss"
-    ]
+    ],
+    "dota1Image": "storm_spirit.gif"
   },
   {
     "name": "Sven",
     "id": "sven",
     "stat": "strength",
     "imageId": "sven",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "sven.gif"
   },
   {
     "name": "Techies",
@@ -718,7 +806,8 @@
       "Spoon",
       "gt",
       "Goblin Techies"
-    ]
+    ],
+    "dota1Image": "techies.gif"
   },
   {
     "name": "Templar Assassin",
@@ -728,77 +817,88 @@
     "nicknames": [
       "lanaya",
       "ta"
-    ]
+    ],
+    "dota1Image": "templar_assasin.gif"
   },
   {
     "name": "Terrorblade",
     "id": "terrorblade",
     "stat": "agility",
     "imageId": "terrorblade",
-    "nicknames": ["tb"]
+    "nicknames": ["tb"],
+    "dota1Image": "terrorblade.gif"
   },
   {
     "name": "Tidehunter",
     "id": "tidehunter",
     "stat": "strength",
     "imageId": "tidehunter",
-    "nicknames": ["leviathan"]
+    "nicknames": ["leviathan"],
+    "dota1Image": "tidehunter.gif"
   },
   {
     "name": "Timbersaw",
     "id": "timbersaw",
     "stat": "strength",
     "imageId": "shredder",
-    "nicknames": ["rizzrack"]
+    "nicknames": ["rizzrack"],
+    "dota1Image": "timbersaw.jpg"
   },
   {
     "name": "Tinker",
     "id": "tinker",
     "stat": "intelligence",
     "imageId": "tinker",
-    "nicknames": ["boush"]
+    "nicknames": ["boush"],
+    "dota1Image": "tinker.gif"
   },
   {
     "name": "Tiny",
     "id": "tiny",
     "stat": "strength",
     "imageId": "tiny",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "tiny.gif"
   },
   {
     "name": "Treant Protector",
     "id": "treant-protector",
     "stat": "strength",
     "imageId": "treant",
-    "nicknames": ["rooftrellen"]
+    "nicknames": ["rooftrellen"],
+    "dota1Image": "treant_protector.gif"
   },
   {
     "name": "Troll Warlord",
     "id": "troll-warlord",
     "stat": "agility",
     "imageId": "troll_warlord",
-    "nicknames": ["tw"]
+    "nicknames": ["tw"],
+    "dota1Image": "troll_warlord.gif"
   },
   {
     "name": "Tusk",
     "id": "tusk",
     "stat": "strength",
     "imageId": "tusk",
-    "nicknames": ["ymir"]
+    "nicknames": ["ymir"],
+    "dota1Image": "tusk.jpg"
   },
   {
     "name": "Undying",
     "id": "undying",
     "stat": "strength",
     "imageId": "undying",
-    "nicknames": ["dirge"]
+    "nicknames": ["dirge"],
+    "dota1Image": "undying.gif"
   },
   {
     "name": "Ursa",
     "id": "ursa",
     "stat": "agility",
     "imageId": "ursa",
-    "nicknames": ["ulfsaar"]
+    "nicknames": ["ulfsaar"],
+    "dota1Image": "ursa.gif"
   },
   {
     "name": "Vengeful Spirit",
@@ -808,28 +908,32 @@
     "nicknames": [
       "shendelzare",
       "vs"
-    ]
+    ],
+    "dota1Image": "vengeful_spirit.jpg"
   },
   {
     "name": "Venomancer",
     "id": "venomancer",
     "stat": "agility",
     "imageId": "venomancer",
-    "nicknames": ["lesale"]
+    "nicknames": ["lesale"],
+    "dota1Image": "venomancer.gif"
   },
   {
     "name": "Viper",
     "id": "viper",
     "stat": "agility",
     "imageId": "viper",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "viper.gif"
   },
   {
     "name": "Visage",
     "id": "visage",
     "stat": "intelligence",
     "imageId": "visage",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "visage.gif"
   },
   {
     "name": "Warlock",
@@ -839,14 +943,16 @@
     "nicknames": [
       "demnok",
       "wl"
-    ]
+    ],
+    "dota1Image": "warlock.gif"
   },
   {
     "name": "Weaver",
     "id": "weaver",
     "stat": "agility",
     "imageId": "weaver",
-    "nicknames": ["skitskurr"]
+    "nicknames": ["skitskurr"],
+    "dota1Image": "weaver.gif"
   },
   {
     "name": "Windranger",
@@ -856,7 +962,8 @@
     "nicknames": [
       "lyralei",
       "wr"
-    ]
+    ],
+    "dota1Image": "wind_runner.gif"
   },
   {
     "name": "Winter Wyvern",
@@ -866,7 +973,8 @@
     "nicknames": [
       "auroth",
       "ww"
-    ]
+    ],
+    "dota1Image": "winter_wyvern.gif"
   },
   {
     "name": "Witch Doctor",
@@ -876,7 +984,8 @@
     "nicknames": [
       "zharvakko",
       "wd"
-    ]
+    ],
+    "dota1Image": "witch_doctor.gif"
   },
   {
     "name": "Wraith King",
@@ -888,13 +997,15 @@
       "skeleton king",
       "wk",
       "sk"
-    ]
+    ],
+    "dota1Image": "wraith_king.gif"
   },
   {
     "name": "Zeus",
     "id": "zeus",
     "stat": "intelligence",
     "imageId": "zuus",
-    "nicknames": []
+    "nicknames": [],
+    "dota1Image": "zeus.jpg"
   }
 ]

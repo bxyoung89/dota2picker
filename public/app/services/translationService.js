@@ -62,7 +62,7 @@ angular.module("WalrusPunch").service("translationService", [
 			var nicknames = currentTranslation.heroNicknames[heroName];
 			return nicknames;
 		};
-		
+
 		TranslationService.prototype.changeTranslation = function (languageId) {
 			state = "loading";
 			getTranslation(languageId);
