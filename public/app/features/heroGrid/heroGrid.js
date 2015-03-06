@@ -11,11 +11,11 @@ angular.module("WalrusPunch").controller("heroGridController", [
 
 		$scope.heroGridId = "hero-grid-"+guidService.newGuid();
 		$scope.translationService = translationService;
-		$scope.heroes = JSON.parse(JSON.stringify(heroService.getTranslatedHeroes()));
+		$scope.heroes = heroService.getTranslatedHeroes();
 
 		var translatedHeroesWatcher = $scope.$watch(heroService.getTranslatedHeroes, function(translatedHeroes){
 			if($scope.heroes.length === 0){
-				$scope.heroes = JSON.parse(JSON.stringify(translatedHeroes));
+				$scope.heroes = translatedHeroes;
 				return;
 			}
 			$scope.heroes.forEach(function(hero){
@@ -35,9 +35,18 @@ angular.module("WalrusPunch").controller("heroGridController", [
 			filterMixItUp(search);
 		});
 
+		var enemyTeamWatcher = $scope.$watch(counterPickerPageService.getEnemyTeam, function(enemyTeam){
+			$scope.heroes.forEach(function(hero){
+				hero.isSelected = enemyTeam.any(function(enemy){
+					return enemy.id === hero.id;
+				});
+			});
+		}, true);
+
 		$scope.$on("$destroy", function(){
 			translatedHeroesWatcher();
 			searchKeyWordsWatcher();
+			enemyTeamWatcher();
 		});
 
 		$scope.$on(TRANSLATION_EVENTS.translationChanged, function(){
