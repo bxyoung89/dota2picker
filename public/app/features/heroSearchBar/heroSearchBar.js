@@ -38,6 +38,9 @@ angular.module("WalrusPunch").controller("heroSearchBarController", [
 		function updateHeroNames(translatedHeroes){
 			translatedHeroes.forEach(function(hero){
 				allHeroNames.push(hero.name);
+				if(hero.nickNames === undefined){
+					return;
+				}
 				hero.nickNames.forEach(function(name){
 					if(name.length > 2){
 						allHeroNames.push(name.capitalize());

@@ -130,6 +130,33 @@
 	}
 }
 
+.counter-pick-loading-indicator{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+
+	.indicator-content{
+		margin: 0 auto;
+		@include vertical-align();
+		text-align: center;
+
+		svg{
+			height: 200px;
+			width: 200px;
+			margin-bottom: 20px;
+			fill: $off-white;
+		}
+
+		.indicator-description{
+			@include font-size(2.4);
+			color: $off-white;
+			margin-top: -30px;
+		}
+	}
+}
+
 .dota1{
 	.counter-pick-hero-image-wrapper{
 		width: 70px;
@@ -187,6 +214,17 @@
 @media(max-width:$counter-picker-page-small-width){
 	.counter-pick-list{
 		height: auto;
+	}
+
+	.counter-pick-loading-indicator{
+		position: relative;
+		height: auto;
+		padding: 50px 0;
+
+		.indicator-content{
+			top: 0;
+			transform: none;
+		}
 	}
 }
 

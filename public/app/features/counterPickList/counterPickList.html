@@ -1,5 +1,5 @@
 <div class="counter-pick-list" id="{{heroListId}}" ng-controller="counterPickListController">
-	<div class="counter-pick-hero mix" ng-repeat="hero in heroes" data-advantage="{{hero.advantageIndex}}" data-hero-id="{{hero.id}}">
+	<div class="counter-pick-hero mix ng-hide" ng-repeat="hero in heroes" data-advantage="{{hero.advantageIndex}}" data-hero-id="{{hero.id}}" ng-show="hasAdvantageData">
 		<div class="counter-pick-hero-image-wrapper">
 			<img ng-src="{{ getHeroImage(hero)}}">
 		</div>
@@ -18,6 +18,16 @@
 					<use xlink:href="#ico-pointer-down"></use>
 				</svg>
 				<span>{{hero.counterPickAdvantage}}</span>
+			</div>
+		</div>
+	</div>
+	<div class="counter-pick-loading-indicator ng-hide" ng-show="!hasAdvantageData && hasEnemyTeam">
+		<div class="indicator-content">
+			<svg viewBox="0 0 30 30" class="ico-spinner-3 spin-the-spinner">
+				<use xlink:href="#ico-spinner-3"></use>
+			</svg>
+			<div class="indicator-description">
+				{{ translationService.translateString("Loading Advantage Data")}}
 			</div>
 		</div>
 	</div>

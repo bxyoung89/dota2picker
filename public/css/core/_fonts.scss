@@ -172,3 +172,38 @@
 @mixin main-font {
 	font-family: "Source Sans Pro", "Noto Sans", Verdana, Helvetica, Arial, sans-serif;
 }
+
+.spin-the-spinner{
+	display: inline-block;
+	animation: spin 1.35s linear infinite;
+}
+
+@-webkit-keyframes spin {
+	from { -webkit-transform: rotate(0deg); }
+	50% { -webkit-transform: rotate(180deg); }
+	to { -webkit-transform: rotate(360deg); }
+}
+
+@-moz-keyframes spin {
+	from { -moz-transform: rotate(0deg); }
+	50% { -moz-transform: rotate(180deg); }
+	to { -moz-transform: rotate(360deg); }
+}
+
+@-ms-keyframes spin {
+	from { -ms-transform: rotate(0deg); }
+	50% { -ms-transform: rotate(180deg); }
+	to { -ms-transform: rotate(360deg); }
+}
+
+@-o-keyframes spin {
+	from { -o-transform: rotate(0deg); }
+	50% { -o-transform: rotate(180deg); }
+	to { -o-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+	from { transform: rotate(0deg); }
+	50% { transform: rotate(180deg); }
+	to { transform: rotate(360deg); }
+}

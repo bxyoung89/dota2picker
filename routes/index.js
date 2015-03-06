@@ -6,35 +6,71 @@ var fs = require('fs');
 var sugar = require("sugar");
 var heroFile = "heroFiles/base/heroes.json";
 var url = require('url');
-var savedFile = "savedHeroes.json";
+var currentFile = "heroFiles/current/savedHeroes.json";
+var backupPath = "heroFiles/backup/";
+var backupFile = "savedHeroes";
+var numberOfBackups = 0;
 var lastWritten = undefined;
+var useBackup = false;
 
-router.get('/', function(req, res){
+router.get('/', function (req, res) {
 	res.sendfile("views/index.html");
 });
 
-router.get("/getHeroes", function(req, res){
+router.get("/getAdvantages", function (req, res) {
+	var backupFileExists = backupExists();
+	//Case for using the backup file if things go bad
+	if (useBackup && backupFileExists) {
+		fs.readFile(backupPath + backupFile + ".json", "utf8", function (error, data) {
+			if (error) {
+				console.log("Error reading backup :" + error);
+				res.send(error);
+				return;
+			}
+			res.send(data);
+		});
+		return;
+	}
+
+	//First send the current file before deciding if we need to process.
+	var sentResponse = false;
+	if (currentFileExists()) {
+		console.log("Reading current file!");
+		fs.readFile(currentFile, "utf8", function (error, data) {
+			if (error) {
+				console.log("Error reading current file: " + error);
+				return error;
+			}
+			res.send(data);
+		});
+		sentResponse = true;
+	}
+
+	var lastWrittenLessThanADayAgo = lastWritten !== undefined && (new Date()).getTime() - lastWritten.getTime() < 86400000;
+
+	//If the data is less than a day old, we're done
+	if (sentResponse && backupFileExists && lastWrittenLessThanADayAgo) {
+		return;
+	}
+
+	//Otherwise we need to get the new data
+
+	//we need to say we've written now, so even if we've failed it tries again the next day
+	lastWritten = new Date();
+
+	writeCurrentFileToBackup();
+
 	var heroes = [];
-	fs.readFile(heroFile, "utf8", function(error, data){
-		if(error){
-			console.log("Error :", error);
-			return;
-		}
-		console.log(new Date().getTime());
-		if(lastWritten !== undefined && (new Date()).getTime() - lastWritten.getTime() < 86400000){
-			fs.readFile(savedFile, "utf8", function(error, data){
-				if(error){
-					console.log(error);
-					return error;
-				}
-				res.send(data);
-			});
+	fs.readFile(heroFile, "utf8", function (error, data) {
+		if (error) {
+			console.log("Error trying to read heroes file: " + error);
 			return;
 		}
 		data = JSON.parse(data);
 		var validHeroesLength = data.length;
-		data.forEach(function(heroData){
-			var url = "http://www.dotabuff.com/heroes/"+heroData.id+"/matchups";
+
+		data.forEach(function (heroData) {
+			var url = "http://www.dotabuff.com/heroes/" + heroData.id + "/matchups";
 			var advantages = [];
 			var heroIsValid = true;
 			var requestOptions = {
@@ -44,61 +80,30 @@ router.get("/getHeroes", function(req, res){
 				}
 			};
 
-			request(requestOptions, function(error, response, html){
-				if(error){
-					validHeroesLength -=1;
+			request(requestOptions, function (error, response, html) {
+				if (error) {
+					validHeroesLength -= 1;
 					heroIsValid = false;
 					console.log("got an error");
 					console.log(error);
 					return "error";
 				}
-				var $ = cheerio.load(html);
-				//fs.writeFile("herohtmltest.html", html, function(error){
-				//	if(error){
-				//		console.log(error);
-				//	}
-				//});
-				$("tbody").filter(function(){
-					var table = $(this);
-					var rows = table.children();
-					rows.each(function(){
-						var hero = {};
-						var columns = $(this).children();
-						//var columnText = "";
-						//columns.each(function(column){
-						//	columnText = " "+$(column).text();
-						//});
-						//console.log(columnText);
 
-						var nameColumn = columns[1];
-						var heroName = $(nameColumn).text().trim();
-						if(heroName === "" || heroName === heroData.name){
-							return;
-						}
-						var matchingHero = data.find(function(h){
-							return h.name === heroName;
-						});
+				advantages = parseHtmlForAdvantages(html, heroData, data);
 
-						hero.id = matchingHero.id;
-
-						var advantageColumn = columns[2];
-						hero.advantage = parseFloat($(advantageColumn).text());
-						advantages.push(hero);
-					});
-				});
-				if(advantages.length === 0){
-					//console.log("no advantages");
-					validHeroesLength -=1;
+				if (advantages.length === 0) {
+					validHeroesLength -= 1;
 					heroIsValid = false;
+					return;
 				}
 			});
-			var polling = setInterval(function(){
-				if(!heroIsValid){
-					//console.log("hero is not valid: "+heroData.name);
+
+			var polling = setInterval(function () {
+				if (!heroIsValid) {
 					clearInterval(polling);
 					return;
 				}
-				if(advantages.length !== validHeroesLength -1){
+				if (advantages.length !== validHeroesLength - 1) {
 					return;
 				}
 				clearInterval(polling);
@@ -106,50 +111,38 @@ router.get("/getHeroes", function(req, res){
 				heroes.push(heroData);
 			}, 100);
 		});
-		var polling = setInterval(function(){
-			if(heroes.length !== validHeroesLength){
-				//var waitingHeroes = data.filter(function(hero){
-				//	return heroes.find(function(h){
-				//		return h.id === hero.id;
-				//	}) === undefined;
-				//});
-				//var waitingHeroesString = waitingHeroes.reduce(function(sum, hero){
-				//	return sum+ hero.id+" ";
-				//}, "waiting on ");
-				//console.log(waitingHeroesString);
+		var polling = setInterval(function () {
+			if (heroes.length !== validHeroesLength) {
+				//console.log(heroes.length + " of "+validHeroesLength);
 				return;
 			}
 			clearInterval(polling);
 			var validHeroes = [];
-			heroes.forEach(function(hero){
-				if(hero.advantages !== undefined){
+			heroes.forEach(function (hero) {
+				if (hero.advantages !== undefined) {
 					validHeroes.push(hero);
 				}
 			});
-			console.log("writing to file");
-			fs.writeFile(savedFile, JSON.stringify(validHeroes), function(error){
-				if(error){
-					console.log(error);
-				}
-				lastWritten = new Date();
-
-			});
-			res.send(validHeroes);
+			writeToCurrentFile(validHeroes);
+			if (!sentResponse) {
+				res.send(validHeroes);
+			}
 		}, 100);
 	});
 
+
 });
 
-router.get("/getLocale", function(req, res){
+router.get("/getLocale", function (req, res) {
 	res.send(req.locale.code);
 });
 
-router.get("/getTranslation", function(req, res){
+router.get("/getTranslation", function (req, res) {
 	var url_parts = url.parse(req.url, true);
 	var query = url_parts.query;
 	var translationPath = getTranslationPath(query.language);
-	fs.readFile(translationPath, "utf8", function(error, data){
-		if(error){
+	fs.readFile(translationPath, "utf8", function (error, data) {
+		if (error) {
 			console.log("Error getting translations :", error);
 			res.send({
 				"error": "Could not load translation."
@@ -160,19 +153,113 @@ router.get("/getTranslation", function(req, res){
 	});
 });
 
-function getTranslationPath(translationName){
-	switch(translationName){
-		case "english": return "translations/english.json";
-		case "french": return "translations/french.json";
-		case "german": return "translations/german.json";
-		case "japanese": return "translations/japanese.json";
-		case "korean": return "translations/korean.json";
-		case "portuguese": return "translations/portugese.json";
-		case "russian": return "translations/russian.json";
-		case "simplifiedChinese": return "translations/simplifiedChinese.json";
-		case "spanish": return "translations/spanish.json";
-		case "traditionalChinese": return "translations/traditionalChinese.json";
-		default: return "translations/english.json";
+function getTranslationPath(translationName) {
+	switch (translationName) {
+		case "english":
+			return "translations/english.json";
+		case "french":
+			return "translations/french.json";
+		case "german":
+			return "translations/german.json";
+		case "japanese":
+			return "translations/japanese.json";
+		case "korean":
+			return "translations/korean.json";
+		case "portuguese":
+			return "translations/portugese.json";
+		case "russian":
+			return "translations/russian.json";
+		case "simplifiedChinese":
+			return "translations/simplifiedChinese.json";
+		case "spanish":
+			return "translations/spanish.json";
+		case "traditionalChinese":
+			return "translations/traditionalChinese.json";
+		default:
+			return "translations/english.json";
+	}
+}
+
+function writeCurrentFileToBackup() {
+	if(!currentFileExists()){
+		return;
+	}
+	fs.readFile(currentFile, "utf8", function (error, data) {
+		if (error) {
+			console.log("Error reading current file: " + error);
+			return error;
+		}
+
+		numberOfBackups += 1;
+		backupFile = "savedHeroes" + numberOfBackups;
+
+		fs.writeFile(backupPath + backupFile + ".json", data, function (error) {
+			if (error) {
+				console.log("Error writing to backup file: " + error);
+			}
+			useBackup = true;
+			console.log("Using backup!");
+		});
+	});
+}
+
+function writeToCurrentFile(heroes) {
+	fs.writeFile(currentFile, JSON.stringify(heroes), function (error) {
+		if (error) {
+			console.log(error);
+			return;
+		}
+		useBackup = false;
+		console.log("Using current file!");
+	});
+}
+
+function parseHtmlForAdvantages(html, heroData, allHeroes) {
+	var $ = cheerio.load(html);
+	var advantages = [];
+
+	$("tbody").filter(function () {
+		var table = $(this);
+		var rows = table.children();
+		rows.each(function () {
+			var hero = {};
+			var columns = $(this).children();
+
+			var nameColumn = columns[1];
+			var heroName = $(nameColumn).text().trim();
+			if (heroName === "" || heroName === heroData.name) {
+				return;
+			}
+			var matchingHero = allHeroes.find(function (h) {
+				return h.name === heroName;
+			});
+
+			hero.id = matchingHero.id;
+
+			var advantageColumn = columns[2];
+			hero.advantage = parseFloat($(advantageColumn).text());
+			advantages.push(hero);
+		});
+	});
+
+	return advantages;
+}
+
+function backupExists() {
+	return fileExists(backupPath + backupFile + ".json");
+}
+
+function currentFileExists() {
+	return fileExists(currentFile);
+}
+
+function fileExists(filePath) {
+	try {
+		var stats = fs.lstatSync(filePath);
+		return stats.isFile();
+	}
+	catch (exception) {
+		return false;
 	}
 }
 

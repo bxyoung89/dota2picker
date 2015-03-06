@@ -4,3 +4,5 @@ savedHeroes.json
 public/bin/
 public/js/lib/bowerDependencies
 .tmp/
+heroFiles/backup/
+heroFiles/current/

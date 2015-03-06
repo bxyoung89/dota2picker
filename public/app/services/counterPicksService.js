@@ -25,6 +25,12 @@ angular.module("WalrusPunch").service("counterPicksService", [
 		}
 
 		function getCounterPickAdvantage(heroes, enemyTeam){
+			if(heroes[0].advantages === undefined){
+				heroes.forEach(function(hero){
+					hero.counterPickAdvantage = 0;
+				});
+				return;
+			}
 			heroes.forEach(function(hero){
 				var teamAdvantage = enemyTeam.average(function(enemy){
 					return hero.advantages.find(function(advantage){
