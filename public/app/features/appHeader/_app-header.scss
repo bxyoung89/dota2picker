@@ -14,19 +14,22 @@
 
 .app-header-title{
 	@include font-size(2.6);
-	color: $light-red;
+	color: $off-white;
 	margin-left: 10px;
 	float: left;
 	line-height: 44px;
 	font-weight: 600;
+	display: block;
+	text-decoration: none;
 }
 
 .app-header-sub-title{
 	line-height: 42px;
 	@include font-size(1.6);
-	color: $mid-red;
+	color: $light-red;
 	margin-left: 10px;
 	float: left;
+	font-weight: bold;
 }
 
 .hamburger-button{

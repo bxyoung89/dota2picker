@@ -34,6 +34,8 @@ angular.module("WalrusPunch").service("translationService", [
 			"Traditional Chinese": "traditionalChinese"
 		};
 
+		var untranslatedStrings = {};
+
 		function TranslationService() {
 			getTranslation("english");
 		}
@@ -45,6 +47,7 @@ angular.module("WalrusPunch").service("translationService", [
 		TranslationService.prototype.translateString = function (stringToTranslate) {
 			var translatedString = currentTranslation[stringToTranslate];
 			if (translatedString === undefined) {
+				addToUntranslatedStrings(stringToTranslate);
 				return stringToTranslate;
 			}
 			return translatedString;
@@ -54,6 +57,17 @@ angular.module("WalrusPunch").service("translationService", [
 			var translatedString = currentTranslation.heroes[heroName];
 			if (translatedString === undefined) {
 				return heroName;
+			}
+			return translatedString;
+		};
+
+		TranslationService.prototype.translateLanguage = function (stringToTranslate) {
+			if(currentTranslation.languages === undefined){
+				return "";
+			}
+			var translatedString = currentTranslation.languages[stringToTranslate];
+			if (translatedString === undefined) {
+				return stringToTranslate;
 			}
 			return translatedString;
 		};
@@ -116,6 +130,15 @@ angular.module("WalrusPunch").service("translationService", [
 					id: languageIds[englishLanguageLang]
 				};
 			});
+		}
+
+		function addToUntranslatedStrings(string){
+			if(untranslatedStrings[currentTranslationId] === undefined){
+				untranslatedStrings[currentTranslationId] = {};
+			}
+			untranslatedStrings[currentTranslationId][string] = string;
+			console.log(untranslatedStrings);
+
 		}
 
 

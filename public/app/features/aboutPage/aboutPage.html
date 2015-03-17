@@ -5,7 +5,126 @@
 		</div>
 		<div class="page-content">
 			<div class="about-page-content">
-				About
+				<div class="about-page-section">
+					<div class="about-page-section-title">
+						{{ translationService.translateString("About Walrus Punch!")}}
+					</div>
+					<div class="about-page-section-content general-info-section">
+						{{ translationService.translateString("Walrus Punch is a web app that people can use to get an idea of what heroes are stronger against an enemy team.")}}
+						{{ translationService.translateString("It gets data from DotaBuff every day so the information is always changing, but kept current.")}}<br><br>
+						{{ translationService.translateString("Walrus Punch was written with Node.js, Sass, Angular, Grunt, Bower, and jQuery")}}
+					</div>
+				</div>
+				<div class="about-page-section">
+					<div class="about-page-section-title">
+						{{ translationService.translateString("About the Developer")}}
+					</div>
+					<div class="about-page-section-content developer-info-section">
+						<div class="developer-picture" style="background-image: url(http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/3c/3c9d7efcea78408c7fec587348482e2fcf2d0b5a_full.jpg); background-size: cover;}">
+						</div>
+						<div class="developer-info">
+							<div class="developer-name">
+								Broderick Young
+							</div>
+							<div class="developer-description">
+								{{ translationService.translateString("Broderick Young (aka TheWalrus) is a 2k mmr noob intent on getting better.")}}
+							</div>
+
+							<div class="developer-contact">
+								<a href="https://twitter.com/bxyoung89">
+									<svg viewBox="0 0 30 30" class="ico-twitter">
+										<use xlink:href="#ico-twitter"></use>
+									</svg>
+								</a>
+								<a href="https://github.com/bxyoung89">
+									<svg viewBox="0 0 30 30" class="ico-github">
+										<use xlink:href="#ico-github"></use>
+									</svg>
+								</a>
+								<a href="http://broderickyoung.com/">
+									<svg viewBox="0 0 30 30" class="ico-earth">
+										<use xlink:href="#ico-earth"></use>
+									</svg>
+								</a>
+								<a href="http://steamcommunity.com/tradeoffer/new/?partner=82629665&token=Wf2beYpd">
+									<svg viewBox="0 0 512 512" class="ico-steam">
+										<use xlink:href="#ico-steam"></use>
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="about-page-section">
+					<div class="about-page-section-title">
+						{{ translationService.translateString("About the Translators")}}
+					</div>
+					<div class="about-page-section-content translator-info-section">
+						<div class="translator-info-section-subtitle">
+							{{ translationService.translateString("Here's everybody who helped with translating the app. I could not have done it without them!")}}
+						</div>
+						<div class="translators">
+							<div class="translator" ng-repeat="translator in translators">
+								<div class="translator-picture" ng-style="{ 'background-image': 'url('+translator.picture+')', 'background-size': 'cover'}">
+								</div>
+								<div class="translator-info-wrapper">
+									<div class="translator-info">
+										<div class="translator-name">
+											{{ translator.name }}
+										</div>
+										<div class="translator-languages">
+											{{ translator.translatedLanguages}}
+										</div>
+										<div class="translator-description">
+											{{ translator.translatedDescription }}
+										</div>
+										<div class="translator-contact">
+											<a class="ng-hide" href="{{ translator.twitterLink}}"
+											   ng-show="translator.twitterLink !== undefined">
+												<svg viewBox="0 0 30 30" class="ico-twitter">
+													<use xlink:href="#ico-twitter"></use>
+												</svg>
+											</a>
+											<a class="ng-hide" href="{{ translator.githubLink}}"
+											   ng-show="translator.githubLink !== undefined">
+												<svg viewBox="0 0 30 30" class="ico-github">
+													<use xlink:href="#ico-github"></use>
+												</svg>
+											</a>
+											<a class="ng-hide" href="{{ translator.websiteLink}}"
+											   ng-show="translator.websiteLink !== undefined">
+												<svg viewBox="0 0 30 30" class="ico-earth">
+													<use xlink:href="#ico-earth"></use>
+												</svg>
+											</a>
+											<a class="ng-hide" href="{{ translator.steamLink}}"
+											   ng-show="translator.steamLink !== undefined">
+												<svg viewBox="0 0 512 512" class="ico-steam">
+													<use xlink:href="#ico-steam"></use>
+												</svg>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="want-to-translate">
+							<div>
+								{{ translationService.translateString("Want to get Walrus Punch in your language?")}}
+							</div>
+							<a href="https://twitter.com/bxyoung89">
+								<svg viewBox="0 0 30 30" class="ico-twitter">
+									<use xlink:href="#ico-twitter"></use>
+								</svg>
+								{{ translationService.translateString("Contact the developer")}}
+							</a>
+
+							<div class="english-disclaimer">
+								{{ translationService.translateString("English please!")}}
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
