@@ -8,7 +8,7 @@
 //	font-family: "Noto Sans";
 //	src: local("NotoSans"), local("Noto Sans"), url(NotoSans-Regular.woff) format("woff");
 //}
-//
+
 //@font-face {
 //	font-family: "Noto Sans Armenian";
 //	src: local("NotoSansArmenian"), local("Noto Sans Armenian"), url(NotoSansArmenian-Regular.woff) format("woff");
@@ -96,81 +96,54 @@
 //
 //
 //
+
 @font-face {
-	font-family: "Source Sans Pro";
-	src: url("/fonts/sourceSansPro-Regular-webfont.eot");
-	src: url("/fonts/sourceSansPro-Regular-webfont.eot?#iefix") format('embedded-opentype'),
-		url("/fonts/sourceSansPro-Regular-webfont.woff") format('woff'),
-		url("/fonts/sourceSansPro-Regular-webfont.ttf") format('truetype'),
-		url("/fonts/sourceSansPro-Regular-webfont.svg#SourceSansProRegular") format('svg');
+	font-family: "Noto Sans";
+	src: url("/fonts/noto sans/woff2/NotoSans-Regular.woff2") format("woff2"),
+		url("/fonts/noto sans/woff/NotoSans-Regular.woff") format("woff"),
+		url("/fonts/noto sans/ttf/NotoSans-Regular.ttf") format("true-type");
 	font-weight: 400;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: "Source Sans Pro";
-	src: url("/fonts/sourceSansPro-It-webfont.eot");
-	src: url("/fonts/sourceSansPro-It-webfont.eot?#iefix") format('embedded-opentype'),
-	url("/fonts/sourceSansPro-It-webfont.woff") format('woff'),
-	url("/fonts/sourceSansPro-It-webfont.ttf") format('truetype'),
-	url("/fonts/sourceSansPro-It-webfont.svg#SourceSansProItalic") format('svg');
+	font-family: "Noto Sans";
+	src: url("/fonts/noto sans/woff2/NotoSans-Italic.2") format("woff2"),
+		url("/fonts/noto sans/woff/NotoSans-Italic.woff") format("woff"),
+		url("/fonts/noto sans/ttf/NotoSans-Italic.ttf") format("true-type");
 	font-weight: 400;
-	font-style: italic;
-}
-
-@font-face {
-	font-family: "Source Sans Pro";
-	src: url("/fonts/sourceSansPro-Semibold-webfont.eot");
-	src: url("/fonts/sourceSansPro-Semibold-webfont.eot?#iefix") format('embedded-opentype'),
-	url("/fonts/sourceSansPro-Semibold-webfont.woff") format('woff'),
-	url("/fonts/sourceSansPro-Semibold-webfont.ttf") format('truetype'),
-	url("/fonts/sourceSansPro-Semibold-webfont.svg#SourceSansProSemibold") format('svg');
-	font-weight: 600;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: "Source Sans Pro";
-	src: url("/fonts/sourceSansPro-SemiboldIt-webfont.eot");
-	src: url("/fonts/sourceSansPro-SemiboldIt-webfont.eot?#iefix") format('embedded-opentype'),
-	url("/fonts/sourceSansPro-SemiboldIt-webfont.woff") format('woff'),
-	url("/fonts/sourceSansPro-SemiboldIt-webfont.ttf") format('truetype'),
-	url("/fonts/sourceSansPro-SemiboldIt-webfont.svg#SourceSansProSemiboldItalic") format('svg');
-	font-weight: 400;
-	font-style: italic;
-}
-
-@font-face {
-	font-family: "Source Sans Pro";
-	src: url("/fonts/sourceSansPro-Bold-webfont.eot");
-	src: url("/fonts/sourceSansPro-Bold-webfont.eot?#iefix") format('embedded-opentype'),
-	url("/fonts/sourceSansPro-Bold-webfont.woff") format('woff'),
-	url("/fonts/sourceSansPro-Bold-webfont.ttf") format('truetype'),
-	url("/fonts/sourceSansPro-Bold-webfont.svg#SourceSansProBold") format('svg');
-	font-weight: 700;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: "Source Sans Pro";
-	src: url("/fonts/sourceSansPro-BoldIt-webfont.eot");
-	src: url("/fonts/sourceSansPro-BoldIt-webfont.eot?#iefix") format('embedded-opentype'),
-	url("/fonts/sourceSansPro-BoldIt-webfont.woff") format('woff'),
-	url("/fonts/sourceSansPro-BoldIt-webfont.ttf") format('truetype'),
-	url("/fonts/sourceSansPro-BoldIt-webfont.svg#SourceSansProBoldItalic") format('svg');
-	font-weight: 700;
 	font-style: italic;
 }
 
 @font-face {
 	font-family: "Noto Sans";
-	src: url("/fonts/noto sans/NotoSansCJKsc-Regular.otf") format("opentype");
-	font-weight: 400;
+	src: url("/fonts/noto sans/woff2/NotoSans-Bold.woff2") format("woff2"),
+		url("/fonts/noto sans/woff/NotoSans-Bold.woff") format("woff"),
+		url("/fonts/noto sans/ttf/NotoSans-Bold.ttf") format("true-type");
+	font-weight: 700;
 	font-style: normal;
 }
 
+@font-face {
+	font-family: "Noto Sans";
+	src: url("/fonts/noto sans/woff2/NotoSans-BoldItalic.woff2") format("woff2"),
+		url("/fonts/noto sans/woff/NotoSans-BoldItalic.woff") format("woff"),
+		url("/fonts/noto sans/ttf/NotoSans-BoldItalic.ttf") format("true-type");
+	font-weight: 700;
+	font-style: italic;
+}
+
+
+//@font-face {
+//	font-family: "Noto Sans";
+//	src: url("/fonts/noto sans/NotoSansCJKsc-Regular.otf") format("opentype");
+//	font-weight: 400;
+//	font-style: normal;
+//}
+
+
 @mixin main-font {
-	font-family: "Source Sans Pro", "Noto Sans", Verdana, Helvetica, Arial, sans-serif;
+	font-family: "Noto Sans", Verdana, Helvetica, Arial, sans-serif;
 }
 
 .spin-the-spinner{
