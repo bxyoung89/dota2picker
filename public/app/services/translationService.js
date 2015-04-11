@@ -5,7 +5,6 @@ angular.module("WalrusPunch").service("translationService", [
 	function ($http, $rootScope, TRANSLATION_EVENTS) {
 
 		var state = "loading";
-		var serverLocale = "en";
 		var currentTranslationId = "english";
 		var currentTranslation = {};
 		var translationOptions = [];
@@ -103,6 +102,7 @@ angular.module("WalrusPunch").service("translationService", [
 					currentTranslation = data;
 					currentTranslationId = languageId;
 					updateTranslationOptions();
+					updateLanguageCSS();
 					state = "done";
 					$rootScope.$broadcast(TRANSLATION_EVENTS.translationChanged);
 				})
@@ -111,14 +111,23 @@ angular.module("WalrusPunch").service("translationService", [
 				});
 		}
 
-		function localeToLanguage(locale) {
-			switch (locale.toLowerCase()) {
-				case "en":
-					return "english";
-				case "es":
-					return "spanish";
-				default:
-					return "english";
+		function updateLanguageCSS(){
+			$("html").attr("lang", languageToLocal(currentTranslationId));
+		}
+
+		function languageToLocal(languageId){
+			switch(languageId){
+				case "english": return "en";
+				case "french": return "fr";
+				case "german": return "de";
+				case "japanese": return "ja";
+				case "korean": return "ko";
+				case "portuguese": return "pt";
+				case "russian": return "ru";
+				case "simplifiedChinese": return "zh-Hans";
+				case "spanish": return "es";
+				case "traditionalChinese": return "zh-Hant";
+				default: return "en";
 			}
 		}
 
