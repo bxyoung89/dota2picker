@@ -223,6 +223,14 @@
 	&:lang(ja){
 		font-family: "Noto Sans", "Noto Sans Japanese", Verdana, Helvetica, Arial, sans-serif;
 	}
+
+	&:lang(zh-Hans){
+		font-family: "Noto Sans", Verdana, Helvetica, Arial, "Microsoft YaHei New", "Microsoft Yahei", "????", ??, SimSun, STXihei, "????", sans-serif;
+	}
+
+	&:lang(zh-Hant){
+		font-family: "Noto Sans", Verdana, Helvetica, Arial, "Microsoft YaHei New", "Microsoft Yahei", "????", ??, SimSun, STXihei, "????", sans-serif;
+	}
 }
 
 .spin-the-spinner{
