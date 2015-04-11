@@ -109,7 +109,7 @@
 
 
 @mixin main-font {
-	font-family: "Noto Sans", Verdana, Helvetica, Arial, "sourcehansans-tc-regular", sans-serif;
+	font-family: "Noto Sans", Verdana, Helvetica, Arial, "Microsoft YaHei New", "Microsoft Yahei", 微软雅黑, 宋体, SimSun, STXihei, 华文细黑, sans-serif;
 
 	&:lang(ko){
 		font-family: "Noto Sans", "Jeju Gothic", Verdana, Helvetica, Arial, sans-serif;
@@ -117,14 +117,6 @@
 
 	&:lang(ja){
 		font-family: "Noto Sans", "Noto Sans Japanese", Verdana, Helvetica, Arial, sans-serif;
-	}
-
-	&:lang(zh-Hans){
-		font-family: "Noto Sans", Verdana, Helvetica, Arial, "Microsoft YaHei New", "Microsoft Yahei", 微软雅黑, 宋体, SimSun, STXihei, 华文细黑, sans-serif;
-	}
-
-	&:lang(zh-Hant){
-		font-family: "Noto Sans", Verdana, Helvetica, Arial, "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", 宋体, SimSun, STXihei, "华文细黑", sans-serif;
 	}
 }
 

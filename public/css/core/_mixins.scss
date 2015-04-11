@@ -26,3 +26,10 @@
 	font-size: ($size * 10) + px;
 	font-size: $size + rem;
 }
+
+
+@mixin circle($diameter){
+	height: $diameter;
+	width: $diameter;
+	border-radius: 50%;
+}
