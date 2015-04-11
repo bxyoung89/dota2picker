@@ -5,7 +5,8 @@ angular.module("WalrusPunch").controller("appHeaderController", [
 	"HAMBURGER_EVENTS",
 	"translationService",
 	"responsiveService",
-	function ($scope, $rootScope, RESIZE_EVENTS, HAMBURGER_EVENTS, translationService, responsiveService) {
+	"analyticsService",
+	function ($scope, $rootScope, RESIZE_EVENTS, HAMBURGER_EVENTS, translationService, responsiveService, analyticsService) {
 		$scope.translationService = translationService;
 		$scope.responsiveSize = responsiveService.getSize();
 
@@ -23,5 +24,6 @@ angular.module("WalrusPunch").controller("appHeaderController", [
 
 		$scope.openHamburger = function(){
 			$rootScope.$broadcast(HAMBURGER_EVENTS.open);
+			analyticsService.trackEvent("Hamburger Opened", "");
 		};
 	}]);

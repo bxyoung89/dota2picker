@@ -5,7 +5,8 @@ angular.module("WalrusPunch").controller("enemyTeamController", [
 	"translationService",
 	"responsiveService",
 	"counterPickerPageService",
-	function($scope, $rootScope, RESIZE_EVENTS, translationService, responsiveService, counterPickerPageService){
+	"analyticsService",
+	function($scope, $rootScope, RESIZE_EVENTS, translationService, responsiveService, counterPickerPageService, analyticsService){
 		$scope.translationService = translationService;
 		$scope.heroes = [
 			{
@@ -45,5 +46,6 @@ angular.module("WalrusPunch").controller("enemyTeamController", [
 
 		$scope.onHeroClicked = function(hero){
 			counterPickerPageService.removeEnemyHero(hero);
+			analyticsService.trackEvent("Removed from Enemy Team", hero.name);
 		};
 	}]);

@@ -4,7 +4,8 @@ angular.module("WalrusPunch").controller("heroSearchBarController", [
 	"translationService",
 	"heroService",
 	"counterPickerPageService",
-	function($scope, guidService, translationService, heroService, counterPickerPageService){
+	"analyticsService",
+	function($scope, guidService, translationService, heroService, counterPickerPageService, analyticsService){
 		var realInputValue = "";
 		var allHeroNames = [];
 
@@ -33,6 +34,7 @@ angular.module("WalrusPunch").controller("heroSearchBarController", [
 			}
 			realInputValue = newValue;
 			counterPickerPageService.setSearchKeyWords(newValue);
+			analyticsService.trackEvent("Searched for Hero", newValue);
 		};
 
 		function updateHeroNames(translatedHeroes){

@@ -3,7 +3,8 @@ angular.module("WalrusPunch").controller("counterPickerPageController", [
 	"$rootScope",
 	"HAMBURGER_EVENTS",
 	"responsiveService",
-	function ($scope, $rootScope, HAMBURGER_EVENTS, responsiveService) {
+	"analyticsService",
+	function ($scope, $rootScope, HAMBURGER_EVENTS, responsiveService, analyticsService) {
 		$scope.hamburgerIsOpen = false;
 
 		$rootScope.$on(HAMBURGER_EVENTS.open, function () {
@@ -17,6 +18,7 @@ angular.module("WalrusPunch").controller("counterPickerPageController", [
 		$scope.closeHamburger = function () {
 			$scope.hamburgerIsOpen = false;
 			$rootScope.$broadcast(HAMBURGER_EVENTS.close);
+			analyticsService.trackEvent("Hamburger Closed", "");
 		};
 
 		$scope.shouldShowHeroGrid = function(){

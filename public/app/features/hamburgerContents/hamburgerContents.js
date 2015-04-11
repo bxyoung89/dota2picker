@@ -4,7 +4,8 @@ angular.module("WalrusPunch").controller("hamburgerContentsController", [
 	"HAMBURGER_EVENTS",
 	"translationService",
 	"dota1Service",
-	function($scope, $rootScope, HAMBURGER_EVENTS, translationService, dota1Service){
+	"analyticsService",
+	function($scope, $rootScope, HAMBURGER_EVENTS, translationService, dota1Service, analyticsService){
 		$scope.translationService = translationService;
 		$scope.languageOptions = translationService.getTranslationOptions();
 		$scope.selectedLanguage = $scope.languageOptions.find(function(option){
@@ -25,10 +26,12 @@ angular.module("WalrusPunch").controller("hamburgerContentsController", [
 
 		$scope.onSelectedLanguageChanged = function(){
 			translationService.changeTranslation($scope.selectedLanguage.id);
+			analyticsService.trackEvent("Language Changed", $scope.selectedLanguage.id);
 		};
 
 		$scope.onDota1CheckboxToggled = function(){
 			dota1Service.setDota1Mode($scope.shouldUseDota1Portraits);
+			analyticsService.trackEvent("Dota 1 Mode Toggled", $scope.shouldUseDota1Portraits ? "On" : "Off");
 		};
 
 		$scope.closeHamburger = function(){

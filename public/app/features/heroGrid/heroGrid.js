@@ -5,8 +5,9 @@ angular.module("WalrusPunch").controller("heroGridController", [
 	"translationService",
 	"responsiveService",
 	"guidService",
+	"analyticsService",
 	"TRANSLATION_EVENTS",
-	function($scope, heroService, counterPickerPageService, translationService, responsiveService, guidService, TRANSLATION_EVENTS){
+	function($scope, heroService, counterPickerPageService, translationService, responsiveService, guidService, analyticsService, TRANSLATION_EVENTS){
 		var mixItUpFilterTimeout = undefined;
 
 		$scope.heroGridId = "hero-grid-"+guidService.newGuid();
@@ -60,6 +61,7 @@ angular.module("WalrusPunch").controller("heroGridController", [
 
 		$scope.onHeroClicked = function(hero){
 			counterPickerPageService.addEnemyHero(hero);
+			analyticsService.trackEvent("Hero Clicked", hero.name);
 		};
 
 		$scope.isHeroSelected = function(hero){
@@ -125,6 +127,7 @@ angular.module("WalrusPunch").controller("heroGridController", [
 				return;
 			}
 			counterPickerPageService.addEnemyHero(shownHeroes[0]);
+			analyticsService.trackEvent("Hero Selected by text Search", shownHeroes[0].name);
 		}
 
 		function debounceFilterMixItUp(search){
