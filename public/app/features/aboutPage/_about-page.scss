@@ -193,7 +193,6 @@
 	.want-to-translate{
 		width: 100%;
 
-
 		div{
 			text-align: center;
 			margin-bottom: 10px;
@@ -205,7 +204,7 @@
 			display: block;
 			background: $mid-green;
 			height: 40px;
-			width: 250px;
+			width: 260px;
 			line-height: 40px;
 			margin: 0 auto;
 			transition: 300ms ease all;
@@ -228,6 +227,156 @@
 			margin-top: 10px;
 			@include font-size(1.6);
 			color: darken(#fff, 75%);
+		}
+	}
+}
+
+
+@media(max-width:$about-page-medium-width){
+
+	.about-page-section-title{
+		@include font-size(2.2);
+	}
+
+	.about-page-section-content{
+		@include font-size(1.8);
+	}
+
+	.developer-info-section {
+		.developer-name {
+			@include font-size(2.2);
+		}
+	}
+
+	.translator-info-section {
+		.translator {
+			@include font-size(2.2);
+		}
+
+		.translator-name{
+			@include font-size(2.2);
+		}
+
+		.translator-languages{
+			@include font-size(1.4);
+		}
+
+		.translator-description{
+			@include font-size(1.4);
+		}
+	}
+
+	.want-to-translate {
+		width: 100%;
+
+		div {
+			@include font-size(3.2);
+		}
+
+		.english-disclaimer{
+			@include font-size(1.4);
+		}
+	}
+}
+
+@media(max-width:$about-page-small-width){
+
+	.translator-info-section{
+		.translator{
+			height: auto;
+			width: 48%;
+		}
+
+		.translator-picture{
+			height: 200px;
+			width: 100%;
+			position: relative;
+		}
+
+		.translator-info-wrapper{
+			position: relative;
+			padding: 10px;
+		}
+	}
+
+}
+
+@media(max-width:$about-page-tiny-width){
+
+	.developer-info-section{
+		display: table;
+		width: 100%;
+
+		.developer-picture{
+			display: table-cell;
+			width: 33.33333%;
+			float: none;
+		}
+
+		.developer-info{
+			float: none;
+			height: 200px;
+			display: table-cell;
+			width: 66.6666666%;
+			position: relative;
+			padding: 10px;
+			margin: 0;
+		}
+
+		.developer-contact{
+			position: absolute;
+			bottom: 10px;
+			left: 10px;
+		}
+	}
+}
+
+@media(max-width:$about-page-mobile-width){
+	.developer-info-section{
+		display: block;
+		width: 100%;
+
+		.developer-picture{
+			display: block;
+			height: 200px;
+			width: 100%;
+		}
+
+		.developer-info{
+			height: auto;
+			display: block;
+			width: 100%;
+			padding-bottom: 60px;
+			@include font-size(1.4);
+		}
+	}
+
+
+	.translator-info-section {
+		.translator {
+			display: block;
+			margin: 0 auto 20px;
+			width: 96%;
+
+			&:nth-child(even){
+				margin: 0 auto 20px;
+			}
+
+			.translator-info-wrapper{
+				height: auto;
+			}
+
+			.translator-info{
+				padding-bottom: 60px;
+			}
+		}
+
+		.want-to-translate{
+
+			div{
+				@include font-size(2.4);
+				margin-bottom: 10px;
+			}
 		}
 	}
 }
