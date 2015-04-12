@@ -170,21 +170,63 @@
 @media(max-width:$counter-picker-page-medium-width){
 	.counter-pick-hero{
 		width: 100%;
-		height: 33px;
+		height: 60px;
 		margin-bottom: 5px;
 	}
 
 	.counter-pick-hero-image-wrapper{
-		width: 59px;
+		height: 50%;
 	}
 
 	.counter-pick-hero-text{
-		line-height: 33px;
-		padding-left: 69px;
+		line-height: 30px;
+		padding: 0 5px;
+		top: 50%;
+		height: 50%;
 
 		.advantage{
 			@include font-size(2.0);
-			line-height: 33px;
+			line-height: 30px;
+			position: absolute;
+			top: -100%;
+			right: 0;
+			width: calc(100% - 53px);
+			height: 30px;
+			color: $off-white;
+
+			svg{
+				fill: $off-white;
+			}
+		}
+
+		&.positive,
+		&.neutral,
+		&.negative{
+			.advantage{
+				color: $off-white;
+			}
+
+			svg{
+				fill: $off-white;
+			}
+		}
+
+		&.positive{
+			.advantage {
+				background: $mid-green;
+			}
+		}
+
+		&.neutral{
+			.advantage {
+				background: $off-black;
+			}
+		}
+
+		&.negative{
+			.advantage {
+				background: $light-red;
+			}
 		}
 
 		.name{
