@@ -17,7 +17,7 @@
     "cheerio": "*",
     "sugar": "*",
     "express-locale": "~0.1.2",
-    "bower": "~2.3.5"
+    "bower": "~1.4.1"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
