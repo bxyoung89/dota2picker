@@ -66,6 +66,7 @@
 		.name{
 			bottom: 10px;
 			left: 10px;
+			@include font-size(2.0);
 		}
 	}
 }

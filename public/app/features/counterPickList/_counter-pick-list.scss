@@ -248,7 +248,11 @@
 			width: 33px;
 		}
 		.counter-pick-hero-text{
-			padding-left: 43px;
+			padding: 0 5px;
+			
+			.advantage{
+				width: calc(100% - 30px);
+			}
 		}
 	}
 }

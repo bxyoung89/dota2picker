@@ -107,6 +107,10 @@ angular.module("WalrusPunch").controller("heroGridController", [
 
 		setTimeout(function(){
 			initializeMixItUp();
+			setTimeout(function(){
+				debounceFilterMixItUp(counterPickerPageService.getSearchKeyWords());
+				filterMixItUp(counterPickerPageService.getSearchKeyWords());
+			}, 500);
 		}, 0);
 	}
 ]);
