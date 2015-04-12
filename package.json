@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "express": "~4.2.0",
-    "static-favicon": "~1.0.0",
+    "serve-favicon": "~2.2.0",
     "morgan": "~1.0.0",
     "cookie-parser": "~1.0.1",
     "body-parser": "~1.0.0",
@@ -17,9 +17,7 @@
     "cheerio": "*",
     "sugar": "*",
     "express-locale": "~0.1.2",
-    "bower": "~1.4.1"
-  },
-  "devDependencies": {
+    "bower": "~1.4.1",
     "grunt": "~0.4.5",
     "load-grunt-config": "~0.16.0",
     "grunt-concurrent": "~1.0.0",
@@ -32,7 +30,8 @@
     "grunt-sass": "~0.18.0",
     "grunt-ng-annotate": "~0.10.0",
     "grunt-html2js": "~0.3.0",
-    "grunt-notify": "~0.4.1"
+    "grunt-notify": "~0.4.1",
+    "grunt-cli": "~0.1.13"
   },
   "scripts": {
     "start": "node ./bin/www",
