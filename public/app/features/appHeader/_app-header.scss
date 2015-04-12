@@ -17,14 +17,14 @@
 	color: $off-white;
 	margin-left: 10px;
 	float: left;
-	line-height: 44px;
+	line-height: 40px;
 	font-weight: 600;
 	display: block;
 	text-decoration: none;
 }
 
 .app-header-sub-title{
-	line-height: 42px;
+	line-height: 40px;
 	@include font-size(1.6);
 	color: $light-red;
 	margin-left: 10px;
@@ -51,4 +51,22 @@
 		height: 40px;
 		width: 40px;
 	}
+}
+
+
+@media(max-width:$counter-picker-page-medium-width){
+
+}
+
+
+
+@media(max-width:$counter-picker-page-small-width){
+
+}
+
+@media(max-width:$counter-picker-page-tiny-width){
+	.app-header-sub-title{
+		display: none;
+	}
+
 }
