@@ -1,8 +1,9 @@
 angular.module("WalrusPunch").service("translationService", [
 	"$http",
 	"$rootScope",
+	"$localStorage",
 	"TRANSLATION_EVENTS",
-	function ($http, $rootScope, TRANSLATION_EVENTS) {
+	function ($http, $rootScope, $localStorage, TRANSLATION_EVENTS) {
 
 		var state = "loading";
 		var currentTranslationId = "english";
@@ -36,7 +37,8 @@ angular.module("WalrusPunch").service("translationService", [
 		var untranslatedStrings = {};
 
 		function TranslationService() {
-			getTranslation("english");
+			var previousLanguage = getLanguageFromLocalStorage();
+			getTranslation(previousLanguage);
 		}
 
 		TranslationService.prototype.getState = function () {
@@ -78,6 +80,7 @@ angular.module("WalrusPunch").service("translationService", [
 
 		TranslationService.prototype.changeTranslation = function (languageId) {
 			state = "loading";
+			saveLanguageToLocalStorage(languageId);
 			getTranslation(languageId);
 		};
 
@@ -88,10 +91,6 @@ angular.module("WalrusPunch").service("translationService", [
 		TranslationService.prototype.getCurrentTranslationId = function(){
 			return currentTranslationId;
 		};
-
-		function getCurrentLocale() {
-			//todo
-		}
 
 		function getTranslation(languageId) {
 			$http.get("/getTranslation?language=" + languageId)
@@ -147,7 +146,14 @@ angular.module("WalrusPunch").service("translationService", [
 			}
 			untranslatedStrings[currentTranslationId][string] = string;
 			console.log(untranslatedStrings);
+		}
 
+		function getLanguageFromLocalStorage(){
+			return $localStorage.language === undefined ? "english" : $localStorage.language;
+		}
+
+		function saveLanguageToLocalStorage(language){
+			$localStorage.language = language;
 		}
 
 
