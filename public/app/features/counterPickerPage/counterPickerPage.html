@@ -20,6 +20,12 @@
 								<div class="hero-grid-wrapper" ng-if="shouldShowHeroGrid()">
 									<ng-include src="'/app/features/heroGrid/heroGrid.html'"></ng-include>
 								</div>
+								<div class="instructions-wrapper" ng-if="!shouldShowHeroGrid() && shouldShowInstructions">
+									<b>{{ translationService.translateString("Welcome to Walrus Punch!")}}</b>
+									<br>
+									<br>
+									{{ translationService.translateString("To get counter-picks search for a hero above and see the suggested heroes below!") }}
+								</div>
 							</div>
 						</div>
 						<div class="counter-pick-list-wrapper">

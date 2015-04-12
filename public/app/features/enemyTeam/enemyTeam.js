@@ -42,7 +42,12 @@ angular.module("WalrusPunch").controller("enemyTeamController", [
 			enemyTeamWatcher();
 		});
 
-		$scope.getHeroImage = responsiveService.getHeroImageSmall;
+		$scope.getHeroImage = responsiveService.getHeroImageCustom({
+			tiny: "large",
+			small: "large",
+			medium: "large",
+			large: "full"
+		});
 
 		$scope.onHeroClicked = function(hero){
 			counterPickerPageService.removeEnemyHero(hero);

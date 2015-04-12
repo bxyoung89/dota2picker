@@ -87,6 +87,18 @@
 	padding-top: 80px;
 }
 
+.instructions-wrapper{
+	background: $pale-green;
+	color: $off-black;
+	padding: 10px;
+	@include font-size(1.6);
+	text-align: center;
+
+	b{
+		@include font-size(1.8);
+	}
+}
+
 
 @media(max-width:$counter-picker-page-medium-width){
 	.counter-picker-page-top-content{
