@@ -4,19 +4,9 @@ angular.module("WalrusPunch").controller("appHeaderController", [
 	"RESIZE_EVENTS",
 	"HAMBURGER_EVENTS",
 	"translationService",
-	"responsiveService",
 	"analyticsService",
-	function ($scope, $rootScope, RESIZE_EVENTS, HAMBURGER_EVENTS, translationService, responsiveService, analyticsService) {
+	function ($scope, $rootScope, RESIZE_EVENTS, HAMBURGER_EVENTS, translationService, analyticsService) {
 		$scope.translationService = translationService;
-		$scope.responsiveSize = responsiveService.getSize();
-
-		var responsiveSizeWatcher = $scope.$watch(responsiveService.getSize, function(newSize){
-			$scope.responsiveSize = newSize;
-		});
-
-		$scope.$on("$destroy", function(){
-			responsiveSizeWatcher();
-		});
 
 		$rootScope.$on(RESIZE_EVENTS.resized, function(){
 			$scope.$apply();
