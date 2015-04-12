@@ -11,27 +11,27 @@ angular.module("WalrusPunch").service("translationService", [
 		var translationOptions = [];
 		var nativeLanguages = {
 			"English": "English",
-			"French": "Français",
-			"German": "Deutsch",
-			"Japanese": "日本語",
-			"Korean": "한국어",
-			"Portuguese": "Português",
-			"Russian": "Русский",
-			"Simplified Chinese": "简体中文",
-			"Spanish": "Español",
-			"Traditional Chinese": "繁體中文"
+			//"French": "Français",
+			//"German": "Deutsch",
+			//"Japanese": "日本語",
+			//"Korean": "한국어",
+			//"Portuguese": "Português",
+			//"Russian": "Русский",
+			//"Simplified Chinese": "简体中文",
+			"Spanish": "Español"
+			//"Traditional Chinese": "繁體中文"
 		};
 		var languageIds = {
 			"English": "english",
-			"French": "french",
-			"German": "german",
-			"Japanese": "japanese",
-			"Korean": "korean",
-			"Portuguese": "portuguese",
-			"Russian": "russian",
-			"Simplified Chinese": "simplifiedChinese",
-			"Spanish": "spanish",
-			"Traditional Chinese": "traditionalChinese"
+			//"French": "french",
+			//"German": "german",
+			//"Japanese": "japanese",
+			//"Korean": "korean",
+			//"Portuguese": "portuguese",
+			//"Russian": "russian",
+			//"Simplified Chinese": "simplifiedChinese",
+			"Spanish": "spanish"
+			//"Traditional Chinese": "traditionalChinese"
 		};
 
 		var untranslatedStrings = {};

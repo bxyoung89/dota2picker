@@ -1,11 +1,19 @@
 angular.module("WalrusPunch").service("translatorInformationService", [function(){
 
-	var translators = [];
+	var translators = [
+		{
+			name: "Corbin Young",
+			picture: "/images/translators/corbin.jpg",
+			description: "Office Worker by day, Punk Musician and teacher by night. Austin, Texas.",
+			languages: ["Spanish"],
+			websiteLink: "http://noiserocktreehouse.blogspot.com/"
+		}
+	];
 
 	function TranslatorInformationService(){
-		for(var x = 0; x < 10; x+=1){
-			translators.push(getRandomTranslator());
-		}
+		//for(var x = 0; x < 10; x+=1){
+		//	translators.push(getRandomTranslator());
+		//}
 	}
 
 	TranslatorInformationService.prototype.getTranslators = function(){

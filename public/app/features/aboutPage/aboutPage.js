@@ -18,11 +18,14 @@ angular.module("WalrusPunch").controller("aboutPageController", [
 			$scope.hamburgerIsOpen = true;
 		});
 
+		$rootScope.$on(HAMBURGER_EVENTS.close, function () {
+			$scope.hamburgerIsOpen = false;
+		});
+
 		$scope.closeHamburger = function () {
 			$scope.hamburgerIsOpen = false;
 			$rootScope.$broadcast(HAMBURGER_EVENTS.close);
 		};
-
 
 		function translateTranslators(){
 			$scope.translators.forEach(function(translator){
@@ -33,11 +36,5 @@ angular.module("WalrusPunch").controller("aboutPageController", [
 			});
 		}
 
-
-
-
-
-
 		translateTranslators();
-
 	}]);
