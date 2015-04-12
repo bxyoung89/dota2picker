@@ -120,6 +120,7 @@
 		height: 24px;
 		@include font-size(2.4);
 		margin-top: 5px;
+		line-height: 24px;
 	}
 	.enemy-team-heroes-wrapper{
 		height: 75px;
@@ -160,44 +161,22 @@
 	.enemy-team-title{
 		height: 16px;
 		@include font-size(1.6);
+		line-height:16px;
 	}
 	.enemy-team-heroes-wrapper{
-		height: 33px;
-		margin-bottom: 16px;
+		height: auto;
+		margin-bottom: 20px;
 	}
 
 	.enemy-team-hero-slot{
-		width: 59px;
-		height: 33px;
-		margin-right: 5px;
-	}
+		margin: 5px;
 
-	.enemy-hero{
-		svg{
-			height: 30px;
-			width: 30px;
-		}
-
-	}
-
-	.enemy-team-empty-slot{
-		border: 5px dotted $off-white;
-
-		svg{
-			height: 25px;
-			width: 25px;
-		}
-	}
-
-	.dota1{
-		.enemy-team-hero-slot{
-			width: 33px;
+		&:last-child{
+			margin: 5px;
 		}
 	}
 }
 
 @media(max-width:$counter-picker-page-tiny-width){
-	.enemy-team-hero-slot{
-		margin-right: 0;
-	}
+
 }

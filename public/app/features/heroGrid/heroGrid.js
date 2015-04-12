@@ -6,8 +6,9 @@ angular.module("WalrusPunch").controller("heroGridController", [
 	"responsiveService",
 	"guidService",
 	"analyticsService",
+	"heroFilterService",
 	"TRANSLATION_EVENTS",
-	function($scope, heroService, counterPickerPageService, translationService, responsiveService, guidService, analyticsService, TRANSLATION_EVENTS){
+	function($scope, heroService, counterPickerPageService, translationService, responsiveService, guidService, analyticsService, heroFilterService, TRANSLATION_EVENTS){
 		var mixItUpFilterTimeout = undefined;
 
 		$scope.heroGridId = "hero-grid-"+guidService.newGuid();
@@ -76,9 +77,9 @@ angular.module("WalrusPunch").controller("heroGridController", [
 			var heroGrid = $("#"+$scope.heroGridId);
 			var filter = heroGrid.find(".mix").filter(function () {
 				var heroId = $(this).attr("data-hero-id");
-				return filterHeroBySearchText(searchText, heroId);
+				return heroFilterService.filterHeroBySearchText($scope.heroes, searchText, heroId);
 			});
-			heroGrid.mixItUp("filter", filter, addHeroIfOneLeft);
+			heroGrid.mixItUp("filter", filter, function(){ heroFilterService.addHeroIfOneLeft($scope.heroes); });
 		}
 
 		function initializeMixItUp(){
@@ -91,44 +92,6 @@ angular.module("WalrusPunch").controller("heroGridController", [
 			heroGrid.mixItUp("sort", "name: desc");
 		}
 
-		function filterHeroBySearchText(searchText, heroId){
-			if(searchText.trim() === ""){
-				return true;
-			}
-			var hero = $scope.heroes.find(function(hero){
-				return hero.id === heroId;
-			});
-			if(hero === undefined){
-				return true;
-			}
-			var sanitizedSearchText = searchText.toLowerCase().trim();
-			var heroNameStartsWithText = hero.translatedName.toLowerCase().indexOf(sanitizedSearchText) !== -1;
-			if(heroNameStartsWithText){
-				return true;
-			}
-
-			if(hero.nickNames.length === 0){
-				return false;
-			}
-
-			return hero.nickNames.any(function(name){
-				return name.toLowerCase().indexOf(sanitizedSearchText) !== -1;
-			});
-		}
-
-		function addHeroIfOneLeft(){
-			var shownHeroes = $scope.heroes.filter(function(hero){
-				return filterHeroBySearchText(counterPickerPageService.getSearchKeyWords(), hero.id);
-			});
-			if (shownHeroes.length !== 1) {
-				return;
-			}
-			if (shownHeroes[0].selected || counterPickerPageService.getEnemyTeam().length === 5) {
-				return;
-			}
-			counterPickerPageService.addEnemyHero(shownHeroes[0]);
-			analyticsService.trackEvent("Hero Selected by text Search", shownHeroes[0].name);
-		}
 
 		function debounceFilterMixItUp(search){
 			if(mixItUpFilterTimeout !== undefined){

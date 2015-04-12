@@ -4,8 +4,18 @@ angular.module("WalrusPunch").controller("counterPickerPageController", [
 	"HAMBURGER_EVENTS",
 	"responsiveService",
 	"analyticsService",
-	function ($scope, $rootScope, HAMBURGER_EVENTS, responsiveService, analyticsService) {
+	"counterPickerPageService",
+	"heroFilterService",
+	"heroService",
+	function ($scope, $rootScope, HAMBURGER_EVENTS, responsiveService, analyticsService, counterPickerPageService, heroFilterService, heroService) {
 		$scope.hamburgerIsOpen = false;
+
+		var searchKeyWordsWatcher = $scope.$watch(counterPickerPageService.getSearchKeyWords, function(search){
+			if($scope.shouldShowHeroGrid()){
+				return;
+			}
+			heroFilterService.addHeroIfOneLeft(heroService.getTranslatedHeroes());
+		});
 
 		$rootScope.$on(HAMBURGER_EVENTS.open, function () {
 			$scope.hamburgerIsOpen = true;
@@ -14,6 +24,12 @@ angular.module("WalrusPunch").controller("counterPickerPageController", [
 		$rootScope.$on(HAMBURGER_EVENTS.close, function () {
 			$scope.hamburgerIsOpen = false;
 		});
+
+		$scope.$on("$destroy", function(){
+			searchKeyWordsWatcher();
+		});
+
+
 
 		$scope.closeHamburger = function () {
 			$scope.hamburgerIsOpen = false;
