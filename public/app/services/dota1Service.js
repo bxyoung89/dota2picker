@@ -1,4 +1,4 @@
-angular.module("WalrusPunch").service("dota1Service", ["$localStorage", function($localStorage){
+angular.module("WalrusPunch").service("dota1Service", [function(){
 	var dota1ModeOn = false;
 
 
@@ -29,11 +29,11 @@ angular.module("WalrusPunch").service("dota1Service", ["$localStorage", function
 	}
 
 	function updateLocalStorage(){
-		$localStorage.dota1Mode = dota1ModeOn;
+		localStorage.setItem("walrusPunchDota1Mode",dota1ModeOn);
 	}
 
 	function loadLocalStorage(){
-		dota1ModeOn = !!$localStorage.dota1Mode;
+		dota1ModeOn = !!localStorage.getItem("walrusPunchDota1Mode");
 	}
 
 	return new Dota1Service();

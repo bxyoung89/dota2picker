@@ -1,9 +1,8 @@
 angular.module("WalrusPunch").service("translationService", [
 	"$http",
 	"$rootScope",
-	"$localStorage",
 	"TRANSLATION_EVENTS",
-	function ($http, $rootScope, $localStorage, TRANSLATION_EVENTS) {
+	function ($http, $rootScope, TRANSLATION_EVENTS) {
 
 		var state = "loading";
 		var currentTranslationId = "english";
@@ -149,11 +148,11 @@ angular.module("WalrusPunch").service("translationService", [
 		}
 
 		function getLanguageFromLocalStorage(){
-			return $localStorage.language === undefined ? "english" : $localStorage.language;
+			return localStorage.getItem("walrusPunchLanguage") === undefined ? "english" : localStorage.getItem("walrusPunchLanguage");
 		}
 
 		function saveLanguageToLocalStorage(language){
-			$localStorage.language = language;
+			localStorage.setItem("walrusPunchLanguage", language);
 		}
 
 

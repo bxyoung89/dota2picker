@@ -1,4 +1,4 @@
-angular.module("WalrusPunch", ["Templates", "ngRoute", "ngStorage", "countTo", "angularytics"])
+angular.module("WalrusPunch", ["Templates", "ngRoute", "countTo", "angularytics"])
 	.config(["$routeProvider", function($routeProvider){
 		$routeProvider.when("/", {
 			templateUrl: "/app/features/counterPickerPage/counterPickerPage.html",

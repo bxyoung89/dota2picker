@@ -1,7 +1,6 @@
 angular.module("WalrusPunch").controller("counterPickerPageController", [
 	"$scope",
 	"$rootScope",
-	"$localStorage",
 	"HAMBURGER_EVENTS",
 	"responsiveService",
 	"analyticsService",
@@ -9,11 +8,11 @@ angular.module("WalrusPunch").controller("counterPickerPageController", [
 	"heroFilterService",
 	"heroService",
 	"translationService",
-	function ($scope, $rootScope, $localStorage, HAMBURGER_EVENTS, responsiveService, analyticsService, counterPickerPageService, heroFilterService, heroService, translationService) {
+	function ($scope, $rootScope, HAMBURGER_EVENTS, responsiveService, analyticsService, counterPickerPageService, heroFilterService, heroService, translationService) {
 		$scope.hamburgerIsOpen = false;
 		$scope.translationService = translationService;
 		$scope.counterPickerPageService = counterPickerPageService;
-		$scope.shouldShowInstructions = $localStorage.showCounterPickerInstructions === undefined || !!$localStorage.showCounterPickerInstructions;
+		$scope.shouldShowInstructions = localStorage.getItem("walrusPunchShowCounterPickerInstructions") === undefined || !!localStorage.getItem("walrusPunchShowCounterPickerInstructions");
 
 		var searchKeyWordsWatcher = $scope.$watch(counterPickerPageService.getSearchKeyWords, function(){
 			if($scope.shouldShowHeroGrid()){
@@ -27,7 +26,7 @@ angular.module("WalrusPunch").controller("counterPickerPageController", [
 				return;
 			}
 			$scope.shouldShowInstructions = false;
-			$localStorage.showCounterPickerInstructions = false;
+			localStorage.setItem("walrusPunchShowCounterPickerInstructions", false);
 		}, true);
 
 		$rootScope.$on(HAMBURGER_EVENTS.open, function () {
