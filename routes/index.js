@@ -78,7 +78,7 @@ router.get("/getAdvantages", function (req, res) {
 		return;
 	}
 
-	if(writing){
+	if(writing && !sentResponse){
 		console.log("waiting on writing current file");
 		res.send([]);
 		return;
@@ -196,6 +196,7 @@ router.get("/getAdvantages", function (req, res) {
 				heroes.push(hero);
 			});
 			writeToCurrentFile(heroes);
+			useBackup = false;
 			if (!sentResponse) {
 				res.send(heroes);
 			}
