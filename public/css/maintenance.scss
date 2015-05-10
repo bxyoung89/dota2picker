@@ -1,0 +1,35 @@
+@import "lib/normalize";
+
+@import "core/colors";
+@import "core/fonts";
+@import "core/mixins";
+
+body{
+	background: $green-black;
+	color: $off-white;
+	height: 100%;
+	width: 100%;
+}
+
+.maintenance-content-wrapper{
+	height: 100%;
+	width: 100%;
+	position: fixed;
+}
+
+.maintenance-content{
+	text-align: center;
+	margin: 0 auto;
+	@include vertical-align();
+}
+
+svg{
+	fill: $off-white;
+	height: 300px;
+	width: 300px;
+}
+
+.maintenance-text{
+	@include font-size(1.6);
+	margin-top: -50px;
+}

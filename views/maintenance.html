@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title>Walrus Punch!</title>
+
+		<link rel="stylesheet" href="bin/css/maintenance.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<div class="maintenance-content-wrapper">
+			<div class="maintenance-content">
+				<svg viewBox="0 0 30 30" class="ico-warning">
+					<path d="M22.1,20L15.9,9c-0.4-0.7-1.4-0.7-1.7,0L7.9,20c-0.4,0.7,0.1,1.5,0.9,1.5h12.6C22,21.5,22.5,20.7,22.1,20z
+         M15.8,11.9L15.6,17h-1.1l-0.2-5.1H15.8z M15,19.9c-0.5,0-0.9-0.4-0.9-0.9c0-0.5,0.4-0.9,0.9-0.9s0.9,0.4,0.9,0.9
+        C15.9,19.5,15.5,19.9,15,19.9z"></path>
+				</svg>
+				<div class="maintenance-text">
+					Under maintenance. Sorry!
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="bin/js/lib.js"></script>
+	<script>
+		$.get("/getAdvantages");
+	</script>
+</html>

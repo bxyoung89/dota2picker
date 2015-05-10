@@ -37,6 +37,14 @@ var dataWebsites = [
 ];
 
 router.get('/', function (req, res) {
+	if(!currentFileExists() && !backupExists()){
+		res.sendfile("views/maintenance.html");
+		return;
+	}
+	res.sendfile("views/index.html");
+});
+
+router.get('/noMaintenance', function(req, res){
 	res.sendfile("views/index.html");
 });
 
@@ -86,6 +94,7 @@ router.get("/getAdvantages", function (req, res) {
 
 	console.log("writing current file");
 	writing = true;
+	useBackup = true;
 
 	//Otherwise we need to get the new data
 
