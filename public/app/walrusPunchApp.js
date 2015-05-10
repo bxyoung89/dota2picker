@@ -25,7 +25,10 @@ angular.module("WalrusPunch", ["Templates", "ngRoute", "countTo", "angularytics"
 		resized: "resized"
 	})
 	.constant("HERO_EVENTS", {
-		herosUpdated: "herosUpdated"
+		heroesUpdated: "heroesUpdated"
+	})
+	.constant("DATASOURCE_EVENTS", {
+		dataSourceChanged: "dataSourceChanged"
 	})
 	.constant("HAMBURGER_EVENTS", {
 		open: "open",

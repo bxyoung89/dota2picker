@@ -20,7 +20,7 @@ angular.module("WalrusPunch").controller("counterPickListController", [
 			$scope.hasEnemyTeam = enemyTeam.length > 0;
 		}, true);
 
-		$scope.$on(HERO_EVENTS.herosUpdated, function(){
+		$scope.$on(HERO_EVENTS.heroesUpdated, function(){
 			$scope.hasAdvantageData = true;
 			$scope.heroes = heroService.getTranslatedHeroes();
 			debounceFilterMixItUp();

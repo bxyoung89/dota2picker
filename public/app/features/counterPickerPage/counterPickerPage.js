@@ -2,13 +2,15 @@ angular.module("WalrusPunch").controller("counterPickerPageController", [
 	"$scope",
 	"$rootScope",
 	"HAMBURGER_EVENTS",
+	"DATASOURCE_EVENTS",
 	"responsiveService",
 	"analyticsService",
 	"counterPickerPageService",
 	"heroFilterService",
 	"heroService",
 	"translationService",
-	function ($scope, $rootScope, HAMBURGER_EVENTS, responsiveService, analyticsService, counterPickerPageService, heroFilterService, heroService, translationService) {
+	"counterPicksService",
+	function ($scope, $rootScope, HAMBURGER_EVENTS, DATASOURCE_EVENTS, responsiveService, analyticsService, counterPickerPageService, heroFilterService, heroService, translationService, counterPicksService) {
 		$scope.hamburgerIsOpen = false;
 		$scope.translationService = translationService;
 		$scope.counterPickerPageService = counterPickerPageService;
@@ -37,11 +39,14 @@ angular.module("WalrusPunch").controller("counterPickerPageController", [
 			$scope.hamburgerIsOpen = false;
 		});
 
-		$scope.$on("$destroy", function(){
-			searchKeyWordsWatcher();
+		$rootScope.$on(DATASOURCE_EVENTS.dataSourceChanged, function(){
+			counterPicksService.updateCounterPickData(counterPickerPageService.getEnemyTeam());
 		});
 
-
+		$scope.$on("$destroy", function(){
+			searchKeyWordsWatcher();
+			enemyTeamWatcher();
+		});
 
 		$scope.closeHamburger = function () {
 			$scope.hamburgerIsOpen = false;

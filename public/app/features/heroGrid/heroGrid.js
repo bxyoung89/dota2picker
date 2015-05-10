@@ -34,7 +34,7 @@ angular.module("WalrusPunch").controller("heroGridController", [
 			enemyTeamWatcher();
 		});
 
-		$scope.$on(HERO_EVENTS.herosUpdated, function(){
+		$scope.$on(HERO_EVENTS.heroesUpdated, function(){
 			var translatedHeroes = heroService.getTranslatedHeroes();
 			if($scope.heroes.length === 0){
 				$scope.heroes = translatedHeroes;

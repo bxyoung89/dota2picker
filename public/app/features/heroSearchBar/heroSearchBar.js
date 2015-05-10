@@ -22,7 +22,7 @@ angular.module("WalrusPunch").controller("heroSearchBarController", [
 			searchKeyWordsWatcher();
 		});
 
-		$scope.$on(HERO_EVENTS.herosUpdated, function(){
+		$scope.$on(HERO_EVENTS.heroesUpdated, function(){
 			updateHeroNames(heroService.getTranslatedHeroes());
 		});
 

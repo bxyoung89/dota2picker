@@ -48,7 +48,7 @@ angular.module("WalrusPunch").service("heroService", [
 				}
 				hero.counterPickAdvantage = matchingHero.counterPickAdvantage;
 			});
-			$rootScope.$broadcast(HERO_EVENTS.herosUpdated);
+			$rootScope.$broadcast(HERO_EVENTS.heroesUpdated);
 		};
 
 
@@ -73,7 +73,7 @@ angular.module("WalrusPunch").service("heroService", [
 					if(translationService.getState() === "done"){
 						translateHeroes();
 					}
-					$rootScope.$broadcast(HERO_EVENTS.herosUpdated);
+					$rootScope.$broadcast(HERO_EVENTS.heroesUpdated);
 				})
 				.error(function (data, status) {
 					state = "error";

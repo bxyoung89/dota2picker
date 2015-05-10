@@ -1,5 +1,7 @@
 angular.module("WalrusPunch").service("dataSourceService", [
-	function () {
+	"$rootScope",
+	"DATASOURCE_EVENTS",
+	function ($rootScope, DATASOURCE_EVENTS) {
 
 		var currentDataSourceId = "combined";
 		var dataSources = [
@@ -46,6 +48,7 @@ angular.module("WalrusPunch").service("dataSourceService", [
 			currentDataSource = dataSources.filter(function(dataSource){
 				return dataSource.id === dataSourceId;
 			})[0];
+			$rootScope.$broadcast(DATASOURCE_EVENTS.dataSourceChanged);
 		};
 
 		DataSourceService.prototype.getAdvantages = function(hero){
