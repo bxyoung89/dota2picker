@@ -9,11 +9,13 @@
   },
   {
     "name": "Ancient Apparition",
-    "id": "ancient-apparition"
+    "id": "ancient-apparition",
+    "dotaMaxId": "ancient_apparition"
   },
   {
     "name": "Anti-Mage",
-    "id": "anti-mage"
+    "id": "anti-mage",
+    "dotaMaxId": "antimage"
   },
   {
     "name": "Axe",
@@ -37,7 +39,8 @@
   },
   {
     "name": "Bounty Hunter",
-    "id": "bounty-hunter"
+    "id": "bounty-hunter",
+    "dotaMaxId": "bounty_hunter"
   },
   {
     "name": "Brewmaster",
@@ -53,11 +56,13 @@
   },
   {
     "name": "Centaur Warrunner",
-    "id": "centaur-warrunner"
+    "id": "centaur-warrunner",
+    "dotaMaxId": "centaur"
   },
   {
     "name": "Chaos Knight",
-    "id": "chaos-knight"
+    "id": "chaos-knight",
+    "dotaMaxId": "chaos_knight"
   },
   {
     "name": "Chen",
@@ -69,15 +74,18 @@
   },
   {
     "name": "Clockwerk",
-    "id": "clockwerk"
+    "id": "clockwerk",
+    "dotaMaxId": "rattletrap"
   },
   {
     "name": "Crystal Maiden",
-    "id": "crystal-maiden"
+    "id": "crystal-maiden",
+    "dotaMaxId": "crystal_maiden"
   },
   {
     "name": "Dark Seer",
-    "id": "dark-seer"
+    "id": "dark-seer",
+    "dotaMaxId": "dark_seer"
   },
   {
     "name": "Dazzle",
@@ -85,7 +93,8 @@
   },
   {
     "name": "Death Prophet",
-    "id": "death-prophet"
+    "id": "death-prophet",
+    "dotaMaxId": "death_prophet"
   },
   {
     "name": "Disruptor",
@@ -93,19 +102,23 @@
   },
   {
     "name": "Doom",
-    "id": "doom"
+    "id": "doom",
+    "dotaMaxId": "doom_bringer"
   },
   {
     "name": "Dragon Knight",
-    "id": "dragon-knight"
+    "id": "dragon-knight",
+    "dotaMaxId": "dragon_knight"
   },
   {
     "name": "Drow Ranger",
-    "id": "drow-ranger"
+    "id": "drow-ranger",
+    "dotaMaxId": "drow_ranger"
   },
   {
     "name": "Earth Spirit",
-    "id": "earth-spirit"
+    "id": "earth-spirit",
+    "dotaMaxId": "earth_spirit"
   },
   {
     "name": "Earthshaker",
@@ -113,11 +126,13 @@
   },
   {
     "name": "Elder Titan",
-    "id": "elder-titan"
+    "id": "elder-titan",
+    "dotaMaxId": "elder_titan"
   },
   {
     "name": "Ember Spirit",
-    "id": "ember-spirit"
+    "id": "ember-spirit",
+    "dotaMaxId": "ember_spirit"
   },
   {
     "name": "Enchantress",
@@ -129,7 +144,8 @@
   },
   {
     "name": "Faceless Void",
-    "id": "faceless-void"
+    "id": "faceless-void",
+    "dotaMaxId": "faceless_void"
   },
   {
     "name": "Gyrocopter",
@@ -145,7 +161,8 @@
   },
   {
     "name": "Io",
-    "id": "io"
+    "id": "io",
+    "dotaMaxId": "wisp"
   },
   {
     "name": "Jakiro",
@@ -157,7 +174,8 @@
   },
   {
     "name": "Keeper of the Light",
-    "id": "keeper-of-the-light"
+    "id": "keeper-of-the-light",
+    "dotaMaxId": "keeper_of_the_light"
   },
   {
     "name": "Kunkka",
@@ -165,7 +183,8 @@
   },
   {
     "name": "Legion Commander",
-    "id": "legion-commander"
+    "id": "legion-commander",
+    "dotaMaxId": "legion_commander"
   },
   {
     "name": "Leshrac",
@@ -177,7 +196,8 @@
   },
   {
     "name": "Lifestealer",
-    "id": "lifestealer"
+    "id": "lifestealer",
+    "dotaMaxId": "life_stealer"
   },
   {
     "name": "Lina",
@@ -189,7 +209,8 @@
   },
   {
     "name": "Lone Druid",
-    "id": "lone-druid"
+    "id": "lone-druid",
+    "dotaMaxId": "lone_druid"
   },
   {
     "name": "Luna",
@@ -201,7 +222,8 @@
   },
   {
     "name": "Magnus",
-    "id": "magnus"
+    "id": "magnus",
+    "dotaMaxId": "magnataur"
   },
   {
     "name": "Medusa",
@@ -221,27 +243,33 @@
   },
   {
     "name": "Naga Siren",
-    "id": "naga-siren"
+    "id": "naga-siren",
+    "dotaMaxId": "naga_siren"
   },
   {
     "name": "Nature's Prophet",
-    "id": "natures-prophet"
+    "id": "natures-prophet",
+    "dotaMaxId": "furion"
   },
   {
     "name": "Necrophos",
-    "id": "necrophos"
+    "id": "necrophos",
+    "dotaMaxId": "necrolyte"
   },
   {
     "name": "Night Stalker",
-    "id": "night-stalker"
+    "id": "night-stalker",
+    "dotaMaxId": "night_stalker"
   },
   {
     "name": "Nyx Assassin",
-    "id": "nyx-assassin"
+    "id": "nyx-assassin",
+    "dotaMaxId": "nyx_assassin"
   },
   {
     "name": "Ogre Magi",
-    "id": "ogre-magi"
+    "id": "ogre-magi",
+    "dotaMaxId": "ogre_magi"
   },
   {
     "name": "Omniknight",
@@ -253,15 +281,18 @@
   },
   {
     "name": "Outworld Devourer",
-    "id": "outworld-devourer"
+    "id": "outworld-devourer",
+    "dotaMaxId": "obsidian_destroyer"
   },
   {
     "name": "Phantom Assassin",
-    "id": "phantom-assassin"
+    "id": "phantom-assassin",
+    "dotaMaxId": "phantom_assassin"
   },
   {
     "name": "Phantom Lancer",
-    "id": "phantom-lancer"
+    "id": "phantom-lancer",
+    "dotaMaxId": "phantom_lancer"
   },
   {
     "name": "Phoenix",
@@ -281,7 +312,8 @@
   },
   {
     "name": "Queen of Pain",
-    "id": "queen-of-pain"
+    "id": "queen-of-pain",
+    "dotaMaxId": "queenofpain"
   },
   {
     "name": "Razor",
@@ -301,15 +333,18 @@
   },
   {
     "name": "Shadow Demon",
-    "id": "shadow-demon"
+    "id": "shadow-demon",
+    "dotaMaxId": "shadow_demon"
   },
   {
     "name": "Shadow Fiend",
-    "id": "shadow-fiend"
+    "id": "shadow-fiend",
+    "dotaMaxId": "nevermore"
   },
   {
     "name": "Shadow Shaman",
-    "id": "shadow-shaman"
+    "id": "shadow-shaman",
+    "dotaMaxId": "shadow_shaman"
   },
   {
     "name": "Silencer",
@@ -317,7 +352,8 @@
   },
   {
     "name": "Skywrath Mage",
-    "id": "skywrath-mage"
+    "id": "skywrath-mage",
+    "dotaMaxId": "skywrath_mage"
   },
   {
     "name": "Slardar",
@@ -337,11 +373,13 @@
   },
   {
     "name": "Spirit Breaker",
-    "id": "spirit-breaker"
+    "id": "spirit-breaker",
+    "dotaMaxId": "spirit_breaker"
   },
   {
     "name": "Storm Spirit",
-    "id": "storm-spirit"
+    "id": "storm-spirit",
+    "dotaMaxId": "storm_spirit"
   },
   {
     "name": "Sven",
@@ -353,7 +391,8 @@
   },
   {
     "name": "Templar Assassin",
-    "id": "templar-assassin"
+    "id": "templar-assassin",
+    "dotaMaxId": "templar_assassin"
   },
   {
     "name": "Terrorblade",
@@ -365,7 +404,8 @@
   },
   {
     "name": "Timbersaw",
-    "id": "timbersaw"
+    "id": "timbersaw",
+    "dotaMaxId": "shredder"
   },
   {
     "name": "Tinker",
@@ -377,11 +417,13 @@
   },
   {
     "name": "Treant Protector",
-    "id": "treant-protector"
+    "id": "treant-protector",
+    "dotaMaxId": "treant"
   },
   {
     "name": "Troll Warlord",
-    "id": "troll-warlord"
+    "id": "troll-warlord",
+    "dotaMaxId": "troll_warlord"
   },
   {
     "name": "Tusk",
@@ -397,7 +439,8 @@
   },
   {
     "name": "Vengeful Spirit",
-    "id": "vengeful-spirit"
+    "id": "vengeful-spirit",
+    "dotaMaxId": "vengefulspirit"
   },
   {
     "name": "Venomancer",
@@ -421,22 +464,26 @@
   },
   {
     "name": "Windranger",
-    "id": "windranger"
+    "id": "windrunner"
   },
   {
     "name": "Winter Wyvern",
-    "id": "winter-wyvern"
+    "id": "winter-wyvern",
+    "dotaMaxId": "winter_wyvern"
   },
   {
     "name": "Witch Doctor",
-    "id": "witch-doctor"
+    "id": "witch-doctor",
+    "dotaMaxId": "witch_doctor"
   },
   {
     "name": "Wraith King",
-    "id": "wraith-king"
+    "id": "wraith-king",
+    "dotaMaxId": "skeleton_king"
   },
   {
     "name": "Zeus",
-    "id": "zeus"
+    "id": "zeus",
+    "dotaMaxId": "zuus"
   }
 ]

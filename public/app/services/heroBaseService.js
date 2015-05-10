@@ -737,7 +737,7 @@ angular.module("WalrusPunch").service("heroBaseService", function(){
 		},
 		{
 			"name": "Windranger",
-			"id": "windranger",
+			"id": "windrunner",
 			"stat": "intelligence",
 			"imageId": "windrunner",
 			"dota1Image": "wind_runner.gif"

@@ -5,7 +5,8 @@ angular.module("WalrusPunch").controller("heroSearchBarController", [
 	"heroService",
 	"counterPickerPageService",
 	"analyticsService",
-	function($scope, guidService, translationService, heroService, counterPickerPageService, analyticsService){
+	"HERO_EVENTS",
+	function($scope, guidService, translationService, heroService, counterPickerPageService, analyticsService, HERO_EVENTS){
 		var realInputValue = "";
 		var allHeroNames = [];
 
@@ -17,15 +18,13 @@ angular.module("WalrusPunch").controller("heroSearchBarController", [
 			$scope.inputValue(newKeyWords);
 		});
 
-		var translatedHeroesWatcher = $scope.$watch(heroService.getTranslatedHeroes, function(translatedHeroes){
-			updateHeroNames(translatedHeroes);
-		}, true);
-
 		$scope.$on("$destroy", function(){
 			searchKeyWordsWatcher();
-			translatedHeroesWatcher();
 		});
 
+		$scope.$on(HERO_EVENTS.herosUpdated, function(){
+			updateHeroNames(heroService.getTranslatedHeroes());
+		});
 
 
 		$scope.inputValue = function(newValue){

@@ -26,12 +26,12 @@ angular.module("WalrusPunch").controller("enemyTeamController", [
 			}
 		];
 
-		var enemyTeamWatcher = $scope.$watch(counterPickerPageService.getEnemyTeam, function(newTeam){
-			$scope.heroes = JSON.parse(JSON.stringify(newTeam));
+		var enemyTeamWatcher = $scope.$watch(counterPickerPageService.getEnemyTeamIds, function(newTeamIds){
+			$scope.heroes = counterPickerPageService.getEnemyTeam();
 			if($scope.heroes.length === 5){
 				return;
 			}
-			for(var x = 0; x < 5 - newTeam.length; x+=1){
+			for(var x = 0; x < 5 - newTeamIds.length; x+=1){
 				$scope.heroes.push({
 					empty: true
 				});

@@ -2,13 +2,12 @@ angular.module("WalrusPunch").service("heroService", [
 	"$http",
 	"$rootScope",
 	"TRANSLATION_EVENTS",
+	"HERO_EVENTS",
 	"translationService",
 	"heroBaseService",
-	function ($http, $rootScope, TRANSLATION_EVENTS, translationService, heroBaseService) {
+	function ($http, $rootScope, TRANSLATION_EVENTS, HERO_EVENTS, translationService, heroBaseService) {
 		var heroes = heroBaseService.getHeroBases();
 		var state = "loading";
-		var translationServiceInterval = undefined;
-
 
 		function HeroService() {
 			processHeroBases();
@@ -39,12 +38,31 @@ angular.module("WalrusPunch").service("heroService", [
 			oldHero.nickNames = newHero.nickNames;
 		};
 
+		HeroService.prototype.updateHeroesWithCounterPickAdvantage = function(updatedHeros){
+			heroes.forEach(function(hero){
+				var matchingHero = updatedHeros.find(function(h){
+					return h.id === hero.id;
+				});
+				if(matchingHero === undefined){
+					return;
+				}
+				hero.counterPickAdvantage = matchingHero.counterPickAdvantage;
+			});
+			$rootScope.$broadcast(HERO_EVENTS.herosUpdated);
+		};
+
 
 		function getHeroes() {
 			$http.get("/getAdvantages")
 				.success(function (data) {
 					if (!Array.isArray(data)) {
 						data = JSON.parse(data);
+					}
+					if(data.length === 0){
+						setTimeout(function(){
+							getHeroes();
+						}, 5000);
+						return;
 					}
 					data.forEach(function (hero) {
 						var matchingHero = heroes.find(function(h){
@@ -55,7 +73,7 @@ angular.module("WalrusPunch").service("heroService", [
 					if(translationService.getState() === "done"){
 						translateHeroes();
 					}
-					state = "done";
+					$rootScope.$broadcast(HERO_EVENTS.herosUpdated);
 				})
 				.error(function (data, status) {
 					state = "error";

@@ -21,7 +21,7 @@ angular.module("WalrusPunch").controller("counterPickerPageController", [
 			heroFilterService.addHeroIfOneLeft(heroService.getTranslatedHeroes());
 		});
 
-		var enemyTeamWatcher = $scope.$watch(counterPickerPageService.getEnemyTeam, function(enemyTeam){
+		var enemyTeamWatcher = $scope.$watch(counterPickerPageService.getEnemyTeamIds, function(enemyTeam){
 			if($scope.shouldShowHeroGrid() || enemyTeam.length === 0){
 				return;
 			}

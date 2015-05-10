@@ -34,7 +34,7 @@ angular.module("WalrusPunch").service("heroFilterService", ["counterPickerPageSe
 		if (shownHeroes.length !== 1) {
 			return;
 		}
-		if (shownHeroes[0].selected || counterPickerPageService.getEnemyTeam().length === 5) {
+		if (shownHeroes[0].selected || counterPickerPageService.getEnemyTeamIds().length === 5) {
 			return;
 		}
 		counterPickerPageService.addEnemyHero(shownHeroes[0]);

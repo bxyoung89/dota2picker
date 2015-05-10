@@ -5,35 +5,28 @@ angular.module("WalrusPunch").controller("counterPickListController", [
 	"guidService",
 	"counterPickerPageService",
 	"translationService",
-	function($scope, heroService, responsiveService, guidService, counterPickerPageService, translationService){
+	"HERO_EVENTS",
+	function($scope, heroService, responsiveService, guidService, counterPickerPageService, translationService, HERO_EVENTS){
 		var mixItUpFilterTimeout = undefined;
 
 		$scope.heroListId = "counter-pick-list-heroes-"+guidService.newGuid();
 		$scope.heroes = heroService.getTranslatedHeroes();
 		$scope.getHeroImage = responsiveService.getHeroImageSmall;
 		$scope.hasAdvantageData = heroService.getState() === "done";
-		$scope.hasEnemyTeam = counterPickerPageService.getEnemyTeam().length > 0;
+		$scope.hasEnemyTeam = counterPickerPageService.getEnemyTeamIds().length > 0;
 		$scope.translationService = translationService;
 
-		var heroesWatcher = $scope.$watch(heroService.getTranslatedHeroes, function(heroes){
-			$scope.heroes = heroes;
-			debounceFilterMixItUp();
-		}, true);
-
-		var heroServiceStateWatcher = $scope.$watch(heroService.getState, function(state){
-			$scope.hasAdvantageData = state === "done";
-			if($scope.hasAdvantageData){
-				debounceFilterMixItUp();
-			}
-		});
-
-		var hasEnemyTeamWatcher = $scope.$watch(counterPickerPageService.getEnemyTeam, function(enemyTeam){
+		var hasEnemyTeamWatcher = $scope.$watch(counterPickerPageService.getEnemyTeamIds, function(enemyTeam){
 			$scope.hasEnemyTeam = enemyTeam.length > 0;
 		}, true);
 
+		$scope.$on(HERO_EVENTS.herosUpdated, function(){
+			$scope.hasAdvantageData = true;
+			$scope.heroes = heroService.getTranslatedHeroes();
+			debounceFilterMixItUp();
+		});
+
 		$scope.$on("$destroy", function(){
-			heroesWatcher();
-			heroServiceStateWatcher();
 			hasEnemyTeamWatcher();
 		});
 
@@ -85,12 +78,12 @@ angular.module("WalrusPunch").controller("counterPickListController", [
 
 			var filter = heroList.find(".mix").filter(function () {
 				var heroId = $(this).attr("data-hero-id");
-				var enemyTeamIsEmpty = counterPickerPageService.getEnemyTeam().length === 0;
+				var enemyTeamIsEmpty = counterPickerPageService.getEnemyTeamIds().length === 0;
 				if(enemyTeamIsEmpty){
 					return false;
 				}
-				var isOnEnemyTeam = counterPickerPageService.getEnemyTeam().any(function(enemy){
-					return enemy.id === heroId;
+				var isOnEnemyTeam = counterPickerPageService.getEnemyTeamIds().any(function(enemy){
+					return enemy === heroId;
 				});
 				return !isOnEnemyTeam;
 			});

@@ -12,6 +12,29 @@ var backupFile = "savedHeroes";
 var numberOfBackups = 0;
 var lastWritten = undefined;
 var useBackup = false;
+var writing = false;
+
+var dataWebsites = [
+	{
+		name: "DotaBuff",
+		id: "dotabuff",
+		rawId: "rawDotabuff",
+		heroUrl: function(hero){
+			return "http://www.dotabuff.com/heroes/" + hero.id + "/matchups";
+		},
+		htmlParser: parseDotaBuffHtmlForAdvantages
+	},
+	{
+		name: "DotaMax",
+		id: "dotamax",
+		rawId: "rawDotamax",
+		heroUrl: function(hero){
+			var heroId = hero.dotaMaxId === undefined ? hero.id : hero.dotaMaxId;
+			return "http://dotamax.com/hero/detail/match_up_anti/" + heroId ;
+		},
+		htmlParser: parseDotaMaxHtmlForAdvantages
+	}
+];
 
 router.get('/', function (req, res) {
 	res.sendfile("views/index.html");
@@ -21,6 +44,7 @@ router.get("/getAdvantages", function (req, res) {
 	var backupFileExists = backupExists();
 	//Case for using the backup file if things go bad
 	if (useBackup && backupFileExists) {
+		console.log("Sending Backup");
 		fs.readFile(backupPath + backupFile + ".json", "utf8", function (error, data) {
 			if (error) {
 				console.log("Error reading backup :" + error);
@@ -41,6 +65,7 @@ router.get("/getAdvantages", function (req, res) {
 				console.log("Error reading current file: " + error);
 				return error;
 			}
+			console.log(data);
 			res.send(data);
 		});
 		sentResponse = true;
@@ -53,6 +78,15 @@ router.get("/getAdvantages", function (req, res) {
 		return;
 	}
 
+	if(writing){
+		console.log("waiting on writing current file");
+		res.send([]);
+		return;
+	}
+
+	console.log("writing current file");
+	writing = true;
+
 	//Otherwise we need to get the new data
 
 	//we need to say we've written now, so even if we've failed it tries again the next day
@@ -60,72 +94,110 @@ router.get("/getAdvantages", function (req, res) {
 
 	writeCurrentFileToBackup();
 
-	var heroes = [];
 	fs.readFile(heroFile, "utf8", function (error, data) {
 		if (error) {
 			console.log("Error trying to read heroes file: " + error);
 			return;
 		}
 		data = JSON.parse(data);
+		var advantagesPerProvider = {};
+		var invalidHeroesPerProvider = {};
+		dataWebsites.forEach(function(website){
+			advantagesPerProvider[website.id] = {};
+			invalidHeroesPerProvider[website.id] = [];
+		});
 		var validHeroesLength = data.length;
+		var doneComputingAdvantages = false;
 
 		data.forEach(function (heroData) {
-			var url = "http://www.dotabuff.com/heroes/" + heroData.id + "/matchups";
-			var advantages = [];
-			var heroIsValid = true;
-			var requestOptions = {
-				url: url,
-				headers: {
-					"User-Agent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"
+			dataWebsites.forEach(function(website){
+				var url = website.heroUrl(heroData);
+				var advantages = [];
+				var heroIsValid = true;
+				var requestOptions = {
+					url: url,
+					headers: {
+						"User-Agent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36",
+						"Accept-Language": "en"
+					}
+				};
+				var numberOfTimeouts = 0;
+				function handleRequestReturn(error, response, html) {
+					if (error) {
+						console.log("got an error");
+						console.log(error);
+						if(numberOfTimeouts < 5){
+							numberOfTimeouts +=1;
+							console.log("trying again: "+numberOfTimeouts+" times tried");
+							setTimeout(function(){
+								request(requestOptions, handleRequestReturn);
+							}, 2000);
+							return;
+						}
+						heroIsValid = false;
+						invalidHeroesPerProvider[website.id].push(heroData.id);
+						validHeroesLength = getValidHeroesLength(data, invalidHeroesPerProvider);
+					}
+					advantages = website.htmlParser(html, heroData, data);
+					if(advantages.length !== data.length -1){
+						if(numberOfTimeouts < 5){
+							numberOfTimeouts +=1;
+							setTimeout(function(){
+								request(requestOptions, handleRequestReturn);
+							}, 2000);
+							return;
+						}
+						heroIsValid = false;
+						invalidHeroesPerProvider[website.id].push(heroData.id);
+						validHeroesLength = getValidHeroesLength(data, invalidHeroesPerProvider);
+					}
 				}
-			};
 
-			request(requestOptions, function (error, response, html) {
-				if (error) {
-					validHeroesLength -= 1;
-					heroIsValid = false;
-					console.log("got an error");
-					console.log(error);
-					return "error";
-				}
+				request(requestOptions, handleRequestReturn);
+				var lastHerolength = 0;
 
-				advantages = parseHtmlForAdvantages(html, heroData, data);
-
-				if (advantages.length === 0) {
-					validHeroesLength -= 1;
-					heroIsValid = false;
-					return;
-				}
-			});
-
-			var polling = setInterval(function () {
-				if (!heroIsValid) {
+				var polling = setInterval(function () {
+					if (!heroIsValid) {
+						clearInterval(polling);
+						return;
+					}
+					if (advantages.length !== validHeroesLength - 1) {
+						if(advantages.length !== lastHerolength){
+							lastHerolength = advantages.length;
+						}
+						return;
+					}
 					clearInterval(polling);
-					return;
-				}
-				if (advantages.length !== validHeroesLength - 1) {
-					return;
-				}
-				clearInterval(polling);
-				heroData.advantages = advantages;
-				heroes.push(heroData);
-			}, 100);
+					advantagesPerProvider[website.id][heroData.id] = advantages.sortBy(function(advantage){
+						return 1 - advantage.a;
+					});
+					doneComputingAdvantages = isDoneComputingAdvantages(validHeroesLength, advantagesPerProvider, data);
+				}, 100);
+			});
 		});
 		var polling = setInterval(function () {
-			if (heroes.length !== validHeroesLength) {
-				//console.log(heroes.length + " of "+validHeroesLength);
+			//console.log("Done computing advantages:" +doneComputingAdvantages);
+			if (!doneComputingAdvantages) {
 				return;
 			}
 			clearInterval(polling);
-			var validHeroes = [];
-			heroes.forEach(function (hero) {
-				if (hero.advantages !== undefined) {
-					validHeroes.push(hero);
-				}
+			var completeHeroesIds = getCompleteHerosIds(advantagesPerProvider, data);
+			var heroes = [];
+			var combinedAdvantages = getCombinedAdvantages(advantagesPerProvider);
+			completeHeroesIds.forEach(function(heroId){
+				var hero = data.find(function(h){
+					return h.id === heroId;
+				});
+				hero.advantages = {};
+				Object.keys(advantagesPerProvider).forEach(function(websiteId){
+					hero.advantages[websiteId] = advantagesPerProvider[websiteId][heroId];
+				});
+				hero.advantages.combined = combinedAdvantages[hero.id];
+				heroes.push(hero);
 			});
-			writeToCurrentFile(validHeroes);
+			writeToCurrentFile(heroes);
 			if (!sentResponse) {
-				res.send(validHeroes);
+				res.send(heroes);
 			}
 		}, 100);
 	});
@@ -210,11 +282,11 @@ function writeToCurrentFile(heroes) {
 			return;
 		}
 		useBackup = false;
-		console.log("Using current file!");
+		console.log("Writing current file!");
 	});
 }
 
-function parseHtmlForAdvantages(html, heroData, allHeroes) {
+function parseDotaBuffHtmlForAdvantages(html, heroData, allHeroes) {
 	var $ = cheerio.load(html);
 	var advantages = [];
 
@@ -237,7 +309,38 @@ function parseHtmlForAdvantages(html, heroData, allHeroes) {
 			hero.id = matchingHero.id;
 
 			var advantageColumn = columns[2];
-			hero.advantage = parseFloat($(advantageColumn).text());
+			hero.a = parseFloat($(advantageColumn).text());
+			advantages.push(hero);
+		});
+	});
+
+	return advantages;
+}
+
+function parseDotaMaxHtmlForAdvantages(html, heroData, allHeroes) {
+	var $ = cheerio.load(html);
+	var advantages = [];
+
+	$("tbody").filter(function () {
+		var table = $(this);
+		var rows = table.children();
+		rows.each(function () {
+			var hero = {};
+			var columns = $(this).children();
+
+			var nameColumn = columns[0];
+			var heroName = $(nameColumn).find(".hero-name-list").text().trim();
+			if (heroName === "" || heroName === heroData.name) {
+				return;
+			}
+			var matchingHero = allHeroes.find(function (h) {
+				return h.name === heroName;
+			});
+
+			hero.id = matchingHero.id;
+
+			var advantageColumn = $(columns[1]).children()[0];
+			hero.a = parseFloat($(advantageColumn).text());
 			advantages.push(hero);
 		});
 	});
@@ -261,6 +364,108 @@ function fileExists(filePath) {
 	catch (exception) {
 		return false;
 	}
+}
+
+function getValidHeroesLength(allHeroes, invalidHeroesPerProvider){
+	var allHeroesIds = allHeroes.map(function(hero){
+		return hero.id;
+	});
+	var matchingInvalidHeroes = Object.keys(invalidHeroesPerProvider).reduce(function(sum, invalidHeroes){
+		return sum.intersect(invalidHeroes);
+	}, allHeroesIds);
+
+	return allHeroes.length - matchingInvalidHeroes.length;
+}
+
+function isDoneComputingAdvantages(validHeroesLength, advantagesPerProvider, allHeroes){
+	return validHeroesLength === getCompleteHerosIds(advantagesPerProvider,allHeroes).length;
+}
+
+function getCompleteHerosIds(advantagesPerProvider, allHeroes){
+	var allHeroesIds = allHeroes.map(function(hero){
+		return hero.id;
+	});
+	var advantagesPerProviderNameArray = Object.keys(advantagesPerProvider).map(function(key){
+		return Object.keys(advantagesPerProvider[key]).map(function(heroId){
+			return heroId;
+		});
+	});
+	var matchingCompleteHeroes = advantagesPerProviderNameArray.reduce(function(sum, nameArray){
+		return sum.intersect(nameArray);
+	}, allHeroesIds);
+
+	return matchingCompleteHeroes;
+}
+
+function getNormalizedAdvantagesPerProvider(advantagesPerProvider){
+	var normalizedAdvantages = {};
+	Object.keys(advantagesPerProvider).forEach(function(websiteId){
+		var allAdvantageNumbers = Object.keys(advantagesPerProvider[websiteId]).map(function(heroId){
+			return advantagesPerProvider[websiteId][heroId];
+		}).flatten();
+		var uniqueAdvantageNumbers = allAdvantageNumbers.flatten().map(function(advantage){
+			return advantage.a;
+		}).unique();
+		var min = uniqueAdvantageNumbers.min();
+		var max = uniqueAdvantageNumbers.max();
+		var newAdvantages = {};
+		Object.keys(advantagesPerProvider[websiteId]).map(function(heroId){
+			newAdvantages[heroId] = advantagesPerProvider[websiteId][heroId].map(function(advantage){
+				var newAdvantage = {};
+				newAdvantage.id = advantage.id;
+				newAdvantage.a =  normalizeNumber(advantage.a, min, max);
+				return newAdvantage;
+			});
+		});
+		normalizedAdvantages[websiteId] = newAdvantages;
+	});
+	return normalizedAdvantages;
+}
+
+//this will normalize the number to a -10 to 10 scale
+function normalizeNumber(number, min, max){
+	//normalize to 0 to 1;
+	var normalized = (number - min)/(max - min);
+	//scale to -10 to 10
+	var scaled = (normalized * 20) - 10;
+	return scaled;
+}
+
+function getCombinedAdvantages(advantagesPerProvider){
+	var normalizedAdvantagesPerProvider = getNormalizedAdvantagesPerProvider(advantagesPerProvider);
+	var combinedAdvantages = {};
+	var advantagesPerHero = {};
+	Object.keys(normalizedAdvantagesPerProvider).forEach(function(websiteId){
+		var advantages = normalizedAdvantagesPerProvider[websiteId];
+		Object.keys(advantages).forEach(function(heroId){
+			if(advantagesPerHero[heroId] === undefined){
+				advantagesPerHero[heroId] = [];
+			}
+			advantagesPerHero[heroId].push(advantages[heroId]);
+		});
+	});
+
+	var numberOfAdvantages = advantagesPerHero[Object.keys(advantagesPerHero)[0]].length;
+	Object.keys(advantagesPerHero).forEach(function(heroId){
+		var allHeroAdvantages = advantagesPerHero[heroId].flatten();
+		var heroCombinedAdvantagesByEnemyHero = {};
+		allHeroAdvantages.forEach(function(advantage){
+			if(heroCombinedAdvantagesByEnemyHero[advantage.id] === undefined){
+				heroCombinedAdvantagesByEnemyHero[advantage.id] = 0;
+			}
+			heroCombinedAdvantagesByEnemyHero[advantage.id] += (advantage.a/numberOfAdvantages);
+		});
+		combinedAdvantages[heroId] = Object.keys(heroCombinedAdvantagesByEnemyHero).map(function(enemyHeroId){
+			return {
+				id: enemyHeroId,
+				a: Math.round(heroCombinedAdvantagesByEnemyHero[enemyHeroId] * 1000)/1000
+			};
+		}).sortBy(function(advantage){
+			return 1 - advantage.a;
+		});
+	});
+
+	return combinedAdvantages;
 }
 
 

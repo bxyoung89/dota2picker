@@ -1,6 +1,7 @@
 angular.module("WalrusPunch").service("counterPicksService", [
 	"heroService",
-	function (heroService) {
+	"dataSourceService",
+	function (heroService, dataSourceService) {
 
 		function CounterPicksService() {
 
@@ -33,12 +34,14 @@ angular.module("WalrusPunch").service("counterPicksService", [
 			}
 			heroes.forEach(function(hero){
 				var teamAdvantage = enemyTeam.average(function(enemy){
-					return hero.advantages.find(function(advantage){
+					var advantage = dataSourceService.getAdvantages(hero).find(function(advantage){
 						return advantage.id === enemy.id;
-					}).advantage;
+					});
+					return advantage.a;
 				});
 				hero.counterPickAdvantage = (Math.round(teamAdvantage * 1000) / 1000).toFixed(3);
 			});
+			heroService.updateHeroesWithCounterPickAdvantage(heroes);
 		}
 
 		function getAdvantageIndex(heroes){

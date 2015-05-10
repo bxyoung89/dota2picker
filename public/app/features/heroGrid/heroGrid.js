@@ -8,14 +8,34 @@ angular.module("WalrusPunch").controller("heroGridController", [
 	"analyticsService",
 	"heroFilterService",
 	"TRANSLATION_EVENTS",
-	function($scope, heroService, counterPickerPageService, translationService, responsiveService, guidService, analyticsService, heroFilterService, TRANSLATION_EVENTS){
+	"HERO_EVENTS",
+	function($scope, heroService, counterPickerPageService, translationService, responsiveService, guidService, analyticsService, heroFilterService, TRANSLATION_EVENTS, HERO_EVENTS){
 		var mixItUpFilterTimeout = undefined;
 
 		$scope.heroGridId = "hero-grid-"+guidService.newGuid();
 		$scope.translationService = translationService;
 		$scope.heroes = heroService.getTranslatedHeroes();
 
-		var translatedHeroesWatcher = $scope.$watch(heroService.getTranslatedHeroes, function(translatedHeroes){
+		var searchKeyWordsWatcher = $scope.$watch(counterPickerPageService.getSearchKeyWords, function(search){
+			debounceFilterMixItUp(search);
+			filterMixItUp(search);
+		});
+
+		var enemyTeamWatcher = $scope.$watch(counterPickerPageService.getEnemyTeamIds, function(enemyTeamIds){
+			$scope.heroes.forEach(function(hero){
+				hero.isSelected = enemyTeamIds.any(function(enemy){
+					return enemy === hero.id;
+				});
+			});
+		}, true);
+
+		$scope.$on("$destroy", function(){
+			searchKeyWordsWatcher();
+			enemyTeamWatcher();
+		});
+
+		$scope.$on(HERO_EVENTS.herosUpdated, function(){
+			var translatedHeroes = heroService.getTranslatedHeroes();
 			if($scope.heroes.length === 0){
 				$scope.heroes = translatedHeroes;
 				return;
@@ -30,25 +50,6 @@ angular.module("WalrusPunch").controller("heroGridController", [
 
 				heroService.retranslateHero(hero, matchingHero);
 			});
-		}, true);
-
-		var searchKeyWordsWatcher = $scope.$watch(counterPickerPageService.getSearchKeyWords, function(search){
-			debounceFilterMixItUp(search);
-			filterMixItUp(search);
-		});
-
-		var enemyTeamWatcher = $scope.$watch(counterPickerPageService.getEnemyTeam, function(enemyTeam){
-			$scope.heroes.forEach(function(hero){
-				hero.isSelected = enemyTeam.any(function(enemy){
-					return enemy.id === hero.id;
-				});
-			});
-		}, true);
-
-		$scope.$on("$destroy", function(){
-			translatedHeroesWatcher();
-			searchKeyWordsWatcher();
-			enemyTeamWatcher();
 		});
 
 		$scope.$on(TRANSLATION_EVENTS.translationChanged, function(){
@@ -66,9 +67,9 @@ angular.module("WalrusPunch").controller("heroGridController", [
 		};
 
 		$scope.isHeroSelected = function(hero){
-			var enemyTeam = counterPickerPageService.getEnemyTeam();
+			var enemyTeam = counterPickerPageService.getEnemyTeamIds();
 			return enemyTeam.any(function(enemyHero){
-				return enemyHero.id === hero.id;
+				return enemyHero === hero.id;
 			});
 		};
 

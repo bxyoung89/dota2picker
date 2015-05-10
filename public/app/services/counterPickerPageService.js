@@ -1,6 +1,6 @@
-angular.module("WalrusPunch").service("counterPickerPageService", [ "counterPicksService", function(counterPicksService){
+angular.module("WalrusPunch").service("counterPickerPageService", [ "counterPicksService", "heroService", function(counterPicksService, heroService){
 
-	var enemyTeam = [];
+	var enemyTeamIds = [];
 	var searchKeyWords = "";
 
 	function CounterPickerPageService(){
@@ -8,31 +8,43 @@ angular.module("WalrusPunch").service("counterPickerPageService", [ "counterPick
 	}
 
 	CounterPickerPageService.prototype.getEnemyTeam = function(){
-		return enemyTeam;
+		var enemyTeam = heroService.getTranslatedHeroes().filter(function(hero){
+			return enemyTeamIds.some(function(enemyId){
+				return hero.id === enemyId;
+			});
+		});
+		var sortedEnemyTeam = enemyTeamIds.map(function(id){
+			return enemyTeam.find(function(hero){
+				return hero.id === id;
+			});
+		});
+		return sortedEnemyTeam;
+	};
+
+	CounterPickerPageService.prototype.getEnemyTeamIds = function(){
+		return enemyTeamIds;
 	};
 
 	CounterPickerPageService.prototype.addEnemyHero = function(hero){
-		if(enemyTeam.length === 5){
+		if(enemyTeamIds.length === 5){
 			return;
 		}
-		var matchingEnemyHero = enemyTeam.find(function(enemy){
-			return enemy.id === hero.id;
+		var matchingEnemyHero = enemyTeamIds.find(function(enemy){
+			return enemy === hero.id;
 		});
 		if(matchingEnemyHero !== undefined){
 			return;
 		}
-		hero.isSelected = true;
-		enemyTeam.push(hero);
+		enemyTeamIds.push(hero.id);
 		onEnemyTeamChanged();
 	};
 
 	CounterPickerPageService.prototype.removeEnemyHero = function(hero){
-		hero.isSelected = false;
-		var enemyTeamLength = enemyTeam.length;
-		enemyTeam.remove(function(h){
-			return h.id === hero.id;
+		var enemyTeamLength = enemyTeamIds.length;
+		enemyTeamIds.remove(function(h){
+			return h === hero.id;
 		});
-		if(enemyTeam.length !== enemyTeamLength){
+		if(enemyTeamIds.length !== enemyTeamLength){
 			onEnemyTeamChanged();
 		}
 	};
@@ -46,7 +58,7 @@ angular.module("WalrusPunch").service("counterPickerPageService", [ "counterPick
 	};
 
 	function onEnemyTeamChanged(){
-		counterPicksService.updateCounterPickData(enemyTeam);
+		counterPicksService.updateCounterPickData(CounterPickerPageService.prototype.getEnemyTeam());
 	}
 
 	return new CounterPickerPageService();
