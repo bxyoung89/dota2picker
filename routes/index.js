@@ -6,6 +6,7 @@ var fs = require('fs');
 var sugar = require("sugar");
 var heroFile = "heroFiles/base/heroes.json";
 var url = require('url');
+var mkdirp = require("mkdirp");
 var currentFile = "heroFiles/current/savedHeroes.json";
 var backupPath = "heroFiles/backup/";
 var backupFile = "savedHeroes";
@@ -13,6 +14,11 @@ var numberOfBackups = 0;
 var lastWritten = undefined;
 var useBackup = false;
 var writing = false;
+var heroFileDirectoriesExist = false;
+var heroFileDirectories = [
+	"backup",
+	"current"
+];
 
 var dataWebsites = [
 	{
@@ -184,9 +190,17 @@ router.get("/getAdvantages", function (req, res) {
 				}, 100);
 			});
 		});
+		var oldHeroesWaitingOn = [];
 		var polling = setInterval(function () {
 			//console.log("Done computing advantages:" +doneComputingAdvantages);
 			if (!doneComputingAdvantages) {
+				var heroesWaitingOn = data.map(function(hero){
+					return hero.id;
+				}).subtract(getCompleteHerosIds(advantagesPerProvider, data));
+				if(JSON.stringify(oldHeroesWaitingOn) !== JSON.stringify(heroesWaitingOn) ){
+					oldHeroesWaitingOn = heroesWaitingOn;
+					console.log("waiting on "+JSON.stringify(heroesWaitingOn));
+				}
 				return;
 			}
 			clearInterval(polling);
@@ -266,6 +280,7 @@ function writeCurrentFileToBackup() {
 	if(!currentFileExists()){
 		return;
 	}
+	checkDirectoriesExist();
 	fs.readFile(currentFile, "utf8", function (error, data) {
 		if (error) {
 			console.log("Error reading current file: " + error);
@@ -286,6 +301,7 @@ function writeCurrentFileToBackup() {
 }
 
 function writeToCurrentFile(heroes) {
+	checkDirectoriesExist();
 	fs.writeFile(currentFile, JSON.stringify(heroes), function (error) {
 		if (error) {
 			console.log(error);
@@ -476,6 +492,31 @@ function getCombinedAdvantages(advantagesPerProvider){
 	});
 
 	return combinedAdvantages;
+}
+
+function checkDirectoriesExist(){
+	var existsPerDirectory = [];
+	heroFileDirectories.forEach(function(directory){
+		var path = "heroFiles/"+directory;
+		var exists = false;
+		try {
+			var stats = fs.lstatSync(path);
+			exists = stats.isDirectory();
+		}
+		catch (exception){
+			exists = false;
+		}
+		existsPerDirectory.push(exists);
+	});
+
+	existsPerDirectory.forEach(function(exists, index){
+		if(exists){
+			return;
+		}
+		mkdirp("heroFiles/"+heroFileDirectories[index], function(err){
+			return;
+		});
+	});
 }
 
 
