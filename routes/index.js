@@ -29,17 +29,17 @@ var dataWebsites = [
 			return "http://www.dotabuff.com/heroes/" + hero.id + "/matchups";
 		},
 		htmlParser: parseDotaBuffHtmlForAdvantages
-	},
-	{
-		name: "DotaMax",
-		id: "dotamax",
-		rawId: "rawDotamax",
-		heroUrl: function(hero){
-			var heroId = hero.dotaMaxId === undefined ? hero.id : hero.dotaMaxId;
-			return "http://dotamax.com/hero/detail/match_up_anti/" + heroId ;
-		},
-		htmlParser: parseDotaMaxHtmlForAdvantages
-	}
+	}//,
+	//{
+	//	name: "DotaMax",
+	//	id: "dotamax",
+	//	rawId: "rawDotamax",
+	//	heroUrl: function(hero){
+	//		var heroId = hero.dotaMaxId === undefined ? hero.id : hero.dotaMaxId;
+	//		return "http://dotamax.com/hero/detail/match_up_anti/" + heroId ;
+	//	},
+	//	htmlParser: parseDotaMaxHtmlForAdvantages
+	//}
 ];
 
 router.get('/', function (req, res) {
@@ -200,6 +200,9 @@ router.get("/getAdvantages", function (req, res) {
 				if(JSON.stringify(oldHeroesWaitingOn) !== JSON.stringify(heroesWaitingOn) ){
 					oldHeroesWaitingOn = heroesWaitingOn;
 					console.log("waiting on "+JSON.stringify(heroesWaitingOn));
+					dataWebsites.forEach(function(website){
+						console.log(website.name +" has "+Object.keys(advantagesPerProvider[website.id]).length+" heroes");
+					});
 				}
 				return;
 			}
