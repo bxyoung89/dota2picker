@@ -22,7 +22,7 @@
     "grunt-html2js": "~0.3.4",
     "grunt-ng-annotate": "~1.0.1",
     "grunt-notify": "~0.4.1",
-    "grunt-sass": "~1.1.0",
+    "grunt-sass": "~1.0.0",
     "jade": "~1.11.0",
     "load-grunt-config": "^0.17.2",
     "mkdirp": "~0.5.1",
