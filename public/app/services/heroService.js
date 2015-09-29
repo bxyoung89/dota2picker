@@ -38,9 +38,9 @@ angular.module("WalrusPunch").service("heroService", [
 			oldHero.nickNames = newHero.nickNames;
 		};
 
-		HeroService.prototype.updateHeroesWithCounterPickAdvantage = function(updatedHeros){
+		HeroService.prototype.updateHeroesWithCounterPickAdvantage = function(updatedHeroes){
 			heroes.forEach(function(hero){
-				var matchingHero = updatedHeros.find(function(h){
+				var matchingHero = updatedHeroes.find(function(h){
 					return h.id === hero.id;
 				});
 				if(matchingHero === undefined){
