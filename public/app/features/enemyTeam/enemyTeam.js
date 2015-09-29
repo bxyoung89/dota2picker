@@ -1,12 +1,11 @@
 angular.module("WalrusPunch").controller("enemyTeamController", [
 	"$scope",
-	"$rootScope",
-	"RESIZE_EVENTS",
+	"ENEMY_TEAM_CHANGED",
 	"translationService",
 	"responsiveService",
 	"counterPickerPageService",
 	"analyticsService",
-	function($scope, $rootScope, RESIZE_EVENTS, translationService, responsiveService, counterPickerPageService, analyticsService){
+	function($scope, ENEMY_TEAM_CHANGED, translationService, responsiveService, counterPickerPageService, analyticsService){
 		$scope.translationService = translationService;
 		$scope.heroes = [
 			{
@@ -26,20 +25,20 @@ angular.module("WalrusPunch").controller("enemyTeamController", [
 			}
 		];
 
-		var enemyTeamWatcher = $scope.$watch(counterPickerPageService.getEnemyTeamIds, function(newTeamIds){
+		$scope.$on(ENEMY_TEAM_CHANGED.enemyTeamChanged, function(){
 			$scope.heroes = counterPickerPageService.getEnemyTeam();
 			if($scope.heroes.length === 5){
 				return;
 			}
-			for(var x = 0; x < 5 - newTeamIds.length; x+=1){
+			var filledSlots = $scope.heroes.length;
+			for(var x = 0; x < 5 - filledSlots; x+=1){
 				$scope.heroes.push({
 					empty: true
 				});
 			}
-		}, true);
-
-		$scope.$on("$destroy", function(){
-			enemyTeamWatcher();
+			setTimeout(function(){
+				$scope.$apply();
+			}, 0);
 		});
 
 		$scope.getHeroImage = responsiveService.getHeroImageCustom({

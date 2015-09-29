@@ -34,6 +34,9 @@ angular.module("WalrusPunch", ["Templates", "ngRoute", "countTo", "angularytics"
 		open: "open",
 		close: "close"
 	})
+	.constant("ENEMY_TEAM_CHANGED", {
+		enemyTeamChanged: "enemyTeamChanged"
+	})
 	.run([ "Angularytics", function(Angularlytics){
 			Angularlytics.init();
 		}
