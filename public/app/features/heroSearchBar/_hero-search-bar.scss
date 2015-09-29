@@ -1,12 +1,13 @@
 .hero-search-bar{
 	padding: 10px;
 	width: 100%;
-	background: $off-white;
+
 	position: relative;
 	overflow: hidden;
 
 	input{
 		padding-right: 80px;
+		background: $off-white;
 	}
 
 	svg {

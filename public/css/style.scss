@@ -1,5 +1,4 @@
 @import "lib/normalize";
-@import "lib/mixitup";
 
 @import "core/colors";
 @import "core/fonts";
@@ -8,6 +7,9 @@
 @import "core/app-layout";
 @import "core/page-layout";
 @import "core/input";
+
+@import "lib/mixitup";
+@import "lib/type-ahead";
 
 @import "../app/features/aboutPage/about-page";
 @import "../app/features/appHeader/app-header";

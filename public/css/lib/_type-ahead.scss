@@ -1,0 +1,10 @@
+.tt-menu{
+	position: relative !important;
+	width: calc(100% - 20px);
+	margin: 10px;
+	background: rgba($light-red, 0.6);
+}
+
+.tt-suggestion{
+	border-bottom: 1px solid rgba($off-black, 0.6);
+}
