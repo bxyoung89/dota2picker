@@ -7,6 +7,7 @@ var sugar = require("sugar");
 var heroFile = "heroFiles/base/heroes.json";
 var url = require('url');
 var mkdirp = require("mkdirp");
+var randomUserAgent = require("random-useragent");
 var currentFile = "heroFiles/current/savedHeroes.json";
 var backupPath = "heroFiles/backup/";
 var backupFile = "savedHeroes";
@@ -132,7 +133,7 @@ router.get("/getAdvantages", function (req, res) {
 				var requestOptions = {
 					url: url,
 					headers: {
-						"User-Agent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36",
+						"User-Agent": randomUserAgent.getRandom(),
 						"Accept-Language": "en"
 					}
 				};
