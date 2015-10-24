@@ -30,17 +30,17 @@ var dataWebsites = [
 			return "http://www.dotabuff.com/heroes/" + hero.id + "/matchups";
 		},
 		htmlParser: parseDotaBuffHtmlForAdvantages
-	}//,
-	//{
-	//	name: "DotaMax",
-	//	id: "dotamax",
-	//	rawId: "rawDotamax",
-	//	heroUrl: function(hero){
-	//		var heroId = hero.dotaMaxId === undefined ? hero.id : hero.dotaMaxId;
-	//		return "http://dotamax.com/hero/detail/match_up_anti/" + heroId ;
-	//	},
-	//	htmlParser: parseDotaMaxHtmlForAdvantages
-	//}
+	},
+	{
+		name: "DotaMax",
+		id: "dotamax",
+		rawId: "rawDotamax",
+		heroUrl: function(hero){
+			var heroId = hero.dotaMaxId === undefined ? hero.id : hero.dotaMaxId;
+			return "http://dotamax.com/hero/detail/match_up_anti/" + heroId ;
+		},
+		htmlParser: parseDotaMaxHtmlForAdvantages
+	}
 ];
 
 router.get('/', function (req, res) {
@@ -127,7 +127,7 @@ router.get("/getAdvantages", function (req, res) {
 		var validHeroesLength = data.length;
 		var doneComputingAdvantages = false;
 
-		data.forEach(function (heroData) {
+		data.forEach(function (heroData, heroIndex) {
 			dataWebsites.forEach(function(website){
 				var url = website.heroUrl(heroData);
 				var advantages = [];
@@ -171,7 +171,10 @@ router.get("/getAdvantages", function (req, res) {
 					}
 				}
 
-				request(requestOptions, handleRequestReturn);
+				setTimeout(function(){
+					request(requestOptions, handleRequestReturn);
+				}, heroIndex * 3000);
+
 				var lastHerolength = 0;
 
 				var polling = setInterval(function () {
@@ -210,9 +213,12 @@ router.get("/getAdvantages", function (req, res) {
 				return;
 			}
 			clearInterval(polling);
+			console.log("All websites have completed!");
 			var completeHeroesIds = getCompleteHerosIds(advantagesPerProvider, data);
+			console.log("got complete hero ids");
 			var heroes = [];
 			var combinedAdvantages = getCombinedAdvantages(advantagesPerProvider);
+			console.log("got combined advantages");
 			completeHeroesIds.forEach(function(heroId){
 				var hero = data.find(function(h){
 					return h.id === heroId;
