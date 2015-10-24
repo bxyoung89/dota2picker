@@ -108,8 +108,10 @@ router.get("/getAdvantages", function (req, res) {
 	//we need to say we've written now, so even if we've failed it tries again the next day
 	lastWritten = new Date();
 
+	console.log("writing to backup first");
 	writeCurrentFileToBackup();
 
+	console.log("reading from file");
 	fs.readFile(heroFile, "utf8", function (error, data) {
 		if (error) {
 			console.log("Error trying to read heroes file: " + error);
@@ -222,6 +224,7 @@ router.get("/getAdvantages", function (req, res) {
 				hero.advantages.combined = combinedAdvantages[hero.id];
 				heroes.push(hero);
 			});
+			console.log("got advantages writing to current file");
 			writeToCurrentFile(heroes);
 			useBackup = false;
 			if (!sentResponse) {
