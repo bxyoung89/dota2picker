@@ -22,15 +22,15 @@ var heroFileDirectories = [
 ];
 
 var dataWebsites = [
-	{
-		name: "DotaBuff",
-		id: "dotabuff",
-		rawId: "rawDotabuff",
-		heroUrl: function(hero){
-			return "http://www.dotabuff.com/heroes/" + hero.id + "/matchups";
-		},
-		htmlParser: parseDotaBuffHtmlForAdvantages
-	},
+	//{
+	//	name: "DotaBuff",
+	//	id: "dotabuff",
+	//	rawId: "rawDotabuff",
+	//	heroUrl: function(hero){
+	//		return "http://www.dotabuff.com/heroes/" + hero.id + "/matchups";
+	//	},
+	//	htmlParser: parseDotaBuffHtmlForAdvantages
+	//},
 	{
 		name: "DotaMax",
 		id: "dotamax",
