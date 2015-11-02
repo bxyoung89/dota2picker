@@ -22,25 +22,25 @@ var heroFileDirectories = [
 ];
 
 var dataWebsites = [
-	//{
-	//	name: "DotaBuff",
-	//	id: "dotabuff",
-	//	rawId: "rawDotabuff",
-	//	heroUrl: function(hero){
-	//		return "http://www.dotabuff.com/heroes/" + hero.id + "/matchups";
-	//	},
-	//	htmlParser: parseDotaBuffHtmlForAdvantages
-	//},
 	{
-		name: "DotaMax",
-		id: "dotamax",
-		rawId: "rawDotamax",
+		name: "DotaBuff",
+		id: "dotabuff",
+		rawId: "rawDotabuff",
 		heroUrl: function(hero){
-			var heroId = hero.dotaMaxId === undefined ? hero.id : hero.dotaMaxId;
-			return "http://dotamax.com/hero/detail/match_up_anti/" + heroId ;
+			return "http://www.dotabuff.com/heroes/" + hero.id + "/matchups";
 		},
-		htmlParser: parseDotaMaxHtmlForAdvantages
-	}
+		htmlParser: parseDotaBuffHtmlForAdvantages
+	}//,
+	//{
+	//	name: "DotaMax",
+	//	id: "dotamax",
+	//	rawId: "rawDotamax",
+	//	heroUrl: function(hero){
+	//		var heroId = hero.dotaMaxId === undefined ? hero.id : hero.dotaMaxId;
+	//		return "http://dotamax.com/hero/detail/match_up_anti/" + heroId ;
+	//	},
+	//	htmlParser: parseDotaMaxHtmlForAdvantages
+	//}
 ];
 
 router.get('/', function (req, res) {

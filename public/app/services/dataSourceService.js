@@ -12,20 +12,20 @@ angular.module("WalrusPunch").service("dataSourceService", [
 			//		return hero.advantages.combined;
 			//	}
 			//},
-			//{
-			//	name: "DotaBuff",
-			//	id: "dotabuff",
-			//	advantageFunction: function(hero){
-			//		return hero.advantages.dotabuff;
-			//	}
-			//},
 			{
-				name: "DotaMax",
-				id: "dotaMax",
+				name: "DotaBuff",
+				id: "dotabuff",
 				advantageFunction: function(hero){
 					return hero.advantages.dotabuff;
 				}
-			}
+			}//,
+			//{
+			//	name: "DotaMax",
+			//	id: "dotaMax",
+			//	advantageFunction: function(hero){
+			//		return hero.advantages.dotabuff;
+			//	}
+			//}
 		];
 		var currentDataSource = dataSources[0];
 		
