@@ -39,12 +39,13 @@
     "Traditional Chinese": "Traditional Chinese"
   },
   "heroes": {
-    "Alchemist": "Alchemist",
-    "Axe": "Axe",
-    "Anti-Mage": "Anti-Mage",
-    "Ancient Apparition": "Ancient Apparition",
-    "Bane": "Bane",
     "Abaddon": "Abaddon",
+    "Alchemist": "Alchemist",
+    "Ancient Apparition": "Ancient Apparition",
+    "Anti-Mage": "Anti-Mage",
+    "Arc Warden": "Arc Warden",
+    "Axe": "Axe",
+    "Bane": "Bane",
     "Batrider": "Batrider",
     "Bloodseeker": "Bloodseeker",
     "Beastmaster": "Beastmaster",
@@ -157,6 +158,10 @@
     "Ancient Apparition": [
       "kaldr",
       "aa"
+    ],
+    "Arc Warden": [
+      "zet",
+      "aw"
     ],
     "Bane": ["atropos"],
     "Abaddon": ["avernus"],

@@ -17,13 +17,13 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.4.0",
+    "angular": "~1.5.1",
     "angular-count-to": "https://raw.githubusercontent.com/sparkalow/angular-count-to/master/build/angular-count-to.min.js",
-    "angular-route": "~1.4.0",
+    "angular-route": "~1.5.1",
     "angularytics": "~0.4.0",
-    "jquery": "~2.1.4",
+    "jquery": "~2.2.1",
     "mixitup": "~2.1.11",
-    "ngstorage": "~0.3.9",
+    "ngstorage": "~0.3.10",
     "typeahead.js": "~0.11.1",
     "sugar": "~1.4.1"
   }

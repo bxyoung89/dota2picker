@@ -29,6 +29,13 @@ angular.module("WalrusPunch").service("heroBaseService", function(){
 			"dota1Image": "anti-mage.gif"
 		},
 		{
+			"name": "Arc Warden",
+			"id": "arc-warden",
+			"stat": "agility",
+			"imageId": "arc_warden",
+			"dota1Image": "arc_warden.gif"
+		},
+		{
 			"name": "Axe",
 			"id": "axe",
 			"stat": "strength",

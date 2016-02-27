@@ -18,6 +18,11 @@
     "dotaMaxId": "antimage"
   },
   {
+    "name": "Arc Warden",
+    "id": "arc-warden",
+    "dotaMaxId": "arc_warden"
+  },
+  {
     "name": "Axe",
     "id": "axe"
   },

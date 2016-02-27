@@ -35,12 +35,13 @@
     "Traditional Chinese": "Traditional Chinese"
   },
   "heroes": {
-    "Alchemist": "炼金术士",
-    "Axe": "斧王",
-    "Anti-Mage": "敌法师",
-    "Ancient Apparition": "远古冰魄",
-    "Bane": "祸乱之源",
     "Abaddon": "亚巴顿",
+    "Alchemist": "炼金术士",
+    "Ancient Apparition": "远古冰魄",
+    "Anti-Mage": "敌法师",
+    "Arc Warden": "天穹守望者",
+    "Axe": "斧王",
+    "Bane": "祸乱之源",
     "Batrider": "蝙蝠骑士",
     "Bloodseeker": "嗜血狂魔",
     "Beastmaster": "兽王",
@@ -153,6 +154,10 @@
     "Ancient Apparition": [
       "kaldr",
       "aa"
+    ],
+    "Arc Warden": [
+      "zet",
+      "aw"
     ],
     "Bane": ["atropos"],
     "Abaddon": ["avernus"],
