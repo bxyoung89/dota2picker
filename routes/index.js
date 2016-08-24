@@ -173,7 +173,7 @@ router.get("/getAdvantages", function (req, res) {
 
 				setTimeout(function(){
 					request(requestOptions, handleRequestReturn);
-				}, heroIndex * 500);
+				}, heroIndex * 3000);
 
 				var lastHerolength = 0;
 
