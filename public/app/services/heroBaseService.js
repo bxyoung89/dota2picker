@@ -687,6 +687,13 @@ angular.module("WalrusPunch").service("heroBaseService", function(){
 			"dota1Image": "tusk.jpg"
 		},
 		{
+			"name": "Underlord",
+			"id": "underlord",
+			"stat": "strength",
+			"imageId": "abyssal_underlord",
+			"dota1Image": "pit_lord.gif"
+		},
+		{
 			"name": "Undying",
 			"id": "undying",
 			"stat": "strength",
