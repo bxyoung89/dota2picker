@@ -372,6 +372,13 @@ angular.module("WalrusPunch").service("heroBaseService", function(){
 			"dota1Image": "medusa.gif"
 		},
 		{
+			"name": "Monkey King",
+			"id": "monkey-king",
+			"stat": "agility",
+			"imageId": "monkey_king",
+			"dota1Image": "medusa.gif"
+		},
+		{
 			"name": "Meepo",
 			"id": "meepo",
 			"stat": "agility",

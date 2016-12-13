@@ -243,6 +243,11 @@
     "id": "mirana"
   },
   {
+    "name": "Monkey King",
+    "id": "monkey-king",
+    "dotaMaxId": "monkey_king"
+  },
+  {
     "name": "Morphling",
     "id": "morphling"
   },

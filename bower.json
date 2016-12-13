@@ -26,5 +26,8 @@
     "ngstorage": "~0.3.10",
     "typeahead.js": "~0.11.1",
     "sugar": "~1.4.1"
+  },
+  "resolutions": {
+    "angular": "1.5.9"
   }
 }
