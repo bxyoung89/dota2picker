@@ -38,4 +38,7 @@
     "start": "node ./bin/www",
     "postinstall": "bower install && grunt build"
   }
+  "engines": {
+    "node": "8.1.x"
+  }
 }
