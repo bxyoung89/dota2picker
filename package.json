@@ -39,6 +39,6 @@
     "postinstall": "bower install && grunt build"
   },
   "engines": {
-    "node": "8.1.x"
+    "node": "8.x"
   }
 }
