@@ -148,6 +148,13 @@ angular.module("WalrusPunch").service("heroBaseService", function(){
 			"dota1Image": "dark_seer.gif"
 		},
 		{
+			"name": "Dark Willow",
+			"id": "dark-willow",
+			"stat": "intelligence",
+			"imageId": "dark_willow",
+			"dota1Image": "dark_willow.gif"
+		},
+		{
 			"name": "Dazzle",
 			"id": "dazzle",
 			"stat": "intelligence",
@@ -237,6 +244,13 @@ angular.module("WalrusPunch").service("heroBaseService", function(){
 			"stat": "agility",
 			"imageId": "faceless_void",
 			"dota1Image": "faceless_void.gif"
+		},
+		{
+			"name": "Grimstroke",
+			"id": "grimstroke",
+			"stat": "intelligence",
+			"imageId": "grimstroke",
+			"dota1Image": "gyrocopter.gif"
 		},
 		{
 			"name": "Gyrocopter",
@@ -461,6 +475,13 @@ angular.module("WalrusPunch").service("heroBaseService", function(){
 			"stat": "intelligence",
 			"imageId": "obsidian_destroyer",
 			"dota1Image": "outworld_devourer.gif"
+		},
+		{
+			"name": "Pangolier",
+			"id": "pangolier",
+			"stat": "agility",
+			"imageId": "pangolier",
+			"dota1Image": "phantom_assasin.gif"
 		},
 		{
 			"name": "Phantom Assassin",
