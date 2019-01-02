@@ -63,6 +63,7 @@
     "Death Prophet": "Death Prophet",
     "Doom": "Doom",
     "Dark Seer": "Dark Seer",
+    "Dark Willow": "Dark Willow",
     "Dragon Knight": "Dragon Knight",
     "Disruptor": "Disruptor",
     "Drow Ranger": "Drow Ranger",
@@ -75,6 +76,7 @@
     "Huskar": "Huskar",
     "Io": "Io",
     "Faceless Void": "Faceless Void",
+    "Grimstroke": "GrimStroke",
     "Gyrocopter": "Gyrocopter",
     "Juggernaut": "Juggernaut",
     "Invoker": "Invoker",
@@ -103,6 +105,7 @@
     "Necrophos": "Necrophos",
     "Ogre Magi": "Ogre Magi",
     "Outworld Devourer": "Outworld Devourer",
+    "Pangolier": "Pangolier",
     "Phantom Lancer": "Phantom Lancer",
     "Omniknight": "Omniknight",
     "Phantom Assassin": "Phantom Assassin",
@@ -215,6 +218,9 @@
       "ish",
       "ds"
     ],
+    "Dark Willow": [
+      "dw"
+    ],
     "Dragon Knight": [
       "davion",
       "dk"
@@ -242,6 +248,7 @@
     "Huskar": [],
     "Io": ["wisp"],
     "Faceless Void": ["darkterror"],
+    "Grimstroke": [],
     "Gyrocopter": ["aurel"],
     "Juggernaut": ["yurnero"],
     "Invoker": [
@@ -295,14 +302,15 @@
       "od",
       "harbinger"
     ],
-    "Phantom Lancer": [
-      "azwraith",
-      "pl"
-    ],
     "Omniknight": ["ok"],
+    "Pangolier": ["pango"],
     "Phantom Assassin": [
       "pa",
       "mortred"
+    ],
+    "Phantom Lancer": [
+      "azwraith",
+      "pl"
     ],
     "Puck": [],
     "Oracle": ["nerif"],

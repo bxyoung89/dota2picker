@@ -59,6 +59,7 @@
     "Death Prophet": "死亡先知",
     "Doom": "末日使者",
     "Dark Seer": "黑暗贤者",
+    "Dark Willow": "邪影芳灵",
     "Dragon Knight": "龙骑士",
     "Disruptor": "干扰者",
     "Drow Ranger": "卓尔游侠",
@@ -71,6 +72,7 @@
     "Huskar": "哈斯卡",
     "Io": "艾欧",
     "Faceless Void": "虚空假面",
+    "Grimstroke": "天涯墨客",
     "Gyrocopter": "矮人直升机",
     "Juggernaut": "主宰",
     "Invoker": "祈求者",
@@ -99,9 +101,10 @@
     "Necrophos": "瘟疫法师",
     "Ogre Magi": "食人魔魔法师",
     "Outworld Devourer": "殁境神蚀者",
-    "Phantom Lancer": "幻影长矛手",
     "Omniknight": "全能骑士",
+    "Pangolier": "石鳞剑士",
     "Phantom Assassin": "幻影刺客",
+    "Phantom Lancer": "幻影长矛手",
     "Puck": "帕克",
     "Oracle": "神谕者",
     "Pudge": "帕吉",
@@ -211,6 +214,9 @@
       "ish",
       "ds"
     ],
+    "Dark Willow": [
+      "dw"
+    ],
     "Dragon Knight": [
       "davion",
       "dk"
@@ -238,6 +244,7 @@
     "Huskar": [],
     "Io": ["wisp"],
     "Faceless Void": ["darkterror"],
+    "Grimstroke": [],
     "Gyrocopter": ["aurel"],
     "Juggernaut": ["yurnero"],
     "Invoker": [
@@ -291,14 +298,15 @@
       "od",
       "harbinger"
     ],
-    "Phantom Lancer": [
-      "azwraith",
-      "pl"
-    ],
     "Omniknight": ["ok"],
+    "Pangolier": ["pango"],
     "Phantom Assassin": [
       "pa",
       "mortred"
+    ],
+    "Phantom Lancer": [
+      "azwraith",
+      "pl"
     ],
     "Puck": [],
     "Oracle": ["nerif"],
@@ -365,6 +373,7 @@
       "vs"
     ],
     "Venomancer": ["lesale"],
+    "Underlord": ["pit lord", "abyssal underlord"],
     "Ursa": ["ulfsaar"],
     "Viper": [],
     "Visage": [],

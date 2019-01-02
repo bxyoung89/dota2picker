@@ -1,0 +1,10 @@
+.tmp
+bin
+heroFiles
+grunt
+node_modules
+.idea
+public/bin
+public/js/lib
+<!-- get rid of this once youre not on acient technology -->
+public

@@ -1,503 +1,633 @@
 [
   {
     "name": "Abaddon",
-    "id": "abaddon"
+    "id": "abaddon",
+    "openDotaId": "102"
   },
   {
     "name": "Alchemist",
-    "id": "alchemist"
+    "id": "alchemist",
+    "openDotaId": "73"
   },
   {
     "name": "Ancient Apparition",
     "id": "ancient-apparition",
-    "dotaMaxId": "ancient_apparition"
+    "dotaMaxId": "ancient_apparition",
+    "openDotaId": "68"
   },
   {
     "name": "Anti-Mage",
     "id": "anti-mage",
-    "dotaMaxId": "antimage"
+    "dotaMaxId": "antimage",
+    "openDotaId": "1"
   },
   {
     "name": "Arc Warden",
     "id": "arc-warden",
-    "dotaMaxId": "arc_warden"
+    "dotaMaxId": "arc_warden",
+    "openDotaId": "113"
   },
   {
     "name": "Axe",
-    "id": "axe"
+    "id": "axe",
+    "openDotaId": "2"
   },
   {
     "name": "Bane",
-    "id": "bane"
+    "id": "bane",
+    "openDotaId": "3"
   },
   {
     "name": "Batrider",
-    "id": "batrider"
+    "id": "batrider",
+    "openDotaId": "65"
   },
   {
     "name": "Beastmaster",
-    "id": "beastmaster"
+    "id": "beastmaster",
+    "openDotaId": "38"
   },
   {
     "name": "Bloodseeker",
-    "id": "bloodseeker"
+    "id": "bloodseeker",
+    "openDotaId": "4"
   },
   {
     "name": "Bounty Hunter",
     "id": "bounty-hunter",
-    "dotaMaxId": "bounty_hunter"
+    "dotaMaxId": "bounty_hunter",
+    "openDotaId": "62"
   },
   {
     "name": "Brewmaster",
-    "id": "brewmaster"
+    "id": "brewmaster",
+    "openDotaId": "78"
   },
   {
     "name": "Bristleback",
-    "id": "bristleback"
+    "id": "bristleback",
+    "openDotaId": "99"
   },
   {
     "name": "Broodmother",
-    "id": "broodmother"
+    "id": "broodmother",
+    "openDotaId": "61"
   },
   {
     "name": "Centaur Warrunner",
     "id": "centaur-warrunner",
-    "dotaMaxId": "centaur"
+    "dotaMaxId": "centaur",
+    "openDotaId": "96"
   },
   {
     "name": "Chaos Knight",
     "id": "chaos-knight",
-    "dotaMaxId": "chaos_knight"
+    "dotaMaxId": "chaos_knight",
+    "openDotaId": "81"
   },
   {
     "name": "Chen",
-    "id": "chen"
+    "id": "chen",
+    "openDotaId": "66"
   },
   {
     "name": "Clinkz",
-    "id": "clinkz"
+    "id": "clinkz",
+    "openDotaId": "56"
   },
   {
     "name": "Clockwerk",
     "id": "clockwerk",
-    "dotaMaxId": "rattletrap"
+    "dotaMaxId": "rattletrap",
+    "openDotaId": "51"
   },
   {
     "name": "Crystal Maiden",
     "id": "crystal-maiden",
-    "dotaMaxId": "crystal_maiden"
+    "dotaMaxId": "crystal_maiden",
+    "openDotaId": "5"
   },
   {
     "name": "Dark Seer",
     "id": "dark-seer",
-    "dotaMaxId": "dark_seer"
+    "dotaMaxId": "dark_seer",
+    "openDotaId": "55"
+  },
+  {
+    "name": "Dark Willow",
+    "id": "dark-willow",
+    "dotaMaxId": "dark_willow",
+    "openDotaId": "119"
   },
   {
     "name": "Dazzle",
-    "id": "dazzle"
+    "id": "dazzle",
+    "openDotaId": "50"
   },
   {
     "name": "Death Prophet",
     "id": "death-prophet",
-    "dotaMaxId": "death_prophet"
+    "dotaMaxId": "death_prophet",
+    "openDotaId": "43"
   },
   {
     "name": "Disruptor",
-    "id": "disruptor"
+    "id": "disruptor",
+    "openDotaId": "87"
   },
   {
     "name": "Doom",
     "id": "doom",
-    "dotaMaxId": "doom_bringer"
+    "dotaMaxId": "doom_bringer",
+    "openDotaId": "69"
   },
   {
     "name": "Dragon Knight",
     "id": "dragon-knight",
-    "dotaMaxId": "dragon_knight"
+    "dotaMaxId": "dragon_knight",
+    "openDotaId": "49"
   },
   {
     "name": "Drow Ranger",
     "id": "drow-ranger",
-    "dotaMaxId": "drow_ranger"
+    "dotaMaxId": "drow_ranger",
+    "openDotaId": "6"
   },
   {
     "name": "Earth Spirit",
     "id": "earth-spirit",
-    "dotaMaxId": "earth_spirit"
+    "dotaMaxId": "earth_spirit",
+    "openDotaId": "107"
   },
   {
     "name": "Earthshaker",
-    "id": "earthshaker"
+    "id": "earthshaker",
+    "openDotaId": "7"
   },
   {
     "name": "Elder Titan",
     "id": "elder-titan",
-    "dotaMaxId": "elder_titan"
+    "dotaMaxId": "elder_titan",
+    "openDotaId": "103"
   },
   {
     "name": "Ember Spirit",
     "id": "ember-spirit",
-    "dotaMaxId": "ember_spirit"
+    "dotaMaxId": "ember_spirit",
+    "openDotaId": "106"
   },
   {
     "name": "Enchantress",
-    "id": "enchantress"
+    "id": "enchantress",
+    "openDotaId": "58"
   },
   {
     "name": "Enigma",
-    "id": "enigma"
+    "id": "enigma",
+    "openDotaId": "33"
   },
   {
     "name": "Faceless Void",
     "id": "faceless-void",
-    "dotaMaxId": "faceless_void"
+    "dotaMaxId": "faceless_void",
+    "openDotaId": "41"
+  },
+  {
+    "name": "Grimstroke",
+    "id": "grimstroke",
+    "openDotaId": "121"
   },
   {
     "name": "Gyrocopter",
-    "id": "gyrocopter"
+    "id": "gyrocopter",
+    "openDotaId": "72"
   },
   {
     "name": "Huskar",
-    "id": "huskar"
+    "id": "huskar",
+    "openDotaId": "59"
   },
   {
     "name": "Invoker",
-    "id": "invoker"
+    "id": "invoker",
+    "openDotaId": "74"
   },
   {
     "name": "Io",
     "id": "io",
-    "dotaMaxId": "wisp"
+    "dotaMaxId": "wisp",
+    "openDotaId": "91"
   },
   {
     "name": "Jakiro",
-    "id": "jakiro"
+    "id": "jakiro",
+    "openDotaId": "64"
   },
   {
     "name": "Juggernaut",
-    "id": "juggernaut"
+    "id": "juggernaut",
+    "openDotaId": "8"
   },
   {
     "name": "Keeper of the Light",
     "id": "keeper-of-the-light",
-    "dotaMaxId": "keeper_of_the_light"
+    "dotaMaxId": "keeper_of_the_light",
+    "openDotaId": "90"
   },
   {
     "name": "Kunkka",
-    "id": "kunkka"
+    "id": "kunkka",
+    "openDotaId": "23"
   },
   {
     "name": "Legion Commander",
     "id": "legion-commander",
-    "dotaMaxId": "legion_commander"
+    "dotaMaxId": "legion_commander",
+    "openDotaId": "104"
   },
   {
     "name": "Leshrac",
-    "id": "leshrac"
+    "id": "leshrac",
+    "openDotaId": "52"
   },
   {
     "name": "Lich",
-    "id": "lich"
+    "id": "lich",
+    "openDotaId": "31"
   },
   {
     "name": "Lifestealer",
     "id": "lifestealer",
-    "dotaMaxId": "life_stealer"
+    "dotaMaxId": "life_stealer",
+    "openDotaId": "54"
   },
   {
     "name": "Lina",
-    "id": "lina"
+    "id": "lina",
+    "openDotaId": "25"
   },
   {
     "name": "Lion",
-    "id": "lion"
+    "id": "lion",
+    "openDotaId": "26"
   },
   {
     "name": "Lone Druid",
     "id": "lone-druid",
-    "dotaMaxId": "lone_druid"
+    "dotaMaxId": "lone_druid",
+    "openDotaId": "80"
   },
   {
     "name": "Luna",
-    "id": "luna"
+    "id": "luna",
+    "openDotaId": "48"
   },
   {
     "name": "Lycan",
-    "id": "lycan"
+    "id": "lycan",
+    "openDotaId": "77"
   },
   {
     "name": "Magnus",
     "id": "magnus",
-    "dotaMaxId": "magnataur"
+    "dotaMaxId": "magnataur",
+    "openDotaId": "97"
   },
   {
     "name": "Medusa",
-    "id": "medusa"
+    "id": "medusa",
+    "openDotaId": "94"
   },
   {
     "name": "Meepo",
-    "id": "meepo"
+    "id": "meepo",
+    "openDotaId": "82"
   },
   {
     "name": "Mirana",
-    "id": "mirana"
+    "id": "mirana",
+    "openDotaId": "9"
   },
   {
     "name": "Monkey King",
     "id": "monkey-king",
-    "dotaMaxId": "monkey_king"
+    "dotaMaxId": "monkey_king",
+    "openDotaId": "114"
   },
   {
     "name": "Morphling",
-    "id": "morphling"
+    "id": "morphling",
+    "openDotaId": "10"
   },
   {
     "name": "Naga Siren",
     "id": "naga-siren",
-    "dotaMaxId": "naga_siren"
+    "dotaMaxId": "naga_siren",
+    "openDotaId": "89"
   },
   {
     "name": "Nature's Prophet",
     "id": "natures-prophet",
-    "dotaMaxId": "furion"
+    "dotaMaxId": "furion",
+    "openDotaId": "53"
   },
   {
     "name": "Necrophos",
     "id": "necrophos",
-    "dotaMaxId": "necrolyte"
+    "dotaMaxId": "necrolyte",
+    "openDotaId": "36"
   },
   {
     "name": "Night Stalker",
     "id": "night-stalker",
-    "dotaMaxId": "night_stalker"
+    "dotaMaxId": "night_stalker",
+    "openDotaId": "60"
   },
   {
     "name": "Nyx Assassin",
     "id": "nyx-assassin",
-    "dotaMaxId": "nyx_assassin"
+    "dotaMaxId": "nyx_assassin",
+    "openDotaId": "88"
   },
   {
     "name": "Ogre Magi",
     "id": "ogre-magi",
-    "dotaMaxId": "ogre_magi"
+    "dotaMaxId": "ogre_magi",
+    "openDotaId": "84"
   },
   {
     "name": "Omniknight",
-    "id": "omniknight"
+    "id": "omniknight",
+    "openDotaId": "57"
   },
   {
     "name": "Oracle",
-    "id": "oracle"
+    "id": "oracle",
+    "openDotaId": "111"
   },
   {
     "name": "Outworld Devourer",
     "id": "outworld-devourer",
-    "dotaMaxId": "obsidian_destroyer"
+    "dotaMaxId": "obsidian_destroyer",
+    "openDotaId": "76"
+  },
+  {
+    "name": "Pangolier",
+    "id": "pangolier",
+    "dotaMaxId": "pangolier",
+    "openDotaId": "120"
   },
   {
     "name": "Phantom Assassin",
     "id": "phantom-assassin",
-    "dotaMaxId": "phantom_assassin"
+    "dotaMaxId": "phantom_assassin",
+    "openDotaId": "44"
   },
   {
     "name": "Phantom Lancer",
     "id": "phantom-lancer",
-    "dotaMaxId": "phantom_lancer"
+    "dotaMaxId": "phantom_lancer",
+    "openDotaId": "12"
   },
   {
     "name": "Phoenix",
-    "id": "phoenix"
+    "id": "phoenix",
+    "openDotaId": "110"
   },
   {
     "name": "Puck",
-    "id": "puck"
+    "id": "puck",
+    "openDotaId": "13"
   },
   {
     "name": "Pudge",
-    "id": "pudge"
+    "id": "pudge",
+    "openDotaId": "14"
   },
   {
     "name": "Pugna",
-    "id": "pugna"
+    "id": "pugna",
+    "openDotaId": "45"
   },
   {
     "name": "Queen of Pain",
     "id": "queen-of-pain",
-    "dotaMaxId": "queenofpain"
+    "dotaMaxId": "queenofpain",
+    "openDotaId": "39"
   },
   {
     "name": "Razor",
-    "id": "razor"
+    "id": "razor",
+    "openDotaId": "15"
   },
   {
     "name": "Riki",
-    "id": "riki"
+    "id": "riki",
+    "openDotaId": "32"
   },
   {
     "name": "Rubick",
-    "id": "rubick"
+    "id": "rubick",
+    "openDotaId": "86"
   },
   {
     "name": "Sand King",
-    "id": "sand-king"
+    "id": "sand-king",
+    "openDotaId": "16"
   },
   {
     "name": "Shadow Demon",
     "id": "shadow-demon",
-    "dotaMaxId": "shadow_demon"
+    "dotaMaxId": "shadow_demon",
+    "openDotaId": "79"
   },
   {
     "name": "Shadow Fiend",
     "id": "shadow-fiend",
-    "dotaMaxId": "nevermore"
+    "dotaMaxId": "nevermore",
+    "openDotaId": "11"
   },
   {
     "name": "Shadow Shaman",
     "id": "shadow-shaman",
-    "dotaMaxId": "shadow_shaman"
+    "dotaMaxId": "shadow_shaman",
+    "openDotaId": "27"
   },
   {
     "name": "Silencer",
-    "id": "silencer"
+    "id": "silencer",
+    "openDotaId": "75"
   },
   {
     "name": "Skywrath Mage",
     "id": "skywrath-mage",
-    "dotaMaxId": "skywrath_mage"
+    "dotaMaxId": "skywrath_mage",
+    "openDotaId": "101"
   },
   {
     "name": "Slardar",
-    "id": "slardar"
+    "id": "slardar",
+    "openDotaId": "28"
   },
   {
     "name": "Slark",
-    "id": "slark"
+    "id": "slark",
+    "openDotaId": "93"
   },
   {
     "name": "Sniper",
-    "id": "sniper"
+    "id": "sniper",
+    "openDotaId": "35"
   },
   {
     "name": "Spectre",
-    "id": "spectre"
+    "id": "spectre",
+    "openDotaId": "67"
   },
   {
     "name": "Spirit Breaker",
     "id": "spirit-breaker",
-    "dotaMaxId": "spirit_breaker"
+    "dotaMaxId": "spirit_breaker",
+    "openDotaId": "71"
   },
   {
     "name": "Storm Spirit",
     "id": "storm-spirit",
-    "dotaMaxId": "storm_spirit"
+    "dotaMaxId": "storm_spirit",
+    "openDotaId": "17"
   },
   {
     "name": "Sven",
-    "id": "sven"
+    "id": "sven",
+    "openDotaId": "18"
   },
   {
     "name": "Techies",
-    "id": "techies"
+    "id": "techies",
+    "openDotaId": "105"
   },
   {
     "name": "Templar Assassin",
     "id": "templar-assassin",
-    "dotaMaxId": "templar_assassin"
+    "dotaMaxId": "templar_assassin",
+    "openDotaId": "46"
   },
   {
     "name": "Terrorblade",
-    "id": "terrorblade"
+    "id": "terrorblade",
+    "openDotaId": "109"
   },
   {
     "name": "Tidehunter",
-    "id": "tidehunter"
+    "id": "tidehunter",
+    "openDotaId": "29"
   },
   {
     "name": "Timbersaw",
     "id": "timbersaw",
-    "dotaMaxId": "shredder"
+    "dotaMaxId": "shredder",
+    "openDotaId": "98"
   },
   {
     "name": "Tinker",
-    "id": "tinker"
+    "id": "tinker",
+    "openDotaId": "34"
   },
   {
     "name": "Tiny",
-    "id": "tiny"
+    "id": "tiny",
+    "openDotaId": "19"
   },
   {
     "name": "Treant Protector",
     "id": "treant-protector",
-    "dotaMaxId": "treant"
+    "dotaMaxId": "treant",
+    "openDotaId": "83"
   },
   {
     "name": "Troll Warlord",
     "id": "troll-warlord",
-    "dotaMaxId": "troll_warlord"
+    "dotaMaxId": "troll_warlord",
+    "openDotaId": "95"
   },
   {
     "name": "Tusk",
-    "id": "tusk"
+    "id": "tusk",
+    "openDotaId": "100"
   },
   {
     "name": "Underlord",
-    "id": "underlord"
+    "id": "underlord",
+    "openDotaId": "108"
   },
   {
     "name": "Undying",
-    "id": "undying"
+    "id": "undying",
+    "openDotaId": "85"
   },
   {
     "name": "Ursa",
-    "id": "ursa"
+    "id": "ursa",
+    "openDotaId": "70"
   },
   {
     "name": "Vengeful Spirit",
     "id": "vengeful-spirit",
-    "dotaMaxId": "vengefulspirit"
+    "dotaMaxId": "vengefulspirit",
+    "openDotaId": "20"
   },
   {
     "name": "Venomancer",
-    "id": "venomancer"
+    "id": "venomancer",
+    "openDotaId": "40"
   },
   {
     "name": "Viper",
-    "id": "viper"
+    "id": "viper",
+    "openDotaId": "47"
   },
   {
     "name": "Visage",
-    "id": "visage"
+    "id": "visage",
+    "openDotaId": "92"
   },
   {
     "name": "Warlock",
-    "id": "warlock"
+    "id": "warlock",
+    "openDotaId": "37"
   },
   {
     "name": "Weaver",
-    "id": "weaver"
+    "id": "weaver",
+    "openDotaId": "63"
   },
   {
     "name": "Windranger",
-    "id": "windrunner"
+    "id": "windrunner",
+    "openDotaId": "21"
   },
   {
     "name": "Winter Wyvern",
     "id": "winter-wyvern",
-    "dotaMaxId": "winter_wyvern"
+    "dotaMaxId": "winter_wyvern",
+    "openDotaId": "112"
   },
   {
     "name": "Witch Doctor",
     "id": "witch-doctor",
-    "dotaMaxId": "witch_doctor"
+    "dotaMaxId": "witch_doctor",
+    "openDotaId": "30"
   },
   {
     "name": "Wraith King",
     "id": "wraith-king",
-    "dotaMaxId": "skeleton_king"
+    "dotaMaxId": "skeleton_king",
+    "openDotaId": "42"
   },
   {
     "name": "Zeus",
     "id": "zeus",
-    "dotaMaxId": "zuus"
+    "dotaMaxId": "zuus",
+    "openDotaId": "22"
   }
 ]

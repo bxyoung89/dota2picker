@@ -1,27 +1,31 @@
 {
+  "About Walrus Punch!": "About Walrus Punch!",
+  "About the Developer": "About the Developer",
+  "About the Translators": "About the Translators",
+  "Broderick Young (aka TheWalrus) is a 2k mmr noob intent on getting better.": "Broderick Young (aka TheWalrus) is a 2k mmr noob intent on getting better.",
+  "Contact the developer": "Contact the developer",
+  "English please!": "English please!",
+  "Here's everybody who helped with translating the app. I could not have done it without them!": "Here's everybody who helped with translating the app. I could not have done it without them!",
+  "Home": "Home",
+  "It gets data from DotaBuff every day so the information is always changing, but kept current.": "It gets data from DotaBuff every day so the information is always changing, but kept current.",
+  "Loading Advantage Data": "Loading Advantage Data",
+  "Search For A Hero": "Search For A Hero",
+  "Select a language": "Select a language",
+  "Use Dota 1 Portraits": "Use Dota 1 Portraits",
+  "Walrus Punch is a web app that people can use to get an idea of what heroes are stronger against an enemy team.": "Walrus Punch is a web app that people can use to get an idea of what heroes are stronger against an enemy team.",
+  "Walrus Punch was written with Node.js, Sass, Angular, Grunt, Bower, and jQuery": "Walrus Punch was written with Node.js, Sass, Angular, Grunt, Bower, and jQuery",
+  "Want to get Walrus Punch in your language?": "Want to get Walrus Punch in your language?",
   "Search for a Hero": "Search for a Hero",
   "Welcome to Walrus Punch!": "Welcome to Walrus Punch!",
   "To get counter-picks search for a hero above and see the suggested heroes below!": "To get counter-picks search for a hero above and see the suggested heroes below!",
-  "All Roles": "All Roles",
   "Enemy Team": "Enemy Team",
-  "Walrus Punch!": "바다코끼리 펀치!",
+  "Walrus Punch!": "Walrus Punch!",
   "A Dota 2 CounterPicker": "A Dota 2 CounterPicker",
-  "By Broderick Young": "By Broderick Young",
-  "Hey! Thanks for coming. I hope you enjoy the site.": "Hey! Thanks for coming. I hope you enjoy the site.",
-  "It was made using Node.js, Knockout.js, JQuery, Sugar.js, Typeahead.js, and MixItUp.": "It was made using Node.js, Knockout.js, JQuery, Sugar.js, Typeahead.js, and MixItUp.",
-  "The data comes straight from Dotabuff": "The data comes straight from ###Dotabuff###",
-  "It's updated every day so the data is fresh!": "It's updated every day so the data is fresh!",
-  "Broderick Young (AKA TheWalrus) is a 3k mmr noob intent on getting better.": "###Broderick Young### (AKA TheWalrus) is a 3k mmr noob intent on getting better.",
-  "You can check out the source code for this project on GitHub.": "You can check out the source code for this project on ###GitHub###.",
-  "You can contact me on Twitter.": "You can contact me on ###Twitter###.",
-  "If you're feeling really generous send me something on Steam!": "If you're feeling really generous send me something on ###Steam###",
   "About": "About",
   "Language": "Language",
-  "stats": {
-    "strength": "strength",
-    "agility": "agility",
-    "intelligence": "intelligence"
-  },
+  "Office Worker by day, Punk Musician and teacher by night. Austin, Texas.": "Office Worker by day, Punk Musician and teacher by night. Austin, Texas.",
+  "Select data source": "Select data source",
+  "Combined": "Combined",
   "languages": {
     "English": "English",
     "French": "French",
@@ -59,6 +63,7 @@
     "Death Prophet": "Death Prophet",
     "Doom": "Doom",
     "Dark Seer": "Dark Seer",
+    "Dark Willow": "Dark Willow",
     "Dragon Knight": "Dragon Knight",
     "Disruptor": "Disruptor",
     "Drow Ranger": "Drow Ranger",
@@ -71,6 +76,7 @@
     "Huskar": "Huskar",
     "Io": "Io",
     "Faceless Void": "Faceless Void",
+    "Grimstroke": "GrimStroke",
     "Gyrocopter": "Gyrocopter",
     "Juggernaut": "Juggernaut",
     "Invoker": "Invoker",
@@ -99,6 +105,7 @@
     "Necrophos": "Necrophos",
     "Ogre Magi": "Ogre Magi",
     "Outworld Devourer": "Outworld Devourer",
+    "Pangolier": "Pangolier",
     "Phantom Lancer": "Phantom Lancer",
     "Omniknight": "Omniknight",
     "Phantom Assassin": "Phantom Assassin",
@@ -211,6 +218,9 @@
       "ish",
       "ds"
     ],
+    "Dark Willow": [
+      "dw"
+    ],
     "Dragon Knight": [
       "davion",
       "dk"
@@ -238,6 +248,7 @@
     "Huskar": [],
     "Io": ["wisp"],
     "Faceless Void": ["darkterror"],
+    "Grimstroke": [],
     "Gyrocopter": ["aurel"],
     "Juggernaut": ["yurnero"],
     "Invoker": [
@@ -291,14 +302,15 @@
       "od",
       "harbinger"
     ],
-    "Phantom Lancer": [
-      "azwraith",
-      "pl"
-    ],
     "Omniknight": ["ok"],
+    "Pangolier": ["pango"],
     "Phantom Assassin": [
       "pa",
       "mortred"
+    ],
+    "Phantom Lancer": [
+      "azwraith",
+      "pl"
     ],
     "Puck": [],
     "Oracle": ["nerif"],
@@ -365,6 +377,7 @@
       "vs"
     ],
     "Venomancer": ["lesale"],
+    "Underlord": ["pit lord", "abyssal underlord"],
     "Ursa": ["ulfsaar"],
     "Viper": [],
     "Visage": [],

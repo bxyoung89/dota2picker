@@ -5,27 +5,34 @@ angular.module("WalrusPunch").service("dataSourceService", [
 
 		var currentDataSourceId = "combined";
 		var dataSources = [
-			//{
-			//	name: "Combined",
-			//	id: "combined",
-			//	advantageFunction: function(hero){
-			//		return hero.advantages.combined;
-			//	}
-			//},
+			{
+				name: "Combined",
+				id: "combined",
+				advantageFunction: function(hero){
+					return hero.advantages.combined;
+				}
+			},
 			{
 				name: "DotaBuff",
 				id: "dotabuff",
 				advantageFunction: function(hero){
 					return hero.advantages.dotabuff;
 				}
-			}//,
-			//{
-			//	name: "DotaMax",
-			//	id: "dotaMax",
-			//	advantageFunction: function(hero){
-			//		return hero.advantages.dotabuff;
-			//	}
-			//}
+			},
+			// {
+			// 	name: "DotaMax",
+			// 	id: "dotaMax",
+			// 	advantageFunction: function(hero){
+			// 		return hero.advantages.dotamax;
+			// 	}
+			// },
+			{
+				name: "OpenDota",
+				id: "opeonDota",
+				advantageFunction: function(hero){
+					return hero.advantages.opendota;
+				}
+			},
 		];
 		var currentDataSource = dataSources[0];
 		
