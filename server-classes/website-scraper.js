@@ -22,7 +22,7 @@ class WebsiteScraper {
 	async getRawHtmlFromWebsite(heroData, website) {
 		const heroHtmlMap = {};
 		for (const hero of heroData) {
-			const heroHtmlResponse = await requestWithDelay(hero, website, 20000 + (Math.random()* 10000));
+			const heroHtmlResponse = await requestWithDelay(hero, website, 40000 + (Math.random()* 10000));
 			heroHtmlMap[hero.id] = heroHtmlResponse.data;
 			console.log(`get html from website: got ${hero.id}`);
 		}
