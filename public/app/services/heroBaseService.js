@@ -152,7 +152,7 @@ angular.module("WalrusPunch").service("heroBaseService", function(){
 			"id": "dark-willow",
 			"stat": "intelligence",
 			"imageId": "dark_willow",
-			"dota1Image": "dark_willow.gif"
+			"dota1Image": "dark_seer.gif"
 		},
 		{
 			"name": "Dazzle",

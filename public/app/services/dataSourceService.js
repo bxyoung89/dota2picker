@@ -3,22 +3,22 @@ angular.module("WalrusPunch").service("dataSourceService", [
 	"DATASOURCE_EVENTS",
 	function ($rootScope, DATASOURCE_EVENTS) {
 
-		var currentDataSourceId = "combined";
+		var currentDataSourceId = "openDota";
 		var dataSources = [
-			{
-				name: "Combined",
-				id: "combined",
-				advantageFunction: function(hero){
-					return hero.advantages.combined;
-				}
-			},
-			{
-				name: "DotaBuff",
-				id: "dotabuff",
-				advantageFunction: function(hero){
-					return hero.advantages.dotabuff;
-				}
-			},
+			// {
+			// 	name: "Combined",
+			// 	id: "combined",
+			// 	advantageFunction: function(hero){
+			// 		return hero.advantages.combined;
+			// 	}
+			// },
+			// {
+			// 	name: "DotaBuff",
+			// 	id: "dotabuff",
+			// 	advantageFunction: function(hero){
+			// 		return hero.advantages.dotabuff;
+			// 	}
+			// },
 			// {
 			// 	name: "DotaMax",
 			// 	id: "dotaMax",
@@ -28,7 +28,7 @@ angular.module("WalrusPunch").service("dataSourceService", [
 			// },
 			{
 				name: "OpenDota",
-				id: "opeonDota",
+				id: "openDota",
 				advantageFunction: function(hero){
 					return hero.advantages.opendota;
 				}
