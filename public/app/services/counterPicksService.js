@@ -37,6 +37,9 @@ angular.module("WalrusPunch").service("counterPicksService", [
 					var advantage = dataSourceService.getAdvantages(hero).find(function(advantage){
 						return advantage.id === enemy.id;
 					});
+					if(!advantage){
+						return 0;
+					}
 					return advantage.a;
 				});
 				hero.counterPickAdvantage = (Math.round(teamAdvantage * 1000) / 1000).toFixed(3);
