@@ -20,7 +20,7 @@
     "grunt-contrib-uglify": "~4.0.0",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-csso": "~0.8.1",
-    "grunt-html2js": "^0.5.1",
+    "grunt-html2js": "^0.6.0",
     "grunt-ng-annotate": "~1.0.1",
     "grunt-notify": "~0.4.3",
     "grunt-postcss": "^0.7.2",

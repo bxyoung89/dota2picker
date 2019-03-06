@@ -152,7 +152,7 @@ angular.module("WalrusPunch").service("heroBaseService", function(){
 			"id": "dark-willow",
 			"stat": "intelligence",
 			"imageId": "dark_willow",
-			"dota1Image": "dark_seer.gif"
+			"dota1Image": "not_in_dota1.gif"
 		},
 		{
 			"name": "Dazzle",
@@ -250,7 +250,7 @@ angular.module("WalrusPunch").service("heroBaseService", function(){
 			"id": "grimstroke",
 			"stat": "intelligence",
 			"imageId": "grimstroke",
-			"dota1Image": "gyrocopter.gif"
+			"dota1Image": "not_in_dota1.gif"
 		},
 		{
 			"name": "Gyrocopter",
@@ -379,6 +379,13 @@ angular.module("WalrusPunch").service("heroBaseService", function(){
 			"dota1Image": "magnus.gif"
 		},
 		{
+			"name": "Mars",
+			"id": "mars",
+			"stat": "strength",
+			"imageId": "mars",
+			"dota1Image": "not_in_dota1.gif"
+		},
+		{
 			"name": "Medusa",
 			"id": "medusa",
 			"stat": "agility",
@@ -390,7 +397,7 @@ angular.module("WalrusPunch").service("heroBaseService", function(){
 			"id": "monkey-king",
 			"stat": "agility",
 			"imageId": "monkey_king",
-			"dota1Image": "medusa.gif"
+			"dota1Image": "not_in_dota1.gif"
 		},
 		{
 			"name": "Meepo",
@@ -481,7 +488,7 @@ angular.module("WalrusPunch").service("heroBaseService", function(){
 			"id": "pangolier",
 			"stat": "agility",
 			"imageId": "pangolier",
-			"dota1Image": "phantom_assasin.gif"
+			"dota1Image": "not_in_dota1.gif"
 		},
 		{
 			"name": "Phantom Assassin",

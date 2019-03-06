@@ -294,6 +294,12 @@
     "openDotaId": "97"
   },
   {
+    "name": "Mars",
+    "id": "mars",
+    "dotaMaxId": "magnataur",
+    "openDotaId": "122"
+  },
+  {
     "name": "Medusa",
     "id": "medusa",
     "openDotaId": "94"
