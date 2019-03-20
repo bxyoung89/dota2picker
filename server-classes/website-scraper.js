@@ -1,12 +1,10 @@
 const axios = require("axios");
-const randomUserAgent = require("random-useragent");
 
 const requestWithDelay = (heroData, website, delay) => new Promise((resolve) => {
 	setTimeout(() => {
 		const url = website.getHeroUrl(heroData);
 		axios.get(url, {
 			headers: {
-				"User-Agent": randomUserAgent.getRandom(),
 				"Accept-Language": "en",
 			},
 		}).then((data) => {

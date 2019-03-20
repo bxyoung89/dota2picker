@@ -30,7 +30,6 @@
     "mkdirp": "~0.5.1",
     "morgan": "^1.9.1",
     "postcss": "^5.2.18",
-    "random-useragent": "^0.2.1",
     "request": "^2.88.0",
     "serve-favicon": "^2.5.0",
     "sugar": "~1.4.1"
