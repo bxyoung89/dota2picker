@@ -497,6 +497,11 @@
     "openDotaId": "71"
   },
   {
+    "name": "Snapfire",
+    "id": "snapfire",
+    "openDotaId": "128"
+  },
+  {
     "name": "Storm Spirit",
     "id": "storm-spirit",
     "dotaMaxId": "storm_spirit",
@@ -596,6 +601,11 @@
     "name": "Visage",
     "id": "visage",
     "openDotaId": "92"
+  },
+  {
+    "name": "Void Spirit",
+    "id": "void_spirit",
+    "openDotaId": "126"
   },
   {
     "name": "Warlock",

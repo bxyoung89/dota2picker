@@ -617,6 +617,13 @@ angular.module("WalrusPunch").service("heroBaseService", function(){
 			"dota1Image": "slark.gif"
 		},
 		{
+			"name": "Snapfire",
+			"id": "snapfire",
+			"stat": "strength",
+			"imageId": "snapfire",
+			"dota1Image": "not_in_dota1.gif"
+		},
+		{
 			"name": "Sniper",
 			"id": "sniper",
 			"stat": "agility",
@@ -769,6 +776,13 @@ angular.module("WalrusPunch").service("heroBaseService", function(){
 			"stat": "intelligence",
 			"imageId": "visage",
 			"dota1Image": "visage.gif"
+		},
+		{
+			"name": "Void Spirit",
+			"id": "void_spirit",
+			"stat": "intelligence",
+			"imageId": "void_spirit",
+			"dota1Image": "not_in_dota1.gif"
 		},
 		{
 			"name": "Warlock",
