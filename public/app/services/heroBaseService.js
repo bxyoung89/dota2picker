@@ -267,6 +267,13 @@ angular.module("WalrusPunch").service("heroBaseService", function(){
 			"dota1Image": "huskar.gif"
 		},
 		{
+			"name": "Hoodwink",
+			"id": "hoodwink",
+			"stat": "strength",
+			"imageId": "agility",
+			"dota1Image": "not_in_dota1.gif"
+		},
+		{
 			"name": "Invoker",
 			"id": "invoker",
 			"stat": "intelligence",
