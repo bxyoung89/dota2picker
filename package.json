@@ -10,7 +10,7 @@
     "cheerio": "^0.22.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-locale": "~0.1.2",
     "grunt": "~0.4.5",
     "grunt-cli": "~0.1.13",
